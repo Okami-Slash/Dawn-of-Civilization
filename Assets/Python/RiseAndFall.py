@@ -865,7 +865,10 @@ class RiseAndFall:
 		if iGameTurn == getTurnForYear(-50):
 			if pByzantium.isHuman() and pGreece.isAlive():
 				sta.completeCollapse(iGreece)
-
+			
+		if iGameTurn == getTurnForYear(-100):
+			if pMamluks.isHuman() and pEgypt.isAlive():
+				sta.completeCollapse(iEgypt)
 		#Colonists
 		if iGameTurn == getTurnForYear(-850):
 			self.giveEarlyColonists(iGreece)
@@ -1412,13 +1415,23 @@ class RiseAndFall:
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
 
-		lConditionalCivs = [iMughals, iThailand, iBrazil, iArgentina, iCanada]
+		lConditionalCivs = [iMamluks, iMughals, iThailand, iBrazil, iArgentina, iCanada]
 
 		# Leoreth: extra checks for conditional civs
 		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
 			#if iCiv == iByzantium:
 			#	if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStabilityLevel(iRome) == iStabilitySolid):
 			#		return
+			if iCiv == iMamluks:
+				if pEgypt.isAlive():
+					return
+				
+				if utils.getHumanID() != iArabia:
+					if data.getStabilityLevel(iArabia) > iStabilityShaky:
+						return
+				else:
+					if data.getStabilityLevel(iArabia) > iStabilityUnstable:
+						return
 
 			if iCiv == iThailand:
 				if utils.getHumanID() != iKhmer:
@@ -2585,6 +2598,9 @@ class RiseAndFall:
 		elif iCiv == iNetherlands:
 			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
 			utils.makeUnit(iPikeman, iCiv, tPlot, 3)
+		elif iCiv == iMamluks:
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 		elif iCiv == iMali:
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 4)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
@@ -2941,6 +2957,12 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iLongbowman, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iBalangay, iCiv, tSeaPlot, 1)
+		elif iCiv == iMamluks:
+			utils.createSettlers(iCiv, 3)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, 1)
 		elif iCiv == iMali:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 5)
@@ -3651,13 +3673,18 @@ class RiseAndFall:
 				data.setPlayerEnabled(iBrazil, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
 				data.setPlayerEnabled(iBrazil, False)
-				
+
 		if iHuman not in [iCongo, iEthiopia, iArabia, iBoers]:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_SWAHILI")
 			if iRand <= 0:
 				data.setPlayerEnabled(iSwahili, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Swahili enabled?') != 0:
 				data.setPlayerEnabled(iSwahili, False)
+		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MAMLUKS")
+		if iRand <= 0:
+			data.setPlayerEnabled(iMamluks, False)
+		elif gc.getGame().getSorenRandNum(iRand, 'Mamluks enabled?') != 0:
+			data.setPlayerEnabled(iMamluks, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []

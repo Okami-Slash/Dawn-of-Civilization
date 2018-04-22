@@ -106,85 +106,88 @@ BeginTeam
 	TeamID=31, (Swahili)
 EndTeam
 BeginTeam
-	TeamID=32, (Mali)
+	TeamID=32, (Mamluks)
 EndTeam
 BeginTeam
-	TeamID=33, (Poland)
+	TeamID=33, (Mali)
 EndTeam
 BeginTeam
-	TeamID=34, (Portugal)
+	TeamID=34, (Poland)
 EndTeam
 BeginTeam
-	TeamID=35, (Inca)
+	TeamID=35, (Portugal)
 EndTeam
 BeginTeam
-	TeamID=36, (Italy)
+	TeamID=36, (Inca)
 EndTeam
 BeginTeam
-	TeamID=37, (Mongols)
+	TeamID=37, (Italy)
 EndTeam
 BeginTeam
-	TeamID=38, (Aztecs)
+	TeamID=38, (Mongols)
 EndTeam
 BeginTeam
-	TeamID=39, (Mughals)
+	TeamID=39, (Aztecs)
 EndTeam
 BeginTeam
-	TeamID=40, (Turkey)
+	TeamID=40, (Mughals)
 EndTeam
 BeginTeam
-	TeamID=41, (Thailand)
+	TeamID=41, (Turkey)
 EndTeam
 BeginTeam
-	TeamID=42, (Congo)
+	TeamID=42, (Thailand)
 EndTeam
 BeginTeam
-	TeamID=43, (Sweden)
+	TeamID=43, (Congo)
 EndTeam
 BeginTeam
-	TeamID=44, (Netherlands)
+	TeamID=44, (Sweden)
 EndTeam
 BeginTeam
-	TeamID=45, (Germany)
+	TeamID=45, (Netherlands)
 EndTeam
 BeginTeam
-	TeamID=46, (America)
+	TeamID=46, (Germany)
 EndTeam
 BeginTeam
-	TeamID=47, (Argentina)
+	TeamID=47, (America)
 EndTeam
 BeginTeam
-	TeamID=48, (Brazil)
+	TeamID=48, (Argentina)
 EndTeam
 BeginTeam
-	TeamID=49, (Australia)
+	TeamID=49, (Brazil)
 EndTeam
 BeginTeam
-	TeamID=50, (Boers)
+	TeamID=50, (Australia)
 EndTeam
 BeginTeam
-	TeamID=51, (Canada)
+	TeamID=51, (Boers)
 EndTeam
 BeginTeam
-	TeamID=52, (Israel)
+	TeamID=52, (Canada)
 EndTeam
 BeginTeam
-	TeamID=53, (Independent)
+	TeamID=53, (Israel)
 EndTeam
 BeginTeam
-	TeamID=54, (Independent2)
+	TeamID=54, (Independent)
 EndTeam
 BeginTeam
-	TeamID=55, (Native)
+	TeamID=55, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=56, (Celtia)
+	TeamID=56, (Native)
 EndTeam
 BeginTeam
-	TeamID=57, (Seljuks)
+	TeamID=57, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=58, (Barbarian)
+	TeamID=58, (Seljuks)
+EndTeam
+BeginTeam
+	TeamID=59, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -413,7 +416,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=20
-	LeaderType=LEADER_SALADIN
+	LeaderType=LEADER_HARUN
 	CivType=CIVILIZATION_ARABIA
 	PlayableCiv=1
 	StartingGold=300
@@ -579,6 +582,21 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=32
+	LeaderType=LEADER_BAIBARS
+	CivType=CIVILIZATION_MAMLUKS
+	PlayableCiv=1
+	StartingGold=300
+	StateReligion=RELIGION_ISLAM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=33
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI
 	PlayableCiv=1
@@ -592,7 +610,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=33
+	Team=34
 	LeaderType=LEADER_SOBIESKI
 	CivType=CIVILIZATION_POLAND
 	PlayableCiv=1
@@ -606,7 +624,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=34
+	Team=35
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL
 	PlayableCiv=1
@@ -620,7 +638,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=35
+	Team=36
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA
 	PlayableCiv=1
@@ -632,7 +650,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 EndPlayer
 BeginPlayer
-	Team=36
+	Team=37
 	LeaderType=LEADER_LORENZO
 	CivType=CIVILIZATION_ITALY
 	PlayableCiv=1
@@ -646,7 +664,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=37
+	Team=38
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL
 	PlayableCiv=1
@@ -659,7 +677,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=38
+	Team=39
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC
 	PlayableCiv=1
@@ -672,7 +690,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=39
+	Team=40
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
 	PlayableCiv=1
@@ -687,7 +705,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=40
+	Team=41
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN
 	PlayableCiv=1
@@ -702,7 +720,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=41
+	Team=42
 	LeaderType=LEADER_NARESUAN
 	CivType=CIVILIZATION_THAILAND
 	PlayableCiv=1
@@ -716,7 +734,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=42
+	Team=43
 	LeaderType=LEADER_MBEMBA
 	CivType=CIVILIZATION_CONGO
 	PlayableCiv=1
@@ -728,7 +746,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=43
+	Team=44
 	LeaderType=LEADER_GUSTAV
 	CivType=CIVILIZATION_SWEDEN
 	PlayableCiv=1
@@ -742,7 +760,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=44
+	Team=45
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS
 	PlayableCiv=1
@@ -756,7 +774,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=45
+	Team=46
 	LeaderType=LEADER_FREDERICK
 	CivType=CIVILIZATION_GERMANY
 	PlayableCiv=1
@@ -771,7 +789,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=46
+	Team=47
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA
 	PlayableCiv=1
@@ -785,7 +803,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+	Team=48
 	LeaderType=LEADER_SAN_MARTIN
 	CivType=CIVILIZATION_ARGENTINA
 	PlayableCiv=1
@@ -799,7 +817,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+	Team=49
 	LeaderType=LEADER_DOM_PEDRO
 	CivType=CIVILIZATION_BRAZIL
 	PlayableCiv=1
@@ -814,7 +832,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+	Team=50
 	LeaderType=LEADER_MENZIES
 	CivType=CIVILIZATION_AUSTRALIA
 	PlayableCiv=1
@@ -828,7 +846,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=50
+	Team=51
 	LeaderType=LEADER_KRUGER
 	CivType=CIVILIZATION_BOER
 	PlayableCiv=1
@@ -842,7 +860,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=51
+	Team=52
 	LeaderType=LEADER_TRUDEAU
 	CivType=CIVILIZATION_CANADA
 	PlayableCiv=1
@@ -857,7 +875,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=52
+	Team=53
 	LeaderType=LEADER_BEN_GURION
 	CivType=CIVILIZATION_ISRAEL
 	PlayableCiv=1
@@ -872,7 +890,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=53
+	Team=54
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -881,7 +899,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=54
+	Team=55
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -890,7 +908,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=55
+	Team=56
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -899,7 +917,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=56
+	Team=57
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
@@ -907,7 +925,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=57
+	Team=58
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
 	Color=PLAYERCOLOR_SELJUK
@@ -918,7 +936,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=58
+	Team=59
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0
@@ -27147,7 +27165,7 @@ BeginPlot
 	x=70,y=41
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=55,
 EndPlot
 BeginPlot
 	x=70,y=42
@@ -27907,8 +27925,8 @@ BeginPlot
 	x=72,y=41
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
-	Player54Culture=22, (Independent Leader)
+	TeamReveal=55,
+	Player55Culture=22, (Independent Leader)
 EndPlot
 BeginPlot
 	x=72,y=42
@@ -28281,23 +28299,23 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent)
 	EndUnit
 	BeginCity
-		CityOwner=54, (iIndependent)
+		CityOwner=55, (iIndependent)
 		CityName=Yerushalayim
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		CityPopulation=1
-		Player54Culture=20, (iIndependent)
+		Player55Culture=20, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot
@@ -28312,20 +28330,20 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=55, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=54, (iIndependent2)
+		CityOwner=55, (iIndependent2)
 		CityName=Sidon
 		CityPopulation=2
 		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player54Culture=10
+		Player55Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -29839,14 +29857,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=58, (iBarbarian)
+		UnitType=UNIT_MILITIA, UnitOwner=59, (iBarbarian)
 	EndUnit
 	BeginCity
-		CityOwner=58, (iBarbarian)
+		CityOwner=59, (iBarbarian)
 		CityName=Uruk
 		CityPopulation=3
 		BuildingType=BUILDING_MONUMENT
-		Player58Culture=30
+		Player59Culture=30
 	EndCity
 EndPlot
 BeginPlot
@@ -29889,14 +29907,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=53, (iIndependent)
+		CityOwner=54, (iIndependent)
 		CityName=Ninua
 		CityPopulation=2
 		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player53Culture=10
+		Player54Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -30622,17 +30640,17 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=53, (iIndependent2)
+		UnitType=UNIT_ARCHER, UnitOwner=54, (iIndependent2)
 	EndUnit
 	BeginCity
-		CityOwner=53, (iIndependent2)
+		CityOwner=54, (iIndependent2)
 		CityName=Susa
 		CityPopulation=2
 		BuildingType=BUILDING_PAGAN_TEMPLE
-		Player53Culture=10
+		Player54Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -39379,11 +39397,11 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginCity
-		CityOwner=53, (iIndependent2)
+		CityOwner=54, (iIndependent2)
 		CityName=Luoyang
 		BuildingType=BUILDING_PAGAN_TEMPLE
 		CityPopulation=1
-		Player53Culture=10, (iIndependent)
+		Player54Culture=10, (iIndependent)
 	EndCity
 EndPlot
 BeginPlot

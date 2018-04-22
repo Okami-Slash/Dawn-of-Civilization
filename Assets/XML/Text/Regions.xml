@@ -557,4 +557,16 @@
 		<Tag>TXT_KEY_UHV_AREA_81</Tag>
 		<English>Sargon's Legend</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_82</Tag>
+		<English>Hejaz</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_83</Tag>
+		<English>Lower Nile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_84</Tag>
+		<English>Lower Nile, North Africa</English>
+	</TEXT>
 </Civ4GameText>

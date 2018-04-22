@@ -646,4 +646,8 @@
 		<Tag>TXT_KEY_LEADER_LAPU_LAPU</Tag>
 		<English>Lapu-Lapu</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MUSTASIM</Tag>
+		<English>Mustasim</English>
+	</TEXT>
 </Civ4GameText>

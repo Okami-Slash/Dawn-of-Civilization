@@ -34,9 +34,7 @@ def getLanguages(iCiv):
 		
 	pCiv = gc.getPlayer(iCiv)
 
-	if iCiv == iEgypt:
-		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
-		return (iLangEgyptian,)
+	if iCiv == iEgypt: return (iLangEgyptian,)
 	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iBabylonia: return (iLangBabylonian,)
 	elif iCiv == iAssyria: return (iLangAssyrian,)
@@ -74,6 +72,7 @@ def getLanguages(iCiv):
 		if utils.isReborn(iCiv): return (iLangSpanish,)
 		return (iLangPhilippine, iLangIndonesian)
 	elif iCiv == iSwahili: return (iLangSwahili, iLangEthiopian, iLangCongolese,)
+	elif iCiv == iMamluks: return (iLangEgyptianArabic, iLangArabian)
 	elif iCiv == iMali: return (iLangMalian,)
 	elif iCiv == iPoland: return (iLangPolish, iLangRussian)
 	elif iCiv == iPortugal: return (iLangPortuguese, iLangSpanish)

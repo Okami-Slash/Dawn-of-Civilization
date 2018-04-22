@@ -105,6 +105,7 @@ iCivHolyRome :	Techs([iFeudalism], column=6, exceptions=[iArtisanry, iScholarshi
 iCivRussia :	Techs([iFeudalism], column=6, exceptions=[iPolitics, iScholarship, iEthics]),
 iCivPhilippines : 	Techs(column=6),
 iCivSwahili : 	Techs([iTheology], column=6, exceptions=[iArtisanry, iPolitics]),
+iCivMamluks : 	Techs([iTheology], column=6),
 iCivMali : 	Techs([iTheology], column=6),
 iCivPoland : 	Techs([iFeudalism, iFortification, iCivilService, iTheology], column=6),
 iCivSeljuks :	Techs([iFeudalism, iFortification, iMachinery, iAlchemy, iTheology], column=6),

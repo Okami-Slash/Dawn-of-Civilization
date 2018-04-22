@@ -236,6 +236,17 @@ tPacific3BR = (122, 33)
 # Roman empire
 tRomanEmpire = { iRome : ((44, 30), (75, 56))}
 
+# first Mamluk goal: Control Northern Africa, Hejaz, the Levant and Mesopotamia by 1300 AD
+tHejazTL = (73, 30)
+tHejazBR = (77, 36)
+tHejazExceptions = [(73, 30), (76, 36), (77, 36), (77, 35)]
+tLevantTL = (72, 37)
+tLevantBR = (74, 41)
+
+# second Mamluk goal: Make Cairo the most populous city in the world and have at least 30 population on the Lower Nile in 1380 AD
+tLowerNileTL = (66, 29)
+tLowerNileBR = (70, 36)
+
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -1165,7 +1176,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		if iGameTurn == getTurnForYear(1500):
 			expire(iPhilippines, 1)
-			
+
 		# third goal: Have 5000 gold in 1600 AD
 		if iGameTurn == getTurnForYear(1600):
 			if pPhilippines.getGold() >= utils.getTurns(5000):
@@ -1198,7 +1209,36 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iSwahili, 1)
 			
 		# second goal: build an Islamic Mosque by 1500 AD
-		
+	elif iPlayer == iMamluks:
+		if isPossible(iMamluks, 0):
+			bNorthAfrica = isCultureControlled(iMamluks, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR))
+			bHejaz = isCultureControlled(iMamluks, utils.getPlotList(tHejazTL, tHejazBR, tHejazExceptions))
+			bLevant = isCultureControlled(iMamluks, utils.getPlotList(tLevantTL, tLevantBR))
+			bMesopotamia = isControlled(iMamluks, Areas.getCoreArea(iBabylonia, False))
+			if bNorthAfrica and bHejaz and bLevant and bMesopotamia:
+				win(iMamluks, 0)
+			
+		if iGameTurn == getTurnForYear(1300):
+			expire(iMamluks, 0)
+	
+		# second goal: Make Cairo the most populous city in the world and have at least 30 population on the Lower Nile in 1380 AD
+		if iGameTurn == getTurnForYear(1380):
+			lLowerNile = [(x, y) for (x, y) in utils.getPlotList(tLowerNileTL, tLowerNileBR) if gc.getMap().plot(x, y).isRiver()]
+			if isBestCity(iMamluks, (69, 35), cityPopulation) and countPopulationInArea(iMamluks, lLowerNile) >= 30:
+				win(iMamluks, 1)
+			else:
+				lose(iMamluks, 1)
+				
+		# third goal: Have the highest total culture and science output in 1500 AD
+		if iGameTurn == getTurnForYear(1500):
+			bMostCultureOutput = isBestPlayer(iMamluks, playerCultureOutput)
+			bMostResearchOutput = isBestPlayer(iMamluks, playerResearchOutput)
+			if bMostCultureOutput and bMostResearchOutput:
+				win(iMamluks, 2)
+			else:
+				lose(iMamluks, 2)
+			
+	elif iPlayer == iMali:
 		# third goal: found a city in Australia by 1650 AD
 		if iGameTurn == getTurnForYear(1650):
 			expire(iSwahili, 2)
@@ -2813,6 +2853,12 @@ def playerTechs(iPlayer):
 def playerRealPopulation(iPlayer):
 	return gc.getPlayer(iPlayer).getRealPopulation()
 
+def playerCultureOutput(iPlayer):
+	return gc.getPlayer(iPlayer).getCommerceRate(CommerceTypes.COMMERCE_CULTURE)
+	
+def playerResearchOutput(iPlayer):
+	return gc.getPlayer(iPlayer).getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)
+
 def getNumBuildings(iPlayer, iBuilding):
 	return gc.getPlayer(iPlayer).countNumBuildings(iBuilding)
 
@@ -3422,6 +3468,13 @@ def countHuts(tTL, tBR):
 		plot = gc.getMap().plot(x, y)
 		if plot.getImprovementType() == iHut:
 			iCount += 1
+	return iCount
+	
+def countPopulationInArea(iPlayer, lArea):
+	iCount = 0
+	for city in utils.getCityList(iPlayer):
+		if (city.getX(), city.getY()) in lArea:
+			iCount += city.getPopulation()
 	return iCount
 
 ### UHV HELP SCREEN ###
@@ -4225,6 +4278,24 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iTreasury = pPhilippines.getGold()
 			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
+
+	elif iPlayer == iMamluks:
+		if iGoal == 0:
+			bNorthAfrica = isCultureControlled(iMamluks, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR))
+			bHejaz = isCultureControlled(iMamluks, utils.getPlotList(tHejazTL, tHejazBR, tHejazExceptions))
+			bLevant = isCultureControlled(iMamluks, utils.getPlotList(tLevantTL, tLevantBR))
+			bMesopotamia = isControlled(iMamluks, Areas.getCoreArea(iBabylonia, False))
+			aHelp.append(getIcon(bNorthAfrica) + localText.getText("TXT_KEY_VICTORY_NORTH_AFRICA_MAM", ()) + ' ' + getIcon(bHejaz) + localText.getText("TXT_KEY_VICTORY_HEJAZ", ()) + ' ' + getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()) + ' ' + getIcon(bMesopotamia) + localText.getText("TXT_KEY_VICTORY_MESOPOTAMIA", ()))
+		elif iGoal == 1:
+			lLowerNile = [(x, y) for (x, y) in utils.getPlotList(tLowerNileTL, tLowerNileBR) if gc.getMap().plot(x, y).isRiver()]
+			pBestCity = getBestCity(iMamluks, (69, 35), cityPopulation)
+			bBestCity = isBestCity(iMamluks, (69, 35), cityPopulation)
+			iPopCount = countPopulationInArea(iMamluks, lLowerNile)
+			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iPopCount >= 30) + localText.getText("TXT_KEY_VICTORY_NILE_POPULATION", (iPopCount, 30)))
+		elif iGoal == 2:
+			iMostCultureOutputCiv = getBestPlayer(iMamluks, playerCultureOutput)
+			iMostResearchOutputCiv = getBestPlayer(iMamluks, playerResearchOutput)
+			aHelp.append(getIcon(iMostCultureOutputCiv == iMamluks) + localText.getText("TXT_KEY_VICTORY_HIGHEST_CULTURE_OUTPUT_CIV", (str(gc.getPlayer(iMostCultureOutputCiv).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(iMostResearchOutputCiv == iMamluks) + localText.getText("TXT_KEY_VICTORY_HIGHEST_RESEARCH_OUTPUT_CIV", (str(gc.getPlayer(iMostResearchOutputCiv).getCivilizationShortDescriptionKey()),)))
 
 	elif iPlayer == iMali:
 		if iGoal == 1:

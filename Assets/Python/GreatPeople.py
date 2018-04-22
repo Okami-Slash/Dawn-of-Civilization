@@ -2380,6 +2380,8 @@ iCivSwahili : {
 		"Fumo Liyongo",
 	],
 },
+iCivMamluks : {
+},
 iCivMali : {
 	iGreatProphet : [
 		"Wali Keita", # 13th

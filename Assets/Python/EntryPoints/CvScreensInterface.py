@@ -1210,7 +1210,23 @@ def getUHVTileInfo(argsList):
 		if (x, y) in vic.lBalticSea or (x, y) in vic.lBalticSea:
 			return 75
 				
-		# continue with ID 72
+	elif iPlayer == iMamluks:
+		if utils.isPlotInArea((x, y), vic.tLowerNileTL, vic.tLowerNileBR) and gc.getMap().plot(x, y).isRiver():
+			if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+				return 84
+			return 83
+		
+		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+			return 22
+		
+		if utils.isPlotInArea((x, y), vic.tHejazTL, vic.tHejazBR, vic.tHejazExceptions):
+			return 82
+		
+		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
+			return 78
+		
+		if (x, y) in Areas.getCoreArea(iBabylonia, False):
+			return 4
 			
 	return -1
 		

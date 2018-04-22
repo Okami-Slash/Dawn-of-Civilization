@@ -1326,6 +1326,7 @@ enum PlayerTypes				// Exposed to Python
 	RUSSIA,
 	PHILIPPINES,
 	SWAHILI,
+	MAMLUKS,
 	MALI,
 	POLAND,
 	PORTUGAL,
