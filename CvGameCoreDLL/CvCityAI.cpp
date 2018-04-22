@@ -322,7 +322,7 @@ void CvCityAI::AI_assignWorkingPlots()
 			}
 		}
 	}
-	FAssertMsg(iExtraSpecialists >= 0, "added too many specialists");
+	//FAssertMsg(iExtraSpecialists >= 0, "added too many specialists");
 
 	// if we still have population to assign, assign specialists
 	while (extraSpecialists() > 0)
@@ -1585,6 +1585,7 @@ void CvCityAI::AI_chooseProduction()
 				break;
 
 			case AREAAI_NEUTRAL:
+			case NO_AREAAI:
 				break;
 			default:
 				FAssert(false);
@@ -6223,8 +6224,13 @@ void CvCityAI::AI_updateBestBuild()
 
 	int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
 	iProductionAdvantage /= kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION);
-	iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
-	iProductionAdvantage /= AI_yieldMultiplier(YIELD_COMMERCE);
+
+	int iCommerceYieldMultiplier = AI_yieldMultiplier(YIELD_COMMERCE);
+	if (iCommerceYieldMultiplier != 0)
+	{
+		iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
+		iProductionAdvantage /= iCommerceYieldMultiplier;
+	}
 
 	//now we normalize the effect by # of cities
 

@@ -9696,7 +9696,6 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 	bool bIsFirstTech;
 	int iFirstLeft, iSecondLeft;
 	int iFirstResearch, iSecondResearch;
-	int iNumTechsDiscovered;
 	int iPercentWasted = 0;
 
 	if (canDiscover(plot()))
@@ -9713,24 +9712,22 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 
 		iFirstResearch = 0;
 		iSecondResearch = 0;
-		iNumTechsDiscovered = 0;
 
 		if (eFirstDiscoverTech != NO_TECH)
 		{
 			iFirstLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoverTech);
 			iFirstResearch = std::min(getDiscoverResearch(eFirstDiscoverTech), iFirstLeft);
-			iNumTechsDiscovered++;
 
 			if (eSecondDiscoverTech != NO_TECH)
 			{
 				iSecondLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoverTech);
 				iSecondResearch = std::max(0, std::min(getDiscoverResearch(eSecondDiscoverTech) - iFirstLeft, iSecondLeft));
-				iNumTechsDiscovered++;
 			}
 		}
 
-		iPercentWasted = iNumTechsDiscovered > 0 ? (100 - (((iFirstResearch + iSecondResearch) * 100) / iNumTechsDiscovered * getDiscoverResearch(NO_TECH))) : 100;
-		FAssert(((iPercentWasted >= 0) && (iPercentWasted <= 100)));
+		iPercentWasted = 100 - (iFirstResearch + iSecondResearch) * 100 / getDiscoverResearch(NO_TECH);
+		FAssert(iPercentWasted >= 0, "iPercentWasted expected to be positive");
+		FAssert(iPercentWasted <= 100, "iPercentWaster expected to be at most 100");
 
 		if (iFirstResearch >= iFirstLeft)
         {
@@ -11670,7 +11667,7 @@ bool CvUnitAI::AI_targetMinorCity(int iMinorCiv)
 
 		if (pBestPlot != NULL)
 		{
-			FAssert(!(pBestCity->at(pBestPlot))); // no suicide missions...
+			//FAssert(!(pBestCity->at(pBestPlot))); // no suicide missions...
 			if (atPlot(pBestPlot))
 			{
 				getGroup()->pushMission(MISSION_SKIP);
@@ -12908,7 +12905,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		{
 			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
 
-			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) == modifier)
+			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) >= modifier)
 			{
 				if (pLoopPlot != NULL)
 				{
@@ -12956,7 +12953,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		}
 		else
 		{
-			FAssert(!atPlot(pBestPlot));
+			//FAssert(!atPlot(pBestPlot));
 			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), MOVE_SAFE_TERRITORY, false, false, MISSIONAI_FOUND, pBestFoundPlot);
 			return true;
 		}
@@ -13317,7 +13314,7 @@ bool CvUnitAI::AI_settlerSeaTransport()
 	//to inland sites
 
 	pWaterArea = plot()->waterArea();
-	FAssertMsg(pWaterArea != NULL, "Ship out of water?");
+	//FAssertMsg(pWaterArea != NULL, "Ship out of water?");
 
 	CvUnit* pSettlerUnit = NULL;
 	pPlot = plot();
@@ -18452,7 +18449,7 @@ bool CvUnitAI::AI_diplomaticMission(int iPowerMultiplier)
 	{
 		ePlayer = (PlayerTypes)iI;
 
-		if (GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian() || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAVassal())
+		if (ePlayer == getOwnerINLINE() || GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian() || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAVassal())
 		{
 			continue;
 		}

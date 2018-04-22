@@ -1508,12 +1508,14 @@ DomainTypes CvPlayerAI::AI_unitAIDomainType(UnitAITypes eUnitAI) const
 	case UNITAI_CITY_SPECIAL:
 	case UNITAI_EXPLORE:
 	case UNITAI_MISSIONARY:
+	case UNITAI_PERSECUTOR:
 	case UNITAI_PROPHET:
 	case UNITAI_ARTIST:
 	case UNITAI_SCIENTIST:
 	case UNITAI_GENERAL:
 	case UNITAI_MERCHANT:
 	case UNITAI_ENGINEER:
+	case UNITAI_STATESMAN:
 	case UNITAI_SPY:
 	case UNITAI_ATTACK_CITY_LEMMING:
 		return DOMAIN_LAND;
@@ -4153,6 +4155,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 													break;
 
 												case UNITAI_MISSIONARY:
+												case UNITAI_PERSECUTOR:
 													iUnitValue += ((getStateReligion() != NO_RELIGION) ? 600 : 300);
 													break;
 
@@ -4162,6 +4165,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 												case UNITAI_GENERAL:
 												case UNITAI_MERCHANT:
 												case UNITAI_ENGINEER:
+												case UNITAI_STATESMAN:
 													break;
 
 												case UNITAI_SPY:
@@ -9439,6 +9443,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 		case UNITAI_GENERAL:
 		case UNITAI_MERCHANT:
 		case UNITAI_ENGINEER:
+		case UNITAI_STATESMAN:
 		case UNITAI_SPY:
 			break;
 
@@ -9855,6 +9860,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 	case UNITAI_GENERAL:
 	case UNITAI_MERCHANT:
 	case UNITAI_ENGINEER:
+	case UNITAI_STATESMAN:
 		break;
 
 	case UNITAI_SPY:

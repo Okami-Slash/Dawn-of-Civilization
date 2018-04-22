@@ -26307,8 +26307,9 @@ BeginPlot
 		CityName=Athinai
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_PAGAN_TEMPLE
 		BuildingType=BUILDING_ACADEMY
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_BYZANTINE_HIPPODROME
 		BuildingType=BUILDING_PARTHENON
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_AQUEDUCT
