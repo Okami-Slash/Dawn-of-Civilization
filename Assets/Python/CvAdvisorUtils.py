@@ -184,7 +184,7 @@ def unitBuiltFeats(pCity, pUnit):
 	
 	if (not gc.getPlayer(pCity.getOwner()).isFeatAccomplished(FeatTypes.FEAT_UNITCOMBAT_NAVAL)):
 
-		if (pUnit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL")):
+		if (pUnit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_TRANSPORT")):
 		
 			gc.getPlayer(pCity.getOwner()).setFeatAccomplished(FeatTypes.FEAT_UNITCOMBAT_NAVAL, True)
 			

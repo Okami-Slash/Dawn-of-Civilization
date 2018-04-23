@@ -431,31 +431,26 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iHarappa, 2)
 
 	elif iPlayer == iHittite:
-		#first goal: Control 20 trade routes by 1300 BC
+		#first goal: Control 12 trade routes by 1200 BC
 		if isPossible(iHittite, 0):
-			iNumRoutes = pHittite.getTradeRoutes()
-			if iNumRoutes >= 20:
+			iNumRoutes = 0
+			for city in utils.getCityList(iHittite):
+				iNumRoutes += city.getTradeRoutes()
+			if iNumRoutes >= 13:
 				win(iHittite, 0)
 		
 		if iGameTurn == getTurnForYear(-1200):
 			expire(iHittite, 0)
 		
-		#second goal: Control 3 Iron, Copper, and Horses in 546 BC
-		if iGameTurn == getTurnForYear(-546):
-			iNumIron = countResources(iHittite, iIron)
-			iNumCopper = countResources(iHittite, iCopper)
-			iNumHorse = countResources(iHittite, iHorse)
-			if iNumIron >= 3 and iNumCopper >= 3 and iNumHorse >= 3:
-				win(iHittite, 1)
-			else:
-				lose(iHittite, 1)
+		# second goal: never lose a single city until 133 BC
+		if iGameTurn == getTurnForYear(-133) and isPossible(iHittite, 1): win(iHittite, 1)
 		
 		#third goal: Be the first Mediterranean Empire in control of Iron.
 		if countResources(iPlayer, iIron) > 0:
-				win(iHittite, 2)
+			win(iHittite, 2)
 		
 		for iPlayer in range(iNumMajorPlayers):
-			if iPlayer == iIndia or iPlayer == iChina or iPlayer == iPersia or iPlayer == iHarappa: continue
+			if iPlayer == iIndia or iPlayer == iChina or iPlayer == iHarappa: continue
 			if countResources(iPlayer, iIron) > 0:
 				lose(iHittite, 2)
 
@@ -1933,6 +1928,10 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	# third Vietnamese goal: never lose a single city until 1950 AD
 	if iOwner == iVietnam:
 		expire(iVietnam, 2)
+
+	# second Hittite goal: never lose a single city until 133 BC
+	if gc.getGame().getGameTurn() > getTurnForYear(-1900) and iOwner == iHittite:
+		expire(iHittite, 1)
 
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 
@@ -3853,7 +3852,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bLibrary = data.getWonderBuilder(iGreatLibrary) == iAssyria
 			aHelp.append(getIcon(bGardens) + localText.getText("TXT_KEY_BUILDING_HANGING_GARDENS", ()) + getIcon(bLibrary) + localText.getText("TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL", ()))
 
-		if iGoal == 2:
+		elif iGoal == 2:
 			iNumBaths = getNumBuildings(iAssyria, iBath)
 			iNumAqueducts = getNumBuildings(iAssyria, iAqueduct)
 			iNumGardens = getNumBuildings(iAssyria, iGarden)
@@ -3861,16 +3860,12 @@ def getUHVHelp(iPlayer, iGoal):
 	
 	elif iPlayer == iHittite:
 		if iGoal == 0:
-			iNumRoutes = pHittite.getTradeRoutes()
-			aHelp.append(getIcon(iNumRoutes >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_ROUTES", (iNumRoutes, 20)))
+			iNumRoutes = 0
+			for city in utils.getCityList(iHittite):
+				iNumRoutes += city.getTradeRoutes()
+			aHelp.append(getIcon(iNumRoutes >= 13) + localText.getText("TXT_KEY_VICTORY_NUM_ROUTES", (iNumRoutes, 13)))
 
-		if iGoal == 1:
-			iNumIron = countResources(iHittite, iIron)
-			iNumCopper = countResources(iHittite, iCopper)
-			iNumHorse = countResources(iHittite, iHorse)
-			aHelp.append(getIcon(iNumIron >= 3) + localText.getText("TXT_KEY_VICTORY_IRON_CONTROLLED", (iNumIron, 3)) + ' ' + getIcon(iNumCopper >= 3) + localText.getText("TXT_KEY_VICTORY_COPPER_CONTROLLED", (iNumCopper, 3)) + ' ' + getIcon(iNumHorse >= 3) + localText.getText("TXT_KEY_VICTORY_HORSE_CONTROLLED", (iNumHorse, 3)))
-
-		if iGoal == 2:
+		elif iGoal == 2:
 			iNumIron = countResources(iHittite, iIron)
 			aHelp.append(getIcon(iNumIron > 0) + localText.getText("TXT_KEY_VICTORY_FIRST_MEDITERRANEAN_IRON_CONTROLLED", ()))
 
@@ -4005,6 +4000,7 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iOrthodox = getNumBuildings(iEthiopia, iOrthodoxCathedral)
 			aHelp.append(getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))
+	
 	elif iPlayer == iVietnam:
 		if iGoal == 0:
 			iCulture = pVietnam.countTotalCulture()

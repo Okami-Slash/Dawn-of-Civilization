@@ -37,7 +37,7 @@ class CvPediaUnitChart:
 		else:
 			szMove = "Moves"
 
-		if self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_AIR') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_NAVAL') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_SIEGE'):
+		if self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_AIR') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_TRANSPORT') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_SIEGE'):
 			szSpecial = "Bombard"
 		else:
 			szSpecial = "1st Strike"
@@ -89,7 +89,7 @@ class CvPediaUnitChart:
 					szBombard = u"%d%%" % UnitInfo.getBombardRate()
 				elif UnitInfo.getBombRate() > 0:
 					szBombard = u"%d%%" % UnitInfo.getBombRate()
-				elif UnitInfo.getFirstStrikes() > 0 and not (self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_AIR') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_NAVAL') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_SIEGE')):
+				elif UnitInfo.getFirstStrikes() > 0 and not (self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_AIR') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_TRANSPORT') or self.iGroup == gc.getInfoTypeForString('UNITCOMBAT_SIEGE')):
 					szBombard = u"%d" % UnitInfo.getFirstStrikes()
 				else:
 					szBombard = u""

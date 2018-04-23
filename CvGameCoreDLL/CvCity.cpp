@@ -13518,6 +13518,7 @@ int CvCity::getTradeRoutes() const
 	}
 	iTradeRoutes += getExtraTradeRoutes();
 	
+	// Hittite UP
 	if (getOwner() == HITTITE && plot()->isCore(HITTITE))
 		iTradeRoutes += 1;
 

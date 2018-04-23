@@ -3375,7 +3375,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HTT1</Tag>
-		<English>Control 20 Trade Routes by 1200 BC</English>
+		<English>Control 13 Trade Routes by 1200 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_ROUTES</Tag>
@@ -3383,11 +3383,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HTT2_TITLE</Tag>
-		<English>Implements of War</English>
+		<English>Resilience</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HTT2</Tag>
-		<English>Control 3 Iron, Copper, and Horses resources in 546 BC</English>
+		<English>Never lose a single city until 133 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HTT3_TITLE</Tag>
