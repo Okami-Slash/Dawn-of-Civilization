@@ -1202,7 +1202,7 @@ lTotalWarOnSpawn = [
 [], #Assyria
 [], #Harappa
 [iIndependent, iIndependent, iBabylonia], #Hittite
-[], #Greece
+[iHittite], #Greece
 [], #India
 [], #Phoenicia
 [], #Polynesia

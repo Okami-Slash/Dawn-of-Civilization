@@ -21,7 +21,7 @@ tMinorCities = (
 (-3600, (69, 32), iIndependent2, 'Niwt-Rst', 1, iArcher, 1), 	# Upper Egypt
 (-3600, (69, 35), iIndependent2, 'Ineb-Hedj', 1, iArcher, 1), 	# Lower Egypt
 (-3000, (69, 43), iIndependent, 'Wilusha', 1, iArcher, 2),	# Troy
-(-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 2), 	# Phoenicians
+(-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 1), 	# Phoenicians
 (-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, iMilitia, 1), 	# Minoans
 #(-2500, (77, 42), iIndependent2, 'Ninua', 2, iMilitia, 3), 	# Assyrian Empire

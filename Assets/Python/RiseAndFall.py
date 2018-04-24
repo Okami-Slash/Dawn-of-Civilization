@@ -2513,7 +2513,6 @@ class RiseAndFall:
 			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
 		if iCiv == iHittite:
 			utils.makeUnit(iHuluganni, iCiv, tPlot, 2)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 		elif iCiv == iGreece:
 			utils.makeUnit(iHoplite, iCiv, tPlot, 4)
 		elif iCiv == iPersia:
@@ -2670,7 +2669,7 @@ class RiseAndFall:
 			utils.makeUnit(iCatapult, iCiv, tPlot, 2)
 		if iCiv == iHittite:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(iHuluganni, iCiv, tPlot, 1)
 			teamHittite.declareWar(iIndependent, False, WarPlanTypes.NO_WARPLAN)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
