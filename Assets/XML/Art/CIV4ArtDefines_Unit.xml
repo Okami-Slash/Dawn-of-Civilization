@@ -1945,7 +1945,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ISRAELI_MERKAVA</Type>
-			<Button>,Art/Interface/Buttons/Units/Merkava.dds</Button>
+			<Button>Art/Interface/Buttons/Units/Merkava.dds</Button>
 			<fScale>0.57</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
