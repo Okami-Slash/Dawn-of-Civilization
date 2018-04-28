@@ -931,6 +931,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LIBRARY_OF_ASHURBANIPAL_HELP</Tag>
-		<English>Upon conquering a city, gain science equal to the former owner's local culture.</English>
+		<English>Upon building, gain science equal to the culture of every city in your empire.</English>
 	</TEXT>
 </Civ4GameText>

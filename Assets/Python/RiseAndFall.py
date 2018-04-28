@@ -3706,6 +3706,16 @@ class RiseAndFall:
 
 			
 	def onWonderBuilt(self, iCiv, iBuilding):
+		print "ashurbanipal" + str(iAshurbanipalLibrary) + str(iBuilding)
+		
+		if iBuilding == iAshurbanipalLibrary:
+			print "ashurbanipal"
+			for city in utils.getCityList(iCiv):
+				player = gc.getPlayer(iCiv)
+				culture = city.getCulture(iCiv)
+				player.changeOverflowResearch(culture)
+				print "asd " + str(culture)
+		
 		if iBuilding == iOracle:
 			city = gc.getPlayer(iCiv).getCapitalCity()
 			tPlot = (city.getX(), city.getY())
@@ -3806,21 +3816,5 @@ class RiseAndFall:
 					if unit.getOwner() == plot.getPlotCity().getOwner():
 						utils.flipUnit(unit, iFlip, (city[0], city[1]))
 				utils.flipCity(city, False, False, iFlip, [])
-
-	def onWonderBuilt(self, iCiv, iBuilding):
-		if iBuilding == iOracle:
-			city = gc.getPlayer(iCiv).getCapitalCity()
-			tPlot = (city.getX(), city.getY())
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-			if tSeaPlot:
-				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
-				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
-				gc.getPlayer(iCiv).initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 
 rnf = RiseAndFall()

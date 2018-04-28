@@ -567,7 +567,7 @@ iCivMexico,	# Aztecs
 tResurrectionIntervals = (
 [], #Egypt
 [(600, 2020)], #China
-[(-3000, -2500), (-1300, -500)], #Babylonia
+[(-3000, -2500), (-700, -539)], #Babylonia
 [(-3000, -700)], #Assyria
 [],		# Harappa
 [(1900, 546)],		#Hittite
@@ -1379,7 +1379,7 @@ tAIStopBirthThreshold = (
 tResurrectionProb = (
 10, #Egypt
 100, #China
-50, #Babylonia
+60, #Babylonia
 40, #Assyria
 0, #Harappa
 25, #Hittite

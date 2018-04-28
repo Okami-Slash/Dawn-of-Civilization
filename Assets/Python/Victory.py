@@ -1910,15 +1910,6 @@ def onCityBuilt(iPlayer, city):
 				win(iSwahili, 2)
 				
 def onCityAcquired(iPlayer, iOwner, city, bConquest):
-	# Library of Ashurbanipal effect
-	if (bConquest and gc.getPlayer(iPlayer).isHasBuildingEffect(iAshurbanipalLibrary)):
-		player = gc.getPlayer(iPlayer)
-		culture = city.getCulture(iOwner)
-		print "asd " + str(iPlayer)
-		print "asd " + str(player)
-		print "asd " + str(culture)
-		player.changeOverflowResearch(culture)
-
 	if not gc.getGame().isVictoryValid(7): return
 
 	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
