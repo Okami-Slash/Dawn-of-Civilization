@@ -392,7 +392,7 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iBabylonia, 2)
 
 	elif iPlayer == iAssyria:
-		if iGameTurn == getTurnForYear(-1300):
+		if iGameTurn == getTurnForYear(-700):
 			bLevant = isControlled(iAssyria, utils.getPlotList(tLevantTL, tLevantBR))
 			bElam = isControlled(iAssyria, utils.getPlotList(tElamTL, tElamBR))
 			bMesopotamia = isControlled(iAssyria, utils.getPlotList(tMesopotamiaTL, tMesopotamiaBR))
