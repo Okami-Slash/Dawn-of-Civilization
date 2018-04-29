@@ -1015,32 +1015,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
-		<English>Renaissance Architecture</English>
-		<German>Architektur der Renaissance</German>
+		<English>The fourth crusade</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1</Tag>
-		<English>Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD</English>
-		<German>Bauen Sie bis zum Jahr 1500 n. Chr. die San Marco Basilica, die Sixtinische Kapelle und den Schiefen Turm</German>
+		<English>Control Konstantinoupolis in 1204 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA2_TITLE</Tag>
-		<English>Renaissance Art</English>
-		<German>Kunst der Renaissance</German>
+		<English>The Travels of Marco Polo</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA2</Tag>
-		<English>Have three cities with influential culture by 1600 AD</English>
-		<German>Haben Sie drei St&#228;dte mit einflussreicher Kultur bis zum Jahr 1600 n. Chr.</German>
+		<English>Conduct a trade mission in China by 1300AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3_TITLE</Tag>
-		<English>Mare Nostrum</English>
+		<English>The Renaissance</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3</Tag>
-		<English>Control 65% of the Mediterranean by 1930 AD</English>
-		<German>Kontrollieren Sie 65% der Mittelmeerk&#252;ste bis zum Jahr 1930 n. Chr.</German>
+		<English>Be the first to discover Patronage, Finance, Humanities, Academia and Scientific Method</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1_TITLE</Tag>
@@ -1049,8 +1044,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1</Tag>
-		<English>Have an average city culture of 6000 by 1600 AD without ever losing a city</English>
-		<German>Erreichen Sie bis zum Jahr 1600 n. Chr. durchschnittlich 6000 Kulturpunkte pro Stadt, ohne jemals eine Stadt zu verlieren</German>
+		<English>Control Honsu and Korea by 1600AD.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1_EPIC</Tag>
@@ -1069,8 +1063,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP2</Tag>
-		<English>Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1940 AD</English>
-		<German>Kontrollieren oder vasallisieren Sie im Jahr 1940 n. Chr. Korea, die Mandschurei, China, Indochina, Indonesian und die Philippinen</German>
+		<English>Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1950 AD</English>
+		<German>Kontrollieren oder vasallisieren Sie im Jahr 1950 n. Chr. Korea, die Mandschurei, China, Indochina, Indonesian und die Philippinen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP3_TITLE</Tag>
@@ -1372,8 +1366,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO1</Tag>
-		<English>Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD</English>
-		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei St&#228;dte im Maghreb und erobern Sie zwei Städte in Iberien und Westafrika</German>
+		<English>Control 2 cities in Maghreb, Iberia, France and West Africa in 1200 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO2_TITLE</Tag>
@@ -1382,28 +1375,24 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO2</Tag>
-		<English>Build La Mezquita and settle a total of four great prophets, scientists or engineers in Cordoba by 1300 AD</English>
-		<German>Errichten Sie bis zum Jahr 1300 n. Chr. La Mezquita und siedeln Sie insgesamt vier gro&#223;e Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+		<English>Build La Mezquita and settle a total of four great prophets, scientists or engineers in Cordoba by 1350 AD</English>
+		<German>Errichten Sie bis zum Jahr 1350 n. Chr. La Mezquita und siedeln Sie insgesamt vier gro&#223;e Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3_TITLE</Tag>
-		<English>Barbary Corsairs</English>
-		<German>Korsaren der Barbareskenk&#252;ste</German>
+		<English>Gibara Mosque</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3</Tag>
-		<English>Acquire 3000 gold through piracy by 1650 AD</English>
-		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 3000 Gold durch Piraterie</German>
+		<English>Build a great Islamic Mosque in Western Cuba by 1500 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3_EPIC</Tag>
-		<English>Acquire 4500 gold through piracy by 1650 AD</English>
-		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 4500 Gold durch Piraterie</German>
+		<English>Build a great Islamic Mosque in Western Cuba by 1500 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3_MARATHON</Tag>
-		<English>Acquire 9000 gold through piracy by 1650 AD</English>
-		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 9000 Gold durch Piraterie</German>
+		<English>Build a great Islamic Mosque in Western Cuba by 1500 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1_TITLE</Tag>
@@ -1972,8 +1961,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3</Tag>
-		<English>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
-		<German>Erwerben Sie bis 1500 n. Chr. 3000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
+		<English>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1300 AD</English>
+		<German>Erwerben Sie bis 1300 n. Chr. 3000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3_EPIC</Tag>
@@ -3452,5 +3441,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_RESEARCH_OUTPUT_CIV</Tag>
 		<English>Civilization with highest research output: %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HONSHU</Tag>
+		<English>Honshu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRANCE</Tag>
+		<English>France: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONSTANTINOUPOLIS</Tag>
+		<English>Konstantinoupolis</English>
 	</TEXT>
 </Civ4GameText>

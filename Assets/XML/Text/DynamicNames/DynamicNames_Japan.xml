@@ -27,27 +27,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPAN_PEOPLES</Tag>
-		<English>Yamato Peoples</English>
-		<French>
-			<Text>Peuplades Yamato</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Yamato-V&#246;lker:Yamato-V&#246;lker:Yamato-V&#246;lkern</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>Popoli Yamato</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pueblos Yamato</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<English>Taira Peoples</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPAN_DEFAULT</Tag>
@@ -159,5 +139,25 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_KAMAKURA</Tag>
+		<English>Kamakura</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_ASHIKAGA</Tag>
+		<English>Ashikaga</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_TOKUGAWA</Tag>
+		<English>Tokugawa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_ODA</Tag>
+		<English>Oda</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_CLAN</Tag>
+		<English>%s2 Clan</English>
 	</TEXT>
 </Civ4GameText>

@@ -405,4 +405,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_BURGUNDIAN</Tag>
+		<English>Burgudian</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_BURGUNDY</Tag>
+		<English>Burgudy</English>
+	</TEXT>
 </Civ4GameText>

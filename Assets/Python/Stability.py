@@ -101,6 +101,9 @@ def endTurn(iPlayer):
 		data.setSecedingCities(iPlayer, [])
 		
 def triggerCollapse(iPlayer):
+	#citis: keep preassure on Italy
+	if utils.getHumanID() == iItaly and iPlayer == iHolyRome:
+		return
 	# help overexpanding AI: collapse to core, unless fall date
 	if utils.getHumanID() != iPlayer:
 		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
@@ -505,8 +508,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						break
 						
 				# make respawns on collapse more likely
-				if tBirth[iLoopPlayer] <= gc.getGame().getGameTurnYear() <= tFall[iLoopPlayer]:
-					bPossible = True
+				#if tBirth[iLoopPlayer] <= gc.getGame().getGameTurnYear() <= tFall[iLoopPlayer]:
+				#	bPossible = True
 				
 				if bPossible:
 					if iLoopPlayer in dPossibleResurrections:
@@ -544,10 +547,11 @@ def secedeCity(city, iNewOwner):
 	sName = city.getName()
 	
 	iNumDefenders = max(2, gc.getPlayer(iNewOwner).getCurrentEra()-1)
-	lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
 
-	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
+	lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders, True)
 	
+	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True, False, False)
+
 	utils.flipOrCreateDefenders(iNewOwner, lFlippedUnits, (city.getX(), city.getY()), iNumDefenders)
 	
 	if city.getOwner() == utils.getHumanID():
@@ -568,7 +572,7 @@ def secedeCity(city, iNewOwner):
 def completeCollapse(iPlayer):
 	#citis: AI Byzantium is even harder to collapse
 	iYear = gc.getGame().getGameTurnYear()
-	if iPlayer == iByzantium and utils.getHumanID() != iByzantium:
+	if iPlayer == iByzantium and utils.getHumanID() != iByzantium and iYear < 1453:
 		collapseToCore(iPlayer)
 		return
 	
@@ -601,17 +605,22 @@ def completeCollapse(iPlayer):
 	CyInterface().addMessage(utils.getHumanID(), False, iDuration, sText, "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 	
 def collapseToCore(iPlayer):
-	#citis: AI Byzantium is even harder to collapse
-	iYear = gc.getGame().getGameTurnYear()
-	if iPlayer == iByzantium and iYear < 1204 and utils.getHumanID() != iByzantium:
-		return
 
 	lAhistoricalCities = []
 	lNonCoreCities = []
 	
+	#citis: AI Byzantium is even harder to collapse
+	if iPlayer == iByzantium and gc.getGame().getGameTurnYear() < 1204 and utils.getHumanID() != iByzantium:
+		bByzantineCore = Areas.getArea(iPlayer, {iByzantium : ((67, 41), (75, 45))}, {iByzantium : [(73, 41), (73, 42), (74, 41), (74, 42), (75, 41), (75, 42)]})
+	else:
+		bByzantineCore = False
+	
 	for city in utils.getCityList(iPlayer):
 		plot = gc.getMap().plot(city.getX(), city.getY())
-		if not plot.isCore(iPlayer):
+		if not plot.isCore(iPlayer):			
+			if bByzantineCore:
+				if (city.getX(), city.getY()) in bByzantineCore:
+					break;
 			lNonCoreCities.append(city)
 			if plot.getSettlerValue(iPlayer) < 90:
 				lAhistoricalCities.append(city)

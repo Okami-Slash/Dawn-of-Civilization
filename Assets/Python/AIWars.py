@@ -94,10 +94,15 @@ tChinaTL = (101, 42)
 tChinaBR = (106, 48)
 
 tConquestQinChina = (10, iChina, iIndependent, tChinaTL, tChinaBR, 2, iChineseUnificationYear, 10)
-tConquestQinChina2 = (10, iChina, iIndependent2, tChinaTL, tChinaBR, 2, iChineseUnificationYear + 50, 10) #Chian deletes the conquerors
+tConquestQinChina2 = (10, iChina, iIndependent2, tChinaTL, tChinaBR, 2, iChineseUnificationYear + 50, 10) #China deletes the conquerors
 
+#Justianians conquests
+tJustinianYear = 535
+tSouthItalyTL = (60, 40)
+tSouthItalyBR = (63, 43)
+tConquestByzantiumSouthItaly = (10, iByzantium, iIndependent, tSouthItalyTL, tSouthItalyBR, 1, tJustinianYear, 10)
 
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestQinChina, tConquestQinChina2, tConquestChinaVietnam1, tConquestChinaVietnam2]
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestQinChina, tConquestQinChina2, tConquestByzantiumSouthItaly, tConquestChinaVietnam1, tConquestChinaVietnam2]
 
 class AIWars:
 		
@@ -145,6 +150,7 @@ class AIWars:
 		self.checkConquest(tConquestQinChina2)
 		self.checkConquest(tConquestCholaSumatra)
 		
+		self.checkConquest(tConquestByzantiumSouthItaly)
 		
 		self.checkConquest(tConquestChinaVietnam1)
 		self.checkConquest(tConquestChinaVietnam2)

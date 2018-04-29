@@ -245,4 +245,16 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKING_UNION</Tag>
+		<English>%s1 Union</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DENMARK_NORWAY_ADJECTIVE</Tag>
+		<English>Danish-Norwegian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORTH_SEA</Tag>
+		<English>North Sea</English>
+	</TEXT>
 </Civ4GameText>

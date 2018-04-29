@@ -905,7 +905,7 @@ class RFCUtils:
 			iNumCities = 3
 			
 		if iPlayer == iPortugal and self.getHumanID() != iPortugal:
-			iNumCities = 5
+			iNumCities = 10
 
 		lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 		id = lCivList.index(iPlayer)
@@ -1265,7 +1265,7 @@ class RFCUtils:
 	def getAreaCitiesCiv(self, iCiv, lPlots):
 		return [city for city in self.getAreaCities(lPlots) if city.getOwner() == iCiv]
 		
-	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False):
+	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bCreateGarisons = True):
 		tPlot = (x, y)
 		plot = gc.getMap().plot(x, y)
 		
@@ -1273,7 +1273,7 @@ class RFCUtils:
 	
 		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 		
-		if bFlipUnits: 
+		if bFlipUnits:
 			self.flipUnitsInCityBefore(tPlot, iCiv, iOwner)
 		else:
 			self.pushOutGarrisons(tPlot, iOwner)
@@ -1283,7 +1283,7 @@ class RFCUtils:
 		
 		if bFlipUnits: 
 			self.flipUnitsInCityAfter(tPlot, iCiv)
-		else:
+		elif bCreateGarisons:
 			self.createGarrisons(tPlot, iCiv, 2)
 		
 		plot.setRevealed(iCiv, True, True, -1)
@@ -1887,21 +1887,22 @@ class RFCUtils:
 				if unit.getOwner() == city.getOwner():
 					if x >= 0 or y >= 0: unit.setXY(x, y, False, True, False)
 
-	def flipOrRelocateGarrison(self, city, iNumDefenders):
+	def flipOrRelocateGarrison(self, city, iNumDefenders, bResolveCityConflicts = False):
 		x = city.getX()
 		y = city.getY()
 		
 		lRelocatedUnits = []
 		lFlippedUnits = []
-		
-		for tPlot in self.surroundingPlots((x, y), 2):
+		radius = 2
+		if bResolveCityConflicts: radius = 1
+		for tPlot in self.surroundingPlots((x, y), radius):
 			for unit in self.getUnitList(tPlot):
 				if unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
-					if len(lFlippedUnits) < iNumDefenders:
+					if bResolveCityConflicts or len(lFlippedUnits) < iNumDefenders:
 						lFlippedUnits.append(unit)
 					else:
 						lRelocatedUnits.append(unit)
-						
+		
 		return lFlippedUnits, lRelocatedUnits
 		
 	def flipUnits(self, lUnits, iNewOwner, tPlot):

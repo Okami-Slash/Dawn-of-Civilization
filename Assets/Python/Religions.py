@@ -541,7 +541,7 @@ class Religions:
 			return
 
 		iPlayerReligion = gc.getPlayer(iPlayer).getStateReligion()
-		if iTech == iAcademia:
+		if iTech == iCombinedArms:
 			if iPlayerReligion == iCatholicism or iPlayerReligion == iOrthodoxy:
 				if not gc.getGame().isReligionFounded(iProtestantism):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)

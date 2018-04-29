@@ -377,11 +377,12 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=300
 	StateReligion=RELIGION_BUDDHISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -390,7 +391,7 @@ BeginPlayer
 	CivType=CIVILIZATION_VIKING
 	PlayableCiv=1
 	StartingGold=150
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
@@ -452,6 +453,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -645,6 +647,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -23574,6 +23577,7 @@ EndPlot
 BeginPlot
 	x=60,y=58
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_FISH
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23879,7 +23883,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=46
-	BonusType=BONUS_CLAM
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -40911,11 +40915,7 @@ BeginPlot
 		CityName=Kaifeng
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_CHINESE_TAIXUE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_TAOIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
@@ -41678,9 +41678,6 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 	EndCity
 EndPlot
@@ -41724,13 +41721,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_CHINESE_TAIXUE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		BuildingType=BUILDING_CONFUCIAN_SHRINE
-		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_TAOIST_MONASTERY
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
@@ -42512,8 +42503,6 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
 	EndCity
@@ -44411,8 +44400,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=42
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=112,y=43
@@ -44421,9 +44410,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
-	BonusType=BONUS_TEA
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=112,y=45
@@ -45156,6 +45144,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=44
+	BonusType=BONUS_TEA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -45173,7 +45162,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=47
-	BonusType=BONUS_COPPER
+	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -45575,14 +45564,13 @@ BeginPlot
 	x=115,y=48
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_COPPER
 	PlotType=1
 EndPlot
 BeginPlot
 	x=115,y=49
-	BonusType=BONUS_SILVER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=50

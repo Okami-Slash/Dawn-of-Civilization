@@ -27792,7 +27792,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=46
-	BonusType=BONUS_CLAM
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=19,24,25,27,28,41,44,45,46,54,55,

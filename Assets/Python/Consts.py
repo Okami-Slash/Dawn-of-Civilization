@@ -286,8 +286,8 @@ tBirth = (
 -37,					# Korea
 65, # 145, #60AD			# Maya
 310,					# Byzantium
-794, # 97, #660BC			# Japan
-790, # 177, #551AD			# Vikings
+1160, # 97, #660BC			# Japan
+740, # 177, #551AD			# Vikings
 620, # 183, #622AD			# Arabia
 618,					# Tibet
 650,					# Indonesia
@@ -1161,7 +1161,7 @@ lEnemyCivsOnSpawn = [
 [iEgypt,iEgypt,iBabylonia,iGreece,iPersia,iCarthage,iRome,iEthiopia,iByzantium,iSpain,iFrance,iCeltia,iIndependent,iIndependent2], #Arabia
 [iIndia, iIndia, iIndia], #Tibet
 [iKhmer], #Indonesia
-[iFrance], #Moors
+[iArabia, iArabia, iArabia, iArabia, iArabia, iArabia, iArabia, iArabia, iFrance], #Moors
 [], #Spain
 [iRome], #France
 [], #Khmer
@@ -1283,7 +1283,7 @@ tAggressionLevel = (
 1, #France
 2, #Khmer
 1, #England
-3, #Holy Rome
+2, #Holy Rome
 1, #Russia
 0, #Philippines
 0, #Swahili
@@ -1602,13 +1602,13 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 195
+iNumUnits = 196
 (iOceanLiner, iLion, iBear, iPanther, iWolf, iRabbit, iSettler, iCityBuilder, iWorker, iPunjabiWorker, iLabourer, iMadeireiro, 
 iScout, iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, 
 iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, iVulture, iDogSoldier, 
 iSwordsman, iJaguar, iLegion, iGallicWarrior, iAucac, iHeavySwordsman, iSamurai, iHuscarl, iPombos, iSpearman, 
 iHoplite, iImmortal, iImpi, iHeavySpearman, iPikeman, iLandsknecht, iArquebusier, iJanissary, iAskari, iQizilbash, 
-iMohawk, iMusketeer, iMusketman, iRedcoat, iKarolin, iRifleman, iAlbionLegion, iInfantry, 
+iMohawk, iMusketeer, iMusketman, iRedcoat, iKarolin, iRifleman, iAlbionLegion, iInfantry, iCondottieri,
 iBersagliere, iDigger, iSamInfantry, iMobileSam, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, 
 iSkirmisher, iHolkan, iKelebolo, iLongbowman, iPatiyodha, iRattanArcher, iFirearmSkirmisher, iMinuteman, iCommando, iNavySeal, iSpecialForces, iCrossbowman, iChokonu, iChariot, iWarChariot, iHuluganni, 
 iCidainh, iHorseman, iNumidianCavalry, iAsvaka, iHorseArcher, iCamelArcher, iKhampa, iLancer, iKeshik, iCataphract, 
@@ -1846,7 +1846,7 @@ tTradingCompanyPlotLists = (
 [(109, 33)], #Spain
 [(101, 37), (101, 36), (102, 36), (102, 35), (103, 35), (103, 34), (104, 34), (104, 33)], #France
 [(95, 37), (94, 37), (94, 36), (94, 35), (94, 34), (93, 34), (93, 33), (92, 33), (92, 32), (88, 33), (88, 34), (88, 35), (120, 5), (121, 5), (120, 6), (121, 6), (122, 7), (122, 8), (123, 9), (122, 10), (122, 11)], #England
-[(82, 34), (89, 31), (101, 29), (105, 39), (93, 28), (93, 27), (71, 17), (69, 13), (54, 26), (62, 20)], #Portugal
+[(82, 34), (89, 31), (101, 29), (105, 39), (93, 28), (93, 27), (71, 17), (69, 13), (54, 26), (62, 20), (111, 42)], #Portugal
 [(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
 )
 
@@ -1873,7 +1873,7 @@ lNetworkEvents = {
 }
 
 # citis: polities
-iNumPolities = 177
+iNumPolities = 180
 (iPolityOldEgypt, iPolityMiddleEgypt, iPolityNewEgypt, iPolityFatimids, iPolityMamluks, iPolityAyyubids, iPolityEgypt, #7
 iPolityZhou, iPolityQin, iPolityHan, iPolityJin, iPolityTang, iPolitySong, iPolityMing, iPolityQing, iPolityChina, #9
 iPolityAkkadia, iPolityAssyria, iPolityBabylonia, iPolityNeoAssyria, iPolityNeoBabylonia, iPolityIraq, #6
@@ -1888,8 +1888,8 @@ iPolityChola, iPolityBahmani, iPolityVijayanagar, iPolityMysore, iPolityTamil, #
 iPolityAksum, iPolityAdal, iPolityEthiopia, #3
 iPolitySamhan, iPolityGoguryeo, iPolityGojoseon, iPolityGoryeo, iPolityJoseon, iPolityKorea, #6
 iPolityMaya, iPolityYucatan, iPolityNewGranada, iPolityColombia, iPolitySouthAmerica, #5
-iPolityKamakura, iPolityAshikaga, iPolityTokugawa, iPolityJapan, #4
-iPolityVikings, iPolityKalmarUnion, iPolityDenmark, iPolityNorway, iPolitySweden, iPolityDenmarkNorway, #6
+iPolityHeian, iPolityKamakura, iPolityAshikaga, iPolityOda, iPolityTokugawa, iPolityJapan, #4
+iPolityVikings, iPolityKalmarUnion, iPolityNorthSea, iPolityDenmark, iPolityNorway, iPolitySweden, iPolityDenmarkNorway, #6
 iPolityRashiduns, iPolityAbbasids, iPolityUmmayads, iPolityDiriyah, iPolityNedj, iPolitySaudis, iPolityArabLeague, #5
 iPolityTibet, #1
 iPolitySrivijaya, iPolityMelayu, iPolityMajapahit, iPolityMataram, iPolityIndonesia, #4
@@ -1952,6 +1952,29 @@ dPolities = {
 	
 	
 	#Italy:
-	iPolityVenice : ["TXT_KEY_CIV_ITALY_VENICE_ADJECTIVE", -1, -1, iTypeCapital, (61, 47), iLorenzo, {"tRectangle" : ((61, 46), (62, 48)), 'lExceptions' : []}]
+	iPolityVenice : ["TXT_KEY_CIV_ITALY_VENICE_ADJECTIVE", -1, -1, iTypeCapital, (61, 47), iLorenzo, {"tRectangle" : ((61, 46), (62, 47)), 'lExceptions' : []}],
+	iPolityItaly : ["TXT_KEY_CIV_ITALY_ADJECTIVE", "TXT_KEY_CIV_ITALY_SHORT_DESC", -1, iTypeNational, (60, 44), iCavour, {"tRectangle" : ((58, 40), (63, 47)), 'lExceptions' : [(62, 47), (63, 46), (63, 47)]}],
 	
+	#Vikings:
+	iPolityVikings : ["TXT_KEY_CIV_VIKING_ADJECTIVE", -1, -1, iTypeNationalAdjective, (60, 56), -1, {"tRectangle" : ((58, 55), (62, 59)), 'lExceptions' : []}],
+	iPolityNorthSea : ["TXT_KEY_CIV_NORTH_SEA", -1, -1, iTypeDynastic, (60, 56), iRagnar, {"tRectangle" : ((58, 55), (62, 59)), 'lExceptions' : []}],
+	iPolityKalmarUnion : [-1, -1, "TXT_KEY_CIV_VIKING_UNION", iTypeCapital, (63, 57), -1, {"tRectangle" : ((60, 56), (63, 59)), 'lExceptions' : []}],
+	iPolityDenmark : ["TXT_KEY_CIV_DENMARK_ADJECTIVE", "TXT_KEY_CIV_DENMARK_SHORT_DESC", -1, iTypeNational, (60, 56), -1, {"tRectangle" : ((59, 55), (60, 57)), 'lExceptions' : []}],
+	iPolityNorway : ["TXT_KEY_CIV_NORWAY_ADJECTIVE", "TXT_KEY_CIV_NORWAY_SHORT_DESC", -1, iTypeNational, (60, 59), iGerhardsen, {"tRectangle" : ((58, 59), (61, 60)), 'lExceptions' : []}],
+	iPolitySweden : ["TXT_KEY_CIV_SWEDEN_ADJECTIVE", "TXT_KEY_CIV_SWEDEN_SHORT_DESC", -1, iTypeNational, (63, 59), iGustav, {"tRectangle" : ((61, 57), (63, 60)), 'lExceptions' : []}],
+	iPolityDenmarkNorway : ["TXT_KEY_CIV_DENMARK_NORWAY_ADJECTIVE", "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY", -1, iTypeNational, (60, 56), -1, {"tRectangle" : ((59, 55), (60, 59)), 'lExceptions' : []}],
+	
+	#Japan:
+	iPolityHeian : [-1, -1, -1, iTypeCapital, (113, 45), iKammu, {'tRectangle' : ((112, 45), (114, 46)), 'lExceptions' : []}],
+	iPolityKamakura : ["TXT_KEY_CIV_JAPAN_KAMAKURA", -1, -1, iTypeDynastic, (113, 45), iOdaNobunaga, {'tRectangle' : ((112, 44), (114, 46)), 'lExceptions' : []}],
+	iPolityAshikaga : ["TXT_KEY_CIV_JAPAN_ASHIKAGA", -1, -1, iTypeDynastic, (113, 45), iOdaNobunaga, {'tRectangle' : ((112, 44), (114, 46)), 'lExceptions' : []}],
+	iPolityOda : ["TXT_KEY_CIV_JAPAN_ODA", -1, "TXT_KEY_CIV_JAPAN_CLAN", iTypeDynastic, (116, 46), iOdaNobunaga, {'tRectangle' : ((115, 45), (117, 46)), 'lExceptions' : []}],
+	iPolityTokugawa : ["TXT_KEY_CIV_JAPAN_TOKUGAWA", -1, "TXT_KEY_CIV_JAPAN_DEFAULT", iTypeDynastic, (116, 46), iOdaNobunaga, {'tRectangle' : ((115, 45), (116, 47)), 'lExceptions' : []}],
+	iPolityJapan : ["TXT_KEY_CIV_JAPAN_ADJECTIVE", "TXT_KEY_CIV_JAPAN_SHORT", -1, iTypeNational, (116, 46), iMeiji, {'tRectangle' : ((111, 41), (116, 52)), 'lExceptions' : [(111, 51), (111, 52), (112, 52)]}],
+
+	#Moors:
+	iPolityCordoba : [-1, -1, -1, iTypeCapital, (51, 41), iRahman, {'tRectangle' : ((50, 40), (52, 42)), 'lExceptions' : []}],
+	iPolityAndalus : ["TXT_KEY_CIV_ANDALUSIAN", "TXT_KEY_CIV_ANDALUS", "TXT_KEY_CIV_MOORS_TAIFAS", iTypeNational, (51, 41), -1, {'tRectangle' : ((50, 40), (52, 42)), 'lExceptions' : []}],
+	iPolityAlmohads : ["TXT_KEY_CIV_MOORS_ALMOHAD", -1, -1, iTypeDynastic, (51, 37), iYaqub, {'tRectangle' : ((48, 34), (54, 39)), 'lExceptions' : []}],
+	iPolityMorocco : ["TXT_KEY_CIV_MOROCCO_ADJECTIVE", "TXT_KEY_CIV_MOROCCO_SHORT_DESC", -1, iTypeNational, (51, 37), iYaqub, {'tRectangle' : ((50, 36), (51, 38)), 'lExceptions' : []}]
 }

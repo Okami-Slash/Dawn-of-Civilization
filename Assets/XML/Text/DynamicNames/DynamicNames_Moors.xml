@@ -153,4 +153,12 @@
 		<Tag>TXT_KEY_CIV_MOORS_SHORT_DESC</Tag>
 		<English>Moors</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ANDALUSIAN</Tag>
+		<English>Andalusian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ANDALUS</Tag>
+		<English>Andalus</English>
+	</TEXT>
 </Civ4GameText>

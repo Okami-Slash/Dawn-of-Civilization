@@ -462,7 +462,7 @@
 		<English>%s2 League</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_COLONIAL_EMPIRE</Tag>
+		<Tag>TXT_KEY_COLONIAL_EMPIRE_ADJECTIVE</Tag>
 		<English>%s2 Colonial Empire</English>
 	</TEXT>
 	<TEXT>
@@ -492,5 +492,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_MOST_SERENE_REPUBLIC_OF</Tag>
 		<English>Most Serene Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLONIAL_EMPIRE_OF</Tag>
+		<English>Colonial Empire of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GREATER_EMPIRE_OF</Tag>
+		<English>Empire of Greater %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GREATER_EMPIRE_ADJECTIVE</Tag>
+		<English>Empire of Greater %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DESPOTATE_ADJECTIVE</Tag>
+		<English>%s2 Despotate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DESPOTATE_OF</Tag>
+		<English>Despotate of %s1</English>
 	</TEXT>
 </Civ4GameText>

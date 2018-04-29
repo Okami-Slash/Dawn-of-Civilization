@@ -2052,7 +2052,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_RAGNAR_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/Ragnar_Early</Filename>
+			<Filename>Sounds/Diplomacy/MountainKing</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

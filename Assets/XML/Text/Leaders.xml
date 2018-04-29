@@ -650,4 +650,8 @@
 		<Tag>TXT_KEY_LEADER_MUSTASIM</Tag>
 		<English>Mustasim</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CNUT</Tag>
+		<English>Cnut</English>
+	</TEXT>
 </Civ4GameText>

@@ -143,15 +143,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ITALY</Tag>
-		<English>It is the year 1167 AD. For too long has Italy been under the rule of German kings, but now the Lombard cities have risen up and thanks to Papal support, achieved de facto independence. The Italian city states, though often feuding with each other, are centers of science, culture and commerce and can now reap the benefits of their skills to usher in a Renaissance of European culture.</English>
+		<English>It is the year 697 AD. Local people have settled the hundrends islands of Venetian lagoon, to defend against the Lombard and Hunnic raids. Although successful, Venice is too weak to match the strength of Byzantines and Germans. Venetians shall focus on seafaring and trade to find their own destiny away from their neighbours' grip.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_JAPAN</Tag>
-		<English>It is the year 525 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_DOM_JAPAN_LATE</Tag>
-		<English>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
+		<English>It is the year 1160 AD. The authority of royal family has diminished to the point Japan is in a seemingly endless civil war. Actual power is held by feudal lords fighting each other with any means possible, arms, espionage, intrigue and deception. They all aspire to unify Japan under their own rule.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_JAPAN_1700AD</Tag>
@@ -191,7 +187,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MOORS</Tag>
-		<English>It is the year 711 AD. The Berbers and Arabs of the Maghreb have crossed the Strait of Gibraltar and defeated the Visigoths to establish the Emirate of Cordoba in Al-Andalus, driving the Iberian Christians to the northern coast of Asturias.</English>
+		<English>It is the year 756 AD. Berbers and Arabs of the Maghreb have crossed the Strait of Gibraltar and defeated the Visigoths. After the rise of Abbasid dynasty in Bagdad, the Ummayads broke off establishing their own government in Cordoba. Although the new state is the strongest in the area, it has no allies, Christians are reorganising in the North and internal fractions are growing.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MUGHALS</Tag>
@@ -311,7 +307,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS</Tag>
-		<English>It is the year 551 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for plunder or settlement.</English>
+		<English>It is the year 740 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for plunder or settlement.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS_LATE</Tag>

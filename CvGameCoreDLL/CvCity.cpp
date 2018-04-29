@@ -333,6 +333,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeReligionYieldChange(GET_PLAYER(eOwner).getStateReligion(), (YieldTypes)iI, GET_PLAYER(eOwner).getReligionYieldChange((YieldTypes)iI));
 	}
 
+	// Leoreth: Chinese UP: +25% food kept on city growth
+	if (getOwnerINLINE() == CHINA)
+	{
+		changeMaxFoodKeptPercent(25);
+	}
+
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
 
@@ -1219,6 +1225,9 @@ void CvCity::doTurn()
 
 			iCount += getTradeYield((YieldTypes)iI);
 			iCount += getCorporationYield((YieldTypes)iI);
+			iCount += getHappinessYield((YieldTypes)iI);
+
+			int iBaseYieldRate = getBaseYieldRate((YieldTypes)iI);
 
 			FAssert(iCount == getBaseYieldRate((YieldTypes)iI));
 		}
@@ -10872,6 +10881,12 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
+
+			if (eBonus == NO_BONUS)
+			{
+				continue;
+			}
+
 			iNumBonuses = getNumBonuses(eBonus);
 
 			// Leoreth: Brazilian UP (sugar counts as oil for oil industry)
@@ -10881,7 +10896,7 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			}
 
 			// Leoreth: includes Dutch UP (double yield from trading company)
-			if (NO_BONUS != eBonus && iNumBonuses > 0)
+			if (iNumBonuses > 0)
 			{
 				//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
 				iCommerce += (getOwner() == NETHERLANDS && eCorporation == ((CorporationTypes)1) ? 2 : 1) * 
@@ -14377,13 +14392,16 @@ void CvCity::doCulture()
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
 	PlayerTypes ePlayer;
+	int iChange;
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		ePlayer = (PlayerTypes)iI;
-		if (!GET_PLAYER(ePlayer).isAlive() && getCulture(ePlayer) > 0)
+		iChange = std::min(getCultureTimes100(ePlayer), iTotalCultureTimes100 / 100);
+
+		if (!GET_PLAYER(ePlayer).isAlive() && iChange > 0)
 		{
 			// culture of dead civilizations decreases by 1% of total city culture per turn
-			changeCultureTimes100(ePlayer, -iTotalCultureTimes100 / 100, false, true);
+			changeCultureTimes100(ePlayer, -iChange, false, true);
 		}
 	}
 }
@@ -15059,7 +15077,6 @@ void CvCity::doReligion()
 {
 	int iI;
 	ReligionTypes eReligion, eDisappearingReligion;
-	int iReligionInfluence;
 	int iChance, iRand;
 
 	for (iI = 0; iI < NUM_RELIGIONS; iI++)
@@ -17761,11 +17778,15 @@ int CvCity::getCorporationHappinessByCorporation(CorporationTypes eCorporation) 
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
-			iNumBonuses = getNumBonuses(eBonus);
 
-			if (NO_BONUS != eBonus && iNumBonuses > 0)
+			if (eBonus != NO_BONUS)
 			{
-				iHappiness += GC.getCorporationInfo(eCorporation).getHappiness() * std::min(12, iNumBonuses);
+				iNumBonuses = getNumBonuses(eBonus);
+
+				if (iNumBonuses > 0)
+				{
+					iHappiness += GC.getCorporationInfo(eCorporation).getHappiness() * std::min(12, iNumBonuses);
+				}
 			}
 		}
 	}
@@ -17803,11 +17824,15 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
-			iNumBonuses = getNumBonuses(eBonus);
 
-			if (NO_BONUS != eBonus && iNumBonuses > 0)
+			if (eBonus != NO_BONUS)
 			{
-				iHealth += GC.getCorporationInfo(eCorporation).getHealth() * std::min(12, iNumBonuses);
+				iNumBonuses = getNumBonuses(eBonus);
+
+				if (iNumBonuses > 0)
+				{
+					iHealth += GC.getCorporationInfo(eCorporation).getHealth() * std::min(12, iNumBonuses);
+				}
 			}
 		}
 	}

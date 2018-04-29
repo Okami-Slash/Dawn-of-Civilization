@@ -68,23 +68,29 @@ tMinorCities = (
 (610, (92, 43), iBarbarian, 'Kyunglung', 1, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
-(800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
+(790, (113, 45), iIndependent, 'Kyoto', 2, iSamurai, 2),	# Heian Period
+(800, (60, 59), iVikings, 'Oslo', 2, -1, -1),
+(800, (63, 59), iVikings, 'Stockholm', 2, -1, -1),
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
 (862, (70, 56), iIndependent, 'Novgorod', 2, iHeavySpearman, 2),# Novgorod
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
-(880, (65, 48), iIndependent2, 'Buda', 3, iHorseArcher, 5),		# Budapest
+(880, (65, 48), iIndependent2, 'Buda', 3, iAxeman, 3),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (910, (50, 45), iIndependent2, 'Le&#243;n', 1, iHeavySpearman, 2),			# Leon
 (943, (52, 58), iIndependent2, 'Scuin', 1, iLongbowman, 2),		# Kingdom of Alba
-(990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
-(1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
+(950, (113, 43), iIndependent2, 'Matsuyama', 5, iSamurai, 2),	# Feudal Japan
+(990, (115, 48), iIndependent2, 'Aomori', 5, iLancer, 2),	# Feudal Japan
+(990, (49, 56), iVikings, '&#193;th Cliath', 1, -1, -1),			# Dublin
+(1000, (61, 63), iVikings, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
-(1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
+(900, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, iHorseArcher, 1),		# Kazan
-(1255, (65, 55), iBarbarian, 'K&#246;nigsberg', 2, iLancer, 3),		# Kazan
+(1255, (65, 55), iBarbarian, 'K&#246;nigsberg', 2, iLancer, 3),		# Teutonic Order
+(1336, (114, 51), iJapan, 'Sapporo', 2, iSamurai, 2),	# Feudal Japan
 (1400, (104, 33), iIndependent, 'Saigon', 5, iCrossbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, iPombos, 1),	# Mbanza Kongo
+(1543, (111, 42), iPortugal, 'Nagasaki', 2, iArquebusier, 2),	# Portoguese Nagasaki
 (1744, (77, 34), iArabia, 'Al-Diriyah', 3, iMusketman, 3),	# Nadj
 )
 
@@ -233,8 +239,8 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseArcher, 3, (55, 49), (65, 53), self.spawnInvaders, iGameTurn, 5, 0, ["TXT_KEY_ADJECTIVE_HUNNIC"])
 
 		#citis: Lombards in Italy
-		if utils.isYearIn(568, 843):
-			self.checkSpawn(iBarbarian, iHeavySwordsman, 4 + iHandicap, (60, 40), (63, 45), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_LOMBARD"])
+		#if utils.isYearIn(568, 843):
+		#	self.checkSpawn(iBarbarian, iHeavySwordsman, 4 + iHandicap, (60, 40), (63, 45), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_LOMBARD"])
 
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if utils.isYearIn(680, 1000):
@@ -379,8 +385,6 @@ class Barbs:
 			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
 			if iGameTurn < getTurnForYear(iYear): return
 			if iGameTurn > getTurnForYear(iYear)+10: continue
-			if iPlayer == utils.getHumanID(): continue
-			
 			if data.lMinorCityFounded[i]: continue
 			
 			x, y = tPlot
@@ -397,7 +401,8 @@ class Barbs:
 			
 			if sName == 'Kyiv': lReligions = [iOrthodoxy, iCatholicism]
 			if iPlayer == iCeltia and utils.getScenario() != i3000BC: iPlayer = iIndependent
-			if sName == 'Buda': bForceSpawn = True
+			if sName == 'Buda':
+				lBuildings = [iGranary]
 			if sName == 'Zou' or sName == 'Zhongdu' or sName == 'Fenghao' or sName == 'Yuecheng':
 				lBuildings = [iLibrary, iPaganTemple]
 			if sName == 'Ninua' or sName == 'Pratisthan' or 'Aia' or 'Rhizos':
@@ -421,14 +426,25 @@ class Barbs:
 				lBuildings = [iPaganTemple, iLibrary]
 			if sName in ['Mero&#235;']:
 				lBuildings = [iObelisk, iGranary]
-			if sName in ['Singidun', 'Le&#243;n', 'Scuin']:
+			if sName in ['Singidun', 'Le&#243;n', 'Scuin', 'Buda']:
 				lBuildings = [iOrthodoxTemple, iOrthodoxMonastery, iBarracks, iWalls, iCastle]
 			if sName in ['Novgorod']:
 				lReligions = [iOrthodoxy]
 				lBuildings = [iOrthodoxTemple, iWalls, iCastle, iGranary, iMarket]
 			if sName in ['K&#246;nigsberg']:
 				lBuildings = [iCatholicChurch, iCatholicMonastery, iBarracks, iWalls, iCastle]
+			if iPlayer == iJapan or sName in ['Kyoto', 'Aomori', 'Matsuyama', 'Sapporo']:
+				if utils.getHumanID() == iJapan:
+					lBuildings = [iWalls, iCastle, iBarracks, iPaganTemple, iMonument]
+				else:
+					iNumUnits = 0
+			if sName in ['Nagasaki']:
+				lBuildings = [iCatholicMonastery, iWalls, iHarbor]
 			
+			if iPlayer == utils.getHumanID():
+				if iPlayer not in [iJapan]:
+					continue
+				iPlayer = utils.getRandomEntry([iIndependent, iIndependent2])
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
 			utils.evacuate(tPlot)

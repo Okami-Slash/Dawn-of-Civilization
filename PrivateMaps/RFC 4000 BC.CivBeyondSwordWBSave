@@ -23317,6 +23317,7 @@ EndPlot
 BeginPlot
 	x=60,y=58
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_FISH
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23619,7 +23620,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=46
-	BonusType=BONUS_CLAM
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43192,8 +43193,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=42
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=112,y=43
@@ -43202,9 +43203,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
-	BonusType=BONUS_TEA
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=112,y=45
@@ -43937,6 +43937,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=44
+	BonusType=BONUS_TEA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -43954,7 +43955,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=47
-	BonusType=BONUS_COPPER
+	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -44356,14 +44357,13 @@ BeginPlot
 	x=115,y=48
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_COPPER
 	PlotType=1
 EndPlot
 BeginPlot
 	x=115,y=49
-	BonusType=BONUS_SILVER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=50

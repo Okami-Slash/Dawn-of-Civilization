@@ -22238,8 +22238,8 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_RAGNAR</Type>
-			<Description>TXT_KEY_LEADER_RAGNAR</Description>
-			<Civilopedia>TXT_KEY_LEADER_RAGNAR_PEDIA</Civilopedia>
+			<Description>TXT_KEY_LEADER_CNUT</Description>
+			<Civilopedia>TXT_KEY_LEADER_CNUT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_RAGNAR</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
@@ -22699,11 +22699,11 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
@@ -29533,8 +29533,8 @@
 			<iWarmongerRespect>0</iWarmongerRespect>
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
-			<iNoTechTradeThreshold>15</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>10</iTechTradeKnownPercent>
+			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
+			<iTechTradeKnownPercent>35</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>250</iMaxWarRand>
@@ -29719,7 +29719,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>15</iContactDelay>
+					<iContactDelay>30</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -32777,23 +32777,23 @@
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SWEDEN_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_SWEDEN_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SWEDEN_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_GLOBAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SWEDEN_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_DIGITAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_SWEDEN_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
