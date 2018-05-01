@@ -44410,7 +44410,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
-	TERRAIN_COAST
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
