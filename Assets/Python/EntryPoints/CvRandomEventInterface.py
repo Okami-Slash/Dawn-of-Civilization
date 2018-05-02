@@ -4619,6 +4619,7 @@ def doNuclearReactorLeak3(argsList):
 def doNuclearMeltdown(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	if iPlayer in [iIsrael, iBoers] and gc.getGame().getGameTurnYear() <= 1980: return
 	iCity = kTriggeredData.iCityId
 	
 	pCity = gc.getPlayer(iPlayer).getCity(iCity)

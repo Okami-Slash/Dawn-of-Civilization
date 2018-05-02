@@ -1970,9 +1970,6 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		}
 	}
 
-	if (getOwner() == BABYLONIA && !isHuman() && eUnit == GC.getInfoTypeForString("UNIT_ARCHER") && GC.getGameINLINE().getGameTurnYear() < -2200)
-		return false;
-
 	if (!(GET_PLAYER(getOwnerINLINE()).canTrain(eUnit, bContinue, bTestVisible, bIgnoreCost)))
 	{
 		return false;
