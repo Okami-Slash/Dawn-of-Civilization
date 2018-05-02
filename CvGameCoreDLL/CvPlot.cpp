@@ -6790,11 +6790,38 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	PROFILE_FUNC();
 
 	BonusTypes eBonus;
+	BonusTypes eAdjBon;
+	ImprovementTypes eAdjImp;
+	bool bAdjMou;
+	bool bAdjCit;
+	CvPlot* pAdjacentPlot;
 	int iBestYield;
 	int iYield;
 	int iI;
 
 	iYield = GC.getImprovementInfo(eImprovement).getYieldChange(eYield);
+
+	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+		eAdjBon = pAdjacentPlot->getBonusType();
+		eAdjImp = pAdjacentPlot->getImprovementType();
+		bAdjMou = pAdjacentPlot->isPeak();
+		bAdjCit = pAdjacentPlot->isCity();
+
+		if ((pAdjacentPlot != NULL) && pAdjacentPlot->isRevealed(GET_PLAYER(ePlayer).getTeam(), false))
+		{
+			if (eAdjBon != NO_BONUS && eAdjImp != NO_IMPROVEMENT)
+				if (GC.getImprovementInfo(eAdjImp).isImprovementBonusMakesValid(eAdjBon))
+					iYield += GC.getImprovementInfo(eImprovement).getAdjacentBonusedImprovementYieldChanges(eAdjImp, eYield);
+
+			if (bAdjCit)
+				iYield += GC.getImprovementInfo(eImprovement).getAdjacentCityYieldChange(eYield);
+
+			if (bAdjMou)
+				iYield += GC.getImprovementInfo(eImprovement).getAdjacentMountainYieldChange(eYield);
+		}
+	}
 
 	if (isRiverSide())
 	{

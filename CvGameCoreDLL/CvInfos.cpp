@@ -12943,10 +12943,13 @@ m_piYieldChange(NULL),
 m_piRiverSideYieldChange(NULL),
 m_piHillsYieldChange(NULL),
 m_piIrrigatedChange(NULL),
+m_ppiAdjacentCityYieldChange(NULL),
+m_ppiAdjacentMountainYieldChange(NULL),
 m_pbTerrainMakesValid(NULL),
 m_pbFeatureMakesValid(NULL),
 m_ppiTechYieldChanges(NULL),
 m_ppiRouteYieldChanges(NULL),
+m_ppiAdjacentBonusedImprovementYieldChanges(NULL),
 m_paImprovementBonus(NULL)
 {
 }
@@ -12967,6 +12970,8 @@ CvImprovementInfo::~CvImprovementInfo()
 	SAFE_DELETE_ARRAY(m_piRiverSideYieldChange);
 	SAFE_DELETE_ARRAY(m_piHillsYieldChange);
 	SAFE_DELETE_ARRAY(m_piIrrigatedChange);
+	SAFE_DELETE_ARRAY(m_ppiAdjacentCityYieldChange);
+	SAFE_DELETE_ARRAY(m_ppiAdjacentMountainYieldChange);
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	SAFE_DELETE_ARRAY(m_pbFeatureMakesValid);
 
@@ -12991,6 +12996,15 @@ CvImprovementInfo::~CvImprovementInfo()
 			SAFE_DELETE_ARRAY(m_ppiRouteYieldChanges[iI]);
 		}
 		SAFE_DELETE_ARRAY(m_ppiRouteYieldChanges);
+	}
+
+	if (m_ppiAdjacentBonusedImprovementYieldChanges != NULL)
+	{
+		for (iI = 0; iI<GC.getNumImprovementInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiAdjacentBonusedImprovementYieldChanges[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiAdjacentBonusedImprovementYieldChanges);
 	}
 }
 
@@ -13216,6 +13230,30 @@ int* CvImprovementInfo::getIrrigatedYieldChangeArray()
 	return m_piIrrigatedChange;
 }
 
+int CvImprovementInfo::getAdjacentCityYieldChange(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppiAdjacentCityYieldChange ? m_ppiAdjacentCityYieldChange[i] : -1;
+}
+
+int* CvImprovementInfo::getAdjacentCityYieldChangeArray()
+{
+	return m_ppiAdjacentCityYieldChange;
+}
+
+int CvImprovementInfo::getAdjacentMountainYieldChange(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppiAdjacentMountainYieldChange ? m_ppiAdjacentMountainYieldChange[i] : -1;
+}
+
+int* CvImprovementInfo::getAdjacentMountainYieldChangeArray()
+{
+	return m_ppiAdjacentMountainYieldChange;
+}
+
 bool CvImprovementInfo::getTerrainMakesValid(int i) const
 {
 	FAssertMsg(i < GC.getNumTerrainInfos(), "Index out of bounds");
@@ -13256,6 +13294,20 @@ int CvImprovementInfo::getRouteYieldChanges(int i, int j) const
 int* CvImprovementInfo::getRouteYieldChangesArray(int i)
 {
 	return m_ppiRouteYieldChanges[i];
+}
+
+int CvImprovementInfo::getAdjacentBonusedImprovementYieldChanges(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiAdjacentBonusedImprovementYieldChanges[i][j];
+}
+
+int* CvImprovementInfo::getAdjacentBonusedImprovementYieldChangesArray(int i)
+{
+	return m_ppiAdjacentBonusedImprovementYieldChanges[i];
 }
 
 int CvImprovementInfo::getImprovementBonusYield(int i, int j) const
@@ -13376,6 +13428,14 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	m_piIrrigatedChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piIrrigatedChange);
 
+	SAFE_DELETE_ARRAY(m_ppiAdjacentCityYieldChange);
+	m_ppiAdjacentCityYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_ppiAdjacentCityYieldChange);
+
+	SAFE_DELETE_ARRAY(m_ppiAdjacentMountainYieldChange);
+	m_ppiAdjacentMountainYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_ppiAdjacentMountainYieldChange);
+
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	m_pbTerrainMakesValid = new bool[GC.getNumTerrainInfos()];
 	stream->Read(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
@@ -13422,6 +13482,22 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	{
 		m_ppiRouteYieldChanges[i]  = new int[NUM_YIELD_TYPES];
 		stream->Read(NUM_YIELD_TYPES, m_ppiRouteYieldChanges[i]);
+	}
+
+	if (m_ppiAdjacentBonusedImprovementYieldChanges != NULL)
+	{
+		for (i = 0; i<GC.getNumImprovementInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppiAdjacentBonusedImprovementYieldChanges[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiAdjacentBonusedImprovementYieldChanges);
+	}
+
+	m_ppiAdjacentBonusedImprovementYieldChanges = new int*[GC.getNumImprovementInfos()];
+	for (i = 0; i<GC.getNumImprovementInfos(); i++)
+	{
+		m_ppiAdjacentBonusedImprovementYieldChanges[i] = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppiAdjacentBonusedImprovementYieldChanges[i]);
 	}
 }
 
@@ -13473,6 +13549,8 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piRiverSideYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piHillsYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piIrrigatedChange);
+	stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentCityYieldChange);
+	stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentMountainYieldChange);
 	stream->Write(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
 	stream->Write(GC.getNumFeatureInfos(), m_pbFeatureMakesValid);
 
@@ -13490,6 +13568,11 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	for(i=0;i<GC.getNumRouteInfos();i++)
 	{
 		stream->Write(NUM_YIELD_TYPES, m_ppiRouteYieldChanges[i]);
+	}
+
+	for (i = 0; i<GC.getNumImprovementInfos(); i++)
+	{
+		stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentBonusedImprovementYieldChanges[i]);
 	}
 }
 bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
@@ -13558,6 +13641,28 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piIrrigatedChange, NUM_YIELD_TYPES);
+	}
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AdjacentCityYieldChange"))
+	{
+		// call the function that sets the yield change variable
+		pXML->SetYields(&m_ppiAdjacentCityYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_ppiAdjacentCityYieldChange, NUM_YIELD_TYPES);
+	}
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AdjacentMountainYieldChange"))
+	{
+		// call the function that sets the yield change variable
+		pXML->SetYields(&m_ppiAdjacentMountainYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_ppiAdjacentMountainYieldChange, NUM_YIELD_TYPES);
 	}
 
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCost, "iAdvancedStartCost");
@@ -13716,6 +13821,58 @@ bool CvImprovementInfo::readPass2(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(szTextVal, "ImprovementUpgrade");
 	m_iImprovementUpgrade = GC.getInfoTypeForString(szTextVal);
+	
+	int iIndex, j, iNumSibs;
+
+	//1SDAN
+	// initialize the boolean list to the correct size and all the booleans to false
+	FAssertMsg((GC.getNumImprovementInfos() > 0) && (NUM_YIELD_TYPES) > 0, "either the number of bonus infos is zero or less or the number of yield types is zero or less");
+	pXML->Init2DIntList(&m_ppiAdjacentBonusedImprovementYieldChanges, GC.getNumImprovementInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AdjacentBonusedImprovementYieldChanges"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+
+				if (0 < iNumSibs)
+				{
+					for (j = 0; j<iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "ImprovementType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							// delete the array since it will be reallocated
+							SAFE_DELETE_ARRAY(m_ppiAdjacentBonusedImprovementYieldChanges[iIndex]);
+							// if we can set the current xml node to it's next sibling
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ImprovementYields"))
+							{
+								// call the function that sets the yield change variable
+								pXML->SetYields(&m_ppiAdjacentBonusedImprovementYieldChanges[iIndex]);
+								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+							}
+							else
+							{
+								pXML->InitList(&m_ppiAdjacentBonusedImprovementYieldChanges[iIndex], NUM_YIELD_TYPES);
+							}
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
 
 	return true;
 }

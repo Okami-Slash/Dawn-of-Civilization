@@ -39,6 +39,18 @@
 		<English>Highway</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ADJACENT_YIELD_CHANGE</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_Icon per adjacent bonus improved by a[SPACE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJACENT_CITY</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_Icon per adjacent city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJACENT_MOUNTAIN</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_Icon per adjacent mountain</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE</Tag>
 		<English>Tribal Village</English>
 		<French>

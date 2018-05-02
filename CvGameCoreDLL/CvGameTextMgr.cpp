@@ -15029,6 +15029,39 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		}
 	}
 
+	// 1SDAN: Adjacent Bonused Improvement
+	for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+	{
+		for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+		{
+			int iChange = info.getAdjacentBonusedImprovementYieldChanges(iImprovement, iYield);
+			if (0 != iChange)
+			{
+				szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getImprovementInfo((ImprovementTypes)iImprovement).getDescription());
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_CIVIC_ADJACENT_YIELD_CHANGE", iChange, GC.getYieldInfo((YieldTypes)iYield).getChar()));
+				szBuffer.append(szTempBuffer);
+			}
+		}
+	}
+
+	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+	{
+		int iChange = info.getAdjacentCityYieldChange(iYield);
+		if (0 != iChange)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_ADJACENT_CITY", iChange, GC.getYieldInfo((YieldTypes)iYield).getChar()));
+		}
+
+		iChange = info.getAdjacentMountainYieldChange(iYield);
+		if (0 != iChange)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_ADJACENT_MOUNTAIN", iChange, GC.getYieldInfo((YieldTypes)iYield).getChar()));
+		}
+	}
+
 	if (info.isRequiresRiverSide())
 	{
 		szBuffer.append(NEWLINE);

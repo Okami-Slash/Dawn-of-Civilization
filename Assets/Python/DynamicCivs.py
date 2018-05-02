@@ -492,7 +492,7 @@ dCapitals = {
 	iPhoenicia : ['Sur', 'Sydwn', 'Carthage'],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Oslo", "Nidaros", "Roskilde", "Stockholm", "Kalmar"],
-	iKhmer : ["Pagan", "Dali", "Angkor"],
+	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
 	iItaly : ["Fiorenza", "Roma"],

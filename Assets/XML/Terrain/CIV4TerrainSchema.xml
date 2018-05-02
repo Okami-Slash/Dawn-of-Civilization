@@ -349,6 +349,17 @@
 	<ElementType name="RouteYieldChanges" content="eltOnly">
 		<element type="RouteYieldChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="ImprovementType" content="textOnly"/>
+	<ElementType name="ImprovementYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="AdjacentBonusedImprovementYieldChange" content="eltOnly">
+		<element type="ImprovementType"/>
+		<element type="ImprovementYields"/>
+	</ElementType>
+	<ElementType name="AdjacentBonusedImprovementYieldChanges" content="eltOnly">
+		<element type="AdjacentBonusedImprovementYieldChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="PrereqTech" content="textOnly"/>
 	<ElementType name="TechYields" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
@@ -364,6 +375,12 @@
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="IrrigatedYieldChange" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="AdjacentCityYieldChange" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="AdjacentMountainYieldChange" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="BonusType" content="textOnly"/>
@@ -430,6 +447,8 @@
 		<element type="RiverSideYieldChange" minOccurs="0"/>
 		<element type="HillsYieldChange" minOccurs="0"/>
 		<element type="IrrigatedYieldChange" minOccurs="0"/>
+		<element type="AdjacentCityYieldChange" minOccurs="0"/>
+		<element type="AdjacentMountainYieldChange" minOccurs="0"/>
 		<element type="bActsAsCity"/>
 		<element type="bHillsMakesValid"/>
 		<element type="bFreshWaterMakesValid"/>
@@ -463,6 +482,7 @@
 		<element type="ImprovementUpgrade"/>
 		<element type="TechYieldChanges"/>
 		<element type="RouteYieldChanges"/>
+		<element type="AdjacentBonusedImprovementYieldChanges" minOccurs="0" maxOccurs="*"/>
 		<element type="WorldSoundscapeAudioScript" minOccurs="0"/>
 		<element type="bGraphicalOnly"/>
 	</ElementType>

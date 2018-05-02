@@ -270,6 +270,48 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -335,6 +377,48 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -550,6 +634,11 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
+			<AdjacentMountainYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</AdjacentMountainYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>1</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -690,6 +779,48 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -756,7 +887,7 @@
 			<bFreshWaterMakesValid>1</bFreshWaterMakesValid>
 			<bRiverSideMakesValid>0</bRiverSideMakesValid>
 			<bNoFreshWater>0</bNoFreshWater>
-			<bRequiresFlatlands>1</bRequiresFlatlands>
+			<bRequiresFlatlands>0</bRequiresFlatlands>
 			<bRequiresRiverSide>0</bRequiresRiverSide>
 			<bRequiresIrrigation>0</bRequiresIrrigation>
 			<bCarriesIrrigation>0</bCarriesIrrigation>
@@ -816,6 +947,56 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -884,6 +1065,24 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -950,6 +1149,48 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1016,6 +1257,48 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1181,6 +1464,48 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1351,6 +1676,48 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1358,6 +1725,11 @@
 			<Description>TXT_KEY_IMPROVEMENT_QUARRY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_QUARRY_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_QUARRY</ArtDefineTag>
+			<AdjacentMountainYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</AdjacentMountainYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1435,6 +1807,48 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1549,6 +1963,48 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1556,6 +2012,16 @@
 			<Description>TXT_KEY_IMPROVEMENT_CAMP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CAMP_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CAMP</ArtDefineTag>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
+			<AdjacentMountainYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentMountainYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1628,6 +2094,32 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1688,6 +2180,48 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1760,6 +2294,11 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1832,6 +2371,40 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1847,6 +2420,11 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>1</bFreshWaterMakesValid>
@@ -1892,6 +2470,40 @@
 			<ImprovementUpgrade>IMPROVEMENT_HAMLET</ImprovementUpgrade>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1907,6 +2519,11 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>1</bFreshWaterMakesValid>
@@ -1952,6 +2569,40 @@
 			<ImprovementUpgrade>IMPROVEMENT_VILLAGE</ImprovementUpgrade>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1964,6 +2615,11 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>3</iYieldChange>
 			</YieldChanges>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -2005,6 +2661,40 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -2017,6 +2707,11 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>4</iYieldChange>
 			</YieldChanges>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -2073,6 +2768,40 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -2145,6 +2874,16 @@
 				<iYield>0</iYield>
 				<iYield>1</iYield>
 			</RiverSideYieldChange>
+			<AdjacentCityYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentCityYieldChange>
+			<AdjacentMountainYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</AdjacentMountainYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -2222,6 +2961,32 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<AdjacentBonusedImprovementYieldChanges>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+				<AdjacentBonusedImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</AdjacentBonusedImprovementYieldChange>
+			</AdjacentBonusedImprovementYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>

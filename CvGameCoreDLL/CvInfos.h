@@ -3061,6 +3061,11 @@ public:
 	int getIrrigatedYieldChange(int i) const;				// Exposed to Python
 	int* getIrrigatedYieldChangeArray();				// For Moose - CvWidgetData XXX
 
+	int getAdjacentCityYieldChange(int i) const;
+	int* getAdjacentCityYieldChangeArray();
+	int getAdjacentMountainYieldChange(int i) const;
+	int* getAdjacentMountainYieldChangeArray();
+
 	bool getTerrainMakesValid(int i) const;				// Exposed to Python
 	bool getFeatureMakesValid(int i) const;				// Exposed to Python
 
@@ -3068,6 +3073,9 @@ public:
 	int* getTechYieldChangesArray(int i);
 	int getRouteYieldChanges(int i, int j) const;				// Exposed to Python
 	int* getRouteYieldChangesArray(int i);				// For Moose - CvWidgetData XXX
+
+	int getAdjacentBonusedImprovementYieldChanges(int i, int j) const;
+	int* getAdjacentBonusedImprovementYieldChangesArray(int i);
 
 	int getImprovementBonusYield(int i, int j) const;				// Exposed to Python
 	bool isImprovementBonusMakesValid(int i) const;				// Exposed to Python
@@ -3135,11 +3143,15 @@ protected:
 	int* m_piHillsYieldChange;
 	int* m_piIrrigatedChange;
 
+	int* m_ppiAdjacentCityYieldChange;
+	int* m_ppiAdjacentMountainYieldChange;
+
 	bool* m_pbTerrainMakesValid;
 	bool* m_pbFeatureMakesValid;
 
 	int** m_ppiTechYieldChanges;
 	int** m_ppiRouteYieldChanges;
+	int** m_ppiAdjacentBonusedImprovementYieldChanges;
 
 	CvImprovementBonusInfo* m_paImprovementBonus;
 
