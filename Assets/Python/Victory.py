@@ -456,7 +456,7 @@ def checkTurn(iGameTurn, iPlayer):
 			win(iHittite, 2)
 		
 		for iEnemy in range(iNumMajorPlayers):
-			if iEnemy == iIndia or iPlayer == iChina or iPlayer == iHarappa: continue
+			if iEnemy == iIndia or iPlayer == iChina or iPlayer == iHarappa or iPlayer == iAssyria or iPlayer == iBabylonia: continue
 			if countResources(iEnemy, iIron) > 0:
 				lose(iHittite, 2)
 
