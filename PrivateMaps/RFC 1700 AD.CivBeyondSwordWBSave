@@ -52154,6 +52154,7 @@ EndPlot
 BeginPlot
 	x=111,y=40
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=1,18,24,35,54,
@@ -52166,10 +52167,28 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=42
-	ImprovementType=IMPROVEMENT_WINDMILL
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginCity
+		CityOwner=18, (Japan)
+		CityName=Kagoshima
+		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		ReligionType=RELIGION_BUDDHISM
+		Player18Culture=100, (Japan)
+	EndCity
 	TeamReveal=1,15,18,24,35,54,55,
 EndPlot
 BeginPlot
@@ -52195,6 +52214,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=46
+	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,18,
@@ -52213,7 +52234,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=49
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=1,15,18,55,
 EndPlot
@@ -52543,7 +52564,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=39
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=18,24,35,54,
 EndPlot
@@ -52555,36 +52576,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=41
-	BonusType=BONUS_GOLD
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginCity
-		CityOwner=18, (Japan)
-		CityName=Kagoshima
-		CityPopulation=6
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		ReligionType=RELIGION_BUDDHISM
-		Player18Culture=100, (Japan)
-	EndCity
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,24,35,54,
 EndPlot
 BeginPlot
 	x=112,y=42
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=15,18,24,35,54,
 EndPlot
 BeginPlot
@@ -52595,26 +52594,50 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
-	BonusType=BONUS_TEA
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
 	x=112,y=45
-	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_PADDY_FIELD
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginCity
+		CityOwner=18, (Japan)
+		CityName=Hiroshima
+		CityPopulation=10
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_UNIVERSITY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_PHARMACY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		BuildingType=BUILDING_HIMEJI_CASTLE
+		ReligionType=RELIGION_BUDDHISM
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		Player18Culture=250, (Japan)
+	EndCity
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
 	x=112,y=46
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,18,
@@ -52627,13 +52650,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
 	x=112,y=49
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,18,54,
 EndPlot
@@ -52976,13 +52999,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=40
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=18,24,35,54,
 EndPlot
 BeginPlot
 	x=113,y=41
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_WHALE
+	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	PlotType=3
 	TeamReveal=18,24,35,54,
 EndPlot
@@ -52994,9 +53019,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=43
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=0
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
@@ -53009,80 +53033,9 @@ BeginPlot
 	x=113,y=45
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_RICE
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
-	EndUnit
-(	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=18, (Japan)) (AI only)
-(	EndUnit)
-	BeginCity
-		CityOwner=18, (Japan)
-		CityName=Kyouto
-		CityPopulation=10
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_HIMEJI_CASTLE
-		ReligionType=RELIGION_BUDDHISM
-		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player18Culture=250, (Japan)
-	EndCity
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
@@ -53451,8 +53404,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=41
-	BonusType=BONUS_WHALE
-	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=18,24,54,
@@ -53465,40 +53416,106 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=43
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_GOLD
+	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_MINE
+	PlotType=1
+	TeamReveal=15,18,54,
+EndPlot
+BeginPlot
+	x=114,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
-	x=114,y=44
-	ImprovementType=IMPROVEMENT_VILLAGE
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	TeamReveal=15,18,54,
-EndPlot
-BeginPlot
 	x=114,y=45
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=2
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=18, (Japan)
+	EndUnit
+	BeginCity
+		CityOwner=18, (Japan)
+		CityName=Kyouto
+		CityPopulation=10
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_UNIVERSITY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_PHARMACY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		BuildingType=BUILDING_HIMEJI_CASTLE
+		ReligionType=RELIGION_BUDDHISM
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		Player18Culture=250, (Japan)
+	EndCity
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
 	x=114,y=46
-	BonusType=BONUS_IRON
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
 	x=114,y=47
-	BonusType=BONUS_COPPER
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=15,18,54,
 EndPlot
 BeginPlot
@@ -53515,23 +53532,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=50
-	BonusType=BONUS_DYE
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=114,y=51
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=114,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -53888,6 +53902,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=44
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+	TeamReveal=18,54,
+EndPlot
+BeginPlot
+	x=115,y=45
+	BonusType=BONUS_IRON
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+	TeamReveal=18,54,
+EndPlot
+BeginPlot
+	x=115,y=46
 	BonusType=BONUS_CRAB
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
@@ -53895,46 +53924,21 @@ BeginPlot
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
-	x=115,y=45
-	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_PADDY_FIELD
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	TeamReveal=18,54,
-EndPlot
-BeginPlot
-	x=115,y=46
-	BonusType=BONUS_PIG
-	ImprovementType=IMPROVEMENT_PASTURE
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	TeamReveal=18,54,
-EndPlot
-BeginPlot
 	x=115,y=47
-	RiverNSDirection=2
-	isWOfRiver
-	BonusType=BONUS_SILK
-	ImprovementType=IMPROVEMENT_PLANTATION
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=115,y=48
-	ImprovementType=IMPROVEMENT_MINE
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=115,y=49
-	BonusType=BONUS_SILVER
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -53945,15 +53949,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=51
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=115,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -54277,20 +54280,43 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=42
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=116,y=43
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginCity
+		CityOwner=18, (Japan)
+		CityName=Oosaka
+		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		ReligionType=RELIGION_BUDDHISM
+		Player18Culture=100, (Japan)
+	EndCity
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=116,y=44
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_TEA
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -54301,51 +54327,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=46
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=116,y=47
-	isNOfRiver
-	RiverWEDirection=1
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
-	EndUnit
-	BeginCity
-		CityOwner=18, (Japan)
-		CityName=Edo
-		CityPopulation=12
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		ReligionType=RELIGION_BUDDHISM
-		Player18Culture=100, (Japan)
-	EndCity
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=116,y=48
-	BonusType=BONUS_SILK
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -54362,20 +54359,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=51
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=116,y=52
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SILVER
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=116,y=53
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -54685,13 +54686,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=42
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_CRAB
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=117,y=43
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,54,
 EndPlot
@@ -54703,40 +54705,72 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=45
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=46
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_RICE
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=47
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_PIG
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=48
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	RiverNSDirection=2
+	isWOfRiver
+	BonusType=BONUS_SILK
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=49
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginCity
+		CityOwner=18, (Japan)
+		CityName=Akita
+		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		ReligionType=RELIGION_BUDDHISM
+		Player18Culture=100, (Japan)
+	EndCity
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=50
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_COPPER
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	PlotType=1
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
@@ -54747,27 +54781,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=52
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=53
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=117,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_DYE
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=117,y=56
@@ -55076,7 +55112,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=44
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,54,
 EndPlot
@@ -55088,37 +55124,67 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=46
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Japan)
+	EndUnit
+	BeginCity
+		CityOwner=18, (Japan)
+		CityName=Edo
+		CityPopulation=12
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_UNIVERSITY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		ReligionType=RELIGION_BUDDHISM
+		Player18Culture=100, (Japan)
+	EndCity
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=118,y=47
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	ImprovementType=IMPROVEMENT_FARM
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=118,y=48
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	ImprovementType=IMPROVEMENT_FARM
+	isNOfRiver
+	RiverWEDirection=1
+	PlotType=2
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=118,y=49
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SILK
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+	PlotType=1
 	TeamReveal=18,54,
 EndPlot
 BeginPlot
 	x=118,y=50
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=118,y=51
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
@@ -55130,38 +55196,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=53
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=118,y=54
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
+EndPlot
+BeginPlot
+	x=118,y=55
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=118,y=55
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
-EndPlot
-BeginPlot
 	x=118,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=57
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=58
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=59
@@ -55175,8 +55237,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=61
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=118,y=62
@@ -55442,56 +55505,57 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=119,y=44
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=45
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=46
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=47
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=49
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=50
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=51
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=119,y=52
-	BonusType=BONUS_WHALE
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -55501,48 +55565,44 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=119,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=119,y=55
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=57
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=58
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=119,y=59
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=119,y=60
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=61
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=62
@@ -55818,13 +55878,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=45
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
 BeginPlot
 	x=120,y=46
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=18,
 EndPlot
@@ -55875,31 +55935,35 @@ EndPlot
 BeginPlot
 	x=120,y=55
 	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS
 	PlotType=3
 EndPlot
 BeginPlot
 	x=120,y=56
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
-EndPlot
-BeginPlot
-	x=120,y=57
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
-EndPlot
-BeginPlot
-	x=120,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
+	x=120,y=57
+	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	PlotType=2
+EndPlot
+BeginPlot
+	x=120,y=58
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=0
+EndPlot
+BeginPlot
 	x=120,y=59
 	TerrainType=TERRAIN_SNOW
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	PlotType=2
 EndPlot
 BeginPlot
 	x=120,y=60
 	TerrainType=TERRAIN_SNOW
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	PlotType=2
 EndPlot
 BeginPlot
@@ -56227,7 +56291,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=55
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -56593,6 +56657,8 @@ EndPlot
 BeginPlot
 	x=122,y=56
 	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_WHALE
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
 EndPlot
 BeginPlot

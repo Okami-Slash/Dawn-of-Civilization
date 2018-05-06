@@ -68,7 +68,7 @@ tMinorCities = (
 (610, (92, 43), iBarbarian, 'Kyunglung', 1, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
-(790, (113, 45), iIndependent, 'Kyoto', 2, iSamurai, 2),	# Heian Period
+(790, (114, 45), iIndependent, 'Kyouto', 2, iSamurai, 2),	# Heian Period
 (800, (60, 59), iVikings, 'Oslo', 2, -1, -1),
 (800, (63, 59), iVikings, 'Stockholm', 2, -1, -1),
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
@@ -79,8 +79,8 @@ tMinorCities = (
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (910, (50, 45), iIndependent2, 'Le&#243;n', 1, iHeavySpearman, 2),			# Leon
 (943, (52, 58), iIndependent2, 'Scuin', 1, iLongbowman, 2),		# Kingdom of Alba
-(950, (113, 43), iIndependent2, 'Matsuyama', 5, iSamurai, 2),	# Feudal Japan
-(990, (115, 48), iIndependent2, 'Aomori', 5, iLancer, 2),	# Feudal Japan
+(950, (116, 43), iIndependent2, 'Matsuyama', 5, iSamurai, 2),	# Feudal Japan
+(990, (117, 49), iIndependent2, 'Aomori', 5, iLancer, 2),	# Feudal Japan
 (990, (49, 56), iVikings, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iVikings, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
@@ -433,7 +433,7 @@ class Barbs:
 				lBuildings = [iOrthodoxTemple, iWalls, iCastle, iGranary, iMarket]
 			if sName in ['K&#246;nigsberg']:
 				lBuildings = [iCatholicChurch, iCatholicMonastery, iBarracks, iWalls, iCastle]
-			if iPlayer == iJapan or sName in ['Kyoto', 'Aomori', 'Matsuyama', 'Sapporo']:
+			if iPlayer == iJapan or sName in ['Kyouto', 'Aomori', 'Matsuyama', 'Sapporo']:
 				if utils.getHumanID() == iJapan:
 					lBuildings = [iWalls, iCastle, iBarracks, iPaganTemple, iMonument]
 				else:
@@ -442,8 +442,6 @@ class Barbs:
 				lBuildings = [iCatholicMonastery, iWalls, iHarbor]
 			
 			if iPlayer == utils.getHumanID():
-				if iPlayer not in [iJapan]:
-					continue
 				iPlayer = utils.getRandomEntry([iIndependent, iIndependent2])
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
