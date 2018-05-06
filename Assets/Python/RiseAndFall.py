@@ -3831,7 +3831,7 @@ class RiseAndFall:
 								iFlip = unit.getOwner()
 								print "Flip to " + str(iFlip)
 
-		if iFlip != -1 and len(lCities) > 0:
+		if iFlip != -1 and (iFlip in [iEngland, iFrance, iSpain, iPortugal, iAmerica, iPolynesia] or (iFlip == iMaya and utils.isReborn(iMaya))) and gc.getPlayer(iFlip).getGoldPerTurn() >= 0 and len(lCities) > 0:
 			for city in lCities:
 				plot = gc.getMap().plot(city[0], city[1])
 				for index in range(plot.getNumUnits()):
