@@ -702,4 +702,12 @@
 		<Tag>TXT_KEY_LEADER_CNUT</Tag>
 		<English>Cnut</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CIXI</Tag>
+		<English>Cixi</English>
+		<French>Cixi</French>
+		<German>Cixi</German>
+		<Italian>Cixi</Italian>
+		<Spanish>Cixi</Spanish>
+	</TEXT>
 </Civ4GameText>

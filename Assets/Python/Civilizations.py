@@ -120,6 +120,7 @@ iCivThailand : 	Techs(column=8, exceptions=[iCompass, iDoctrine, iCommune, iPatr
 iCivIran : 	Techs([iHeritage, iFirearms, iAcademia], column=9),
 iCivSweden : 	Techs([iHeritage, iFirearms], column=9),
 iCivNetherlands:Techs(column=10),
+iCivManchuria:	Techs([iCombinedArms], column=10),
 iCivGermany :	Techs([iReplaceableParts], column=11),
 iCivAmerica :	Techs([iRepresentation, iChemistry], column=12),
 iCivArgentina :	Techs(column=13, exceptions=[iMachineTools]),
@@ -145,7 +146,7 @@ iCivKorea :	Techs(column=6, exceptions=[iNobility, iEthics, iArchitecture, iPoli
 {
 iCivIndependent:Techs(column=10),
 iCivIndependent2:Techs(column=10),
-iCivChina :	Techs([iHorticulture, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics, iAcademia]),
+iCivManchuria :	Techs([iHorticulture, iUrbanPlanning, iCombinedArms], column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivIndia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration]),
 iCivTamils :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivIran :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),

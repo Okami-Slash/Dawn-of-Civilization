@@ -1181,7 +1181,7 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iMongolia:
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
-
+	
 	elif iPlayer == iAustralia:
 		if utils.isPlotInArea((x, y), vic.tAustraliaTL, vic.tAustraliaBR):
 			return 70
@@ -1234,8 +1234,12 @@ def getUHVTileInfo(argsList):
 			
 		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
 			return 86
+
+	elif iPlayer == iManchuria:
+		if gc.getMap().plot(x, y).getSettlerValue(iManchuria) >= 90:
+			return 87
 				
-		# continue with ID 87
+	# continue with ID 88
 			
 	return -1
 		

@@ -1611,4 +1611,20 @@
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO</Tag>
+		<English>Piaohao</English>
+		<French>Piaohao</French>
+		<German>Piaohao</German>
+		<Italian>Piaohao</Italian>
+		<Spanish>Piaohao</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Piaohao[COLOR_REVERT], the Manchurian replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], stores food.</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
 </Civ4GameText>

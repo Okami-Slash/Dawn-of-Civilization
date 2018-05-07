@@ -1246,6 +1246,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	MUSTASIM,
 	BUMIN,
 	TAMERLANE,
+	KANGXI,
+	CIXI,
 	NUM_LEADERHEADS
 
 };
@@ -1368,6 +1370,7 @@ enum PlayerTypes				// Exposed to Python
 	CONGO,
 	SWEDEN,
 	NETHERLANDS,
+	MANCHURIA,
 	GERMANY,
 	AMERICA,
 	ARGENTINA,

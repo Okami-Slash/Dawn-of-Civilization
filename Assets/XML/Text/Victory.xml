@@ -1316,6 +1316,54 @@
 		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN1_TITLE</Tag>
+		<English>The Malthusian Limit</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN1</Tag>
+		<English>Have 25% of the world population in China and Manchuria in 1800 AD</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN2_TITLE</Tag>
+		<English>Celestial Empire</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN2</Tag>
+		<English>Have the highest food, production and commerce output in 1850 AD</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN3_TITLE</Tag>
+		<English>Westernization Movement</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN3</Tag>
+		<English>Be the first to discover eight Industrial and eight Global technologies</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
 		<English>The Sun</English>
 		<German>Die Sonne</German>
@@ -3179,6 +3227,14 @@
 		<English>Percentage of world population: %s1 / %s2%%</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION_AREA</Tag>
+		<English>Percentage of world population %s3: %s1 / %s2%%</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
 		<English>Percentage of the world: %s1 / %s2%%</English>
 	</TEXT>
@@ -3743,5 +3799,29 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CAPITAL_CULTURE</Tag>
 		<English>Culture in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_FOOD_CIV</Tag>
+		<English>Highest food output: %s1</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_PRODUCTION_CIV</Tag>
+		<English>Highest production output: %s1</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_COMMERCE_CIV</Tag>
+		<English>Highest commerces output: %s1</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
 	</TEXT>
 </Civ4GameText>

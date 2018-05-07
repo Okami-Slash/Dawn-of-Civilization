@@ -587,6 +587,7 @@ dStartingLeaders = [
 	iThailand : iNaresuan,
 	iCongo : iMbemba,
 	iSweden : iGustavVasa,
+	iManchuria : iKangxi,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
 	iAustralia : iCurtin,
@@ -1142,8 +1143,8 @@ def specificName(iPlayer):
 
 	if iPlayer == iChina:
 		if bEmpire:
-			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
-				return "TXT_KEY_CIV_CHINA_QING"
+			# if iEra >= iIndustrial or utils.getScenario() == i1700AD:
+				# return "TXT_KEY_CIV_CHINA_QING"
 
 			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
@@ -1366,6 +1367,9 @@ def specificName(iPlayer):
 
 		if bCityStates:
 			return short(iPlayer)
+
+	elif iPlayer == iManchuria:
+		return "TXT_KEY_CIV_CHINA_QING"
 
 	elif iPlayer == iGermany:
 		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
@@ -2713,11 +2717,14 @@ def leader(iPlayer):
 
 	elif iPlayer == iThailand:
 		if iEra >= iIndustrial: return iMongkut
-		
+
 	elif iPlayer == iSweden:
 		if iEra >= iIndustrial: return iKarl
 		
 		if bEmpire: return iGustav
+
+	elif iPlayer == iManchuria:
+		if iEra >= iIndustrial: return iCixi
 
 	elif iPlayer == iGermany:
 		if isFascist(iPlayer): return iHitler

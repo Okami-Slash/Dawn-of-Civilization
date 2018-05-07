@@ -158,6 +158,9 @@ class CvRFCEventHandler:
 					if newCapital:
 						utils.moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
 
+			elif iPlayer == iManchuria and tCity == (102, 47):
+				utils.moveCapital(iMongolia, tCity) # Beijing
+
 		# remove slaves if unable to practice slavery
 		if not gc.getPlayer(iPlayer).canUseSlaves():
 			utils.removeSlaves(city)
@@ -188,6 +191,10 @@ class CvRFCEventHandler:
 				utils.setReborn(iTurks, True)
 			else:
 				utils.setReborn(iTurks, False)
+
+		# Merijn: conquering Beijing adds it to the Manchurian core
+		if iPlayer == iManchuria and tCity == (102, 47):
+			utils.setReborn(iManchuria, True)
 
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
