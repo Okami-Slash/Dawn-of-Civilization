@@ -1341,12 +1341,12 @@ dPolities = {
 	iPolityDenmarkNorway : ["TXT_KEY_CIV_DENMARK_NORWAY_ADJECTIVE", "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY", -1, iTypeNational, (60, 56), -1, {"tRectangle" : ((59, 55), (60, 59)), 'lExceptions' : []}],
 	
 	#Japan:
-	iPolityHeian : [-1, -1, -1, iTypeCapital, (113, 45), iKammu, {'tRectangle' : ((112, 45), (114, 46)), 'lExceptions' : []}],
-	iPolityKamakura : ["TXT_KEY_CIV_JAPAN_KAMAKURA", -1, -1, iTypeDynastic, (113, 45), iOdaNobunaga, {'tRectangle' : ((112, 44), (114, 46)), 'lExceptions' : []}],
-	iPolityAshikaga : ["TXT_KEY_CIV_JAPAN_ASHIKAGA", -1, -1, iTypeDynastic, (113, 45), iOdaNobunaga, {'tRectangle' : ((112, 44), (114, 46)), 'lExceptions' : []}],
-	iPolityOda : ["TXT_KEY_CIV_JAPAN_ODA", -1, "TXT_KEY_CIV_JAPAN_CLAN", iTypeDynastic, (116, 46), iOdaNobunaga, {'tRectangle' : ((115, 45), (117, 46)), 'lExceptions' : []}],
-	iPolityTokugawa : ["TXT_KEY_CIV_JAPAN_TOKUGAWA", -1, "TXT_KEY_CIV_JAPAN_DEFAULT", iTypeDynastic, (116, 46), iOdaNobunaga, {'tRectangle' : ((115, 45), (116, 47)), 'lExceptions' : []}],
-	iPolityJapan : ["TXT_KEY_CIV_JAPAN_ADJECTIVE", "TXT_KEY_CIV_JAPAN_SHORT", -1, iTypeNational, (116, 46), iMeiji, {'tRectangle' : ((111, 41), (116, 52)), 'lExceptions' : [(111, 51), (111, 52), (112, 52)]}],
+	iPolityHeian : [-1, -1, -1, iTypeCapital, (114, 45), iKammu, {'tRectangle' : ((112, 45), (115, 45)), 'lExceptions' : []}],
+	iPolityKamakura : ["TXT_KEY_CIV_JAPAN_KAMAKURA", -1, -1, iTypeDynastic, (114, 45), iOdaNobunaga, {'tRectangle' : ((112, 43), (114, 45)), 'lExceptions' : [(114, 43)]}],
+	iPolityAshikaga : ["TXT_KEY_CIV_JAPAN_ASHIKAGA", -1, -1, iTypeDynastic, (114, 45), iOdaNobunaga, {'tRectangle' : ((112, 43), (114, 45)), 'lExceptions' : [(114, 43)]}],
+	iPolityOda : ["TXT_KEY_CIV_JAPAN_ODA", -1, "TXT_KEY_CIV_JAPAN_CLAN", iTypeDynastic, (118, 46), iOdaNobunaga, {'tRectangle' : ((117, 46), (118, 50)), 'lExceptions' : []}],
+	iPolityTokugawa : ["TXT_KEY_CIV_JAPAN_TOKUGAWA", -1, "TXT_KEY_CIV_JAPAN_DEFAULT", iTypeDynastic, (118, 46), iOdaNobunaga, {'tRectangle' : ((117, 46), (118, 50)), 'lExceptions' : []}],
+	iPolityJapan : ["TXT_KEY_CIV_JAPAN_ADJECTIVE", "TXT_KEY_CIV_JAPAN_SHORT", -1, iTypeNational, (118, 46), iMeiji, {'tRectangle' : ((111, 42), (118, 50)), 'lExceptions' : []}],
 
 	#Moors:
 	iPolityCordoba : [-1, -1, -1, iTypeCapital, (51, 41), iRahman, {'tRectangle' : ((50, 40), (52, 42)), 'lExceptions' : []}],
