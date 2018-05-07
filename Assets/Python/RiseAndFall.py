@@ -548,6 +548,8 @@ class RiseAndFall:
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 
+		pAssur = gc.getMap().plot(77, 42).getPlotCity()
+		pAssur.setBuildingOriginalOwner(iAshurbanipalLibrary, iAssyria)
 		
 		pTisfun = gc.getMap().plot(76, 40).getPlotCity()
 		pTisfun.setBuildingOriginalOwner(iHangingGardens, iBabylonia)
@@ -581,6 +583,9 @@ class RiseAndFall:
 
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
+		
+		pAssur  = gc.getMap().plot(77, 42).getPlotCity()
+		pAssur.setBuildingOriginalOwner(iAshurbanipalLibrary, iAssyria)
 		
 		#pConstantinople = gc.getMap().plot(68, 45).getPlotCity()
 		#pConstantinople.setBuildingOriginalOwner(iTheodosianWalls, iByzantium)
@@ -896,120 +901,6 @@ class RiseAndFall:
 				city = plot.getPlotCity()
 				if city.getPopulation() > 14:
 					city.changePopulation(-3)
-
-		if iGameTurn == getTurnForYear(1040):	# Leoreth: first Seljuk wave (flips independents, spawns armies for players)
-			tEsfahan = utils.getFreePlot((81, 41))
-			x, y = tEsfahan
-			esfahan = gc.getMap().plot(x, y)
-			if esfahan.isCity():
-				utils.flipCity(tEsfahan, False, True, iSeljuks, ())
-			else:
-				pSeljuks.found(x, y)
-				esfahan.getPlotCity().setName('Isfahan', False)
-			utils.makeUnitAI(iLongbowman, iSeljuks, tEsfahan, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			utils.makeUnit(iIslamicMissionary, iSeljuks, tEsfahan, 1)
-			utils.makeUnit(iWorker, iSeljuks, tEsfahan, 3)
-			utils.cultureManager(tEsfahan, 100, iSeljuks, esfahan.getOwner(), True, False, False)
-			for (i, j) in utils.surroundingPlots(tEsfahan):
-				pPlot = gc.getMap().plot(i, j)
-				if not pPlot.isCity():
-					utils.convertPlotCulture(pPlot, iSeljuks, 100, False)
-
-			utils.updateMinorTechs(iSeljuks, iBarbarian)
-
-			tSeljukAreaTL = (78, 37)
-			tSeljukAreaBR = (85, 46)
-			targetCityList = []
-			targetPlayerList = []
-			lCityPlotList = utils.squareSearch(tSeljukAreaTL, tSeljukAreaBR, utils.cityPlots, -1)
-			for tPlot in lCityPlotList:
-				x, y = tPlot
-				city = gc.getMap().plot(x, y).getPlotCity()
-				if city.getOwner() in [iIndependent, iIndependent2]:
-					utils.flipCity(tPlot, False, True, iSeljuks, ())
-					utils.cultureManager(tPlot, 100, iSeljuks, city.getOwner(), True, False, False)
-					utils.makeUnitAI(iLongbowman, iSeljuks, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-					for (i, j) in utils.surroundingPlots(tPlot):
-						pPlot = gc.getMap().plot(i, j)
-						if not pPlot.isCity():
-							utils.convertPlotCulture(pPlot, iSeljuks, 100, False)
-				else:
-					targetCityList.append(tPlot)
-					targetPlayerList.append(city.getOwner())
-
-			for tPlot in targetCityList:
-				tSpawnPlot = utils.getFreeNeighborPlot(tPlot)
-				x, y = tSpawnPlot
-				iExtra = 0
-				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iArabia and utils.getHumanID() != iArabia: iExtra = 1
-
-				utils.makeUnitAI(iGhulamWarrior, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3 + iExtra)
-				utils.makeUnitAI(iTrebuchet, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + 2*iExtra)
-				utils.makeUnitAI(iHeavySwordsman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
-				utils.makeUnitAI(iLongbowman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-
-			for iPlayer in targetPlayerList:
-				teamSeljuks.declareWar(iPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
-			if utils.getHumanID() in lCivGroups[2]:
-				CyInterface().addMessage(CyGame().getActivePlayer(), True , iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(iRed),0,0,False,False)
-
-		if iGameTurn == getTurnForYear(1070 + data.iSeed % 10 - 5): #Linkman226- Seljuks
-			lSpawnPlots = [(77,41), (74, 43), (72, 44), (74, 39)]
-			for tPlot in lSpawnPlots:
-				spawnPlot = utils.getFreePlot(tPlot)
-				utils.makeUnitAI(iGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-				utils.makeUnitAI(iGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
-				utils.makeUnitAI(iTrebuchet, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
-				pSeljuks.setLastStateReligion(iIslam)
-				teamSeljuks.declareWar(iByzantium, True, WarPlanTypes.WARPLAN_TOTAL)
-				teamSeljuks.declareWar(iArabia, True, WarPlanTypes.WARPLAN_TOTAL)
-
-		if iGameTurn == getTurnForYear(1230 + data.iSeed % 10): #Linkman226- Mongol Conquerors for Seljuks
-
-			# let Seljuk army decay for everyone
-			lSeljukUnits = [pSeljuks.getUnit(i) for i in range(pSeljuks.getNumUnits())]
-
-			lUnitsToRemove = []
-			for unit in lSeljukUnits:
-				if unit.getUnitType() == iGhulamWarrior:
-					if gc.getGame().getSorenRandNum(2, 'Delete unit') != 0:
-						lUnitsToRemove.append(unit)
-
-			for unit in lUnitsToRemove:
-				unit.kill(False, iBarbarian)
-
-			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
-				tPlot = utils.getFreePlot((84, 46))
-				targetAreaTL = (73, 38)
-				targetAreaBR = (85, 46)
-				count = 0
-				lCityPlotList = utils.squareSearch(targetAreaTL, targetAreaBR, utils.cityPlots, -1)
-
-				for tPlot in lCityPlotList:
-					x, y = tPlot
-					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iSeljuks:
-						count += 1
-
-				if count <= 2:
-					iModifier = 0
-				elif count >= len(lCityPlotList)-2:
-					iModifier = 2
-				else:
-					iModifier = 1
-
-				spawnPlot = utils.getFreeNeighborPlot(tPlot)
-
-				utils.makeUnitAI(iKeshik, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier)
-				utils.makeUnitAI(iHorseArcher, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier)
-				utils.makeUnitAI(iTrebuchet, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-				if utils.getHumanID() in lCivGroups[1]:
-					CyInterface().addMessage(utils.getHumanID(), True, iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iSeljuks).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-		if iGameTurn == getTurnForYear(1230 + data.iSeed % 10 + 3): #Linkman226- Mongol Conquerors for Seljuks
-			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
-				tPlot = utils.getFreeNeighborPlot((83, 42))
-				utils.makeUnitAI(iKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-				utils.makeUnitAI(iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-				utils.makeUnitAI(iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 
 		# Leoreth: make sure Aztecs are dead in 1700 if a civ that spawns from that point is selected
 		if iGameTurn == getTurnForYear(1700)-2:
@@ -1585,6 +1476,11 @@ class RiseAndFall:
 		if iCiv in [iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
 
+		print "errerr " + str(iCiv)
+		print "errerr " + str(iHuman)
+		print "errerr " + str(len(data.players))
+		print "errerr " + str(len(lNeighbours))
+		print "errerr " + str(len(tBirth))
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			self.newCivPopup(iCiv)
 
@@ -3407,12 +3303,6 @@ class RiseAndFall:
 				#tCapital = Areas.getCapital(iPlayer)
 				#utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				#utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
-				
-		tCapital = Areas.getCapital(iTurks)
-		utils.makeUnit(iSettler, iTurks, tCapital, 2)
-		utils.makeUnit(iOghuz, iTurks, tCapital, 6)
-		utils.makeUnit(iArcher, iTurks, tCapital, 1)
-		utils.makeUnit(iScout, iTurks, tCapital, 1)
 
 
 	def create4000BCstartingUnits(self):

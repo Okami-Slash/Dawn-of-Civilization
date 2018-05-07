@@ -34799,7 +34799,7 @@ EndPlot
 BeginPlot
 	x=90,y=43
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=90,y=44
@@ -35196,8 +35196,8 @@ BeginPlot
 	x=91,y=44
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
-	PlotType=0
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=91,y=45
