@@ -72,6 +72,7 @@ iCivMughals : 15,
 iCivNetherlands : 15,
 iCivGermany : 12,
 iCivAustralia : 11,
+iCivBoers : 10,
 }
 
 dDistanceSubtrahend = {
@@ -145,6 +146,7 @@ iCivAmerica : 200,
 iCivAustralia : 150,
 iCivArgentina : 150,
 iCivBrazil : 150,
+iCivBoers : 200,
 iCivCanada : 150,
 }
 
@@ -209,6 +211,7 @@ iCivSweden : 3,
 iCivNetherlands : 3,
 iCivGermany : 3,
 iCivAmerica : 3,
+iCivBoers : 3,
 }
 
 dReligiousTolerance = {

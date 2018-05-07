@@ -81954,8 +81954,8 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_MERCHANT_TRADE</FavoriteCivic>
-			<FavoriteReligion>NONE</FavoriteReligion>
+			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -82273,8 +82273,22 @@
 					<iNoWarProb>100</iNoWarProb>
 				</NoWarAttitudeProb>
 			</NoWarAttitudeProbs>
-			<UnitAIWeightModifiers/>
-			<ImprovementWeightModifiers/>
+			<UnitAIWeightModifiers>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+			</UnitAIWeightModifiers>
+			<ImprovementWeightModifiers>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<iWeightModifier>20</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
+					<iWeightModifier>20</iWeightModifier>
+				</ImprovementWeightModifier>
+			</ImprovementWeightModifiers>
 			<DiplomacyIntroMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
