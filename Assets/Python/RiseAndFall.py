@@ -383,7 +383,7 @@ class RiseAndFall:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
 
 	def prepareColonists(self):
-		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
+		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings, iSweden]:
 			data.players[iPlayer].iExplorationTurn = getTurnForYear(1700)
 
 		data.players[iVikings].iColonistsAlreadyGiven = 1
