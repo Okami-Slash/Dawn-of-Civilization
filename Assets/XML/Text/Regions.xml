@@ -508,6 +508,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
+		<German>China</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
@@ -568,5 +569,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_84</Tag>
 		<English>Lower Nile, North Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_85</Tag>
+		<English>Mediterranean Coast</English>
+		<German>Mittelmeerk&#252;ste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_86</Tag>
+		<English>China</English>
+		<German>China</German>
 	</TEXT>
 </Civ4GameText>

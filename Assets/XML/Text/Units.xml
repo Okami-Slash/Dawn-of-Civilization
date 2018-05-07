@@ -1728,4 +1728,8 @@
 		<Tag>TXT_KEY_UNIT_CONDOTTIERI</Tag>
 		<English>Condottieri</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ</Tag>
+		<English>Oghuz</English>
+	</TEXT>
 </Civ4GameText>

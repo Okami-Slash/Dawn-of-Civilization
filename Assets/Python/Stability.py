@@ -591,10 +591,10 @@ def completeCollapse(iPlayer):
 	data.players[iPlayer].iLastTurnAlive = gc.getGame().getGameTurn()
 	
 	# special case: Byzantine collapse: remove Christians in the Turkish core
-
+	
 	#if iPlayer == iByzantium:
-	#	utils.removeReligionByArea(Areas.getCoreArea(iTurkey), iOrthodoxy)
-
+	#	utils.removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
+	
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == iChina:
 		utils.setReborn(iMongolia, True)
@@ -809,7 +809,7 @@ def calculateStability(iPlayer):
 	iPopulationImprovements = 0
 	for (x, y) in Areas.getCoreArea(iPlayer):
 		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer:
+		if plot.getOwner() == iPlayer and plot.getWorkingCity():
 			if plot.getImprovementType() in [iVillage, iTown]:
 				iPopulationImprovements += 1
 			

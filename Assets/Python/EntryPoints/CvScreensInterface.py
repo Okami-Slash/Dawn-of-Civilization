@@ -1084,7 +1084,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
 			return 43
 			
-	elif iPlayer == iTurkey:
+	elif iPlayer == iOttomans:
 		if (x,y) in vic.lEasternMediterranean:
 			return 47
 			
@@ -1181,7 +1181,7 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iMongolia:
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
-			
+
 	elif iPlayer == iAustralia:
 		if utils.isPlotInArea((x, y), vic.tAustraliaTL, vic.tAustraliaBR):
 			return 70
@@ -1227,6 +1227,15 @@ def getUHVTileInfo(argsList):
 		
 		if (x, y) in Areas.getCoreArea(iBabylonia, False):
 			return 4
+
+	elif iPlayer == iTurks:
+		if (x, y) in vic.lMediterraneanPorts:
+			return 85
+			
+		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
+			return 86
+				
+		# continue with ID 87
 			
 	return -1
 		

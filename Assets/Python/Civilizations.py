@@ -37,8 +37,6 @@ def getStartingTechs(iPlayer):
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
 		if tBirth[iPlayer] > utils.getScenarioStartYear(): continue
-		if iPlayer == iSeljuks: continue
-
 		iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 		if iCivilization in lStartingTechs[iScenario]:
 			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
@@ -85,6 +83,7 @@ iCivPersia :	Techs([iBloomery], column=3, exceptions=[iSeafaring, iShipbuilding]
 iCivCarthage :	Techs(column=3, exceptions=[iRiding, iCalendar]),
 iCivPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
 iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
+
 iCivTamils :	Techs([iGuilds], column=6, exceptions=[iArchitecture]),
 iCivEthiopia :	Techs([iBloomery, iMathematics, iContract, iCurrency], column=3, exceptions=[iWriting, iRiding]),
 iCivVietnam :	Techs([iAlloys, iWriting, iCalendar, iPriesthood, iBloomery], column=2),
@@ -93,6 +92,7 @@ iCivMaya :	Techs(column=2, exceptions=[iSeafaring, iCeremony]),
 iCivByzantium :	Techs([iArchitecture, iPolitics, iEthics, iTheology, iScholarship], column=5),
 iCivJapan :	Techs([iCommune, iEducation, iCropRotation, iCompass], column=7, exceptions = [iTheology]),
 iCivVikings : 	Techs([iNobility, iArtisanry, iPolitics, iArchitecture, iGuilds], column=5, exceptions = [iPhilosophy, iPriesthood, iMedicine]),
+iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedicine, iPhilosophy]),
 iCivArabia :	Techs([iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivTibet :	Techs([iNobility, iScholarship, iEthics], column=5),
 iCivIndonesia :	Techs([iEthics, iNobility, iArchitecture], column=5, exceptions=[]),
@@ -108,14 +108,13 @@ iCivSwahili : 	Techs([iTheology], column=6, exceptions=[iArtisanry, iPolitics]),
 iCivMamluks : 	Techs([iTheology], column=6),
 iCivMali : 	Techs([iTheology], column=6),
 iCivPoland : 	Techs([iFeudalism, iFortification, iCivilService, iTheology], column=6),
-iCivSeljuks :	Techs([iFeudalism, iFortification, iMachinery, iAlchemy, iTheology], column=6),
 iCivPortugal :	Techs([iPatronage], column=7),
 iCivInca : 	Techs([iMathematics, iContract, iLiterature, iPriesthood], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
 iCivMongols :	Techs([iPaper, iCompass], column=7, exceptions=[iTheology]),
 iCivAztecs :	Techs([iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
 iCivItaly : 	Techs([iGuilds], column=6),
 iCivMughals :	Techs([iCommune, iCropRotation, iDoctrine, iGunpowder], column=7),
-iCivTurkey :	Techs([iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder], column=7),
+iCivOttomans :	Techs([iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder], column=7),
 iCivCongo : 	Techs([iMachinery, iCivilService, iTheology], column=6),
 iCivThailand : 	Techs(column=8, exceptions=[iCompass, iDoctrine, iCommune, iPatronage]),
 iCivIran : 	Techs([iHeritage, iFirearms, iAcademia], column=9),
@@ -161,7 +160,7 @@ iCivHolyRome :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, 
 iCivRussia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivPoland :	Techs(column=11, exceptions=[iEconomics, iGeography]),
 iCivPortugal :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
-iCivTurkey :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
+iCivOttomans :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
 iCivMughals :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration, iOptics]),
 iCivThailand :	Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivCongo :	Techs([iCartography, iJudiciary], column=8),

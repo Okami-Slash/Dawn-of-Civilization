@@ -25,6 +25,7 @@
 
 #ifdef _USRDLL
 #define MAX_CIV_PLAYERS												(59) //Rhye, Leoreth: +17 for Byzantium, Korea, Indonesia, Mughals, Thailand, Seljuks, Prussia/HRE, Italy, Tamils, Poland, Moors, Congo, Tibet, Brazil, Argentina, Canada, Polynesia, Harappa
+
 #else
 #define MAX_CIV_PLAYERS												(CvGlobals::getInstance().getMaxCivPlayers())
 #endif

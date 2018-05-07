@@ -2541,6 +2541,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
 		break;
+	case TURKS:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+		break;
 	case ARABIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
@@ -3934,7 +3938,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 				{
-					if (hasBonus((BonusTypes)iI))
+					if (hasBonusEffect((BonusTypes)iI))
 					{
 						int iBonusHappinessChange = kBuilding.getBonusHappinessChanges(iI);
 						iValue += (std::min(iBonusHappinessChange, iAngryPopulation) * 8)
@@ -3993,7 +3997,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 				{
-					if (hasBonus((BonusTypes)iI))
+					if (hasBonusEffect((BonusTypes)iI))
 					{
 						int iBonusHealthChange = kBuilding.getBonusHealthChanges(iI);
 						iValue += (std::min(iBonusHealthChange, iBadHealth) * 12)

@@ -231,6 +231,7 @@ class GameData:
 		self.iTamilTradeGold = 0
 		self.iColombianTradeGold = 0
 		self.iVikingGold = 0
+		self.iTurkicPillages = 0
 		self.iMoorishGold = 0
 		self.iEnglishSinks = 0
 		self.iSwahiliTradeGold = 0
@@ -247,6 +248,9 @@ class GameData:
 		self.lAustralianGiftReceivers = []
 		self.iAustraliaHappinessTurns = 0
 		self.iIsraeliResearchTurns = 0
+		
+		self.tFirstTurkicCapital = None
+		self.tSecondTurkicCapital = None
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0
