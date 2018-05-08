@@ -204,7 +204,7 @@ BeginPlayer
 	LeaderType=LEADER_HONGWU
 	LeaderName=TXT_KEY_LEADER_KANGXI
 	CivType=CIVILIZATION_CHINA
-	PlayableCiv=1
+	PlayableCiv=0
 	StartingGold=300
 	StateReligion=RELIGION_CONFUCIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
