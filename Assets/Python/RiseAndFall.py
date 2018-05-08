@@ -1494,11 +1494,6 @@ class RiseAndFall:
 		if iCiv in [iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
 
-		print "errerr " + str(iCiv)
-		print "errerr " + str(iHuman)
-		print "errerr " + str(len(data.players))
-		print "errerr " + str(len(lNeighbours))
-		print "errerr " + str(len(tBirth))
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			self.newCivPopup(iCiv)
 
