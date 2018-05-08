@@ -54,22 +54,19 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
+				<iYield>1</iYield>
 			</Yields>
-			<Commerces>
-				<iCommerce>1</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-			</Commerces>
-			<CultureLevelCommerceChanges>
-				<CultureLevelCommerceChange>
+			<Commerces/>
+			<CultureLevelYieldChanges>
+				<CultureLevelYieldChange>
 					<CultureLevelType>CULTURELEVEL_INFLUENTIAL</CultureLevelType>
-					<CultureLevelCommerces>
-						<iCommerce>0</iCommerce>
-						<iCommerce>1</iCommerce>
-					</CultureLevelCommerces>
-				</CultureLevelCommerceChange>
-			</CultureLevelCommerceChanges>
+					<CultureLevelYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</CultureLevelYields>
+				</CultureLevelYieldChange>
+			</CultureLevelYieldChanges>
 			<CultureLevelGreatPeopleRateChanges>
 				<CultureLevelGreatPeopleRateChange>
 					<CultureLevelType>CULTURELEVEL_REFINED</CultureLevelType>
@@ -95,10 +92,14 @@
 			<bVisible>1</bVisible>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
-			<Yields/>
+			<Yields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+			</Yields>
 			<Commerces>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>0</iCommerce>
 				<iCommerce>4</iCommerce>
 			</Commerces>
 			<CultureLevelCommerceChanges>
@@ -176,20 +177,26 @@
 			<bVisible>1</bVisible>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
-			<Yields/>
+			<Yields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</Yields>
 			<Commerces>
-				<iCommerce>3</iCommerce>
+				<iCommerce>1</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</Commerces>
-			<CultureLevelCommerceChanges>
-				<CultureLevelCommerceChange>
+			<CultureLevelYieldChanges>
+				<CultureLevelYieldChange>
 					<CultureLevelType>CULTURELEVEL_INFLUENTIAL</CultureLevelType>
-					<CultureLevelCommerces>
-						<iCommerce>1</iCommerce>
-					</CultureLevelCommerces>
-				</CultureLevelCommerceChange>
-			</CultureLevelCommerceChanges>
+					<CultureLevelYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</CultureLevelYields>
+				</CultureLevelYieldChange>
+			</CultureLevelYieldChanges>
 			<CultureLevelGreatPeopleRateChanges>
 				<CultureLevelGreatPeopleRateChange>
 					<CultureLevelType>CULTURELEVEL_REFINED</CultureLevelType>
@@ -304,13 +311,9 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>2</iYield>
-				<iYield>0</iYield>
+				<iYield>2</iYield>
 			</Yields>
-			<Commerces>
-				<iCommerce>5</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-			</Commerces>
+			<Commerces/>
 			<iExperience>0</iExperience>
 			<Flavors/>
 			<HotKey/>
@@ -330,9 +333,13 @@
 			<bVisible>0</bVisible>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
-			<Yields/>
+			<Yields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</Yields>
 			<Commerces>
-				<iCommerce>3</iCommerce>
+				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>12</iCommerce>
 			</Commerces>
@@ -407,10 +414,10 @@
 			<Yields>
 				<iYield>1</iYield>
 				<iYield>0</iYield>
-				<iYield>0</iYield>
+				<iYield>3</iYield>
 			</Yields>
 			<Commerces>
-				<iCommerce>6</iCommerce>
+				<iCommerce>4</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 			</Commerces>
