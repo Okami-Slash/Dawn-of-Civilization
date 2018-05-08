@@ -1647,6 +1647,34 @@ int CvCity::countNumWaterPlots() const
 	return iCount;
 }
 
+
+int CvCity::countNumLandPlots() const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+
+	iCount = 0;
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+
+		if (pLoopPlot != NULL)
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (!pLoopPlot->isImpassable() && !pLoopPlot->isWater())
+				{
+					iCount++;
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
+
 int CvCity::countNumRiverPlots() const
 {
 	int iCount = 0;

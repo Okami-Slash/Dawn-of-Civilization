@@ -58,6 +58,7 @@ public:
 	void clearWorkingOverride(int iIndex);														// Exposed to Python
 	int countNumImprovedPlots(ImprovementTypes eImprovement = NO_IMPROVEMENT, bool bPotential = false) const;																			// Exposed to Python
 	int countNumWaterPlots() const;																					// Exposed to Python
+	int countNumLandPlots() const;
 	int countNumRiverPlots() const;																					// Exposed to Python
 
 	int findPopulationRank() const;																					// Exposed to Python

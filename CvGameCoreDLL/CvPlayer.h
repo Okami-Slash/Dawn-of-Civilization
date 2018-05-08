@@ -939,6 +939,10 @@ public:
 	int getLandYield(YieldTypes eIndex) const;
 	void changeLandYield(YieldTypes eIndex, int iChange);
 
+	// 1SDAN
+	int getWaterYield(YieldTypes eIndex) const;
+	void changeWaterYield(YieldTypes eIndex, int iChange);
+
 	// Leoreth
 	void updateHappinessExtraYield();
 
@@ -1521,6 +1525,7 @@ protected:
 	int* m_aiUnhappinessExtraYield; // Leoreth
 	int* m_aiUnimprovedTileYield; // Leoreth
 	int* m_aiLandYield; // 1SDAN
+	int* m_aiWaterYield; // 1SDAN
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;

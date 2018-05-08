@@ -230,6 +230,10 @@
 		<English>[SPACE] on Land</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FOR_WATER_TILES</Tag>
+		<English>[SPACE] on Water</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_UNHEALTHY]</English>
 	</TEXT>

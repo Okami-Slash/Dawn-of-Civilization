@@ -5769,6 +5769,7 @@ m_piHappinessExtraYield(NULL), // Leoreth
 m_piUnhappinessExtraYield(NULL), // Leoreth
 m_piUnimprovedTileYield(NULL), // Leoreth
 m_piLandYield(NULL), // 1SDAN
+m_piWaterYield(NULL), // 1SDAN
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiBuildingProductionModifiers(NULL), //Leoreth
@@ -5804,6 +5805,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_piUnimprovedTileYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_piLandYield); // 1SDAN
+	SAFE_DELETE_ARRAY(m_piWaterYield); // 1SDAN
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); //Leoreth
@@ -6298,6 +6300,20 @@ int* CvCivicInfo::getLandYieldArray() const
 	return m_piLandYield;
 }
 
+// 1SDAN
+int CvCivicInfo::getWaterYield(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piWaterYield ? m_piWaterYield[i] : -1;
+}
+
+// 1SDAN
+int* CvCivicInfo::getWaterYieldArray() const
+{
+	return m_piWaterYield;
+}
+
 int CvCivicInfo::getBuildingHappinessChanges(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -6494,6 +6510,11 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_piLandYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piLandYield);
 
+	// 1SDAN
+	SAFE_DELETE_ARRAY(m_piWaterYield);
+	m_piWaterYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piWaterYield);
+
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	m_paiBuildingHappinessChanges = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
@@ -6635,6 +6656,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piUnhappinessExtraYield); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piUnimprovedTileYield); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piLandYield); // 1SDAN
+	stream->Write(NUM_YIELD_TYPES, m_piWaterYield); // 1SDAN
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); //Leoreth
@@ -6848,6 +6870,17 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piLandYield, NUM_YIELD_TYPES);
+	}
+
+	// 1SDAN
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "WaterYields"))
+	{
+		pXML->SetYields(&m_piWaterYield);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piWaterYield, NUM_YIELD_TYPES);
 	}
 
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", sizeof(GC.getHurryInfo((HurryTypes)0)), GC.getNumHurryInfos());
