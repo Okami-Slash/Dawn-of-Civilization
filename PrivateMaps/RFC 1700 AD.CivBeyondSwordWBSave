@@ -45158,7 +45158,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,41,56,57,
 EndPlot
@@ -46425,7 +46425,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,56,57,
 EndPlot
@@ -46945,7 +46945,7 @@ BeginPlot
 		BuildingType=BUILDING_TERRACOTTA_ARMY
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		player47culture=300, (China)
+		Player47Culture=300, (China)
 	EndCity
 	TeamReveal=47,56,57,
 EndPlot
@@ -47925,7 +47925,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,56,57,
 EndPlot
@@ -48057,7 +48057,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		player47culture=150, (China)
+		Player47Culture=150, (China)
 	EndCity
 	TeamReveal=47,57,
 EndPlot
@@ -48492,7 +48492,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,57,
 EndPlot
@@ -49429,7 +49429,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,25,36,56,57,
 EndPlot
@@ -49523,7 +49523,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		player47culture=80, (China)
+		Player47Culture=80, (China)
 	EndCity
 	TeamReveal=47,15,56,57,
 EndPlot
@@ -49947,7 +49947,7 @@ BeginPlot
 		BuildingType=BUILDING_PORCELAIN_TOWER
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,15,18,56,57,
 EndPlot
@@ -50368,7 +50368,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		player47culture=100, (China)
+		Player47Culture=100, (China)
 	EndCity
 	TeamReveal=47,15,18,56,57,
 EndPlot
@@ -50464,7 +50464,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		player47culture=50, (China)
+		Player47Culture=50, (China)
 	EndCity
 	TeamReveal=47,15,56,
 EndPlot
