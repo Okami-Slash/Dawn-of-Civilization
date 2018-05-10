@@ -4070,7 +4070,7 @@ iCivMaya : {
 		"Uaxaclajuun", # 8th
 		"Chakalte'", # 8th
 		"Jun Nat Omootz", # 8th
-		"Asan Winik Tu’ub", # 8th
+		"Asan Winik Tu'ub", # 8th
 		"Chan Ch'ok Wayib Xok", # 8th
 		"Waj Tan Chak", # 8th
 		iGlobal,
