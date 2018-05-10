@@ -2425,7 +2425,7 @@
 			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Central_Park/Central_Park.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/HangingGardens.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,8</Button>
+			<Button>Art/Interface/Buttons/Buildings/kibbutz.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PHARMACY</Type>

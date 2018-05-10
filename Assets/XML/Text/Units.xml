@@ -1665,6 +1665,10 @@
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
 		<Spanish>No Translation</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ</Tag>
+		<English>Oghuz</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA</Tag>

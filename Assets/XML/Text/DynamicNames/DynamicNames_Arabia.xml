@@ -342,6 +342,11 @@
 		<English>Emirate of Delhi</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_ISRAEL</Tag>
+		<English>Jund Filastin</English>
+		<French>Jund Filastin</French>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_ADJECTIVE</Tag>
 		<English>Arabian</English>
 		<French>

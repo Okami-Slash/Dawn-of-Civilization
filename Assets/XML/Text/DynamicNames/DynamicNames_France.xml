@@ -34,7 +34,7 @@
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Fränkische V&#246;lker:Fränkischen V&#246;lker:Fränkischen V&#246;lkern</Text>
+			<Text>Frï¿½nkische V&#246;lker:Frï¿½nkischen V&#246;lker:Frï¿½nkischen V&#246;lkern</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>1:1:1</Plural>
 		</German>
@@ -139,7 +139,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
-		<English>Québec</English>
+		<English>Quï¿½bec</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_BABYLONIA</Tag>
@@ -147,11 +147,20 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF</Tag>
-		<English>Départements of %s1</English>
+		<English>Dï¿½partements of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_PHOENICIA</Tag>
 		<English>French Mandate of Lebanon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ISRAEL</Tag>
+		<English>French Mandatory Palestine</English>
+		<French>
+			<Text>Palestine mandataire fran&#231;aise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>

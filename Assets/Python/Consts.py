@@ -196,6 +196,7 @@ lNeighbours = [
 [iSpain, iPortugal, iInca, iBrazil], #Argentina
 [iSpain, iPortugal, iInca, iArgentina], #Brazil
 [iAmerica], #Canada
+[iEgypt, iArabia, iOttomans], #Israel
 ]
 
 #for stability hit on spawn
