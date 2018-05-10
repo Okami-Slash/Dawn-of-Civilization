@@ -281,7 +281,7 @@ tBirth = (
 -200, 					# Teotihuacan
 -257,					# Vietnam
 -37,					# Korea
-65, # 145, #60AD			# Maya
+-750, # 145, #60AD			# Maya
 310,					# Byzantium
 1160, # 97, #660BC			# Japan
 740, # 177, #551AD			# Vikings
