@@ -477,6 +477,7 @@ dEmpireThreshold = {
 	iBabylonia : 2,
 	iCarthage : 4,
 	iIndonesia : 4,
+	iTeotihuacan : 3,
 	iKorea : 4,
 	iRussia : 8,
 	iHolyRome : 3,
@@ -524,6 +525,7 @@ dAdjectiveChanges = {
 dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu", "Akkad"],
+	iTeotihuacan : ["Tollan"],
 	iPhoenicia : ['Sur', 'Sydwn', 'Carthage'],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Oslo", "Nidaros", "Roskilde", "Stockholm", "Kalmar"],
@@ -559,9 +561,9 @@ dStartingLeaders = [
 	iJapan : iOdaNobunaga,
 	iTamils : iRajendra,
 	iEthiopia : iZaraYaqob,
+	iTeotihuacan : iAtlatlCauac,
 	iVietnam : iTrung,
 	iKorea : iWangKon,
-	iMaya : iPacal,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
 	iTurks : iBumin,
@@ -1208,7 +1210,6 @@ def specificName(iPlayer):
 		if capital.getY() > 46:
 			if iEra == iClassical:
 				return "TXT_KEY_CIV_KOREA_GOGURYEO"
-
 					
 			if iEra <= iMedieval:
 				return "TXT_KEY_CIV_KOREA_GORYEO"
@@ -1218,6 +1219,13 @@ def specificName(iPlayer):
 					
 			if iEra <= iMedieval:
 				return "TXT_KEY_CIV_KOREA_JOSEON"
+
+	elif iPlayer == iTeotihuacan:
+		if not isCapital(iPlayer, ["Tollan"]):
+				return capitalName(iPlayer)
+				
+		if iGameTurn >= getTurnForYear(800):
+			return "TXT_KEY_CIV_TEOTIHUACAN_TULA"
 
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
@@ -1574,9 +1582,12 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iEthiopia:
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_ETHIOPIA_ADAL"
-
 		elif iEra < iMedieval:
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
+
+	elif iPlayer == iTeotihuacan:
+		if iGameTurn >= getTurnForYear(800):
+			return "TXT_KEY_CIV_TEOTIHUACAN_TOLTEC"
 
 	elif iPlayer == iByzantium:
 		if pRome.getNumCities() > 0:
@@ -2168,6 +2179,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 
 	elif iPlayer == iVietnam:
 		pass
+
+	elif iPlayer == iTeotihuacan:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if bCityStates:
+			return "TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL"
 
 	elif iPlayer == iKorea:
 		if iEra >= iIndustrial:

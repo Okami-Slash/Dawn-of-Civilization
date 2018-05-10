@@ -3317,6 +3317,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ETHIOPIA:
 										break;
+									case TEOTIHUACAN:
+										if (iI == PYRAMID_OF_THE_SUN) iTempValue *= 4;
+										break;
 									case VIETNAM:
 										break;
                                     case KOREA:

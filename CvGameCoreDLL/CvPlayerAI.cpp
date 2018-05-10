@@ -5122,6 +5122,12 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == THEOLOGY)
 										iValue *= 2;*/
 									break;
+								case TEOTIHUACAN:
+									if (iI == MASONRY)
+										iValue *= 4;
+									if (iI == SMELTING)
+										iValue *= 3;
+									break;
 								case VIETNAM:
 									if (iI == CURRENCY || iI == COMMUNE || iI == HERITAGE)
 										iValue *= 2;

@@ -64,12 +64,15 @@ class UniquePowers:
 
 		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
-
+		
 		if iGameTurn >= getTurnForYear(tBirth[iSwahili]) and pSwahili.isAlive():
 			self.swahiliDhow()
 
 		if iGameTurn >= getTurnForYear(tBirth[iPhilippines]) and pPhilippines.isAlive():
 			utils.doPhilippineEmbassy()
+		
+		if iGameTurn >= getTurnForYear(tBirth[iTeotihuacan]) and pTeotihuacan.isAlive():
+			self.teotihuacanArtisan()
 		
 		data.bBabyloniaTechReceived = False
 
@@ -684,3 +687,21 @@ class UniquePowers:
 				data.iSwahiliTradeGold += iGold * 1.0
 				if utils.getHumanID() == iSwahili:
 					CyInterface().addMessage(iSwahili, False, iDuration, CyTranslator().getText("TXT_KEY_SWAHILI_DHOW_GOLD", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+
+	# Teotihuacan artisan: 2 culture per Toltec Artisan stationed in a city
+	def teotihuacanArtisan(self):
+		unitList = PyPlayer(iTeotihuacan).getUnitsOfType(iArtisan)
+		if unitList:
+			totalCulture = 0
+			for unit in unitList:
+				x = unit.getX()
+				y = unit.getY()
+				plot = gc.getMap().plot(x, y)
+				if plot.isCity():
+					city = plot.getPlotCity()
+					if city.getOwner() == iTeotihuacan:
+						city.changeCulture(iTeotihuacan, 2, True)
+						totalCulture += 2
+			if utils.getHumanID() == iTeotihuacan and totalCulture > 0:
+					data.iTeotlSacrifices += totalCulture # for pagan victory
+					CyInterface().addMessage(iTeotihuacan, False, iDuration, CyTranslator().getText("TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE", (totalCulture,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		

@@ -1248,6 +1248,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	TAMERLANE,
 	KANGXI,
 	CIXI,
+	ATLATL_CAUAC,
 	NUM_LEADERHEADS
 
 };
@@ -1335,11 +1336,12 @@ enum PlayerTypes				// Exposed to Python
 	POLYNESIA,
 	PERSIA,
 	ROME,
+	MAYA,
 	TAMILS,
 	ETHIOPIA,
+	TEOTIHUACAN,
 	VIETNAM,
 	KOREA,
-	MAYA,
 	BYZANTIUM,
 	JAPAN,
 	VIKINGS,

@@ -23,6 +23,7 @@ def getAlias(iCiv, iType):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivIran: return iCivPersia
+	elif iCiv == iCivTeotihuacan: return iCivMaya
 	elif iCiv == iCivThailand: return iCivKhmer
 	elif iCiv == iCivManchuria: return iCivChina
 	return iCiv

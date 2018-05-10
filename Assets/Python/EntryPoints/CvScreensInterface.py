@@ -1238,9 +1238,13 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iManchuria:
 		if gc.getMap().plot(x, y).getSettlerValue(iManchuria) >= 90:
 			return 87
-				
-	# continue with ID 88
-			
+
+	elif iPlayer == iTeotihuacan:
+		if utils.isPlotInArea((x, y), vic.tMesoamericaTL, vic.tMesoamericaBR):
+			return 88
+	
+	# continue with ID 89
+	
 	return -1
 		
 def getCityName(argsList):

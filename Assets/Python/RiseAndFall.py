@@ -2006,6 +2006,9 @@ class RiseAndFall:
 					if iNewWorldCiv == iMaya:
 						tContactZoneTL = (15, 30)
 						tContactZoneBR = (34, 42)
+					elif iNewWorldCiv == iTeotihuacan:
+						tContactZoneTL = (11, 31)
+						tContactZoneBR = (34, 43)
 					elif iNewWorldCiv == iAztecs:
 						tContactZoneTL = (11, 31)
 						tContactZoneBR = (34, 43)
@@ -2086,7 +2089,7 @@ class RiseAndFall:
 
 						if iNewWorldCiv == iInca:
 							utils.makeUnitAI(iAucac, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-						elif iNewWorldCiv == iAztecs:
+						elif iNewWorldCiv == iAztecs or iNewWorldCiv == iTeotihuacan:
 							utils.makeUnitAI(iJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 							utils.makeUnitAI(iHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 						elif iNewWorldCiv == iMaya:
@@ -2671,6 +2674,9 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
+		elif iCiv == iTeotihuacan:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 		elif iCiv == iVietnam:
 			utils.createSettlers(iCiv, 2)
 			utils.createMissionaries(iCiv, 1)
@@ -2691,7 +2697,7 @@ class RiseAndFall:
 				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 		elif iCiv == iMaya:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iLegion, iCiv, tPlot, 4)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
@@ -3169,12 +3175,14 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iTeotihuacan:
+			utils.makeUnit(iArtisan, iCiv, tPlot, 2)
 		elif iCiv == iVietnam:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		#elif iCiv == iKorea:
 		#	utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 			#utils.makeUnit(iSettler, iCiv, tPlot, 1)

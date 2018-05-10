@@ -390,5 +390,9 @@
 			<Type>ART_DEF_MOVIE_LIBRARY_OF_ASHURBANIPAL</Type>
 			<Path>Art/Movies/Wonders/Library of Ashurbanipal.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PYRAMID_OF_THE_SUN</Type>
+			<Path>Art/Movies/Wonders/PyramidOfTheSun.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

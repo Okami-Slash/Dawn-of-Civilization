@@ -1933,4 +1933,9 @@
 		<English></English>
 		<German></German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE</Tag>
+		<English>Our artisans have created a total of %d1 [ICON_CULTURE] in our cities!</English>
+		<French>Nos artisans ont cr&#233;&#233; un total de %d1 [ICON_CULTURE] dans nos villes!</French>
+	</TEXT>
 </Civ4GameText>

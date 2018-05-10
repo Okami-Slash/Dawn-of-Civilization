@@ -2038,6 +2038,51 @@
 		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 12000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
+		<English>Mesoamerican Metropolis</English>
+		<French>M&#233;tropole m&#233;soam&#233;ricaine</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1</Tag>
+		<English>Have more than 500 culture in 550 AD</English>
+		<French>Avoir plus de 500 culture en 550 ap. J.-C.</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_EPIC</Tag>
+		<English>Have more than 750 culture in 550 AD</English>
+		<French>Avoir plus de 750 culture en 550 ap. J.-C.</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_MARATHON</Tag>
+		<English>Have more than 1500 culture in 550 AD</English>
+		<French>Avoir plus de 1500 culture en 550 ap. J.-C.</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
+		<English>Birthplace of the Gods</English>
+		<French>L&#224; o&#249; naquirent les dieux</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO2</Tag>
+		<English>Experience a golden age by 550 AD</English>
+		<French>Traverser un âge d'or avant 550 ap. J.-C.</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>
+		<English>The Toltec Empire</English>
+		<French>L'Empire tolt&#232;que</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO3</Tag>
+		<English>Control all tiles in Mesoamerica in 1000 AD</English>
+		<French>Contr&#244;ler toute la M&#233;soam&#233;rique en 1000 ap. J.-C.</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN</Tag>
+		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
+		<French>Pourcentage de la M&#233;soam&#233;rique : %s1 / %s2%%</French>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
 		<English>The King and I</English>
 		<German>Der K&#246;nig und ich</German>
@@ -2454,6 +2499,11 @@
 		<German>Erhalten Sie 50 Nahrung durch Kämpfe</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TEOTL_TEOTIHUACAN</Tag>
+		<English>Produce 200 culture with artisans</English>
+		<French>Produire 200 culture par les artisans</French>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
 		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
 		<German>Haben Sie 100 Runden von Städten, die den "Wir leben den König"-Tag feiern</German>
@@ -2789,6 +2839,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FOOD_FROM_COMBAT</Tag>
 		<English>Food acquired from combat: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS</Tag>
+		<English>Culture produced with artisans: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>

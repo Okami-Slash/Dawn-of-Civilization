@@ -76,6 +76,10 @@ tSomaliaBR = (77, 29)
 tSubeqAfricaTL = (60, 10)
 tSubeqAfricaBR = (72, 29)
 
+# third Teotihuacan goal: control 100% of Mesoamerica and three world wonders in 1000 AD 
+tMesoamericaTL = (15, 32)
+tMesoamericaBR = (23, 40)
+
 # third Byzantine goal: control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
 tNearEastTL = (69, 37)
 tNearEastBR = (76, 45)
@@ -723,7 +727,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if isPossible(iVietnam, 0):
 			if pVietnam.countTotalCulture() >= utils.getTurns(8000):
 				win(iVietnam, 0)
-				
+
 		if iGameTurn == getTurnForYear(1200):
 			expire(iVietnam, 0)
 			
@@ -737,6 +741,35 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iVietnam, 2)
 			else:
 				lose(iVietnam, 2)
+
+	elif iPlayer == iTeotihuacan:
+		
+		# first goal: have 500 culture in 550
+		if iGameTurn == getTurnForYear(550):
+			if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
+				win(iTeotihuacan, 0)
+			else:
+				lose(iTeotihuacan, 0)
+			
+		# second goal: experience a golden age by 550 AD
+		if isPossible(iTeotihuacan, 1):
+			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(8):
+				win(iTeotihuacan, 1)
+				
+			if pTeotihuacan.isGoldenAge() and not pTeotihuacan.isAnarchy():
+				data.iTeotihuacanGoldenAgeTurns += 1
+				
+		if iGameTurn == getTurnForYear(550):
+			expire(iTeotihuacan, 1)
+		
+		# third goal: control all tiles in Mesoamerica in 1000 AD
+		if iGameTurn == getTurnForYear(1000):
+			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+			if percentMesoamerica >= 99.5:
+				win(iTeotihuacan, 2)
+			else: 
+				lose(iTeotihuacan, 2)
 
 	elif iPlayer == iKorea:
 	
@@ -2789,7 +2822,10 @@ def checkReligiousGoal(iPlayer, iGoal):
 
 			# Teotl: sacrifice ten slaves
 			elif paganReligion == "Teotl":
-				if data.iTeotlSacrifices >= 10:
+				if iPlayer == iTeotihuacan:
+					if data.iTeotlSacrifices >= 200:
+						return 1
+				elif data.iTeotlSacrifices >= 10:
 					return 1
 
 			# Vedism: have 100 turns of cities celebrating "We Love the King" day
@@ -3900,6 +3936,8 @@ def getPaganGoalHelp(iPlayer):
 		iCount = data.iTeotlSacrifices
 		if iPlayer == iMaya:
 			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
+		if iPlayer == iTeotihuacan:
+			return getIcon(iCount >= 200) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 200))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 
 	elif paganReligion == "Vedism":
@@ -4170,6 +4208,15 @@ def getUHVHelp(iPlayer, iGoal):
 			bSouthAsia = isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs)
 			aHelp.append(getIcon(bSouthAsia) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES", ()))
 
+	elif iPlayer == iTeotihuacan:
+		if iGoal == 0:
+			iCulture = pTeotihuacan.countTotalCulture()
+			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+		elif iGoal == 2: 
+			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))))
+	
 	elif iPlayer == iKorea:
 		if iGoal == 1:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)
