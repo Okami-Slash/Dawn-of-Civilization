@@ -223,6 +223,7 @@ class GameData:
 		self.lReligionFounder = [-1] * iNumReligions
 		self.lFirstDiscovered = [-1] * iNumTechs
 		self.lFirstEntered = [-1] * iNumEras
+		self.lFirstCompleted = [-1] * iNumEras
 		self.lFirstGreatPeople = [-1] * len(lGreatPeopleUnits)
 		self.iFirstNewWorldColony = -1
 		
