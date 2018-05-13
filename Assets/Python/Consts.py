@@ -578,7 +578,7 @@ tResurrectionIntervals = (
 [(1770, 2020)], #America
 [(1810, 2020)], #Argentina
 [(1820, 2020)], #Brazil
-[(1788, 2020)], #Australia
+[(1850, 2020)], #Australia
 [(1852, 2020)], #Boers
 [(1867, 2020)], #Canada
 [(1948, 2020)], #Israel
