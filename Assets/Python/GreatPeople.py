@@ -102,6 +102,7 @@ def setup():
 	for iCiv in dGreatPeople.keys():
 		for iType in dGreatPeople[iCiv].keys():
 			iOffsets = 0
+			
 			for i, entry in enumerate(dGreatPeople[iCiv][iType]):
 				if entry in range(iNumEras): 
 					lOffsets[iCiv][lTypes.index(iType)][entry] = i - iOffsets

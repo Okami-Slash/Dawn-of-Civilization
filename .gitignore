@@ -18,8 +18,12 @@ Assets/CvGameCoreDLL.dll
 Assets/CvGameCoreDLL.dll
 *.dll
 Assets/CvGameCoreDLL.dll
+<<<<<<< HEAD
 =======
 *.suo
 Assets/CvGameCoreDLL.dll
 Assets/CvGameCoreDLL.dll
 >>>>>>> remotes/Isra/teotihuacan
+=======
+Assets/CvGameCoreDLL.dll
+>>>>>>> remotes/Isra/israel
