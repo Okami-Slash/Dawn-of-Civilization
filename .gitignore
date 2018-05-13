@@ -10,6 +10,7 @@ Profile/
 UpgradeLog.XML
 *.opensdf
 *.sdf
+<<<<<<< HEAD
 *.suo
 Assets/CvGameCoreDLL.dll
 Assets/CvGameCoreDLL.dll
@@ -17,3 +18,8 @@ Assets/CvGameCoreDLL.dll
 Assets/CvGameCoreDLL.dll
 *.dll
 Assets/CvGameCoreDLL.dll
+=======
+*.suo
+Assets/CvGameCoreDLL.dll
+Assets/CvGameCoreDLL.dll
+>>>>>>> remotes/Isra/teotihuacan
