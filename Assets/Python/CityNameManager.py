@@ -7639,4 +7639,7 @@ tRenames = (
 {
 	"Hanoi"			:	"Co Loa"
 },
+#Language: Philippine
+{
+},
 )

@@ -3425,10 +3425,10 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case MAMLUKS:
 										if (iI == LA_MEZQUITA || iI == TOPKAPI_PALACE || iI == UNIVERSITY_OF_SANKORE || iI == SPIRAL_MINARET || iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE || iI == DOME_OF_THE_ROCK) iTempValue /= 2;
+									case PHILIPPINES:
+										break;
 									case MALI:
 										if (iI == UNIVERSITY_OF_SANKORE)	iTempValue *= 4;
-										break;
-									case PHILIPPINES:
 										break;
 									case TURKEY:
 										if (iI == HAGIA_SOPHIA) iTempValue *= 2;
