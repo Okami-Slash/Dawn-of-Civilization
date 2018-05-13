@@ -6797,31 +6797,10 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	CvPlot* pAdjacentPlot;
 	int iBestYield;
 	int iYield;
+	int tempYield;
 	int iI;
 
 	iYield = GC.getImprovementInfo(eImprovement).getYieldChange(eYield);
-
-	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-	{
-		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-		eAdjBon = pAdjacentPlot->getBonusType();
-		eAdjImp = pAdjacentPlot->getImprovementType();
-		bAdjMou = pAdjacentPlot->isPeak();
-		bAdjCit = pAdjacentPlot->isCity();
-
-		if ((pAdjacentPlot != NULL) && pAdjacentPlot->isRevealed(GET_PLAYER(ePlayer).getTeam(), false))
-		{
-			if (eAdjBon != NO_BONUS && eAdjImp != NO_IMPROVEMENT)
-				if (GC.getImprovementInfo(eAdjImp).isImprovementBonusMakesValid(eAdjBon))
-					iYield += GC.getImprovementInfo(eImprovement).getAdjacentBonusedImprovementYieldChanges(eAdjImp, eYield);
-
-			if (bAdjCit)
-				iYield += GC.getImprovementInfo(eImprovement).getAdjacentCityYieldChange(eYield);
-
-			if (bAdjMou)
-				iYield += GC.getImprovementInfo(eImprovement).getAdjacentMountainYieldChange(eYield);
-		}
-	}
 
 	if (isRiverSide())
 	{
@@ -6831,6 +6810,34 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	if (isHills())
 	{
 		iYield += GC.getImprovementInfo(eImprovement).getHillsYieldChange(eYield);
+	}
+
+	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+		if ((pAdjacentPlot != NULL))
+		{
+			eAdjBon = pAdjacentPlot->getBonusType();
+			eAdjImp = pAdjacentPlot->getImprovementType();
+			bAdjMou = pAdjacentPlot->isPeak();
+			bAdjCit = pAdjacentPlot->isCity();
+
+			if (eAdjBon != NO_BONUS && eAdjImp != NO_IMPROVEMENT)
+			{
+				tempYield = GC.getImprovementInfo(eImprovement).getAdjacentBonusedImprovementYieldChanges(eAdjImp, eYield);
+				if (GC.getImprovementInfo(eAdjImp).isImprovementBonusMakesValid(eAdjBon) && tempYield != 0)
+					iYield += tempYield;
+			}
+			
+			tempYield = GC.getImprovementInfo(eImprovement).getAdjacentCityYieldChange(eYield);
+			if (bAdjCit && tempYield != 0)
+				iYield += tempYield;
+
+			tempYield = GC.getImprovementInfo(eImprovement).getAdjacentMountainYieldChange(eYield);
+			if (bAdjMou && tempYield != 0)
+				iYield += tempYield;
+		}
 	}
 
 	if ((bOptimal) ? true : isIrrigationAvailable())
@@ -6873,8 +6880,8 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	{
 		iYield += GET_PLAYER(ePlayer).getImprovementYieldChange(eImprovement, eYield);
 		iYield += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getImprovementYieldChange(eImprovement, eYield);
-		if (!isWater() && !isImpassable()) iYield -= GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield) + GET_PLAYER(ePlayer).getLandYield(eYield);
-		if (isWater() && !isImpassable()) iYield -= GET_PLAYER(ePlayer).getLandYield(eYield);
+		if (!isWater() && !isImpassable() && !isPeak()) iYield -= GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield) + GET_PLAYER(ePlayer).getLandYield(eYield);
+		if (isWater() && !isImpassable() && !isPeak()) iYield -= GET_PLAYER(ePlayer).getLandYield(eYield);
 	}
 
 	if (ePlayer != NO_PLAYER)

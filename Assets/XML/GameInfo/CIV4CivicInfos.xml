@@ -69,6 +69,8 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<SpecialistExtraYields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
 				<iYield>1</iYield>
 			</SpecialistExtraYields>
 			<LandYields>
@@ -568,6 +570,7 @@
 				<iYield>0</iYield>
 				<iYield>-25</iYield>
 			</TradeYieldModifiers>
+			<iCapitalTradeModifier>50</iCapitalTradeModifier>
 			<CapitalYieldModifiers>
 				<iYield>25</iYield>
 			</CapitalYieldModifiers>

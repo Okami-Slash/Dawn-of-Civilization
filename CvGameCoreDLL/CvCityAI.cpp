@@ -610,7 +610,7 @@ void CvCityAI::AI_chooseProduction()
 	bool bPrimaryArea;
 	bool bFinancialTrouble;
 	bool bDanger;
-	bool bChooseUnit;
+	bool bChooseUnit = false;
 	int iProductionRank;
 	int iCulturePressure;
 
