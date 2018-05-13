@@ -101,12 +101,9 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 def setup():
 	for iCiv in dGreatPeople.keys():
 		for iType in dGreatPeople[iCiv].keys():
-			lEntries = dGreatPeople[iCiv][iType]
 			iOffsets = 0
-
-			for i in range(len(lEntries)):
-				entry = lEntries[i]
-				if entry in range(iNumEras):
+			for i, entry in enumerate(dGreatPeople[iCiv][iType]):
+				if entry in range(iNumEras): 
 					lOffsets[iCiv][lTypes.index(iType)][entry] = i - iOffsets
 					iOffsets += 1
 				else:
