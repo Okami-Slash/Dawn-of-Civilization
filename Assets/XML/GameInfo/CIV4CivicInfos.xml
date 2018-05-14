@@ -55,6 +55,11 @@
 			<Button>,Art/Interface/Buttons/Civics/Monarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<SpecialistExtraCommerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</SpecialistExtraCommerces>
 			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
@@ -111,11 +116,11 @@
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<UnimprovedTileYields>
+			<LandYields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-			</UnimprovedTileYields>
+			</LandYields>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
@@ -137,7 +142,7 @@
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
+					<iProductionModifier>1000</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
@@ -809,6 +814,9 @@
 			<Button>,Art/Interface/Buttons/Civics/Priesthood.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<SpecialistExtraCommerces>
+				<iCommerce>2</iCommerce>
+			</SpecialistExtraCommerces>
 			<bStateReligion>1</bStateReligion>
 			<iStateReligionBuildingProductionModifier>25</iStateReligionBuildingProductionModifier>
 		</CivicInfo>
@@ -956,6 +964,29 @@
 			<Button>,Art/Interface/Buttons/Civics/Isolationism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 			<iFreeSpecialist>1</iFreeSpecialist>
 			<bNoForeignTrade>1</bNoForeignTrade>
 		</CivicInfo>
