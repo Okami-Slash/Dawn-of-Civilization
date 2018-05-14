@@ -232,6 +232,7 @@ class GameData:
 		self.iKoreanSinks = 0
 		self.iTamilTradeGold = 0.0
 		self.iColombianTradeGold = 0
+		self.iNigeriaTradeGold = 0
 		self.iVikingGold = 0
 		self.iTurkicPillages = 0
 		self.iMoorishGold = 0

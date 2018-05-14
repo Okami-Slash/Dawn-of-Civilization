@@ -2517,6 +2517,8 @@ class RiseAndFall:
 			utils.makeUnit(iArcher, iCiv, tPlot, 3)
 		elif iCiv == iItaly:
 			utils.makeUnit(iLancer, iCiv, tPlot, 2)
+		elif iCiv == iNigeria:
+			utils.makeUnit(iYanLifida, iCiv, tPlot, 4)
 		elif iCiv == iMongolia:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
@@ -2939,6 +2941,10 @@ class RiseAndFall:
 				utils.makeUnit(iCog, iCiv, tSeaPlot, 1)
 				if utils.getHumanID() != iCiv:
 					utils.makeUnit(iHeavyGalley, iCiv, tSeaPlot, 1)
+		elif iCiv == iNigeria:
+			utils.createSettlers(iCiv, 2)
+			utils.makeUnit(iArcher, iCiv, tPlot, 3)
+			utils.makeUnit(iYanLifida, iCiv, tPlot, 3)
 		elif iCiv == iMongolia:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
@@ -3236,6 +3242,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 		elif iCiv == iItaly:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
+		elif iCiv == iNigeria:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iMongolia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 4)
 		elif iCiv == iAztecs:

@@ -2837,5 +2837,15 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/nizamiyya.dds,Art/Interface/Buttons/mem_buildings_atlas.dds,3,4</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NIGERIA_IYA</Type>
+			<LSystem>LSYSTEM_IYA</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Iya/Celtic_Dun_Civilopedia.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Iya/Button_Iya.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

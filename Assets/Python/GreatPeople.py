@@ -2812,6 +2812,8 @@ iCivItaly : {
 		"Rodolfo Siviero", # 20th
 	],
 },
+iCivNigeria : {
+},
 iCivMongols : {
 	iGreatProphet : [
 		"Abaqa", # 13th

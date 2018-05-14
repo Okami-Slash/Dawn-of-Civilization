@@ -86,8 +86,8 @@ tPool3 = (iEgypt,
 	iVietnam,
 	iPhilippines,
 	iMamluks,
-	iManchuria)
-
+	iManchuria,
+	iNigeria)
 
 class Communications:
 

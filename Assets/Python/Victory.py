@@ -8,11 +8,14 @@ import heapq
 import Areas
 import DynamicCivs as dc
 import CityNameManager as cnm
+import PyHelpers
 
 ### GLOBALS ###
 
 gc = CyGlobalContext()
 localText = CyTranslator()
+
+PyPlayer = PyHelpers.PyPlayer
 
 ### CONSTANTS ###
 
@@ -1456,6 +1459,38 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		#if iGameTurn == getTurnForYear(1945):
 		#	expire(iItaly, 2)
+			
+	elif iPlayer == iNigeria:
+		# first goal: Have the largest army of Africa in 1600 AD
+		if iGameTurn == getTurnForYear(1600):
+			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapitalCity().getRegionID() in lAfrica]
+			if isBestPlayer(iNigeria, playerArmySize, lAfricaCivs):
+				win(iNigeria, 0)
+			else:
+				lose(iNigeria, 0)
+		
+		# second goal: Acquire 2000 gold by selling resources by 1750 AD
+		if isPossible(iNigeria, 1):
+			iTradeGold = 0
+			
+			for iLoopPlayer in range(iNumPlayers):
+				iTradeGold += pNigeria.getGoldPerTurnByPlayer(iLoopPlayer)
+			
+			data.iNigeriaTradeGold += iTradeGold
+			
+			if data.iNigeriaTradeGold >= utils.getTurns(2000):
+				win(iNigeria, 1)
+				
+		if iGameTurn == getTurnForYear(1750):
+			expire(iNigeria, 1)
+		
+		# third goal: Control a Hit Movie and have Oil Company by 1950 AD
+		if isPossible(iNigeria, 2):
+			if pNigeria.getNumAvailableBonuses(iMovies) >= 1 and pNigeria.countCorporations(iOilIndustry) >= 1:
+				win(iNigeria, 2)
+		
+		if iGameTurn == getTurnForYear(1950):
+			expire(iNigeria, 2)
 			
 	elif iPlayer == iMongolia:
 
@@ -2982,11 +3017,11 @@ def cityHappiness(city):
 
 	return iHappiness
 
-def getBestPlayer(iPlayer, function):
+def getBestPlayer(iPlayer, function, lPlayers = [iPlayer for iPlayer in range(iNumPlayers)]):
 	iBestPlayer = iPlayer
 	iBestValue = function(iPlayer)
-
-	for iLoopPlayer in range(iNumPlayers):
+	
+	for iLoopPlayer in lPlayers:
 		pLoopPlayer = gc.getPlayer(iLoopPlayer)
 		if pLoopPlayer.isAlive():
 			if function(iLoopPlayer) > iBestValue:
@@ -2995,8 +3030,8 @@ def getBestPlayer(iPlayer, function):
 
 	return iBestPlayer
 
-def isBestPlayer(iPlayer, function):
-	return getBestPlayer(iPlayer, function) == iPlayer
+def isBestPlayer(iPlayer, function, lPlayers = [iPlayer for iPlayer in range(iNumPlayers)]):
+	return getBestPlayer(iPlayer, function, lPlayers) == iPlayer
 
 def playerTechs(iPlayer):
 	iValue = 0
@@ -3013,6 +3048,14 @@ def playerCultureOutput(iPlayer):
 
 def playerResearchOutput(iPlayer):
 	return gc.getPlayer(iPlayer).getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)
+
+
+def playerArmySize(iPlayer):
+	iCount = 0
+	for unit in PyPlayer(iPlayer).getUnitList():
+		if unit.canFight() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
+			iCount += 1
+	return iCount
 
 def getNumBuildings(iPlayer, iBuilding):
 	return gc.getPlayer(iPlayer).countNumBuildings(iBuilding)
@@ -4599,6 +4642,19 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 0:
 			bConstantinoupolis = isControlled(iPlayer, [(69, 45)])
 			aHelp.append(getIcon(bConstantinoupolis) + localText.getText("TXT_KEY_VICTORY_CONSTANTINOUPOLIS", ()))
+
+	elif iPlayer == iNigeria:
+		if iGoal == 0:
+			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapitalCity().getRegionID() in lAfrica]
+			iLargestArmy = getBestPlayer(iNigeria, playerArmySize, lAfricaCivs)
+			aHelp.append(getIcon(iLargestArmy == iNigeria) + localText.getText("TXT_KEY_VICTORY_LARGEST_ARMY_AFRICA", (str(gc.getPlayer(iLargestArmy).getCivilizationShortDescriptionKey()),)))
+		elif iGoal == 1:
+			iTradeGold = data.iNigeriaTradeGold
+			aHelp.append(getIcon(iTradeGold >= utils.getTurns(2000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(2000))))
+		elif iGoal == 2:
+			bMovies = pNigeria.getNumAvailableBonuses(iMovies) >= 1
+			bOilIndustry = pNigeria.countCorporations(iOilIndustry) >= 1
+			aHelp.append(getIcon(bMovies) + gc.getBonusInfo(iMovies).getDescription() + ' ' + getIcon(bOilIndustry) + gc.getCorporationInfo(iOilIndustry).getDescription())
 
 	elif iPlayer == iMongolia:
 		if iGoal == 1:

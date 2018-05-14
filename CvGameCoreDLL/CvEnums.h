@@ -1249,6 +1249,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	KANGXI,
 	CIXI,
 	ATLATL_CAUAC,
+	ODUDUWA,
+	EWUARE,
+	AMINATU,
 	NUM_LEADERHEADS
 
 };
@@ -1364,6 +1367,7 @@ enum PlayerTypes				// Exposed to Python
 	PORTUGAL,
 	INCA,
 	ITALY,
+	NIGERIA,
 	MONGOLIA,
 	AZTECS,
 	MUGHALS,

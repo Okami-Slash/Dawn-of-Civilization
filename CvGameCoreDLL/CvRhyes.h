@@ -11,14 +11,14 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define BEGIN_WONDERS				(185) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(186) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
-#define NUM_BUILDINGS_PLAGUE		(261) // always increment when a building is added
+#define NUM_BUILDINGS_PLAGUE		(262) // always increment when a building is added
 #define NUM_BUILDINGTYPES_PLAGUE	(169) // increment when a building class is added
 
-#define NUM_MAJOR_PLAYERS		(57)
+#define NUM_MAJOR_PLAYERS		(58)
 #define NUM_MINORS				(5)	 // Independent, Independent2, Natives, Celtia, Barbarians
-#define NUM_CIVS				(64)
+#define NUM_CIVS				(65)
 
 #define NUM_ERAS				(ERA_DIGITAL+1)
 
