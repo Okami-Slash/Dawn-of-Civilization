@@ -214,12 +214,12 @@ lOlderNeighbours = [
 [], # Polynesia
 [iEgypt, iBabylonia, iHarappa, iGreece], #Persia
 [iEgypt, iGreece, iCarthage], #Rome
-[], #Maya
 [iHarappa, iIndia], #Tamils
 [iEgypt], #Ethiopia
 [iMaya], #Teotihuacan
 [], #Vietnam
 [iChina], #Korea
+[], #Maya
 [iGreece], #Byzantium
 [iKorea], #Japan
 [], #Vikings
@@ -351,6 +351,7 @@ tFall = (
 550, #fall of Teotihuacan # Teotihuacan
 602,					# Vietnam
 1255, #Mongol invasion			# Korea
+900, # Maya
 1204, #fourth crusade			# Byzantium
 2020,					# Japan
 1300,					# Vikings
@@ -612,6 +613,7 @@ lEnemyCivsOnSpawn = [
 [iMaya], #Teotihuacan
 [],	#Vietnam
 [], #Korea
+[], #Maya
 [iGreece, iPersia], #Byzantium
 [], #Japan
 [iEngland,iFrance,iIndependent,iIndependent2], #Vikings
@@ -673,6 +675,7 @@ lTotalWarOnSpawn = [
 [], #Teotihuacan
 [],	#Vietnam
 [], #Korea
+[], #Maya
 [iGreece], #Byzantium
 [], #Japan
 [iFrance], #Vikings
@@ -730,12 +733,12 @@ tAggressionLevel = (
 0, #Polynesia
 3, #Persia
 3, #Rome
-1, #Maya
 1, #Tamils
 0, #Ethiopia
 1, #Teotihuacan
 0, #Vietnam
 0, #Korea
+1, #Maya
 1, #Byzantium
 1, #Japan
 2, #Viking
@@ -793,12 +796,12 @@ tAIStopBirthThreshold = (
     80, #Polynesia
     70, #Persia
     80, #Rome
-    80, #Maya
     80, #Tamils
     80, #Ethiopia
     80, #Teotihuacan
 	80,	#Vietnam
     80, #Korea
+    80, #Maya
     80, #Byzantium
     80, #Japan
     80, #Viking
@@ -860,12 +863,12 @@ tResurrectionProb = (
 40, #Polynesia
 70, #Persia
 65, #Rome
-30, #Maya
 10, #Tamils
 80, #Ethopia
 30, #Teotihuacan
 80,	#Vietnam
 80, #Korea
+30, #Maya
 65, #Byzantium
 100, #Japan
 60, #Viking
@@ -925,12 +928,12 @@ tPatienceThreshold = (
 50, #Polynesia
 30, #Persia
 25, #Rome
-35, #Maya
 45, #Tamils
 20, #Ethopia
 35, #Teotihuacan
 25,	#Vietnam
 25, #Korea
+35, #Maya
 25, #Byzantium
 25, #Japan
 30, #Viking
