@@ -3731,8 +3731,6 @@ class RiseAndFall:
 		lCities = []
 		iFlip = -1
 		
-		print "YES"
-		
 		for x in range(BL[0], (TR[0] + 1)):
 			for y in range(BL[1],(TR[1] + 1)):
 				plot = gc.getMap().plot(x, y)
