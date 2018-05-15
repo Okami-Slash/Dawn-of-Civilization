@@ -6812,6 +6812,26 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		iYield += GC.getImprovementInfo(eImprovement).getHillsYieldChange(eYield);
 	}
 
+	int iLength = GC.getImprovementInfo(eImprovement).getNearbyWaterDistance();
+	for (iI = -iLength; iI < iLength; iI++)
+	{
+		for (int iJ = -iLength; iJ < iLength; iJ++)
+		{
+			if (iI == 0 && iJ == 0) continue;
+			pAdjacentPlot = GC.getMapINLINE().plotINLINE(getX_INLINE() + iI, getY_INLINE() + iJ);
+
+			if ((pAdjacentPlot != NULL))
+			{
+				if (pAdjacentPlot->isWater())
+				{
+					iYield += GC.getImprovementInfo(eImprovement).getNearbyWaterYieldChange(eYield);
+					iI = iLength;
+					iJ = iLength;
+				}
+			}
+		}
+	}
+
 	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 	{
 		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));

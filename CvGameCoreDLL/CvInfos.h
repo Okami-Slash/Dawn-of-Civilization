@@ -3069,6 +3069,9 @@ public:
 
 	int getAdjacentCityYieldChange(int i) const;
 	int* getAdjacentCityYieldChangeArray();
+	int getNearbyWaterDistance() const;
+	int getNearbyWaterYieldChange(int i) const;
+	int* getNearbyWaterYieldChangeArray();
 	int getAdjacentMountainYieldChange(int i) const;
 	int* getAdjacentMountainYieldChangeArray();
 
@@ -3121,6 +3124,9 @@ protected:
 	int m_iImprovementPillage;
 	int m_iImprovementUpgrade;
 
+	// 1SDAN
+	int m_iNearbyWaterDistance;
+
 	bool m_bActsAsCity;
 	bool m_bHillsMakesValid;
 	bool m_bFreshWaterMakesValid;
@@ -3149,7 +3155,9 @@ protected:
 	int* m_piHillsYieldChange;
 	int* m_piIrrigatedChange;
 
+	// 1SDAN
 	int* m_ppiAdjacentCityYieldChange;
+	int* m_ppiNearbyWaterYieldChange;
 	int* m_ppiAdjacentMountainYieldChange;
 
 	bool* m_pbTerrainMakesValid;

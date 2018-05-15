@@ -15083,7 +15083,16 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
-		int iChange = info.getAdjacentCityYieldChange(iYield);
+		int iChange = info.getNearbyWaterYieldChange(iYield);
+		int iChange2 = info.getNearbyWaterDistance();
+		if (0 != iChange && 0 != iChange2)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_NEARBY_WATER_1", iChange, GC.getYieldInfo((YieldTypes)iYield).getChar()));
+			szBuffer.append(gDLL->getText("TXT_KEY_NEARBY_WATER_2", iChange2));
+		}
+
+		iChange = info.getAdjacentCityYieldChange(iYield);
 		if (0 != iChange)
 		{
 			szBuffer.append(NEWLINE);

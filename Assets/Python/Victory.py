@@ -2279,12 +2279,12 @@ def onBuildingBuilt(iPlayer, iBuilding, city):
 				if iNumBarracks >= 5 and iNumAqueducts >= 4 and iNumAmphitheatres >= 3 and iNumForums >= 2 and bColosseum:
 					win(iRome, 0)
 
-	#third Assyrian goal: build 5 Aqueducts, 3 Gardens, and 2 Baths by 600 BC
+	#third Assyrian goal: build 3 Aqueducts, 2 Gardens, and 1 Baths by 600 BC
 	elif iPlayer == iAssyria:
 		if isPossible(iAssyria, 2):
 			if iBuilding in [iAqueduct, iBath, iGarden]:
-				iNumBaths = getNumBuildings(iAssyria, iBarracks)
-				iNumAqueducts = getNumBuildings(iAssyria, iBath)
+				iNumBaths = getNumBuildings(iAssyria, iBath)
+				iNumAqueducts = getNumBuildings(iAssyria, iAqueduct)
 				iNumGardens = getNumBuildings(iAssyria, iGarden)
 				if iNumAqueducts >= 3 and iNumGardens >= 2 and iNumBaths >= 1:
 					win(iAssyria, 0)

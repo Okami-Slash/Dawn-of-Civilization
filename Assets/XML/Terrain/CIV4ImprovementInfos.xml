@@ -2012,15 +2012,10 @@
 			<Description>TXT_KEY_IMPROVEMENT_CAMP</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_CAMP_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CAMP</ArtDefineTag>
-			<AdjacentCityYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-			</AdjacentCityYieldChange>
 			<AdjacentMountainYieldChange>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
+				<iYieldChange>2</iYieldChange>
 			</AdjacentMountainYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -2294,11 +2289,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
-			<AdjacentCityYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -2385,23 +2375,18 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 				<AdjacentBonusedImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
 					<ImprovementYields>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 				<AdjacentBonusedImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
 					<ImprovementYields>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 			</AdjacentBonusedImprovementYieldChanges>
@@ -2420,11 +2405,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
-			<AdjacentCityYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>1</bFreshWaterMakesValid>
@@ -2470,6 +2450,12 @@
 			<ImprovementUpgrade>IMPROVEMENT_HAMLET</ImprovementUpgrade>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
+			<iNearbyWaterDistance>2</iNearbyWaterDistance>
+			<NearbyWaterYieldChange>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+			</NearbyWaterYieldChange>
 			<AdjacentBonusedImprovementYieldChanges>
 				<AdjacentBonusedImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
@@ -2477,14 +2463,6 @@
 						<iYield>0</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-					</ImprovementYields>
-				</AdjacentBonusedImprovementYieldChange>
-				<AdjacentBonusedImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 				<AdjacentBonusedImprovementYieldChange>
@@ -2519,11 +2497,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
-			<AdjacentCityYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>1</bFreshWaterMakesValid>
@@ -2569,6 +2542,12 @@
 			<ImprovementUpgrade>IMPROVEMENT_VILLAGE</ImprovementUpgrade>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
+			<iNearbyWaterDistance>2</iNearbyWaterDistance>
+			<NearbyWaterYieldChange>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+			</NearbyWaterYieldChange>
 			<AdjacentBonusedImprovementYieldChanges>
 				<AdjacentBonusedImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
@@ -2576,14 +2555,6 @@
 						<iYield>0</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-					</ImprovementYields>
-				</AdjacentBonusedImprovementYieldChange>
-				<AdjacentBonusedImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 				<AdjacentBonusedImprovementYieldChange>
@@ -2615,11 +2586,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>3</iYieldChange>
 			</YieldChanges>
-			<AdjacentCityYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -2661,6 +2627,12 @@
 				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
+			<iNearbyWaterDistance>2</iNearbyWaterDistance>
+			<NearbyWaterYieldChange>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+			</NearbyWaterYieldChange>
 			<AdjacentBonusedImprovementYieldChanges>
 				<AdjacentBonusedImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
@@ -2668,14 +2640,6 @@
 						<iYield>0</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-					</ImprovementYields>
-				</AdjacentBonusedImprovementYieldChange>
-				<AdjacentBonusedImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 				<AdjacentBonusedImprovementYieldChange>
@@ -2707,11 +2671,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>4</iYieldChange>
 			</YieldChanges>
-			<AdjacentCityYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-			</AdjacentCityYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -2767,6 +2726,12 @@
 						<iYield>1</iYield>
 					</RouteYields>
 				</RouteYieldChange>
+			<iNearbyWaterDistance>2</iNearbyWaterDistance>
+			<NearbyWaterYieldChange>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+			</NearbyWaterYieldChange>
 			</RouteYieldChanges>
 			<AdjacentBonusedImprovementYieldChanges>
 				<AdjacentBonusedImprovementYieldChange>
@@ -2775,14 +2740,6 @@
 						<iYield>0</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-					</ImprovementYields>
-				</AdjacentBonusedImprovementYieldChange>
-				<AdjacentBonusedImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</AdjacentBonusedImprovementYieldChange>
 				<AdjacentBonusedImprovementYieldChange>
@@ -2877,7 +2834,7 @@
 			<AdjacentMountainYieldChange>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
+				<iYieldChange>2</iYieldChange>
 			</AdjacentMountainYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>

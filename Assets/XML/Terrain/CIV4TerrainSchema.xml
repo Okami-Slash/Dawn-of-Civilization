@@ -379,6 +379,10 @@
 	<ElementType name="IrrigatedYieldChange" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iNearbyWaterDistance" content="textOnly" dt:type="int"/>
+	<ElementType name="NearbyWaterYieldChange" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="AdjacentCityYieldChange" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
@@ -484,6 +488,8 @@
 		<element type="ImprovementUpgrade"/>
 		<element type="TechYieldChanges"/>
 		<element type="RouteYieldChanges"/>
+		<element type="iNearbyWaterDistance" minOccurs="0"/>
+		<element type="NearbyWaterYieldChange" minOccurs="0"/>
 		<element type="AdjacentBonusedImprovementYieldChanges" minOccurs="0" maxOccurs="*"/>
 		<element type="WorldSoundscapeAudioScript" minOccurs="0"/>
 		<element type="bGraphicalOnly"/>

@@ -12987,6 +12987,7 @@ m_iDefenseModifier(0),
 m_iHealthPercent(0),
 m_iHappinessPercent(0),
 m_iPillageGold(0),
+m_iNearbyWaterDistance(0),
 m_iImprovementPillage(NO_IMPROVEMENT),
 m_iImprovementUpgrade(NO_IMPROVEMENT),
 m_bActsAsCity(true),
@@ -13009,6 +13010,7 @@ m_piYieldChange(NULL),
 m_piRiverSideYieldChange(NULL),
 m_piHillsYieldChange(NULL),
 m_piIrrigatedChange(NULL),
+m_ppiNearbyWaterYieldChange(NULL),
 m_ppiAdjacentCityYieldChange(NULL),
 m_ppiAdjacentMountainYieldChange(NULL),
 m_pbTerrainMakesValid(NULL),
@@ -13037,6 +13039,7 @@ CvImprovementInfo::~CvImprovementInfo()
 	SAFE_DELETE_ARRAY(m_piHillsYieldChange);
 	SAFE_DELETE_ARRAY(m_piIrrigatedChange);
 	SAFE_DELETE_ARRAY(m_ppiAdjacentCityYieldChange);
+	SAFE_DELETE_ARRAY(m_ppiNearbyWaterYieldChange);
 	SAFE_DELETE_ARRAY(m_ppiAdjacentMountainYieldChange);
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	SAFE_DELETE_ARRAY(m_pbFeatureMakesValid);
@@ -13296,6 +13299,24 @@ int* CvImprovementInfo::getIrrigatedYieldChangeArray()
 	return m_piIrrigatedChange;
 }
 
+int CvImprovementInfo::getNearbyWaterDistance() const
+{
+	return m_iNearbyWaterDistance;
+}
+
+
+int CvImprovementInfo::getNearbyWaterYieldChange(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppiNearbyWaterYieldChange ? m_ppiNearbyWaterYieldChange[i] : -1;
+}
+
+int* CvImprovementInfo::getNearbyWaterYieldChangeArray()
+{
+	return m_ppiNearbyWaterYieldChange;
+}
+
 int CvImprovementInfo::getAdjacentCityYieldChange(int i) const
 {
 	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
@@ -13453,6 +13474,9 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iImprovementPillage);
 	stream->Read(&m_iImprovementUpgrade);
 
+	// 1SDAN
+	stream->Read(&m_iNearbyWaterDistance);
+
 	stream->Read(&m_bActsAsCity);
 	stream->Read(&m_bHillsMakesValid);
 	stream->Read(&m_bFreshWaterMakesValid);
@@ -13494,10 +13518,17 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	m_piIrrigatedChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piIrrigatedChange);
 
+	// 1SDAN
 	SAFE_DELETE_ARRAY(m_ppiAdjacentCityYieldChange);
 	m_ppiAdjacentCityYieldChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_ppiAdjacentCityYieldChange);
 
+	// 1SDAN
+	SAFE_DELETE_ARRAY(m_ppiNearbyWaterYieldChange);
+	m_ppiNearbyWaterYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_ppiNearbyWaterYieldChange);
+
+	// 1SDAN
 	SAFE_DELETE_ARRAY(m_ppiAdjacentMountainYieldChange);
 	m_ppiAdjacentMountainYieldChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_ppiAdjacentMountainYieldChange);
@@ -13588,6 +13619,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iPillageGold);
 	stream->Write(m_iImprovementPillage);
 	stream->Write(m_iImprovementUpgrade);
+	stream->Write(m_iNearbyWaterDistance); // 1SDAN
 
 	stream->Write(m_bActsAsCity);
 	stream->Write(m_bHillsMakesValid);
@@ -13615,8 +13647,9 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piRiverSideYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piHillsYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piIrrigatedChange);
-	stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentCityYieldChange);
-	stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentMountainYieldChange);
+	stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentCityYieldChange); // 1SDAN
+	stream->Write(NUM_YIELD_TYPES, m_ppiNearbyWaterYieldChange); // 1SDAN
+	stream->Write(NUM_YIELD_TYPES, m_ppiAdjacentMountainYieldChange); // 1SDAN
 	stream->Write(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
 	stream->Write(GC.getNumFeatureInfos(), m_pbFeatureMakesValid);
 
@@ -13709,6 +13742,19 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_piIrrigatedChange, NUM_YIELD_TYPES);
 	}
 
+	// 1SDAN
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "NearbyWaterYieldChange"))
+	{
+		// call the function that sets the yield change variable
+		pXML->SetYields(&m_ppiNearbyWaterYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_ppiAdjacentCityYieldChange, NUM_YIELD_TYPES);
+	}
+
+	// 1SDAN
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AdjacentCityYieldChange"))
 	{
 		// call the function that sets the yield change variable
@@ -13720,6 +13766,7 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_ppiAdjacentCityYieldChange, NUM_YIELD_TYPES);
 	}
 
+	// 1SDAN
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "AdjacentMountainYieldChange"))
 	{
 		// call the function that sets the yield change variable
@@ -13731,6 +13778,7 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_ppiAdjacentMountainYieldChange, NUM_YIELD_TYPES);
 	}
 
+	pXML->GetChildXmlValByName(&m_iNearbyWaterDistance, "iNearbyWaterDistance"); // 1SDAN
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCost, "iAdvancedStartCost");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCostIncrease, "iAdvancedStartCostIncrease");
 	pXML->GetChildXmlValByName(&m_bActsAsCity, "bActsAsCity");
