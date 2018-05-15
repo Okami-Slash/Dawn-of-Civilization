@@ -8519,6 +8519,10 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		if (pPlot->isCity(true, getTeam()))
 		{
 			iExtraModifier = cityDefenseModifier();
+			if (pAttacker != NULL && pAttacker->getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_TURKIC_OGHUZ"))
+			{
+				iExtraModifier -= getExtraCityDefensePercent();
+			}
 			iModifier += iExtraModifier;
 			if (pCombatDetails != NULL)
 			{

@@ -7771,6 +7771,7 @@
 			<Description>TXT_KEY_UNIT_TURKIC_OGHUZ</Description>
 			<Civilopedia>TXT_KEY_UNIT_TURKIC_OGHUZ_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_TURKIC_OGHUZ_STRATEGY</Strategy>
+			<Help>TXT_KEY_IGNORES_CITY_DEFENSE_WHILE_ATTACKING_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -7799,6 +7800,12 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
 			<PrereqTech>TECH_NOBILITY</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
 			<iCost>50</iCost>

@@ -467,7 +467,7 @@ def checkTurn(iGameTurn, iPlayer):
 			win(iHittite, 2)
 		
 		for iEnemy in range(iNumMajorPlayers):
-			if iEnemy == iIndia or iPlayer == iChina or iPlayer == iHarappa or iPlayer == iAssyria or iPlayer == iBabylonia: continue
+			if iEnemy == iIndia or iEnemy == iChina or iEnemy == iHarappa or iEnemy == iAssyria or iEnemy == iBabylonia: continue
 			if countResources(iEnemy, iIron) > 0:
 				lose(iHittite, 2)
 
@@ -2286,7 +2286,7 @@ def onBuildingBuilt(iPlayer, iBuilding, city):
 				iNumBaths = getNumBuildings(iAssyria, iBarracks)
 				iNumAqueducts = getNumBuildings(iAssyria, iBath)
 				iNumGardens = getNumBuildings(iAssyria, iGarden)
-				if iNumAqueducts >= 5 and iNumGardens >= 3 and iNumBaths >= 2:
+				if iNumAqueducts >= 3 and iNumGardens >= 2 and iNumBaths >= 1:
 					win(iAssyria, 0)
 
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
@@ -4091,7 +4091,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumBaths = getNumBuildings(iAssyria, iBath)
 			iNumAqueducts = getNumBuildings(iAssyria, iAqueduct)
 			iNumGardens = getNumBuildings(iAssyria, iGarden)
-			aHelp.append(getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumGardens >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_GARDENS", (iNumGardens, 3)) + ' ' + getIcon(iNumBaths >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 2)))
+			aHelp.append(getIcon(iNumAqueducts >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 3)) + ' ' + getIcon(iNumGardens >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_GARDENS", (iNumGardens, 2)) + ' ' + getIcon(iNumBaths >= 1) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 1)))
 	
 	elif iPlayer == iHittite:
 		if iGoal == 0:

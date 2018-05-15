@@ -3255,6 +3255,10 @@ It is fine for a human player mouse-over (which is what it is used for).
                     if (pPlot->isCity(true, pDefender->getTeam()))
                     {
                         iModifier = pDefender->cityDefenseModifier();
+						if (pAttacker != NULL && pAttacker->getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_TURKIC_OGHUZ"))
+						{
+							iModifier -= pDefender->getExtraCityDefensePercent();
+						}
 
                         if (iModifier != 0)
                         {
@@ -3725,6 +3729,10 @@ It is fine for a human player mouse-over (which is what it is used for).
 			if (pPlot->isCity(true, pDefender->getTeam()))
 			{
 				iModifier = pDefender->cityDefenseModifier();
+				if (pAttacker != NULL && pAttacker->getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_TURKIC_OGHUZ"))
+				{
+					iModifier -= pDefender->getExtraCityDefensePercent();
+				}
 
 				if (iModifier != 0)
 				{
