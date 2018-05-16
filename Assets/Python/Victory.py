@@ -2136,22 +2136,30 @@ def onTechAcquired(iPlayer, iTech):
 
 		# third Japanese goal: be the first to discover ten Global and ten Digital technologies
 		if isPossible(iJapan, 2):
-<<<<<<< HEAD
-			if countFirstDiscovered(iPlayer, iGlobal) >= 8 and countFirstDiscovered(iPlayer, iDigital) >= 8:
-				if iPlayer == iJapan: win(iJapan, 2)
-				else: lose(iJapan, 2)
+			if iEra in [iGlobal, iDigital]:
+				if countFirstDiscovered(iPlayer, iGlobal) >= 8 and countFirstDiscovered(iPlayer, iDigital) >= 8:
+					if iPlayer == iJapan: win(iJapan, 2)
+					else: lose(iJapan, 2)
+				if not isFirstDiscoveredPossible(iJapan, iGlobal, 8) or not isFirstDiscoveredPossible(iJapan, iDigital, 8):
+					lose(iJapan, 2)
 
 		# third English goal: be the first to discover ten Renaissance and ten Industrial technologies
 		if isPossible(iEngland, 2):
-			if countFirstDiscovered(iPlayer, iRenaissance) >= 8 and countFirstDiscovered(iPlayer, iIndustrial) >= 8:
-				if iPlayer == iEngland: win(iEngland, 2)
-				else: lose(iEngland, 2)
+			if iEra in [iRenaissance, iIndustrial]:
+				if countFirstDiscovered(iPlayer, iRenaissance) >= 8 and countFirstDiscovered(iPlayer, iIndustrial) >= 8:
+					if iPlayer == iEngland: win(iEngland, 2)
+					else: lose(iEngland, 2)
+				if not isFirstDiscoveredPossible(iEngland, iRenaissance, 8) or not isFirstDiscoveredPossible(iEngland, iIndustrial, 8):
+					lose(iEngland, 2)
 
 		# third German goal: be the first to discover ten Industrial and ten Global technologies
 		if isPossible(iGermany, 2):
-			if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
-				if iPlayer == iGermany: win(iGermany, 2)
-				else: lose(iGermany, 2)
+			if iEra in [iIndustrial, iGlobal]:
+				if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
+					if iPlayer == iGermany: win(iGermany, 2)
+					else: lose(iGermany, 2)
+				if not isFirstDiscoveredPossible(iGermany, iIndustrial, 8) or not isFirstDiscoveredPossible(iGermany, iGlobal, 8):
+					lose(iGermany, 2)
 
 		# third Manchurian goal: be the first to discover all Industrial Technologies and ten Global technologies
 		if isPossible(iManchuria, 2):
@@ -2162,33 +2170,6 @@ def onTechAcquired(iPlayer, iTech):
 							win(iManchuria, 2)
 					else: lose(iManchuria, 2)
 
-=======
-			if iEra in [iGlobal, iDigital]:
-				if countFirstDiscovered(iPlayer, iGlobal) >= 8 and countFirstDiscovered(iPlayer, iDigital) >= 8:
-					if iPlayer == iJapan: win(iJapan, 2)
-					else: lose(iJapan, 2)
-				if not isFirstDiscoveredPossible(iJapan, iGlobal, 8) or not isFirstDiscoveredPossible(iJapan, iDigital, 8):
-					lose(iJapan, 2)
-				
-		# third English goal: be the first to discover ten Renaissance and ten Industrial technologies
-		if isPossible(iEngland, 2):
-			if iEra in [iRenaissance, iIndustrial]:
-				if countFirstDiscovered(iPlayer, iRenaissance) >= 8 and countFirstDiscovered(iPlayer, iIndustrial) >= 8:
-					if iPlayer == iEngland: win(iEngland, 2)
-					else: lose(iEngland, 2)
-				if not isFirstDiscoveredPossible(iEngland, iRenaissance, 8) or not isFirstDiscoveredPossible(iEngland, iIndustrial, 8):
-					lose(iEngland, 2)
-				
-		# third German goal: be the first to discover ten Industrial and ten Global technologies
-		if isPossible(iGermany, 2):
-			if iEra in [iIndustrial, iGlobal]:
-				if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
-					if iPlayer == iGermany: win(iGermany, 2)
-					else: lose(iGermany, 2)
-				if not isFirstDiscoveredPossible(iGermany, iIndustrial, 8) or not isFirstDiscoveredPossible(iGermany, iGlobal, 8):
-					lose(iGermany, 2)
-			
->>>>>>> remotes/origin/develop
 	# handle all "be the first to enter" goals
 	if not isEntered(iEra):
 		data.lFirstEntered[iEra] = iPlayer
