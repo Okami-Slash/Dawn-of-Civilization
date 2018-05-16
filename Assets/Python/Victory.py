@@ -2505,13 +2505,11 @@ def onPlayerGoldTrade(iPlayer, iGold):
 	if iPlayer == iTamils:
 		if isPossible(iTamils, 2):
 			data.iTamilTradeGold += iGold * 100
-<<<<<<< HEAD
+	
 	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
 	elif iPlayer == iSwahili:
 		if isPossible(iSwahili, 0):
 			data.iSwahiliTradeGold += iGold * 100
-=======
->>>>>>> remotes/origin/develop
 		
 def onPlayerSlaveTrade(iPlayer, iGold):
 
@@ -2527,12 +2525,10 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
 		data.iTamilTradeGold += iGold * 100
-<<<<<<< HEAD
+		
 	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
 	elif iPlayer == iSwahili:
 		data.iSwahiliTradeGold += iGold * 100
-=======
->>>>>>> remotes/origin/develop
 		
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iPlayer == iMali:
@@ -2959,14 +2955,10 @@ def isDiscovered(iTech):
 	return data.lFirstDiscovered[iTech] != -1
 
 def isEntered(iEra):
-<<<<<<< HEAD
 	return data.lFirstDiscovered[iEra] != -1
 
 def isEraCompleted(iEra):
-	return data.lFirstCompleted[iEra] != -1
-=======
 	return data.lFirstEntered[iEra] != -1
->>>>>>> remotes/origin/develop
 	
 def checkEraCompleted(iPlayer, iEra):
 	teamPlayer = gc.getTeam(iPlayer)
@@ -3296,7 +3288,6 @@ def countHappinessResources(iPlayer):
 			if pPlayer.getNumAvailableBonuses(iBonus) > 0:
 				iCount += 1
 	return iCount
-<<<<<<< HEAD
 
 def calculatePopulationPercent(iPlayer):
 	iTotalPopulation = gc.getGame().getTotalPopulation()
@@ -3304,9 +3295,6 @@ def calculatePopulationPercent(iPlayer):
 
 	return 100.0 * gc.getTeam(iPlayer).getTotalPopulation() / iTotalPopulation
 
-=======
-	
->>>>>>> remotes/origin/develop
 def countResources(iPlayer, iBonus):
 	iNumBonus = 0
 	pPlayer = gc.getPlayer(iPlayer)
@@ -3533,16 +3521,12 @@ def countFirstDiscovered(iPlayer, iEra):
 		if gc.getTechInfo(iTech).getEra() == iEra and data.lFirstDiscovered[iTech] == iPlayer:
 			iCount += 1
 	return iCount
-<<<<<<< HEAD
 
-=======
-	
 def isFirstDiscoveredPossible(iPlayer, iEra, iRequired):
 	iCount = countFirstDiscovered(iPlayer, iEra)
 	iNotYetDiscovered = countFirstDiscovered(-1, iEra)
 	return iCount + iNotYetDiscovered >= iRequired
-	
->>>>>>> remotes/origin/develop
+
 def isWonder(iBuilding):
 	return iBeginWonders <= iBuilding < iNumBuildings
 
@@ -4254,11 +4238,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSrivijaya = isControlledOrVassalized(iTamils, utils.getPlotList(tSrivijayaTL, tSrivijayaBR))
 			aHelp.append(getIcon(bDeccan) + localText.getText("TXT_KEY_VICTORY_DECCAN", ()) + ' ' + getIcon(bSrivijaya) + localText.getText("TXT_KEY_VICTORY_SRIVIJAYA", ()))
 		elif iGoal == 2:
-<<<<<<< HEAD
-			iTradeGold = data.iTamilTradeGold / 100
-=======
 			iTradeGold = data.fTamilTradeGold / 100
->>>>>>> remotes/origin/develop
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iEthiopia:
