@@ -7722,4 +7722,7 @@ tRenames = (
 #Language: Philippine
 {
 },
+#Language: Nigerian
+{
+},
 )
