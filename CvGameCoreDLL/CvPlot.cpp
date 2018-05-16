@@ -6722,7 +6722,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	}
 
 	//Carribean UP
-	if (getRegionID() == REGION_CARIBBEAN && isWater() && eYield == YIELD_COMMERCE)
+	if (getWorkingCity()->getRegionID() == REGION_CARIBBEAN && isWater() && eYield == YIELD_COMMERCE)
 	{
 		iYield += 2;
 	}
