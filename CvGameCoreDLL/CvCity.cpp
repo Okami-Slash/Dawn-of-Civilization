@@ -350,6 +350,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
+	// North American UP
+	if (getRegionID() == REGION_CANADA || getRegionID() == REGION_UNITED_STATES)
+	{
+		changeExtraHappiness(2);
+	}
+
     // Leoreth: Harappan UU (City Builder)
 	if (getOwnerINLINE() == HARAPPA)
 	{
@@ -3565,6 +3571,18 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		iMultiplier += getMilitaryProductionModifier();
 	}
 
+	// Middle East UP
+	if (getRegionID() == REGION_MAGHREB || getRegionID() == REGION_EGYPT || getRegionID() == REGION_ANATOLIA || getRegionID() == REGION_MESOPOTAMIA || getRegionID() == REGION_PERSIA || getRegionID() == REGION_ARABIA || (getRegionID() == REGION_BALKANS && getX_INLINE() == 68 && getY_INLINE() == 45))
+	{
+		if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
+		{
+			if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+			{
+				iMultiplier += 25;
+			}
+		}
+	}
+		
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		if (hasBonus((BonusTypes)iI))
@@ -6796,6 +6814,19 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 
 		iTempMaintenance /= GC.getMapINLINE().maxPlotDistance();
 
+		//Central Asian UP: -5% Distance Cost per Luxury
+		if (getRegionID() == REGION_RUSSIA || getRegionID() == REGION_SIBERIA || getRegionID() == REGION_ALASKA || getRegionID() == REGION_CENTRAL_ASIA)
+		{
+			for (int i = 0; i < GC.getNumBonusInfos(); i++)
+			{
+				if (GC.getBonusInfo((BonusTypes)i).getHappiness() > 0)
+				{
+					iTempMaintenance *= 100 - getNumBonuses((BonusTypes)i) * 5;
+					iTempMaintenance /= 100;
+				}
+			}
+		}
+
 		iWorstCityMaintenance = std::max(iWorstCityMaintenance, iTempMaintenance);
 
 		if (pLoopCity->isGovernmentCenter())
@@ -6857,6 +6888,11 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 	}
 
 	iNumCitiesMaintenance *= std::max(0, (GET_PLAYER(getOwnerINLINE()).getNumCitiesMaintenanceModifier() + 100));
+	iNumCitiesMaintenance /= 100;
+
+	//Asian UP: -10% Number of Cities Maintainence per Religion
+	if (getRegionID() == REGION_JAPAN || getRegionID() == REGION_MANCHURIA || getRegionID() == REGION_CHINA || getRegionID() == REGION_KOREA || getRegionID() == REGION_TIBET || getRegionID() == REGION_DECCAN || getRegionID() == REGION_INDIA)
+	iNumCitiesMaintenance *= 100 - getReligionCount() * 10;
 	iNumCitiesMaintenance /= 100;
 
 	FAssert(iNumCitiesMaintenance >= 0);
@@ -9169,6 +9205,12 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 	if (eOldValue != eNewValue)
 	{
 		m_eCultureLevel = eNewValue;
+
+		// 1SDAN: American UP
+		if (getOwnerINLINE() == AMERICA)
+		{
+			changeExtraHappiness((eNewValue - eOldValue) * 2);
+		}
 
 		/*if (eOldValue != NO_CULTURELEVEL)
 		{
@@ -13607,6 +13649,12 @@ int CvCity::getTradeRoutes() const
 	if (getOwner() == HITTITE && plot()->isCore(HITTITE))
 		iTradeRoutes += 1;
 
+	//Oceania UP
+	if (isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()) && (getRegionID() == REGION_INDOCHINA || getRegionID() == REGION_INDONESIA || getRegionID() == REGION_AUSTRALIA || getRegionID() == REGION_OCEANIA))
+	{
+		iTradeRoutes += 1;
+	}
+
 	return std::min(iTradeRoutes, GC.getDefineINT("MAX_TRADE_ROUTES"));
 }
 
@@ -17983,8 +18031,10 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 
 	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
 
-	// Leoreth: Inca UP
-	if (getOwnerINLINE() == INCA && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+	// Leoreth: South American UP
+	if ((getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_PERU || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_COLOMBIA || getRegionID() == REGION_BRAZIL) && 
+		(pPlot->isPeak() || pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_MARSH")))
+		iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
 
 	// Leoreth: Polynesian UP
 	if (getOwnerINLINE() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();

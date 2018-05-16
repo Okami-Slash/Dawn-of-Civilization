@@ -863,6 +863,7 @@ def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
+	print "helphelp " + str(iPlayer);
 	return gc.getPlayer(iPlayer).getCivilizationShortDescription(0)
 
 def civAdjective(iPlayer):

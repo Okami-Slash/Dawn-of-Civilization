@@ -2287,7 +2287,7 @@ def onBuildingBuilt(iPlayer, iBuilding, city):
 				iNumAqueducts = getNumBuildings(iAssyria, iAqueduct)
 				iNumGardens = getNumBuildings(iAssyria, iGarden)
 				if iNumAqueducts >= 3 and iNumGardens >= 2 and iNumBaths >= 1:
-					win(iAssyria, 0)
+					win(iAssyria, 2)
 
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
 	elif iPlayer == iKorea:

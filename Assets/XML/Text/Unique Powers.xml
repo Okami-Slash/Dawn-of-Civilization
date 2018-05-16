@@ -11,8 +11,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
-		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
-		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
+		<English>+2 Happiness per Culture Level in Cities</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
@@ -357,11 +356,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC</Tag>
-		<English>Mountains produce 2 food and 1 hammer</English>
-		<French>Les montagnes produisent 2 de nourriture et 1 marteau</French>
-		<German>Berge gew&#228;hren 2 Nahrung und 1 Hammer</German>
-		<Italian>Le montagne producono 2 cibo e 1 scudo</Italian>
-		<Spanish>Las monta&#241;as producen 2 alimentos y 1 martillo</Spanish>
+		<English>Farms next to Mountains don't require Irrigation and yield +1 Food</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND_TITLE</Tag>
