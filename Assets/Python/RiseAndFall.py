@@ -1293,9 +1293,9 @@ class RiseAndFall:
 		if iCiv in lSecondaryCivs:
 			if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
 				return
-
+		
 		lConditionalCivs = [iMamluks, iByzantium, iMughals, iOttomans, iThailand, iBrazil, iArgentina, iCanada]
-
+		
 		# Leoreth: extra checks for conditional civs
 		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
 			#if iCiv == iByzantium:
@@ -1339,21 +1339,6 @@ class RiseAndFall:
 				if not pFrance.isAlive() and utils.getHumanID() == iMoors:
 					gc.getPlayer(iPortugal).setLastStateReligion(iIslam)
 					return
-
-		if utils.getHumanID() != iCiv and iCiv == iItaly:
-			if pRome.isAlive():
-				return
-				
-			cityList = utils.getCitiesInCore(iRome, False)
-			
-			iIndependentCities = 0
-
-			for pCity in cityList:
-				if not pCity.getOwner() < iNumPlayers:
-					iIndependentCities += 1
-
-			if iIndependentCities == 0:
-				return
 
 		tCapital = Areas.getCapital(iCiv)
 

@@ -1041,7 +1041,7 @@ def checkTurn(iGameTurn, iPlayer):
 
 		# third goal: control 9% of the world's population in 1940 AD
 		if iGameTurn == getTurnForYear(1940):
-			if calculatePopulationPercent(iIndonesia) >= 9.0:
+			if getPopulationPercent(iIndonesia) >= 9.0:
 				win(iIndonesia, 2)
 			else:
 				lose(iIndonesia, 2)
@@ -2136,6 +2136,7 @@ def onTechAcquired(iPlayer, iTech):
 
 		# third Japanese goal: be the first to discover ten Global and ten Digital technologies
 		if isPossible(iJapan, 2):
+<<<<<<< HEAD
 			if countFirstDiscovered(iPlayer, iGlobal) >= 8 and countFirstDiscovered(iPlayer, iDigital) >= 8:
 				if iPlayer == iJapan: win(iJapan, 2)
 				else: lose(iJapan, 2)
@@ -2161,6 +2162,33 @@ def onTechAcquired(iPlayer, iTech):
 							win(iManchuria, 2)
 					else: lose(iManchuria, 2)
 
+=======
+			if iEra in [iGlobal, iDigital]:
+				if countFirstDiscovered(iPlayer, iGlobal) >= 8 and countFirstDiscovered(iPlayer, iDigital) >= 8:
+					if iPlayer == iJapan: win(iJapan, 2)
+					else: lose(iJapan, 2)
+				if not isFirstDiscoveredPossible(iJapan, iGlobal, 8) or not isFirstDiscoveredPossible(iJapan, iDigital, 8):
+					lose(iJapan, 2)
+				
+		# third English goal: be the first to discover ten Renaissance and ten Industrial technologies
+		if isPossible(iEngland, 2):
+			if iEra in [iRenaissance, iIndustrial]:
+				if countFirstDiscovered(iPlayer, iRenaissance) >= 8 and countFirstDiscovered(iPlayer, iIndustrial) >= 8:
+					if iPlayer == iEngland: win(iEngland, 2)
+					else: lose(iEngland, 2)
+				if not isFirstDiscoveredPossible(iEngland, iRenaissance, 8) or not isFirstDiscoveredPossible(iEngland, iIndustrial, 8):
+					lose(iEngland, 2)
+				
+		# third German goal: be the first to discover ten Industrial and ten Global technologies
+		if isPossible(iGermany, 2):
+			if iEra in [iIndustrial, iGlobal]:
+				if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
+					if iPlayer == iGermany: win(iGermany, 2)
+					else: lose(iGermany, 2)
+				if not isFirstDiscoveredPossible(iGermany, iIndustrial, 8) or not isFirstDiscoveredPossible(iGermany, iGlobal, 8):
+					lose(iGermany, 2)
+			
+>>>>>>> remotes/origin/develop
 	# handle all "be the first to enter" goals
 	if not isEntered(iEra):
 		data.lFirstEntered[iEra] = iPlayer
@@ -2496,10 +2524,13 @@ def onPlayerGoldTrade(iPlayer, iGold):
 	if iPlayer == iTamils:
 		if isPossible(iTamils, 2):
 			data.iTamilTradeGold += iGold * 100
+<<<<<<< HEAD
 	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
 	elif iPlayer == iSwahili:
 		if isPossible(iSwahili, 0):
 			data.iSwahiliTradeGold += iGold * 100
+=======
+>>>>>>> remotes/origin/develop
 		
 def onPlayerSlaveTrade(iPlayer, iGold):
 
@@ -2515,9 +2546,12 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
 		data.iTamilTradeGold += iGold * 100
+<<<<<<< HEAD
 	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
 	elif iPlayer == iSwahili:
 		data.iSwahiliTradeGold += iGold * 100
+=======
+>>>>>>> remotes/origin/develop
 		
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iPlayer == iMali:
@@ -2944,10 +2978,14 @@ def isDiscovered(iTech):
 	return data.lFirstDiscovered[iTech] != -1
 
 def isEntered(iEra):
+<<<<<<< HEAD
 	return data.lFirstDiscovered[iEra] != -1
 
 def isEraCompleted(iEra):
 	return data.lFirstCompleted[iEra] != -1
+=======
+	return data.lFirstEntered[iEra] != -1
+>>>>>>> remotes/origin/develop
 	
 def checkEraCompleted(iPlayer, iEra):
 	teamPlayer = gc.getTeam(iPlayer)
@@ -3277,6 +3315,7 @@ def countHappinessResources(iPlayer):
 			if pPlayer.getNumAvailableBonuses(iBonus) > 0:
 				iCount += 1
 	return iCount
+<<<<<<< HEAD
 
 def calculatePopulationPercent(iPlayer):
 	iTotalPopulation = gc.getGame().getTotalPopulation()
@@ -3284,6 +3323,9 @@ def calculatePopulationPercent(iPlayer):
 
 	return 100.0 * gc.getTeam(iPlayer).getTotalPopulation() / iTotalPopulation
 
+=======
+	
+>>>>>>> remotes/origin/develop
 def countResources(iPlayer, iBonus):
 	iNumBonus = 0
 	pPlayer = gc.getPlayer(iPlayer)
@@ -3510,7 +3552,16 @@ def countFirstDiscovered(iPlayer, iEra):
 		if gc.getTechInfo(iTech).getEra() == iEra and data.lFirstDiscovered[iTech] == iPlayer:
 			iCount += 1
 	return iCount
+<<<<<<< HEAD
 
+=======
+	
+def isFirstDiscoveredPossible(iPlayer, iEra, iRequired):
+	iCount = countFirstDiscovered(iPlayer, iEra)
+	iNotYetDiscovered = countFirstDiscovered(-1, iEra)
+	return iCount + iNotYetDiscovered >= iRequired
+	
+>>>>>>> remotes/origin/develop
 def isWonder(iBuilding):
 	return iBeginWonders <= iBuilding < iNumBuildings
 
@@ -4222,7 +4273,11 @@ def getUHVHelp(iPlayer, iGoal):
 			bSrivijaya = isControlledOrVassalized(iTamils, utils.getPlotList(tSrivijayaTL, tSrivijayaBR))
 			aHelp.append(getIcon(bDeccan) + localText.getText("TXT_KEY_VICTORY_DECCAN", ()) + ' ' + getIcon(bSrivijaya) + localText.getText("TXT_KEY_VICTORY_SRIVIJAYA", ()))
 		elif iGoal == 2:
+<<<<<<< HEAD
 			iTradeGold = data.iTamilTradeGold / 100
+=======
+			iTradeGold = data.fTamilTradeGold / 100
+>>>>>>> remotes/origin/develop
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iEthiopia:
@@ -4410,7 +4465,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCounter = countHappinessResources(iIndonesia)
 			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 10)))
 		elif iGoal == 2:
-			popPercent = calculatePopulationPercent(iIndonesia)
+			popPercent = getPopulationPercent(iIndonesia)
 			aHelp.append(getIcon(popPercent >= 9.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(9))))
 
 	elif iPlayer == iMoors:
