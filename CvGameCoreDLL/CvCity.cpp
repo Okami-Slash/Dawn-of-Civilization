@@ -1664,7 +1664,7 @@ int CvCity::countNumLandPlots() const
 		{
 			if (pLoopPlot->getWorkingCity() == this)
 			{
-				if ((pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 0 || pLoopPlot->getYield(YIELD_COMMERCE) > 0) && !pLoopPlot->isWater())
+				if ((pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 1 || pLoopPlot->getYield(YIELD_COMMERCE) > 2) && !pLoopPlot->isWater())
 				{
 					iCount++;
 				}

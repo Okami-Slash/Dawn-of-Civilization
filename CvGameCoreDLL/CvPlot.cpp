@@ -7240,13 +7240,13 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	{
 		// Leoreth: unimproved land tiles by civic effect
 		// yield is subtracted again in calculateImprovementYieldChange()
+		// 1SDAN: Land Yield
 		if (!isWater())
 		{
 			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield) + GET_PLAYER(ePlayer).getLandYield(eYield);
 		}
 
-		// Leoreth: unimproved land tiles by civic effect
-		// yield is subtracted again in calculateImprovementYieldChange()
+		// 1SDAN: Water Yield
 		if (isWater())
 		{
 			iYield += GET_PLAYER(ePlayer).getWaterYield(eYield);
