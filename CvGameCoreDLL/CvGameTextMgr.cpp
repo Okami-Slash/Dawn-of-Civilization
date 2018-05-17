@@ -7706,6 +7706,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_HAPPINESS", abs(GC.getCivicInfo(eCivic).getSpecialistHappiness()), GC.getCivicInfo(eCivic).getSpecialistHappiness() > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
 	}
 
+	// 1SDAN: Core Luxury happiness
+	if (GC.getCivicInfo(eCivic).getCoreLuxuryHappiness() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CORE_LUXURY_HAPPINESS", abs(GC.getCivicInfo(eCivic).getCoreLuxuryHappiness()), GC.getCivicInfo(eCivic).getCoreLuxuryHappiness() > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
+	}
+
 	// Capture gold modifier
 	if (GC.getCivicInfo(eCivic).getCaptureGoldModifier() != 0)
 	{
@@ -13354,7 +13361,12 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 		if (GC.getBonusInfo(eBonus).getHappiness() > 0)
 		{
 			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_HAPPY", GC.getBonusInfo(eBonus).getHappiness()));
+			int iHappy = GC.getBonusInfo(eBonus).getHappiness();
+			if (pCity != NULL && pCity->plot()->isCore(pCity->getOwner()))
+			{
+				iHappy += GET_PLAYER(pCity->getOwner()).getCoreLuxuryHappiness();
+			}
+			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_HAPPY", iHappy));
 		}
 		else
 		{

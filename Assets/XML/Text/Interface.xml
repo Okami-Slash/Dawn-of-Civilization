@@ -227,11 +227,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FOR_LAND_TILES</Tag>
-		<English>[SPACE] on Land</English>
+		<English>[SPACE]on Land</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FOR_WATER_TILES</Tag>
-		<English>[SPACE] on Water</English>
+		<English>[SPACE]on Water</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
@@ -1691,6 +1691,10 @@
 		<Tag>TXT_KEY_CIVIC_SPECIALIST_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</English>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Spezialist</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CORE_LUXURY_HAPPINESS</Tag>
+		<English>[ICON_BULLET]Luxuries yield %D1_Change%F2_HappyOrUn in Core Cities</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>

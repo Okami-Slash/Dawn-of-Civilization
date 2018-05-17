@@ -1642,7 +1642,7 @@ int CvCity::countNumWaterPlots() const
 		{
 			if (pLoopPlot->getWorkingCity() == this)
 			{
-				if (pLoopPlot->isWater())
+				if (pLoopPlot->isWater() && (pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 0 || pLoopPlot->getYield(YIELD_COMMERCE) > 0))
 				{
 					iCount++;
 				}
@@ -1670,7 +1670,7 @@ int CvCity::countNumLandPlots() const
 		{
 			if (pLoopPlot->getWorkingCity() == this)
 			{
-				if (!pLoopPlot->isImpassable() && !pLoopPlot->isWater())
+				if ((pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 0 || pLoopPlot->getYield(YIELD_COMMERCE) > 0) && !pLoopPlot->isWater())
 				{
 					iCount++;
 				}
@@ -4235,6 +4235,7 @@ int CvCity::getBonusHappiness(BonusTypes eBonus) const
 	if (hasBonusEffect(eBonus))
 	{
 		iHappiness += GC.getBonusInfo(eBonus).getHappiness();
+		if (plot()->isCore(getOwner())) iHappiness += GET_PLAYER(getOwner()).getCoreLuxuryHappiness();
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)

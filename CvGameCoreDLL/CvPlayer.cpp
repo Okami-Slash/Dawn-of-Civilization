@@ -490,6 +490,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iBuildingHappiness = 0;
 	m_iLargestCityHappiness = 0;
 	m_iSpecialistHappiness = 0; // Leoreth
+	m_iCoreLuxuryHappiness = 0; // 1SDAN
 	m_iWarWearinessPercentAnger = 0;
 	m_iWarWearinessModifier = 0;
 	m_iFreeSpecialist = 0;
@@ -10268,13 +10269,11 @@ void CvPlayer::changeLargestCityHappiness(int iChange)
 	}
 }
 
-
 // Leoreth
 int CvPlayer::getSpecialistHappiness() const
 {
 	return m_iSpecialistHappiness;
 }
-
 
 // Leoreth
 void CvPlayer::changeSpecialistHappiness(int iChange)
@@ -10282,6 +10281,23 @@ void CvPlayer::changeSpecialistHappiness(int iChange)
 	if (iChange != 0)
 	{
 		m_iSpecialistHappiness += iChange;
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
+// 1SDAN
+int CvPlayer::getCoreLuxuryHappiness() const
+{
+	return m_iCoreLuxuryHappiness;
+}
+
+// 1SDAN
+void CvPlayer::changeCoreLuxuryHappiness(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCoreLuxuryHappiness += iChange;
 
 		AI_makeAssignWorkDirty();
 	}
@@ -13728,6 +13744,8 @@ void CvPlayer::changeLandYield(YieldTypes eYield, int iChange)
 	{
 		m_aiLandYield[eYield] += iChange;
 
+		updateYield();
+
 		AI_updateAssignWork();
 	}
 }
@@ -13750,6 +13768,8 @@ void CvPlayer::changeWaterYield(YieldTypes eYield, int iChange)
 	if (iChange != 0)
 	{
 		m_aiWaterYield[eYield] += iChange;
+
+		updateYield();
 
 		AI_updateAssignWork();
 	}
@@ -17854,6 +17874,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeBuildingOnlyHealthyCount((GC.getCivicInfo(eCivic).isBuildingOnlyHealthy()) ? iChange : 0);
 	changeLargestCityHappiness(GC.getCivicInfo(eCivic).getLargestCityHappiness() * iChange);
 	changeSpecialistHappiness(GC.getCivicInfo(eCivic).getSpecialistHappiness() * iChange); // Leoreth
+	changeCoreLuxuryHappiness(GC.getCivicInfo(eCivic).getCoreLuxuryHappiness() * iChange); // 1SDAN
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
 	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
@@ -18250,6 +18271,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBuildingHappiness);
 	pStream->Read(&m_iLargestCityHappiness);
 	pStream->Read(&m_iSpecialistHappiness); // Leoreth
+	pStream->Read(&m_iCoreLuxuryHappiness); // 1SDAN
 	pStream->Read(&m_iWarWearinessPercentAnger);
 	pStream->Read(&m_iWarWearinessModifier);
 	pStream->Read(&m_iFreeSpecialist);
@@ -18788,6 +18810,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingHappiness);
 	pStream->Write(m_iLargestCityHappiness);
 	pStream->Write(m_iSpecialistHappiness); // Leoreth
+	pStream->Write(m_iCoreLuxuryHappiness); // 1SDAN 
 	pStream->Write(m_iWarWearinessPercentAnger);
 	pStream->Write(m_iWarWearinessModifier);
 	pStream->Write(m_iFreeSpecialist);

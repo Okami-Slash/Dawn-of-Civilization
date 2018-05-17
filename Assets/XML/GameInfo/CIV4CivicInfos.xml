@@ -55,12 +55,12 @@
 			<Button>,Art/Interface/Buttons/Civics/Monarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<SpecialistExtraCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</SpecialistExtraCommerces>
-			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
+			<WaterYields>
+				<iYield>0</iYield>
+				<iYield>1</iYield>
+				<iYield>1</iYield>
+			</WaterYields>
+			<iCoreLuxuryHappiness>1</iCoreLuxuryHappiness>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
@@ -514,7 +514,7 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>NONE</Upkeep>
 			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
-			<iWarWearinessModifier>-100</iWarWearinessModifier>
+			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
 			<UnhappinessExtraYields>
 				<iYield>0</iYield>
 				<iYield>2</iYield>

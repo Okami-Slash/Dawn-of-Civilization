@@ -9618,13 +9618,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,59,
 EndPlot
 BeginPlot
 	x=22,y=40
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,59,
 EndPlot
@@ -10099,13 +10099,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,59,
 EndPlot
 BeginPlot
 	x=23,y=40
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,58,59,
 EndPlot
@@ -10932,19 +10932,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=34
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,58,59,
 EndPlot
 BeginPlot
 	x=25,y=35
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,58,59,
 EndPlot
 BeginPlot
 	x=25,y=36
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,58,59,
 EndPlot
@@ -12792,7 +12792,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=35
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,59,
 EndPlot
@@ -12847,7 +12847,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=41
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,48,
 EndPlot
@@ -12865,7 +12865,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=44
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=29,48,
 EndPlot
@@ -13285,13 +13285,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=34
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,
 EndPlot
 BeginPlot
 	x=30,y=35
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,59,
 EndPlot
@@ -13329,7 +13329,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=41
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,48,
 EndPlot
@@ -13794,19 +13794,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=33
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,58,59,
 EndPlot
 BeginPlot
 	x=31,y=34
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,58,
 EndPlot
 BeginPlot
 	x=31,y=35
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,58,59,
 EndPlot
@@ -13844,7 +13844,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=41
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=27,
 EndPlot
@@ -14304,13 +14304,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,59,
 EndPlot
 BeginPlot
 	x=32,y=40
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,
 EndPlot
@@ -14776,7 +14776,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,
 EndPlot
@@ -15237,13 +15237,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=37
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,
 EndPlot
 BeginPlot
 	x=34,y=38
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,48,
 EndPlot
@@ -15661,25 +15661,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=33
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=27,29,37,48,58,
 EndPlot
 BeginPlot
 	x=35,y=34
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,58,
 EndPlot
 BeginPlot
 	x=35,y=35
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,58,
 EndPlot
 BeginPlot
 	x=35,y=36
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,27,29,37,48,
 EndPlot

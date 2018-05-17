@@ -1383,6 +1383,7 @@ public:
 	int getHappyPerMilitaryUnit() const;				// Exposed to Python
 	int getLargestCityHappiness() const;					// Exposed to Python
 	int getSpecialistHappiness() const; // Leoreth
+	int getCoreLuxuryHappiness() const; //1SDAN
 	int getWarWearinessModifier() const;					// Exposed to Python
 	int getFreeSpecialist() const;				// Exposed to Python
 	int getCoreFreeSpecialist() const; // Leoreth
@@ -1498,6 +1499,7 @@ protected:
 	int m_iHappyPerMilitaryUnit;
 	int m_iLargestCityHappiness;
 	int m_iSpecialistHappiness; // Leoreth
+	int m_iCoreLuxuryHappiness; // 1SDAN
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
 	int m_iCoreFreeSpecialist; // Leoreth

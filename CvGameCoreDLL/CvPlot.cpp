@@ -6721,12 +6721,6 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			return 0;
 	}
 
-	//Caribbean UP
-	if (isWater() && getWorkingCity() != NULL && getWorkingCity()->getRegionID() == REGION_CARIBBEAN && eYield == YIELD_COMMERCE)
-	{
-		iYield += 2;
-	}
-
 	if (isImpassable())
 	{
 		return 0;
@@ -6735,6 +6729,11 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	iYield = GC.getTerrainInfo(getTerrainType()).getYield(eYield);
+
+	if (isWater() && getWorkingCity() != NULL && getWorkingCity()->getRegionID() == REGION_CARIBBEAN && eYield == YIELD_COMMERCE)
+	{
+		iYield += 1;
+	}
 
 	if (isHills())
 	{
@@ -7015,7 +7014,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	PlayerTypes ePlayer;
 	CvPlot* pAdjacentPlot;
 	CvCity* pAdjacentCity;
-	bool bAdjacentCity;
+	bool bAdjacentCity = false;
 	bool bCity;
 	int iYield;
 

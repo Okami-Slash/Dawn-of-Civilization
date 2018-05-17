@@ -569,6 +569,10 @@ public:
 	int getSpecialistHappiness() const;
 	void changeSpecialistHappiness(int iChange);
 
+	// 1SDAN
+	int getCoreLuxuryHappiness() const;
+	void changeCoreLuxuryHappiness(int iChange);
+
 	int getWarWearinessPercentAnger() const;																																	// Exposed to Python
 	void updateWarWearinessPercentAnger();
 	int getModifiedWarWearinessPercentAnger(int iWarWearinessPercentAnger) const;
@@ -1405,6 +1409,7 @@ protected:
 	int m_iBuildingHappiness;
 	int m_iLargestCityHappiness;
 	int m_iSpecialistHappiness; // Leoreth
+	int m_iCoreLuxuryHappiness; // 1SDAN
 	int m_iWarWearinessPercentAnger;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;

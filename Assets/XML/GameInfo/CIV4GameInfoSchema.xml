@@ -832,6 +832,7 @@
 	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iColonyCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCoreLuxuryHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iCaptureGoldModifier" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
@@ -882,6 +883,7 @@
 		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
 		<element type="iLargestCityHappiness" minOccurs="0"/>
 		<element type="iSpecialistHappiness" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iCoreLuxuryHappiness" minOccurs="0"/> <!-- 1SDAN -->
 		<element type="iWarWearinessModifier" minOccurs="0"/>
 		<element type="iFreeSpecialist" minOccurs="0"/>
 		<element type="iCoreFreeSpecialist" minOccurs="0"/> <!-- Leoreth -->

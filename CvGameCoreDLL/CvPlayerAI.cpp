@@ -11268,10 +11268,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iLandTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumLandPlots());
+				iLandTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumWaterPlots());
 			}
 
-			iTempValue += std::max(0, iLandTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
+			iTempValue += std::max(0, iLandTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
 		}
 
 		// 1SDAN: Land yield
@@ -11283,10 +11283,34 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iWaterTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumWaterPlots());
+				iWaterTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumLandPlots());
 			}
 
-			iTempValue += std::max(0, iWaterTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
+			iTempValue += std::max(0, iWaterTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
+		}
+
+		// 1SDAN: Core City Luxury Happiness
+		if (kCivic.getCoreLuxuryHappiness() != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			int iHappinessYield = 0;
+
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+				{
+					if (pLoopCity->hasBonusEffect((BonusTypes)iI))
+					{
+						if (GC.getBonusInfo((BonusTypes)iI).getHappiness() > 0)
+						{
+							iHappinessYield++;
+						}
+					}
+				}
+			}
+
+			iTempValue += iHappinessYield * kCivic.getCoreLuxuryHappiness() * 5 / 100;
 		}
 
 		// Leoreth: specialist extra yield
