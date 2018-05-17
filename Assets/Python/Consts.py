@@ -152,6 +152,7 @@ lNeighbours = [
 [iEgypt, iGreece, iPersia, iTurks, iOttomans, iHittite, iMongolia, iCarthage, iByzantium, iAssyria], #Babylonia
 [iEgypt, iGreece, iPersia, iOttomans, iHittite, iMongolia, iCarthage, iByzantium, iBabylonia], #Assyria
 [iIndia, iPersia, iTamils, iTibet, iMughals], #Harappa
+[], #Hittite
 [iPersia, iCarthage, iRome, iByzantium, iHolyRome, iRussia, iOttomans, iHittite, iItaly], #Greece
 [iChina, iHarappa, iPersia, iTamils, iTibet, iKhmer, iMongolia, iMughals, iThailand, iVietnam], #India
 [iEgypt, iGreece, iRome, iSpain, iMali, iPortugal, iAssyria, iBabylonia, iPersia, iArabia, iMoors, iOttomans, iHittite, iItaly, iMamluks], #Carthage
@@ -178,6 +179,9 @@ lNeighbours = [
 [iRome, iVikings, iSpain, iFrance, iHolyRome, iNetherlands, iGermany], #England
 [iRome, iVikings, iFrance, iEngland, iNetherlands, iItaly, iPoland, iGermany], #Holy Rome
 [iPersia, iByzantium, iVikings, iPoland, iOttomans, iMongolia, iGermany], #Russia
+[], #Phillipines
+[], #Swahili
+[], #Mamluks
 [iEgypt, iCarthage, iEthiopia, iMoors, iCongo, iNigeria], #Mali
 [iVikings, iHolyRome, iRussia, iGermany], #Poland
 [iCarthage, iRome, iSpain, iFrance], #Portugal
@@ -190,12 +194,15 @@ lNeighbours = [
 [iBabylonia, iGreece, iPersia, iByzantium, iRussia, iMongolia, iCarthage, iTurks], #Ottomans
 [iIndia, iChina, iJapan, iIndonesia, iKhmer, iTamils], #Thailand
 [iEthiopia, iMali, iNigeria], #Congo
+[], #Sweden
 [iVikings, iFrance, iEngland, iHolyRome, iGermany], #Netherlands
 [iChina, iKorea, iJapan, iMongolia], #Manchuria
 [iRome, iVikings, iFrance, iEngland, iHolyRome, iRussia, iPoland, iNetherlands], #Germany
 [iJapan, iSpain, iFrance, iEngland, iRussia, iInca, iAztecs], #America
 [iSpain, iPortugal, iInca, iBrazil], #Argentina
 [iSpain, iPortugal, iInca, iArgentina], #Brazil
+[], #Australia
+[], #Boers
 [iAmerica], #Canada
 [iEgypt, iArabia, iOttomans], #Israel
 ]

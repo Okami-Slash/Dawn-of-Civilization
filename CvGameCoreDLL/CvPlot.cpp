@@ -6721,8 +6721,8 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			return 0;
 	}
 
-	//Carribean UP
-	if (getWorkingCity()->getRegionID() == REGION_CARIBBEAN && isWater() && eYield == YIELD_COMMERCE)
+	//Caribbean UP
+	if (isWater() && getWorkingCity() != NULL && getWorkingCity()->getRegionID() == REGION_CARIBBEAN && eYield == YIELD_COMMERCE)
 	{
 		iYield += 2;
 	}
@@ -7136,20 +7136,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 				}
 			}
 		}
-
-		// Leoreth: unimproved land tiles by civic effect
-		// yield is subtracted again in calculateImprovementYieldChange()
-		if (!isWater() && !isImpassable())
-		{
-			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield) + GET_PLAYER(ePlayer).getLandYield(eYield);
-		}
-
-		// Leoreth: unimproved land tiles by civic effect
-		// yield is subtracted again in calculateImprovementYieldChange()
-		if (isWater() && !isImpassable())
-		{
-			iYield += GET_PLAYER(ePlayer).getWaterYield(eYield);
-		}
 	}
 
 	if (bCity)
@@ -7322,6 +7308,23 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 
 			if (bAdjacentCity) iYield += 1;
 			else iYield -= 1;
+		}
+	}
+
+	if (ePlayer != NO_PLAYER)
+	{
+		// Leoreth: unimproved land tiles by civic effect
+		// yield is subtracted again in calculateImprovementYieldChange()
+		if (!isWater())
+		{
+			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield) + GET_PLAYER(ePlayer).getLandYield(eYield);
+		}
+
+		// Leoreth: unimproved land tiles by civic effect
+		// yield is subtracted again in calculateImprovementYieldChange()
+		if (isWater())
+		{
+			iYield += GET_PLAYER(ePlayer).getWaterYield(eYield);
 		}
 	}
 
