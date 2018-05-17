@@ -2561,24 +2561,6 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return false;
 	}
 
-	// 1SDAN: Incan UP (Terraces): can build farms adjacent to mountains
-	if (eTeam == INCA && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM"))
-	{
-		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-		{
-			pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-			if ((pAdjacentPlot != NULL))
-			{
-				if (pAdjacentPlot->isPeak())
-				{
-					bInca = true;
-					break;
-				}
-			}
-		}
-	}
-
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
 	if (eTeam == AZTECS && GET_PLAYER((PlayerTypes)AZTECS).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
@@ -6712,15 +6694,6 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	BonusTypes eBonus;
 	int iYield;
 
-	// South American UP
-	if (isPeak() || getFeatureType() == GC.getInfoTypeForString("FEATURE_MARSH"))
-	{
-		if (getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_PERU || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_COLOMBIA || getRegionID() == REGION_BRAZIL)
-			return 0 + GC.getYieldInfo(eYield).getLakeChange() + GC.getYieldInfo(eYield).getLakeChange() + GC.getYieldInfo(eYield).getHillsChange() + GC.getYieldInfo(eYield).getLakeChange();
-		else
-			return 0;
-	}
-
 	if (isImpassable())
 	{
 		return 0;
@@ -6729,11 +6702,6 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	iYield = GC.getTerrainInfo(getTerrainType()).getYield(eYield);
-
-	if (isWater() && getWorkingCity() != NULL && getWorkingCity()->getRegionID() == REGION_CARIBBEAN && eYield == YIELD_COMMERCE)
-	{
-		iYield += 1;
-	}
 
 	if (isHills())
 	{
@@ -6768,15 +6736,6 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	if (isHills())
 	{
 		iYield += ((bIgnoreFeature || (getFeatureType() == NO_FEATURE)) ? GC.getTerrainInfo(getTerrainType()).getHillsYieldChange(eYield) : GC.getFeatureInfo(getFeatureType()).getHillsYieldChange(eYield));
-
-		//1SDAN: African UP: +1 food, +1 production on jungle, rainforest, forest and hill tiles
-		if (getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA || getRegionID() == REGION_WEST_AFRICA)
-		{
-			if ((int)eYield == 0 || (int)eYield == 1)
-			{
-				iYield += 1;
-			}
-		}
 	}
 
 	if (!bIgnoreFeature)
@@ -6785,12 +6744,12 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		{
 			iYield += GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield);
 
-			//1SDAN: African UP: +1 food, +1 production on jungle, rainforest, forest and hill tiles
-			if (getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA || getRegionID() == REGION_WEST_AFRICA)
+			//Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
+			if (getOwnerINLINE() == CONGO)
 			{
 				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
 					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
-					getFeatureType() == GC.getInfoTypeForString("FEATURE_FOREST"))
+					getFeatureType() == GC.getInfoTypeForString("FEATURE_MARSH"))
 				{
 					if ((int)eYield == 0 || (int)eYield == 1)
 					{
@@ -6965,9 +6924,6 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
-	// Incan UP
-	bool bIncanAdjacent = false;
-
 	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 	{
 		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
@@ -6978,9 +6934,6 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 			eAdjImp = pAdjacentPlot->getImprovementType();
 			bAdjMou = pAdjacentPlot->isPeak();
 			bAdjCit = pAdjacentPlot->isCity();
-
-			// Incan UP
-			if (bAdjMou) bIncanAdjacent = true;
 
 			if (eAdjBon != NO_BONUS && eAdjImp != NO_IMPROVEMENT)
 			{
@@ -6998,8 +6951,6 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 				iYield += tempYield;
 		}
 	}
-
-	if (bIncanAdjacent && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && iYield == YIELD_FOOD) iYield += 1;
 
 	return iYield;
 }
@@ -7282,31 +7233,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 					if (iYield >= 3) iYield += 1; // normal golden age effect has to be accounted for
 				}
 			}
-		}
-		
-		//European UP
-		if (getOwnerINLINE() != NO_PLAYER && !isWater() && !isPeak() && !isImpassable() && !isCity() && (getRegionID() == REGION_BRITAIN || getRegionID() == REGION_IBERIA || getRegionID() == REGION_ITALY || getRegionID() == REGION_EUROPE || getRegionID() == REGION_SCANDINAVIA || (getRegionID() == REGION_BALKANS && (getX_INLINE() != 68 || getY_INLINE() != 45))))
-		{
-			for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
-			{
-				pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
-
-				if ((pAdjacentPlot != NULL))
-				{
-					if (pAdjacentPlot->isCity())
-					{
-						pAdjacentCity = pAdjacentPlot->getPlotCity();
-						if (!GET_TEAM(pAdjacentCity->getTeam()).isAtWar(getTeam()))
-						{
-							bAdjacentCity = true;
-							break;
-						}
-					}
-				}
-			}
-
-			if (bAdjacentCity) iYield += 1;
-			else iYield -= 1;
 		}
 	}
 
