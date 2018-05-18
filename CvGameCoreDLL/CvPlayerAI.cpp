@@ -11268,13 +11268,14 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iLandTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumWaterPlots());
+				iLandTiles += std::min(pLoopCity->getWorkingPopulation(), pLoopCity->countNumLandPlots());
 			}
 
+			GC.getGame().logMsg("LANDYIELD %d, %d, %d", getID(), eCivic, std::max(0, iLandTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100);
 			iTempValue += std::max(0, iLandTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
 		}
 
-		// 1SDAN: Land yield
+		// 1SDAN: Water yield
 		if (kCivic.getWaterYield(iI) != 0)
 		{
 			CvCity* pLoopCity;
@@ -11283,9 +11284,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iWaterTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumLandPlots());
+				iWaterTiles += std::min(pLoopCity->getWorkingPopulation(), pLoopCity->countNumWaterPlots());
 			}
-
+			GC.getGame().logMsg("WATERYIELD %d, %d, %d", getID(), eCivic, std::max(0, iWaterTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100);
 			iTempValue += std::max(0, iWaterTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
 		}
 
@@ -11316,7 +11317,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			{
 				iUnhappinessYield += std::max(0, pLoopCity->unhappyLevel() - pLoopCity->happyLevel()) * kCivic.getUnhappinessExtraYield(iI);
 			}
-
 			iTempValue += iUnhappinessYield * AI_averageYieldMultiplier((YieldTypes)iI) / 100;
 		}
 
@@ -11420,9 +11420,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				if (eType != GC.getInfoTypeForString("SPECIALIST_CITIZEN") && eType != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
 					iSlots += pLoopCity->getMaxSpecialistCount(eType);
 			}
-		}
 
-		iTempValue += ((iSpecialists * 5) + iSlots * 3) * kCivic.getSpecialistHappiness();
+			iSlots = std::min(pLoopCity->getPopulation() - pLoopCity->getSpecialistPopulation(), iSlots);
+		}
+		GC.getGame().logMsg("SPECIALISTYIELD %d, %d, %d", getID(), eCivic, iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100);
+		iTempValue = (iSpecialists * 3 + (iSlots / 2)) * kCivic.getSpecialistHappiness();
+		iValue += iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100;
 	}
 
 	// 1SDAN: Core City Luxury Happiness
@@ -11492,8 +11495,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				}
 			}
 		}
-
-		iTempValue += ((iBonuses * 5) + iPotential * 3) * kCivic.getCoreLuxuryHappiness();
+		GC.getGame().logMsg("LUXURYYIELD %d, %d, %d", getID(), eCivic, iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100);
+		iTempValue = (iBonuses * 3 + iPotential) * kCivic.getCoreLuxuryHappiness();
+		iValue += iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100;
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)

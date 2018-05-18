@@ -239,6 +239,9 @@ void CvPlayer::init(PlayerTypes eID)
 		changeStateReligionHappiness(GC.getDefineINT("INITIAL_STATE_RELIGION_HAPPINESS"));
 		changeNonStateReligionHappiness(GC.getDefineINT("INITIAL_NON_STATE_RELIGION_HAPPINESS"));
 
+		GC.getGame().logMsg("REPUBLIC %d", GC.getInfoTypeForString("CIVIC_REPUBLIC"));
+		GC.getGame().logMsg("MONARCHY %d", GC.getInfoTypeForString("CIVIC_MONARCHY"));
+
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			changeTradeYieldModifier(((YieldTypes)iI), GC.getYieldInfo((YieldTypes)iI).getTradeModifier());
