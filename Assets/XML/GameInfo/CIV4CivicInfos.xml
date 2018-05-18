@@ -33,11 +33,12 @@
 					<bHurry>1</bHurry>
 				</Hurry>
 			</Hurrys>
+			<WaterYields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>-1</iYield>
+			</WaterYields>
 			<BuildingHappinessChanges>
-				<BuildingHappinessChange>
-					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
-					<iHappinessChange>1</iHappinessChange>
-				</BuildingHappinessChange>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_MONUMENT</BuildingType>
 					<iHappinessChange>1</iHappinessChange>
@@ -54,12 +55,17 @@
 			<TechPrereq>TECH_CEREMONY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Monarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WaterYields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-				<iYield>1</iYield>
 			</WaterYields>
+			<BuildingHappinessChanges>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+			</BuildingHappinessChanges>
 			<iCoreLuxuryHappiness>1</iCoreLuxuryHappiness>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
@@ -73,6 +79,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Republic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<iSpecialistHappiness>1</iSpecialistHappiness>
 			<LandYields>
 				<iYield>-1</iYield>
 			</LandYields>
@@ -111,6 +118,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
+			<iDistanceMaintenanceModifier>-50</iDistanceMaintenanceModifier>
 			<LandYields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -507,7 +515,7 @@
 			<TechPrereq>TECH_PSYCHOLOGY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Totalitarianism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>NONE</Upkeep>
+			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
 			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
 			<UnhappinessExtraYields>

@@ -4682,7 +4682,10 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
 
-	iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
+	if (eSpecialist != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+	{
+		iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
+	}
 
 	// Merijn: Swedish UP, 2 happiness (and 1 gold) for every settled GP
 	if (getOwnerINLINE() == SWEDEN && (GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass() == NO_UNITCLASS))

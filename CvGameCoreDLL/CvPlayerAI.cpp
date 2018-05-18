@@ -11289,30 +11289,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += std::max(0, iWaterTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
 		}
 
-		// 1SDAN: Core City Luxury Happiness
-		if (kCivic.getCoreLuxuryHappiness() != 0)
-		{
-			CvCity* pLoopCity;
-			int iLoop;
-			int iHappinessYield = 0;
-
-			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-			{
-				for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
-				{
-					if (pLoopCity->hasBonusEffect((BonusTypes)iI))
-					{
-						if (GC.getBonusInfo((BonusTypes)iI).getHappiness() > 0)
-						{
-							iHappinessYield++;
-						}
-					}
-				}
-			}
-
-			iTempValue += iHappinessYield * kCivic.getCoreLuxuryHappiness() * 5 / 100;
-		}
-
 		// Leoreth: specialist extra yield
 		iTempValue += ((AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15) / 100;
 
@@ -11423,6 +11399,101 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iTempValue /= 100;
 
 		iValue += iTempValue;
+	}
+
+
+	// 1SDAN: Specialist Happiness
+	if (kCivic.getSpecialistHappiness() != 0)
+	{
+		CvCity* pLoopCity;
+		SpecialistTypes eType;
+		int iLoop;
+		int iSpecialists;
+		int iSlots;
+
+		for (pLoopCity = firstCity(&iLoop); NULL != pLoopCity; pLoopCity = nextCity(&iLoop))
+		{
+			for (int i = 0; i < GC.getNumSpecialistInfos(); i++)
+			{
+				eType = (SpecialistTypes)i;
+				iSpecialists += pLoopCity->getSpecialistCount(eType);
+				if (eType != GC.getInfoTypeForString("SPECIALIST_CITIZEN") && eType != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+					iSlots += pLoopCity->getMaxSpecialistCount(eType);
+			}
+		}
+
+		iTempValue += ((iSpecialists * 5) + iSlots * 3) * kCivic.getSpecialistHappiness();
+	}
+
+	// 1SDAN: Core City Luxury Happiness
+	if (kCivic.getCoreLuxuryHappiness() != 0)
+	{
+		CvCity* pLoopCity;
+		CvPlot* pLoopPlot;
+		BonusTypes eBonus;
+		ImprovementTypes eImprovement;
+		BuildTypes eBuild;
+		int iLoop;
+		int iBonuses = 0;
+		int iPotential = 0;
+		bool found = false;
+
+		for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+		{
+			eBonus = (BonusTypes)iI;
+
+			if (GC.getBonusInfo(eBonus).getHappiness() > 0)
+			{
+				found = false;
+				for (pLoopCity = firstCity(&iLoop); NULL != pLoopCity; pLoopCity = nextCity(&iLoop))
+				{
+					if (pLoopCity->hasBonus(eBonus))
+					{
+						iBonuses += 1;
+						found = true;
+						break;
+					}
+					else if (!found)
+					{
+						for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+						{
+							if (iJ != CITY_HOME_PLOT)
+							{
+								pLoopPlot = pLoopCity->getCityIndexPlot(iJ);
+
+								if (pLoopPlot != NULL && pLoopPlot->getBonusType() != NULL && pLoopPlot->getBonusType() == eBonus)
+								{
+									eImprovement = pLoopPlot->getImprovementType();
+
+									if ((eImprovement == NO_IMPROVEMENT) || !(GC.getImprovementInfo(eImprovement).isImprovementBonusTrade(eBonus)))
+									{
+										for (int iK = 0; iK < GC.getNumBuildInfos(); iK++)
+										{
+											eBuild = ((BuildTypes)iK);
+
+											if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
+											{
+												if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).isImprovementBonusTrade(eBonus))
+												{
+													if (canBuild(pLoopPlot, eBuild))
+													{
+														iPotential++;
+														found = true;
+														break;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		iTempValue += ((iBonuses * 5) + iPotential * 3) * kCivic.getCoreLuxuryHappiness();
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)

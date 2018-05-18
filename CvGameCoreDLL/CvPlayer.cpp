@@ -10278,9 +10278,37 @@ int CvPlayer::getSpecialistHappiness() const
 // Leoreth
 void CvPlayer::changeSpecialistHappiness(int iChange)
 {
+	CvCity* pLoopCity;
+	SpecialistTypes eType;
+	int iSpecialists;
+	int iCount;
+	int iLoop;
+
+	
 	if (iChange != 0)
 	{
 		m_iSpecialistHappiness += iChange;
+		
+		// 1SDAN: Happiness from existing specialists
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			for (int i = 0; i < GC.getNumSpecialistInfos(); i++)
+			{
+				eType = (SpecialistTypes)i;
+				if (eType != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+				{
+					iCount = pLoopCity->getSpecialistCount(eType);
+					if (iChange > 0)
+					{
+						pLoopCity->changeSpecialistGoodHappiness(iCount * iChange);
+					}
+					else
+					{
+						pLoopCity->changeSpecialistBadHappiness(iCount * iChange);
+					}
+				}
+			}
+		}
 
 		AI_makeAssignWorkDirty();
 	}
@@ -13746,7 +13774,7 @@ void CvPlayer::changeLandYield(YieldTypes eYield, int iChange)
 
 		updateYield();
 
-		AI_updateAssignWork();
+		AI_makeAssignWorkDirty();
 	}
 }
 
@@ -13771,7 +13799,7 @@ void CvPlayer::changeWaterYield(YieldTypes eYield, int iChange)
 
 		updateYield();
 
-		AI_updateAssignWork();
+		AI_makeAssignWorkDirty();
 	}
 }
 
