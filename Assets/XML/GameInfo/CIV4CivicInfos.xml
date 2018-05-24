@@ -36,7 +36,7 @@
 			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
-				<iYield>-5</iYield>
+				<iYield>-10</iYield>
 			</YieldModifiers>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
@@ -123,13 +123,12 @@
 			<TechPrereq>TECH_POLITICS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iDistanceMaintenanceModifier>-50</iDistanceMaintenanceModifier>
-			<LandYields>
+			<Upkeep>NONE</Upkeep>
+			<UnimprovedTileYields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-			</LandYields>
+			</UnimprovedTileYields>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
