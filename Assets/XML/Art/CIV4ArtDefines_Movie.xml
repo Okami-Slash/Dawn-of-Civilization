@@ -394,5 +394,9 @@
 			<Type>ART_DEF_MOVIE_PYRAMID_OF_THE_SUN</Type>
 			<Path>Art/Movies/Wonders/PyramidOfTheSun.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SYDNEY_OPERA</Type>
+			<Path>Art/Movies/Wonders/Sydney_Opera_House.dds</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>
