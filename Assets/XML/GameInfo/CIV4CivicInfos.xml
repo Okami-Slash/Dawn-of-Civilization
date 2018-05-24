@@ -29,10 +29,15 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<Hurrys>
 				<Hurry>
-					<HurryType>HURRY_POPULATION</HurryType>
+					<HurryType>HURRY_POPULATION_BUILDINGS</HurryType>
 					<bHurry>1</bHurry>
 				</Hurry>
 			</Hurrys>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>-5</iYield>
+			</YieldModifiers>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
@@ -60,27 +65,14 @@
 			<TechPrereq>TECH_CEREMONY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Monarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
-			<WaterYields>
-				<iYield>0</iYield>
-				<iYield>1</iYield>
-			</WaterYields>
-			<ImprovementYieldChanges>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-			</ImprovementYieldChanges>
+			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<iCoreLuxuryHappiness>1</iCoreLuxuryHappiness>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_SMOKEHOUSE</BuildingType>
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
-			<iCoreLuxuryHappiness>1</iCoreLuxuryHappiness>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
@@ -92,7 +84,7 @@
 			<TechPrereq>TECH_WRITING</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Republic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iSpecialistHappiness>1</iSpecialistHappiness>
 			<LandYields>
 				<iYield>-1</iYield>
@@ -466,7 +458,7 @@
 			</ImprovementYieldChanges>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_WALLS</BuildingType>
+					<BuildingType>BUILDINGCLASS_BARRACKS</BuildingType>
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
@@ -585,9 +577,14 @@
 			<TechPrereq>TECH_PSYCHOLOGY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Totalitarianism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
-			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<iWarWearinessModifier>-100</iWarWearinessModifier>
+			<Hurrys>
+				<Hurry>
+					<HurryType>HURRY_POPULATION_BUILDINGS</HurryType>
+					<bHurry>1</bHurry>
+				</Hurry>
+			</Hurrys>
 			<UnhappinessExtraYields>
 				<iYield>0</iYield>
 				<iYield>2</iYield>

@@ -20,7 +20,7 @@ tMinorCities = (
 (-3600, (69, 30), iIndependent2, 'Mero&#235;', 3, iMedjay, 1), 	# Meroe
 (-3600, (69, 32), iIndependent2, 'Niwt-Rst', 1, iArcher, 1), 	# Upper Egypt
 (-3600, (69, 35), iIndependent2, 'Ineb-Hedj', 1, iArcher, 1), 	# Lower Egypt
-(-3000, (69, 43), iIndependent, 'Wilusha', 1, iArcher, 2),	# Troy
+(-3000, (69, 43), iIndependent, 'Wilusha', 1, iArcher, 1),	# Troy
 (-2700, (73, 40), iIndependent2, 'Tsor', 2, iArcher, 1), 	# Phoenicians
 (-2700, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-2600, (69, 39), iIndependent2, 'Knossos', 2, iMilitia, 1), 	# Minoans
@@ -228,8 +228,11 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHeavyGalley, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 10, 0)
 
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
-		#if utils.isYearIn(-2000, -800):
-		#	self.checkSpawn(iBarbarian, iHuluganni, 1 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 16, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
+		if utils.isYearIn(-1800, -800):
+			self.checkSpawn(iBarbarian, iHuluganni, 1 + iHandicap, (74, 48), (77, 51), self.spawnInvaders, iGameTurn, 16, 0)
+
+		if utils.isYearIn(-1800, -800):
+			self.checkSpawn(iBarbarian, iAxeman, 1 + iHandicap, (62, 47), (65, 49), self.spawnInvaders, iGameTurn, 16, 0)
 
 		#barbarians in europe
 		if utils.isYearIn(210, 470):
@@ -417,6 +420,9 @@ class Barbs:
 			if sName == 'Tsor':
 				lBuildings = [iJewishTemple, iMonument]
 				lReligions = [iJudaism]
+			if sName == 'Wilusha':
+				utils.makeUnit(iHoplite, iIndependent, tPlot, 1)
+				pIndependent.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 			if sName == 'Syrakousai':
 				lBuildings = [iPaganTemple, iHarbor]
 			if sName in ['Lugodunon', 'Burdigala', 'Lutetia']:

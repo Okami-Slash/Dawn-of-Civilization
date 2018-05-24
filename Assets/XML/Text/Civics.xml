@@ -341,4 +341,12 @@
 		<Tag>TXT_KEY_CIVIC_UPKEEP_REDUCTION</Tag>
 		<English>Upkeep Reduction</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_POPULATION_BUILDINGS</Tag>
+		<English>Can Sacrifice Population to Finish Building Production in a City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_POPULATION_UNITS</Tag>
+		<English>Can Sacrifice Population to Finish Unit Production in a City</English>
+	</TEXT>
 </Civ4GameText>

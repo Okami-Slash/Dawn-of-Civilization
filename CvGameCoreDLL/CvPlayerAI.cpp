@@ -11268,11 +11268,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iLandTiles += std::min(pLoopCity->getWorkingPopulation(), pLoopCity->countNumLandPlots());
+				iLandTiles += pLoopCity->countNumLandPlots();
 			}
 
-			GC.getGame().logMsg("LANDYIELD %d, %d, %d", getID(), eCivic, std::max(0, iLandTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100);
-			iTempValue += std::max(0, iLandTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
+			if (kCivic.getLandYield(iI) < 0) iLandTiles /= 2;
+
+			iTempValue += iLandTiles * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
 		}
 
 		// 1SDAN: Water yield
@@ -11284,10 +11285,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				iWaterTiles += std::min(pLoopCity->getWorkingPopulation(), pLoopCity->countNumWaterPlots());
+				iWaterTiles += pLoopCity->countNumWaterPlots();
 			}
-			GC.getGame().logMsg("WATERYIELD %d, %d, %d", getID(), eCivic, std::max(0, iWaterTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100);
-			iTempValue += std::max(0, iWaterTiles) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
+			iTempValue += iWaterTiles * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
 		}
 
 		// Leoreth: specialist extra yield
@@ -11416,15 +11416,16 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			for (int i = 0; i < GC.getNumSpecialistInfos(); i++)
 			{
 				eType = (SpecialistTypes)i;
-				iSpecialists += pLoopCity->getSpecialistCount(eType);
 				if (eType != GC.getInfoTypeForString("SPECIALIST_CITIZEN") && eType != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
-					iSlots += pLoopCity->getMaxSpecialistCount(eType);
+				{
+					iSpecialists += pLoopCity->getSpecialistCount(eType);
+					iSlots += pLoopCity->getMaxSpecialistCount(eType) - pLoopCity->getSpecialistCount(eType);
+				}
 			}
 
-			iSlots = std::min(pLoopCity->getPopulation() - pLoopCity->getSpecialistPopulation(), iSlots);
+			iSlots = std::min(pLoopCity->getPopulation(), iSlots);
 		}
-		GC.getGame().logMsg("SPECIALISTYIELD %d, %d, %d", getID(), eCivic, iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100);
-		iTempValue = (iSpecialists * 3 + (iSlots / 2)) * kCivic.getSpecialistHappiness();
+		iTempValue = (iSpecialists * 2 + (iSlots / 4)) * kCivic.getSpecialistHappiness();
 		iValue += iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100;
 	}
 
@@ -11432,14 +11433,15 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	if (kCivic.getCoreLuxuryHappiness() != 0)
 	{
 		CvCity* pLoopCity;
-		CvPlot* pLoopPlot;
 		BonusTypes eBonus;
-		ImprovementTypes eImprovement;
-		BuildTypes eBuild;
 		int iLoop;
-		int iBonuses = 0;
-		int iPotential = 0;
-		bool found = false;
+		int iCore = 0;
+		int iBonuses = 2;
+
+		for (pLoopCity = firstCity(&iLoop); NULL != pLoopCity; pLoopCity = nextCity(&iLoop))
+		{
+			if (pLoopCity->plot()->isCore(getID())) iCore++;
+		}
 
 		for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 		{
@@ -11447,56 +11449,11 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			if (GC.getBonusInfo(eBonus).getHappiness() > 0)
 			{
-				found = false;
-				for (pLoopCity = firstCity(&iLoop); NULL != pLoopCity; pLoopCity = nextCity(&iLoop))
-				{
-					if (pLoopCity->hasBonus(eBonus))
-					{
-						iBonuses += 1;
-						found = true;
-						break;
-					}
-					else if (!found)
-					{
-						for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
-						{
-							if (iJ != CITY_HOME_PLOT)
-							{
-								pLoopPlot = pLoopCity->getCityIndexPlot(iJ);
-
-								if (pLoopPlot != NULL && pLoopPlot->getBonusType() != NULL && pLoopPlot->getBonusType() == eBonus)
-								{
-									eImprovement = pLoopPlot->getImprovementType();
-
-									if ((eImprovement == NO_IMPROVEMENT) || !(GC.getImprovementInfo(eImprovement).isImprovementBonusTrade(eBonus)))
-									{
-										for (int iK = 0; iK < GC.getNumBuildInfos(); iK++)
-										{
-											eBuild = ((BuildTypes)iK);
-
-											if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
-											{
-												if (GC.getImprovementInfo((ImprovementTypes)(GC.getBuildInfo(eBuild).getImprovement())).isImprovementBonusTrade(eBonus))
-												{
-													if (canBuild(pLoopPlot, eBuild))
-													{
-														iPotential++;
-														found = true;
-														break;
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+				iBonuses += countOwnedBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities();
+				iBonuses = std::min(iBonuses, iCore);
 			}
 		}
-		GC.getGame().logMsg("LUXURYYIELD %d, %d, %d", getID(), eCivic, iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100);
-		iTempValue = (iBonuses * 3 + iPotential) * kCivic.getCoreLuxuryHappiness();
+		iTempValue = iBonuses * 3 * kCivic.getCoreLuxuryHappiness();
 		iValue += iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100;
 	}
 
@@ -11530,16 +11487,68 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	for (iI = 0; iI < GC.getNumHurryInfos(); iI++)
 	{
+		CvCity* pLoopCity;
+		int iLoop;
+		int iAverageThreshold;
+		int iNumAvoids;
+		int iBonus;
+		int iNumCities;
+
 		if (kCivic.isHurry(iI))
 		{
 			iTempValue = 0;
+			iNumAvoids = 0;
+
+			if (GC.getHurryInfo((HurryTypes)iI).isUnits() && GC.getHurryInfo((HurryTypes)iI).isBuildings())
+			{
+				iBonus = 3 * getNumCities();
+			}
+			else
+			{
+				if (bWarPlan)
+				{
+					iBonus = GC.getHurryInfo((HurryTypes)iI).isUnits() ? 2 : 1;
+				}
+				else
+				{
+					iBonus = GC.getHurryInfo((HurryTypes)iI).isBuildings() ? 2 : 1;
+				}
+			}
 
 			if (GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction() > 0)
 			{
 				// Leoreth: down from 50 : 25
-				iTempValue += ((((AI_avoidScience()) ? 30 : 15) * getNumCities()) / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction());
+				iTempValue += ((AI_avoidScience()) ? 16 : 8) * iBonus / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction();
 			}
-			iTempValue += (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() * getNumCities() * (bWarPlan ? 2 : 1)) / 5;
+
+			if (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() > 0)
+			{
+				iNumCities = 0;
+				iAverageThreshold = 0;
+				for (pLoopCity = firstCity(&iLoop); NULL != pLoopCity; pLoopCity = nextCity(&iLoop))
+				{
+					iNumCities++;
+					iAverageThreshold += GET_PLAYER(getID()).getGrowthThreshold(pLoopCity->getPopulation() - 1);
+					iNumAvoids += pLoopCity->AI_avoidGrowth() ? 1 : 0;
+				}
+				if (iNumCities > 0)
+				{
+					iAverageThreshold / iNumCities;
+					iNumAvoids /= iNumCities;
+				}
+				else 
+				{
+					iAverageThreshold = 1;
+				}
+
+				iTempValue += 8 * (1 + iNumAvoids) * iBonus / iAverageThreshold;
+			}
+
+			if (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() > 0 && GC.getHurryInfo((HurryTypes)iI).isBuildings())
+			{
+				GC.getGame().logMsg("HURRY %d, %d", getID(), (1 + iNumAvoids) * iBonus / iAverageThreshold);
+			}
+
 			iValue += iTempValue;
 		}
 	}
@@ -11631,6 +11640,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 	}
 
+	if (eCivic == CIVIC_CHIEFDOM)
+	{
+		iValue /= 2;
+		iValue -= 5;
+	}
+
 	// Leoreth: boost some modern civics as soon as available
 	switch (eCivic)
 	{
@@ -11699,6 +11714,11 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		iValue /= 2;
 	}
+
+	if (eCivic == CIVIC_DESPOTISM) GC.getGame().logMsg("DESPOTISM %d, %d", getID(), iValue);
+	if (eCivic == CIVIC_MONARCHY) GC.getGame().logMsg("MONARCHY %d, %d", getID(), iValue);
+	if (eCivic == CIVIC_REPUBLIC) GC.getGame().logMsg("REPUBLIC %d, %d", getID(), iValue);
+	if (eCivic == CIVIC_CITIZENSHIP) GC.getGame().logMsg("CITIZENSHIP %d, %d", getID(), iValue);
 
 	return iValue;
 }

@@ -10283,7 +10283,6 @@ void CvPlayer::changeSpecialistHappiness(int iChange)
 {
 	CvCity* pLoopCity;
 	SpecialistTypes eType;
-	int iSpecialists;
 	int iCount;
 	int iLoop;
 
@@ -10298,7 +10297,7 @@ void CvPlayer::changeSpecialistHappiness(int iChange)
 			for (int i = 0; i < GC.getNumSpecialistInfos(); i++)
 			{
 				eType = (SpecialistTypes)i;
-				if (eType != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+				if (eType != GC.getInfoTypeForString("SPECIALIST_SLAVE") && eType != GC.getInfoTypeForString("SPECIALIST_CITIZEN"))
 				{
 					iCount = pLoopCity->getSpecialistCount(eType);
 					if (iChange > 0)

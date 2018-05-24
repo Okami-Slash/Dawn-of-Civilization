@@ -1636,7 +1636,7 @@ int CvCity::countNumWaterPlots() const
 		{
 			if (pLoopPlot->getWorkingCity() == this)
 			{
-				if (pLoopPlot->isWater() && (pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 0 || pLoopPlot->getYield(YIELD_COMMERCE) > 0))
+				if (pLoopPlot->isWater() && (pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 4 || pLoopPlot->getYield(YIELD_COMMERCE) > 4))
 				{
 					iCount++;
 				}
@@ -1664,7 +1664,7 @@ int CvCity::countNumLandPlots() const
 		{
 			if (pLoopPlot->getWorkingCity() == this)
 			{
-				if ((pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 1 || pLoopPlot->getYield(YIELD_COMMERCE) > 2) && !pLoopPlot->isWater())
+				if (!pLoopPlot->isWater() && (pLoopPlot->getYield(YIELD_FOOD) > 0 || pLoopPlot->getYield(YIELD_PRODUCTION) > 2 || pLoopPlot->getYield(YIELD_COMMERCE) > 4))
 				{
 					iCount++;
 				}
@@ -4682,7 +4682,7 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
 
-	if (eSpecialist != GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+	if (eSpecialist != GC.getInfoTypeForString("SPECIALIST_SLAVE") && eSpecialist != GC.getInfoTypeForString("SPECIALIST_CITIZEN"))
 	{
 		iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
 	}
@@ -8416,10 +8416,6 @@ int CvCity::getTradeRouteModifier() const
 		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 			if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
 				iResult += 10;*/
-	
-	//Hittite UP
-	if (getOwner() == HITTITE && plot()->isCore(HITTITE))
-		iResult += 100;
 
 	return iResult;
 }

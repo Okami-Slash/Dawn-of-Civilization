@@ -695,57 +695,6 @@ class RiseAndFall:
 			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
 	def checkTurn(self, iGameTurn):
-		if gc.getGame().getGameTurn() == getTurnForYear(-600) and utils.getHumanID() != iCarthage:
-			if gc.getMap().plot(61, 40).isCity() and gc.getMap().plot(61, 40).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(61, 40).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(61, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(60, 40).getNumUnits()):
-					unit = gc.getMap().plot(60, 40).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(61, 40, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (60, 40), 2)
-				utils.makeUnit(iLightSwordsman, iCarthage, (60, 40), 2)
-				utils.makeUnit(iCatapult, iCarthage, (60, 40), 2)
-			
-			elif gc.getMap().plot(62, 41).isCity() and gc.getMap().plot(62, 41).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(62, 41).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(62, 41).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(61, 40).getNumUnits()):
-					unit = gc.getMap().plot(61, 40).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(62, 41, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (61, 40), 2)
-				utils.makeUnit(iArcher, iCarthage, (61, 40), 2)
-				utils.makeUnit(iCatapult, iCarthage, (61, 40), 2)
-			
-			elif gc.getMap().plot(60, 40).isCity() and gc.getMap().plot(60, 40).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(62, 40).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(60, 40).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(61, 40).getNumUnits()):
-					unit = gc.getMap().plot(61, 40).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(60, 40, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (61, 40), 2)
-				utils.makeUnit(iArcher, iCarthage, (61, 40), 2)
-				utils.makeUnit(iCatapult, iCarthage, (61, 40), 2)
-			
-			if gc.getMap().plot(58, 43).isCity() and gc.getMap().plot(58, 43).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(58, 43).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(58, 43).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(58, 44).getNumUnits()):
-					unit = gc.getMap().plot(58, 44).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(58, 43, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (58, 44), 1)
-				utils.makeUnit(iArcher, iCarthage, (58, 44), 1)
-				utils.makeUnit(iCatapult, iCarthage, (58, 44), 1)
-			
-			if gc.getMap().plot(58, 44).isCity() and gc.getMap().plot(58, 44).getPlotCity().getOwner() != iCarthage and not gc.getTeam(gc.getMap().plot(58, 44).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(58, 44).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(58, 43).getNumUnits()):
-					unit = gc.getMap().plot(58, 43).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(58, 44, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (58, 43), 1)
-				utils.makeUnit(iArcher, iCarthage, (58, 43), 1)
-				utils.makeUnit(iCatapult, iCarthage, (58, 43), 1)
-		
 		if gc.getGame().getGameTurn() == getTurnForYear(-510) and utils.getHumanID() != iCarthage:
 			if gc.getMap().plot(58, 43).isCity() and gc.getMap().plot(58, 43).getPlotCity().getOwner() == iIndependent and not gc.getTeam(gc.getMap().plot(58, 43).getPlotCity().getOwner()).isVassal(iCarthage):
 				utils.flipCity((58, 43), True, True, iCarthage, [])
@@ -756,32 +705,6 @@ class RiseAndFall:
 				utils.flipCity((58, 44), True, True, iCarthage, [])
 				utils.makeUnit(iLightSwordsman, iCarthage, (58, 44), 1)
 				utils.makeUnit(iArcher, iCarthage, (58, 44), 2)
-
-			if gc.getMap().plot(58, 43).isCity() and gc.getMap().plot(58, 43).getPlotCity().getOwner() not in [iIndependent, iCarthage] and not gc.getTeam(gc.getMap().plot(58, 43).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(58, 43).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(58, 44).getNumUnits()):
-					unit = gc.getMap().plot(58, 44).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(58, 43, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (58, 44), 2)
-				utils.makeUnit(iArcher, iCarthage, (58, 44), 2)
-				utils.makeUnit(iCatapult, iCarthage, (58, 44), 2)
-
-			if gc.getMap().plot(58, 44).isCity() and gc.getMap().plot(58, 44).getPlotCity().getOwner() not in [iIndependent, iCarthage] and not gc.getTeam(gc.getMap().plot(58, 44).getPlotCity().getOwner()).isVassal(iCarthage):
-				teamCarthage.declareWar(gc.getMap().plot(58, 44).getPlotCity().getOwner(), False, WarPlanTypes.WARPLAN_TOTAL)
-				for iUnit in range(gc.getMap().plot(58, 43).getNumUnits()):
-					unit = gc.getMap().plot(58, 43).getUnit(iUnit)
-					if gc.getTeam(unit.getOwner()).isAtWar(iCarthage):
-						unit.setXY(58, 44, True, True, False)
-				utils.makeUnit(iLightSwordsman, iCarthage, (58, 43), 1)
-				utils.makeUnit(iArcher, iCarthage, (58, 43), 1)
-				utils.makeUnit(iCatapult, iCarthage, (58, 43), 1)
-
-		if gc.getGame().getGameTurn() == 1 and utils.getHumanID() != iBabylonia:
-			for iUnit in range(gc.getMap().plot(76, 40).getNumUnits()):
-				unit = gc.getMap().plot(76, 40).getUnit(iUnit)
-				if unit.getUnitType() == gc.getInfoTypeForString("UNIT_BABYLONIAN_ASHARITTU_BOWMAN"):
-					unit.setXY(77, 37, True, True, False)
 
 		if gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 1 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]) - 2 or gc.getGame().getGameTurn() == getTurnForYear(tBirth[iAssyria]):
 			for iUnit in range(gc.getMap().plot(78, 43).getNumUnits()):
@@ -2575,15 +2498,14 @@ class RiseAndFall:
 			teamHittite.declareWar(iIndependent, False, WarPlanTypes.NO_WARPLAN)
 		elif iCiv == iGreece:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iArcher, iCiv, tPlot, 2)
-			#utils.makeUnit(iHoplite, iCiv, tPlot, 1) #3
-			#pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-			#pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(iHoplite, iCiv, tPlot, 1) #3
+			pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
-				#pGreece.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pGreece.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				#utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				#utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 		elif iCiv == iPersia:

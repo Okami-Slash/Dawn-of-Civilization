@@ -39,7 +39,7 @@ tNubiaBR = (70, 31)
 tEasternAnatoliaTL = (71, 43)
 tEasternAnatoliaBR = (73, 45)
 
-#second greek goal: colonize Occitania and Catalonia, South Italy and Black sea
+# third Hittite goal: have monopoly on iron in the eastern Mediterranean
 tOccitaniaAndCataloniaTL = (54, 42)
 tOccitaniaAndCataloniaBR = (57, 46)
 tSouthItalyTL = (60, 40)
@@ -459,15 +459,15 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(-1200):
 			expire(iHittite, 0)
 		
-		# second goal: never lose a single city until 133 BC
-		if iGameTurn == getTurnForYear(-133) and isPossible(iHittite, 1): win(iHittite, 1)
+		# second goal: never lose a single city until 600 BC
+		if iGameTurn == getTurnForYear(-600) and isPossible(iHittite, 1): win(iHittite, 1)
 		
 		#third goal: Be the first Mediterranean Empire in control of Iron.
 		if countResources(iPlayer, iIron) > 0:
 			win(iHittite, 2)
 		
 		for iEnemy in range(iNumMajorPlayers):
-			if iEnemy == iIndia or iEnemy == iChina or iEnemy == iHarappa or iEnemy == iAssyria or iEnemy == iBabylonia: continue
+			if iEnemy == iIndia or iEnemy == iChina or iEnemy == iHarappa: continue
 			if countResources(iEnemy, iIron) > 0:
 				lose(iHittite, 2)
 
@@ -2069,8 +2069,8 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	if iOwner == iVietnam:
 		expire(iVietnam, 2)
 
-	# second Hittite goal: never lose a single city until 133 BC
-	if gc.getGame().getGameTurn() > getTurnForYear(-1900) and iOwner == iHittite:
+	# second Hittite goal: never lose a single core city until 133 BC
+	if gc.getGame().getGameTurn() > getTurnForYear(-1900) and city.plot().isCore(iHittite) and iOwner == iHittite:
 		expire(iHittite, 1)
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 
