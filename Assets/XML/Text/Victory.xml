@@ -2113,18 +2113,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1</Tag>
-		<English>Have more than 500 culture in 550 AD</English>
-		<French>Avoir plus de 500 culture en 550 ap. J.-C.</French>
+		<English>Have more than 1000 culture in 550 AD</English>
+		<French>Avoir plus de 1000 culture en 550 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_EPIC</Tag>
-		<English>Have more than 750 culture in 550 AD</English>
-		<French>Avoir plus de 750 culture en 550 ap. J.-C.</French>
+		<English>Have more than 1500 culture in 550 AD</English>
+		<French>Avoir plus de 1500 culture en 550 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_MARATHON</Tag>
-		<English>Have more than 1500 culture in 550 AD</English>
-		<French>Avoir plus de 1500 culture en 550 ap. J.-C.</French>
+		<English>Have more than 3000 culture in 550 AD</English>
+		<French>Avoir plus de 3000 culture en 550 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
@@ -2133,8 +2133,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2</Tag>
-		<English>Experience a golden age by 550 AD</English>
-		<French>Traverser un âge d'or avant 550 ap. J.-C.</French>
+		<English>Experience 2 golden ages by 550 AD</English>
+		<French>Traverser deux âges d'or avant 550 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>

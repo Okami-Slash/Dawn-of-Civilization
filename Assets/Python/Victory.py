@@ -752,16 +752,16 @@ def checkTurn(iGameTurn, iPlayer):
 
 	elif iPlayer == iTeotihuacan:
 		
-		# first goal: have 500 culture in 550
+		# first goal: have 1000 culture in 550
 		if iGameTurn == getTurnForYear(550):
-			if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
+			if pTeotihuacan.countTotalCulture() >= utils.getTurns(1000):
 				win(iTeotihuacan, 0)
 			else:
 				lose(iTeotihuacan, 0)
 			
-		# second goal: experience a golden age by 550 AD
+		# second goal: experience 2 golden ages by 550 AD
 		if isPossible(iTeotihuacan, 1):
-			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(8):
+			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(16):
 				win(iTeotihuacan, 1)
 				
 			if pTeotihuacan.isGoldenAge() and not pTeotihuacan.isAnarchy():
