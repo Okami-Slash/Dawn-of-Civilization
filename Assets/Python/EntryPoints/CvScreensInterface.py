@@ -1242,8 +1242,15 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iTeotihuacan:
 		if utils.isPlotInArea((x, y), vic.tMesoamericaTL, vic.tMesoamericaBR):
 			return 88
+			
+	elif iPlayer == iZimbabwe:
+		if utils.isPlotInArea((x, y), vic.tSubeqAfricaTL, vic.tSubeqAfricaBR):
+			return 89
+			
+		if utils.isPlotInArea((x, y), vic.tSubSaharaTL, vic.tSubSaharaBR, vic.tSubSaharaExceptions):
+			return 90
 	
-	# continue with ID 89
+	# continue with ID 91
 	
 	return -1
 		

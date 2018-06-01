@@ -2584,6 +2584,8 @@ iCivMali : {
 		"fSeh-Dong-Hong-Beh", # 19th
 	],
 },
+iCivZimbabwe : {
+},
 iCivPortugal : {
 	iGreatProphet : [
 		u"António de Lisboa", # 13th

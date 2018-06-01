@@ -1045,6 +1045,13 @@ public:
 	int getSpecialistBadHappiness() const;
 	void changeSpecialistGoodHappiness(int iChange);
 	void changeSpecialistBadHappiness(int iChange);
+
+	//1SDAN
+	int getCoreLuxuryGoodHappiness() const;
+	int getCoreLuxuryBadHappiness() const;
+	void changeCoreLuxuryGoodHappiness(int iChange);
+	void changeCoreLuxuryBadHappiness(int iChange);
+
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture);
@@ -1271,6 +1278,10 @@ protected:
 	//Leoreth
 	int m_iSpecialistGoodHappiness;
 	int m_iSpecialistBadHappiness;
+
+	// 1SDAN
+	int m_iCoreLuxuryGoodHappiness;
+	int m_iCoreLuxuryBadHappiness;
 
 	int m_iCorporationGoodHappiness;
 	int m_iCorporationBadHappiness;

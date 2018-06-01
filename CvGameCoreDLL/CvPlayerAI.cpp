@@ -5332,6 +5332,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									if (iI == COMBINED_ARMS || iI == CIVIL_LIBERTIES)
 										iValue *= 3;
+								case ZIMBABWE:
+									break;
 								case PORTUGAL:
 									if (iI == REPLACEABLE_PARTS)
 										iValue *= 2;
@@ -11242,6 +11244,14 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		for (iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
 		{
 			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) /*+ getNumCities() * 2*/))) / 100;
+		
+			for (int iK = 0; iK < GC.getNumBonusInfos(); iK++)
+			{
+				if (GC.getImprovementInfo((ImprovementTypes)iJ).isImprovementBonusMakesValid((BonusTypes)iK))
+				{
+					iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getNumAvailableBonuses((BonusTypes)iK)))) / 100;
+				}
+			}
 		}
 
 		// Leoreth: unimproved tile yield
@@ -11271,7 +11281,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				iLandTiles += pLoopCity->countNumLandPlots();
 			}
 
-			if (kCivic.getLandYield(iI) < 0) iLandTiles /= 2;
+			if (kCivic.getLandYield(iI) > 0) iLandTiles = iLandTiles * 5 / 4;
+			else iLandTiles = iLandTiles * 3 / 4;
 
 			iTempValue += iLandTiles * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
 		}
@@ -11287,6 +11298,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			{
 				iWaterTiles += pLoopCity->countNumWaterPlots();
 			}
+
+			if (kCivic.getWaterYield(iI) > 0) iWaterTiles = iWaterTiles * 5 / 4;
+			else iWaterTiles = iWaterTiles * 3 / 4;
+
 			iTempValue += iWaterTiles * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
 		}
 
@@ -11425,8 +11440,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			iSlots = std::min(pLoopCity->getPopulation(), iSlots);
 		}
-		iTempValue = (iSpecialists * 2 + (iSlots / 4)) * kCivic.getSpecialistHappiness();
-		iValue += iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100;
+		iTempValue = (iSpecialists + (iSlots / 4)) * kCivic.getSpecialistHappiness();
+		iValue += iTempValue * 3;
 	}
 
 	// 1SDAN: Core City Luxury Happiness
@@ -11436,29 +11451,26 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		BonusTypes eBonus;
 		int iLoop;
 		int iCore = 0;
-		int iBonuses = 2;
+		int iBonuses = 0;
+		int iTemp;
 
 		for (pLoopCity = firstCity(&iLoop); NULL != pLoopCity; pLoopCity = nextCity(&iLoop))
 		{
-			if (pLoopCity->plot()->isCore(getID())) iCore++;
-		}
-
-		for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
-		{
-			eBonus = (BonusTypes)iI;
-
-			if (GC.getBonusInfo(eBonus).getHappiness() > 0)
+			if (pLoopCity->plot()->isCore(getID()))
 			{
-				iBonuses += countOwnedBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities();
-				iBonuses = std::min(iBonuses, iCore);
+				iCore++;
+				iBonuses += pLoopCity->getCoreLuxuryGoodHappiness();
 			}
 		}
-		iTempValue = iBonuses * 3 * kCivic.getCoreLuxuryHappiness();
-		iValue += iTempValue * AI_getHappinessWeight(iTempValue, 1) / 100;
+
+		iTempValue = iBonuses / std::max(1, getCoreLuxuryHappiness());
+		iValue += 3 * AI_getHappinessWeight(iTempValue, 1) / 100;
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 	{
+		if ((BuildingClassTypes)iI == GC.getInfoTypeForString("BUILDINGCLASS_PALACE")) continue;
+
 		if (kCivic.getBuildingHappinessChanges(iI) != 0)
 		{
 			iValue += (kCivic.getBuildingHappinessChanges(iI) * getBuildingClassCount((BuildingClassTypes)iI) * 3);

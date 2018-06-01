@@ -26,18 +26,13 @@
 			<TechPrereq>TECH_PROPERTY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/DespotismCivic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<Upkeep>UPKEEP_LOW</Upkeep>
 			<Hurrys>
 				<Hurry>
 					<HurryType>HURRY_POPULATION_BUILDINGS</HurryType>
 					<bHurry>1</bHurry>
 				</Hurry>
 			</Hurrys>
-			<YieldModifiers>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>-10</iYield>
-			</YieldModifiers>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_PALACE</BuildingType>
@@ -65,8 +60,33 @@
 			<TechPrereq>TECH_CEREMONY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Monarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iCoreLuxuryHappiness>1</iCoreLuxuryHappiness>
+			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
+			<iNumCitiesMaintenanceModifier>-25</iNumCitiesMaintenanceModifier>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_SMOKEHOUSE</BuildingType>
@@ -84,8 +104,7 @@
 			<TechPrereq>TECH_WRITING</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Republic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iSpecialistHappiness>1</iSpecialistHappiness>
+			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<LandYields>
 				<iYield>-1</iYield>
 			</LandYields>
@@ -93,6 +112,14 @@
 				<iYield>1</iYield>
 			</WaterYields>
 			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
 					<ImprovementYields>
@@ -105,7 +132,16 @@
 						<iYield>2</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>-2</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
+			<iDistanceMaintenancePercent>-50</iDistanceMaintenancePercent>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_LIBRARY</BuildingType>
@@ -123,27 +159,24 @@
 			<TechPrereq>TECH_POLITICS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>NONE</Upkeep>
-			<UnimprovedTileYields>
+			<Upkeep>UPKEEP_LOW</Upkeep>
+			<WaterYields>
+				<iYield>-1</iYield>
+				<iYield>0</iYield>
+				<iYield>-1</iYield>
+			</WaterYields>
+			<LandYields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-			</UnimprovedTileYields>
+			</LandYields>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+					<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
 					<ImprovementYields>
+						<iYield>-2</iYield>
 						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>2</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>-2</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -651,15 +684,14 @@
 			<Button>,Art/Interface/Buttons/Civics/Redistribution.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<CapitalYieldModifiers>
+				<iYield>25</iYield>
+			</CapitalYieldModifiers>
 			<TradeYieldModifiers>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>-25</iYield>
 			</TradeYieldModifiers>
-			<iCapitalTradeModifier>50</iCapitalTradeModifier>
-			<CapitalYieldModifiers>
-				<iYield>25</iYield>
-			</CapitalYieldModifiers>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_GRANARY</BuildingType>

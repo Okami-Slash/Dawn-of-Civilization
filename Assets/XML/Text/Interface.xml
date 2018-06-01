@@ -1694,7 +1694,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_LUXURY_HAPPINESS</Tag>
-		<English>[ICON_BULLET]Luxuries yield %D1_Change%F2_HappyOrUn in Core Cities</English>
+		<English>[ICON_BULLET]1 %F2_HappyOrUn per %d1_Num Luxuries in Core Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_CORE_LUXURY</Tag>
+		<English>%D1_Change[ICON_HAPPY]: "Our territories yield great Luxuries!"</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>

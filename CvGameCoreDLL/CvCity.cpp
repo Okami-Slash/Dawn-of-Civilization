@@ -574,6 +574,10 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iSpecialistGoodHappiness = 0;
 	m_iSpecialistBadHappiness = 0;
 
+	// 1SDAN
+	m_iCoreLuxuryGoodHappiness = 0;
+	m_iCoreLuxuryBadHappiness = 0;
+
 	m_iCorporationGoodHappiness = 0;
 	m_iCorporationBadHappiness = 0;
 	m_iCorporationHealth = 0;
@@ -4217,7 +4221,6 @@ int CvCity::getBonusHappiness(BonusTypes eBonus) const
 	if (hasBonusEffect(eBonus))
 	{
 		iHappiness += GC.getBonusInfo(eBonus).getHappiness();
-		if (plot()->isCore(getOwner())) iHappiness += GET_PLAYER(getOwner()).getCoreLuxuryHappiness();
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
@@ -4365,10 +4368,15 @@ void CvCity::processBonusEffect(BonusTypes eBonus, int iChange)
 	changeBonusGoodHealth(iGoodValue * iChange);
 	changeBonusBadHealth(iBadValue * iChange);
 
-
 	iValue = GC.getBonusInfo(eBonus).getHappiness();
 	iGoodValue = std::max(0, iValue);
 	iBadValue = std::min(0, iValue);
+
+	if (GC.getBonusInfo(eBonus).getHappiness() > 0 && iChange != 0)
+	{
+		iChange = iChange > 0 ? 1 : -1;
+		changeCoreLuxuryGoodHappiness(iChange);
+	}
 
 	changeBonusGoodHappiness(iGoodValue * iChange);
 	changeBonusBadHappiness(iBadValue * iChange);
@@ -5388,6 +5396,14 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, (getExtraHappiness() + GET_PLAYER(getOwnerINLINE()).getExtraHappiness()));
 	iHappiness += std::max(0, GC.getHandicapInfo(getHandicapType()).getHappyBonusByID(getOwner()));
 	iHappiness += std::max(0, getVassalHappiness());
+
+	if (GET_PLAYER(getOwner()).getCoreLuxuryHappiness() > 0)
+	{
+		if (plot()->isCore(getOwner()))
+		{
+			iHappiness += std::max(0, getCoreLuxuryGoodHappiness() / std::max(1, GET_PLAYER(getOwner()).getCoreLuxuryHappiness()));
+		}
+	}
 
 	if (getHappinessTimer() > 0)
 	{
@@ -15589,6 +15605,11 @@ void CvCity::read(FDataStreamBase* pStream)
 	// Leoreth
 	pStream->Read(&m_iSpecialistGoodHappiness);
 	pStream->Read(&m_iSpecialistBadHappiness);
+
+	// 1SDAN
+	pStream->Read(&m_iCoreLuxuryGoodHappiness);
+	pStream->Read(&m_iCoreLuxuryBadHappiness);
+	
 	pStream->Read(&m_iCorporationGoodHappiness);
 	pStream->Read(&m_iCorporationBadHappiness);
 	pStream->Read(&m_iCorporationHealth);
@@ -15869,6 +15890,11 @@ void CvCity::write(FDataStreamBase* pStream)
 	// Leoreth
 	pStream->Write(m_iSpecialistGoodHappiness);
 	pStream->Write(m_iSpecialistBadHappiness);
+
+	// 1SDAN
+	pStream->Write(m_iCoreLuxuryGoodHappiness);
+	pStream->Write(m_iCoreLuxuryBadHappiness);
+
 	pStream->Write(m_iCorporationGoodHappiness);
 	pStream->Write(m_iCorporationBadHappiness);
 	pStream->Write(m_iCorporationHealth);
@@ -17821,6 +17847,35 @@ void CvCity::changeSpecialistGoodHappiness(int iChange)
 void CvCity::changeSpecialistBadHappiness(int iChange)
 {
 	m_iSpecialistBadHappiness += iChange;
+}
+
+int CvCity::getCoreLuxuryGoodHappiness() const
+{
+	return m_iCoreLuxuryGoodHappiness;
+}
+
+int CvCity::getCoreLuxuryBadHappiness() const
+{
+	int iCoreLuxuryBadHappiness = m_iCoreLuxuryBadHappiness;
+
+	// Leoreth: increased unhappiness from Egalitarianism
+	int iAngerModifier = 0;
+	for (int iI = 0; iI < GC.getNumCivicInfos(); iI++)
+	{
+		iAngerModifier += GET_PLAYER(getOwnerINLINE()).getCivicPercentAnger((CivicTypes)iI, false);
+	}
+
+	return iCoreLuxuryBadHappiness * (GC.getPERCENT_ANGER_DIVISOR() + 4 * iAngerModifier) / GC.getPERCENT_ANGER_DIVISOR();
+}
+
+void CvCity::changeCoreLuxuryGoodHappiness(int iChange)
+{
+	m_iCoreLuxuryGoodHappiness += iChange;
+}
+
+void CvCity::changeCoreLuxuryBadHappiness(int iChange)
+{
+	m_iCoreLuxuryBadHappiness += iChange;
 }
 
 // Leoreth

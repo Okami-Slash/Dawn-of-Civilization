@@ -87,7 +87,8 @@ tPool3 = (iEgypt,
 	iPhilippines,
 	iMamluks,
 	iManchuria,
-	iNigeria)
+	iNigeria,
+	iZimbabwe)
 
 class Communications:
 

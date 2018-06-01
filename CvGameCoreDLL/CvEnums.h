@@ -1252,6 +1252,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	ODUDUWA,
 	EWUARE,
 	AMINATU,
+	RUSVINGO,
+	MUTOTA,
 	NUM_LEADERHEADS
 
 };
@@ -1364,6 +1366,7 @@ enum PlayerTypes				// Exposed to Python
 	MAMLUKS,
 	MALI,
 	POLAND,
+	ZIMBABWE,
 	PORTUGAL,
 	INCA,
 	ITALY,

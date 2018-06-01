@@ -6278,6 +6278,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		else if (isHumanVictoryWonder(eBuilding, RED_FORT, MUGHALS)) return false;
 		else if (isHumanVictoryWonder(eBuilding, TAJ_MAHAL, MUGHALS)) return false;
 		else if (isHumanVictoryWonder(eBuilding, HARMANDIR_SAHIB, MUGHALS)) return false;
+		
+		else if (isHumanVictoryWonder(eBuilding, GREAT_ZIMBABWE, ZIMBABWE)) return false;
 
 		// Leoreth: delay Babylonia building Pyramids and Sphinx
 		if (getID() == BABYLONIA)
@@ -13832,7 +13834,7 @@ void CvPlayer::changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes
 }
 
 
-// XXX should pUnit be a CvSelectionGroup???
+
 void CvPlayer::updateGroupCycle(CvUnit* pUnit)
 {
 	CLLNode<IDInfo>* pUnitNode;

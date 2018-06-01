@@ -7674,11 +7674,33 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	// Leoreth: unimproved tile yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_FOR_UNIMPROVED_TILES").GetCString(), GC.getCivicInfo(eCivic).getUnimprovedTileYieldArray());
 
+	bool bInclude = false;
+	for (int i = 0; i < NUM_YIELD_TYPES; i++)
+	{
+		if (GC.getCivicInfo(eCivic).getLandYield(i) != 0)
+		{
+			bInclude = true;
+			break;
+		}
+
+		if (GC.getCivicInfo(eCivic).getWaterYield(i) != 0)
+		{
+			bInclude = true;
+			break;
+		}
+	}
+
+	if (bInclude) 
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_ICON_BULLET"));
+	}
+
 	// Leoreth: land tile yield
-	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_FOR_LAND_TILES").GetCString(), GC.getCivicInfo(eCivic).getLandYieldArray());
+	setYieldChangeHelp(szHelpText, L" ", L"", gDLL->getText("TXT_KEY_CIVIC_FOR_LAND_TILES").GetCString(), GC.getCivicInfo(eCivic).getLandYieldArray(), false, false);
 
 	// Leoreth: water tile yield
-	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_FOR_WATER_TILES").GetCString(), GC.getCivicInfo(eCivic).getWaterYieldArray());
+	setYieldChangeHelp(szHelpText, L" ", L"", gDLL->getText("TXT_KEY_CIVIC_FOR_WATER_TILES").GetCString(), GC.getCivicInfo(eCivic).getWaterYieldArray(), false, false);
 
 	//	Largest City Happiness
 	if (GC.getCivicInfo(eCivic).getLargestCityHappiness() != 0)
@@ -7720,16 +7742,24 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER", GC.getCivicInfo(eCivic).getCaptureGoldModifier()));
 	}
 
+	bool bStarted;
 	//	Improvement Yields
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
+		bStarted = false;
 		iLast = 0;
 
 		for (iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
 		{
 			if (GC.getCivicInfo(eCivic).getImprovementYieldChanges(iJ, iI) != 0)
 			{
-				szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_CIVIC_IMPROVEMENT_YIELD_CHANGE", GC.getCivicInfo(eCivic).getImprovementYieldChanges(iJ, iI), GC.getYieldInfo((YieldTypes)iI).getChar()).c_str());
+				if (!bStarted)
+				{
+					szHelpText.append(NEWLINE);
+					szHelpText.append(gDLL->getText("TXT_KEY_ICON_BULLET"));
+					bStarted = true;
+				}
+				szFirstBuffer.Format(L"%s%s", " ", gDLL->getText("TXT_KEY_CIVIC_IMPROVEMENT_YIELD_CHANGE", GC.getCivicInfo(eCivic).getImprovementYieldChanges(iJ, iI), GC.getYieldInfo((YieldTypes)iI).getChar()).c_str());
 				CvWString szImprovement;
 				szImprovement.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iJ).getDescription());
 				setListHelp(szHelpText, szFirstBuffer, szImprovement, L", ", (GC.getCivicInfo(eCivic).getImprovementYieldChanges(iJ, iI) != iLast));
@@ -7738,7 +7768,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
-	//	Building Happiness
+	//	Feature Yields
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
 	{
 		if (GC.getCivicInfo(eCivic).getBuildingHappinessChanges(iI) != 0)
@@ -12864,6 +12894,18 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			iTotalHappy += iHappy;
 			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_SPECIALISTS", iHappy));
 			szBuffer.append(NEWLINE);
+		}
+
+		// 1SDAN
+		if (city.plot()->isCore(city.getOwner()))
+		{
+			iHappy = city.getCoreLuxuryGoodHappiness() / std::max(1, GET_PLAYER(city.getOwner()).getCoreLuxuryHappiness());
+			if (iHappy > 0)
+			{
+				iTotalHappy += iHappy;
+				szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_CORE_LUXURY", iHappy));
+				szBuffer.append(NEWLINE);
+			}
 		}
 
 		iHappy = city.getCorporationGoodHappiness();
