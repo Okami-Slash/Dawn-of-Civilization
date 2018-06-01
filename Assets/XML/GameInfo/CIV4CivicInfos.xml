@@ -63,7 +63,6 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iCoreLuxuryHappiness>1</iCoreLuxuryHappiness>
 			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
-			<iNumCitiesMaintenanceModifier>-25</iNumCitiesMaintenanceModifier>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
