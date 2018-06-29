@@ -2547,6 +2547,7 @@ class RiseAndFall:
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(iKhampa, iCiv, tPlot, 2)
 			utils.createMissionaries(iCiv, 1)
+			gc.getMap().plot(91, 42).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
 		elif iCiv == iKhmer:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
