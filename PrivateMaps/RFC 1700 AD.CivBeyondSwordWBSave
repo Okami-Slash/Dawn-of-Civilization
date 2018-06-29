@@ -31486,7 +31486,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32092,8 +32093,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_VILLAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
