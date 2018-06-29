@@ -7,7 +7,7 @@ BeginGame
 	GameTurn=181
 	StartYear=-3000
 	Description=TXT_KEY_RHYES_WB_DESC
-	ModPath=Mods\RFC Dawn of Civilization
+	ModPath=Mods\DOC Quality Mod Compilation
 EndGame
 BeginTeam
 	TeamID=0, (Egypt)
@@ -8715,6 +8715,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=36
+	BonusType=BONUS_DYE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -9097,7 +9098,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=37
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -9474,7 +9474,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=36
-	BonusType=BONUS_DYE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
