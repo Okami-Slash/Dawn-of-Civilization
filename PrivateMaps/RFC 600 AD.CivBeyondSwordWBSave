@@ -26635,7 +26635,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=0
 	isWOfRiver
-	BonusType=BONUS_WHEAT
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27099,6 +27098,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
