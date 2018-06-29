@@ -1080,7 +1080,8 @@ rBrazil, rArgentina, rPeru, rColombia) = range(iNumRegions)
 
 lNewWorld = [rAustralia, rOceania, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
 
-lEurope = [rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]
+lEurope = [rBritain, rIberia, rItaly, rBalkans, rEurope, rRussia]
+lScandinavia = [rScandinavia]
 lMiddleEast = [rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb, rPersia, rCentralAsia]
 lIndia = [rIndia, rDeccan]
 lEastAsia = [rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]
@@ -1095,9 +1096,11 @@ iArea_EastAsia = 1003
 iArea_Africa = 1004
 iArea_SouthAmerica = 1005
 iArea_NorthAmerica = 1006
+iArea_Scandinavia=1007
 
 mercRegions = {
-	iArea_Europe : set([rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]),
+	iArea_Europe : set([rBritain, rIberia, rItaly, rBalkans, rEurope, rRussia]),
+	iArea_Scandinavia: set([rScandinavia]),
 	iArea_MiddleEast : set([rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb, rPersia, rCentralAsia]),
 	iArea_India : set([rIndia, rDeccan]),
 	iArea_EastAsia : set([rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]),
