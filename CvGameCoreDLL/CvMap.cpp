@@ -1376,6 +1376,7 @@ void CvMap::calculateAreas()
 	CvArea* africa = addArea();
 	CvArea* southAmerica = addArea();
 	CvArea* scandinavia = addArea();
+	CvArea* maghreb = addArea();
 
 	int asiaID = plot(100, 44)->getArea(); // Chang'an
 	int americaID = plot(27, 46)->getArea(); // Washington
@@ -1384,11 +1385,13 @@ void CvMap::calculateAreas()
 	int africaID = africa->getID();
 	int southAmericaID = southAmerica->getID();
 	int scandinaviaID = scandinavia->getID();
+	int maghrebID = maghreb->getID();
 
 	europe->init(europeID, false);
 	africa->init(africaID, false);
 	southAmerica->init(southAmericaID, false);
 	scandinavia->init(scandinaviaID, false);
+	maghreb->init(maghrebID, false);
 
 	CvPlot* plot;
 	for (int iX = 0; iX < getGridWidth(); iX++)
@@ -1413,12 +1416,13 @@ void CvMap::calculateAreas()
 				case REGION_MESOPOTAMIA:
 				case REGION_ARABIA:
 				case REGION_EGYPT:
-				case REGION_MAGHREB:
 				case REGION_PERSIA:
 					if (plot->getArea() == asiaID) plot->setArea(europeID);
 					break;
 				case REGION_SCANDINAVIA:
 					if (plot->getArea() == scandinaviaID) plot->setArea(scandinaviaID);
+				case REGION_MAGHREB:
+					if (plot->getArea() == maghrebID) plot->setArea(maghrebID);
 				case REGION_ETHIOPIA:
 				case REGION_WEST_AFRICA:
 				case REGION_SOUTH_AFRICA:

@@ -2886,6 +2886,14 @@ int CvPlot::getBuildTime(BuildTypes eBuild) const
 	iTime *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getBuildPercent();
 	iTime /= 100;
 
+	if (getFeatureType() != NO_FEATURE)
+	{
+		if (GC.getGame().getActivePlayer() == KHMER && GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST"))
+		{
+			iTime = iTime * 3 / 4;
+		}
+	}
+
 	return iTime;
 }
 
@@ -3276,10 +3284,10 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	iRegularCost *= GC.getMOVE_DENOMINATOR();
 
 	//Rhye - start
-	if (getTerrainType() == TERRAIN_OCEAN)
+	// Leoreth: reduced movement cost only for units that could enter ocean on their own
+	if (!pUnit->getUnitInfo().getTerrainImpassable(TERRAIN_OCEAN) || (pUnit->getUnitInfo().getTerrainPassableTech(TERRAIN_OCEAN) != NO_TECH && GET_TEAM(pUnit->getTeam()).isHasTech((TechTypes)pUnit->getUnitInfo().getTerrainPassableTech(TERRAIN_OCEAN))))
 	{
-		// Leoreth: reduced movement cost only for units that could enter ocean on their own
-		if (!pUnit->getUnitInfo().getTerrainImpassable(getTerrainType()) || (pUnit->getUnitInfo().getTerrainPassableTech(getTerrainType()) != NO_TECH && GET_TEAM(pUnit->getTeam()).isHasTech((TechTypes)pUnit->getUnitInfo().getTerrainPassableTech(getTerrainType()))))
+		if (getTerrainType() == TERRAIN_COAST || getTerrainType() == TERRAIN_OCEAN)
 		{
 			iRegularCost /= 2;
 		}
@@ -7044,7 +7052,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 
 	if (bCity)
 	{
-		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
+		iYield += GC.getYieldInfo(eYield).getMinCity();
 		int iAppliedImprovement = -1;
 
 		// Leoreth (edead): city counts as correct improvement wrt. bonus yields on small islands, except food
