@@ -149,14 +149,14 @@ class CvRFCEventHandler:
 			elif iPlayer == iMongolia and tCity == (102, 47):
 				utils.moveCapital(iMongolia, tCity) # Khanbaliq
 			elif iPlayer == iManchuria and tCity == (102, 47):
-				utils.moveCapital(iMongolia, tCity) # Beijing
+				utils.moveCapital(iManchuria, tCity) # Beijing
 			elif iPlayer == iTurks and utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 				capital = pTurks.getCapitalCity()
 				if not utils.isPlotInArea((capital.getX(), capital.getY()), Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 					newCapital = utils.getRandomEntry(utils.getAreaCitiesCiv(iTurks, utils.getPlotList(Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1])))
 					if newCapital:
 						utils.moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
-				
+
 		# remove slaves if unable to practice slavery
 		if not gc.getPlayer(iPlayer).canUseSlaves():
 			utils.removeSlaves(city)
