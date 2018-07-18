@@ -23031,12 +23031,6 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 		return true;
 	}
 
-	// Porcelain Tower effect: no open borders required for trade
-	if (isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
-	{
-		return true;
-	}
-
 	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()))
 	{
 		if (GET_TEAM(getTeam()).isVassal(kOtherPlayer.getTeam()))
