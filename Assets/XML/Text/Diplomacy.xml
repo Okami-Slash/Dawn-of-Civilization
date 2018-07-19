@@ -366,7 +366,7 @@
 		<English>Unlikely as it may seem, it appears that your puny civilization has something that we want. I suggest you hand it over quickly. </English>
 		<French>Aussi ahurissant que cela puisse para&#238;tre, il semblerait que votre ridicule petite civilisation dispose de quelque chose qui pourrait nous &#234;tre utile. Je vous sugg&#232;re de nous le d&#233;livrer au plus vite.</French>
 		<German>So unglaublich es auch klingen mag: Eure mickrige Zivilisation scheint tatsächlich etwas zu haben, was wir wollen. Ihr wärt gut beraten, es uns schnellstens zu überlassen! </German>
-		<Italian>Per quanto possa apparire improbabile, a quanto pare la tua insignificante civiltà possiede qualcosa che vogliamo. Ti consiglio di darcelo subito. </Italian>
+		<Italian>Per quanto possa apparire improbabile, a quanto pare la tua insignificante civilt&#224; possiede qualcosa che vogliamo. Ti consiglio di darcelo subito. </Italian>
 		<Spanish>Por extraño que suene, parece que vuestra civilización tiene algo que queremos. Os sugiero que nos lo deis rápidamente. </Spanish>
 	</TEXT>
 	<TEXT>
@@ -374,7 +374,7 @@
 		<English>Welcome, [CT_NAME]. And how is that undefended civilization of your coming along?</English>
 		<French>Bienvenue, [CT_NAME]. Alors, comment &#233;volue donc la situation dans votre petite civilisation si vuln&#233;rable ?</French>
 		<German>Willkommen, [CT_NAME]! Und, wie stehen die Dinge in Eurer hilflosen kleinen Zivilisation?</German>
-		<Italian>Salve, [CT_NAME]. Come vanno le cose per la tua civiltà indifesa?</Italian>
+		<Italian>Salve, [CT_NAME]. Come vanno le cose per la tua civilt&#224; indifesa?</Italian>
 		<Spanish>Saludos, [CT_NAME]. ¿Cómo está esa civilización indefensa de la que venís?</Spanish>
 	</TEXT>
 	<TEXT>
@@ -390,7 +390,7 @@
 		<English>Greetings, [CT_NAME]! The [OUR_CIV_ADJ] people always enjoy meeting vulnerable and undefended new civilizations!</English>
 		<French>Mes hommages, [CT_NAME] ! Le peuple des [OUR_CIV_ADJ] est toujours enchant&#233; de rencontrer de nouvelles civilisations vuln&#233;rables et sans d&#233;fense !</French>
 		<German>Seid gegrüßt, [CT_NAME]! Das [OUR_CIV_ADJ:3] Volk ist stets hoch erfreut, die Bekanntschaft schutz- und wehrloser neuer Zivilisationen zu machen!</German>
-		<Italian>Salve, [CT_NAME]! Il sovrano [OUR_CIV_ADJ] è sempre lieto di incontrare nuove civiltà vulnerabili e indifese!</Italian>
+		<Italian>Salve, [CT_NAME]! Il sovrano [OUR_CIV_ADJ] è sempre lieto di incontrare nuove civilt&#224; vulnerabili e indifese!</Italian>
 		<Spanish>¡Saludos, [CT_NAME]! El pueblo [OUR_CIV_ADJ:1] siempre se congratula de encontrarse con civilizaciones vulnerables e indefensas.</Spanish>
 	</TEXT>
 	<TEXT>

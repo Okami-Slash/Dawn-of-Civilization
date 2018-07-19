@@ -14,7 +14,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_TEAM_SIZE</Tag>
 		<English>%D1: "Your team is too big."</English>
-		<French>%D1: "Votre équipe est déjà trop grande."</French>
+		<French>%D1: "Votre équipe est déj&#224; trop grande."</French>
 		<German>%D1: "Ihr habt zu viele Verbündete."</German>
 		<Italian>%D1: "La tua squadra è troppo grande."</Italian>
 		<Spanish>%D1: "Tu equipo es demasiado grande."</Spanish>
@@ -24,7 +24,7 @@
 		<English>%D1: "Your small civilization is no threat to us."</English>
 		<French>%D1: "Votre misérable civilisation ne nous pose aucune menace."</French>
 		<German>%D1: "Eure kleine Zivilisation ist keine Bedrohung für uns."</German>
-		<Italian>%D1: "La tua insignificante civiltà non ci pone alcuna minaccia."</Italian>
+		<Italian>%D1: "La tua insignificante civilt&#224; non ci pone alcuna minaccia."</Italian>
 		<Spanish>%D1: "Tu pequeña civilización no supone ninguna amenaza para nosotros."</Spanish>
 	</TEXT>
 	<TEXT>
@@ -32,7 +32,7 @@
 		<English>%D1: "We feel threatened by your large civilization."</English>
 		<French>%D1: "Nous nous sentons menacés par votre grande civilisation."</French>
 		<German>%D1: "Wir fühlen uns von Eurer großen Zivilisation bedroht."</German>
-		<Italian>%D1: "Ci sentiamo minacciati dalla tua grande civiltà."</Italian>
+		<Italian>%D1: "Ci sentiamo minacciati dalla tua grande civilt&#224;."</Italian>
 		<Spanish>%D1: "Nos sentimos amenazados por tu gran civilización."</Spanish>
 	</TEXT>
 	<TEXT>
