@@ -673,4 +673,8 @@
 		<Italian>Faster improvement construction; extra food from Plantations</Italian>
 		<Spanish>Faster improvement construction; extra food from Plantations</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FOOD_EXCLUDE_GREAT_PEOPLE</Tag>
+		<English>Food per specialist does not affect Great People</English>
+	</TEXT>
 </Civ4GameText>

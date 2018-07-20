@@ -17824,6 +17824,10 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeUnimprovedTileYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnimprovedTileYield(iI) * iChange);
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
+			if (iI == (YieldTypes)YIELD_FOOD && (SpecialistTypes)iJ > SPECIALIST_STATESMAN)
+			{
+				continue;
+			}
 			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); // Leoreth
 		}
 	}
