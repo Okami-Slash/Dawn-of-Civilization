@@ -238,7 +238,7 @@ class GameData:
 		self.iTurkicPillages = 0
 		self.iMoorishGold = 0
 		self.iEnglishSinks = 0
-		self.iSwahiliTradeGold = 0.0
+		self.iSwahiliTradeGold = 0
 		self.iMongolRazes = 0
 		self.iAztecSlaves = 0
 		self.iCongoSlaveCounter = 0
