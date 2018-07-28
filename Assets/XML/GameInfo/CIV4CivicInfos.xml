@@ -68,6 +68,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Republic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<iNumCitiesMaintenanceModifier>100</iNumCitiesMaintenanceModifier>
 			<SpecialistExtraYields>
 				<iYield>1</iYield>
 			</SpecialistExtraYields>
@@ -87,7 +88,7 @@
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
 					<ImprovementYields>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
