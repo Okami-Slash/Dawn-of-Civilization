@@ -22,8 +22,6 @@ currentCongress = None
 
 ### Constants ###
 
-iCongressInterval = 15
-
 tAmericanClaimsTL = (19, 41)
 tAmericanClaimsBR = (24, 49)
 
@@ -36,7 +34,7 @@ tNewfoundlandBR = (36, 59)
 ### Event Handlers ###
 
 def setup():
-	data.iCongressTurns = utils.getTurns(iCongressInterval)
+	data.iCongressTurns = getCongressInterval()
 
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
@@ -44,7 +42,7 @@ def checkTurn(iGameTurn):
 			data.iCongressTurns -= 1
 			
 			if data.iCongressTurns == 0:
-				data.iCongressTurns = utils.getTurns(iCongressInterval)
+				data.iCongressTurns = getCongressInterval()
 				currentCongress = Congress()
 				data.currentCongress = currentCongress
 				currentCongress.startCongress()
@@ -65,6 +63,12 @@ def onChangeWar(bWar, iPlayer, iOtherPlayer):
 			endGlobalWar(iPlayer, iOtherPlayer)
 			
 ### Global Methods ###
+
+def getCongressInterval():
+	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iPalaceOfNations).getBuildingClassType()) > 0:
+		return utils.getTurns(4)
+		
+	return utils.getTurns(15)
 
 def isCongressEnabled():
 	if data.bNoCongressOption:
@@ -790,6 +794,9 @@ class Congress:
 			if iClaimant == iFrance: iFavorClaimant += 10
 			if iOwner == iFrance: iFavorOwner += 10
 			
+			# Palace of Nations
+			if gc.getPlayer(iClaimant).isHasBuildingEffect(iPalaceOfNations): iFavorClaimant += 10
+			
 			# AI memory of human voting behavior
 			if utils.getHumanID() == iClaimant and iVoter in self.dVotingMemory: iFavorClaimant += 5 * self.dVotingMemory[iVoter]
 			if utils.getHumanID() == iOwner and iVoter in self.dVotingMemory: iFavorOwner += 5 * self.dVotingMemory[iVoter]
@@ -1022,6 +1029,9 @@ class Congress:
 			
 			# cannot demand cities while at war
 			if gc.getTeam(iPlayer).isAtWar(iLoopPlayer): continue
+			
+			# Palace of Nations effect
+			if gc.getPlayer(iLoopPlayer).isHasBuildingEffect(iPalaceOfNations): continue
 			
 			for city in utils.getCityList(iLoopPlayer):
 				x, y = city.getX(), city.getY()

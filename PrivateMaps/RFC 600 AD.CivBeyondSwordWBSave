@@ -32129,6 +32129,7 @@ BeginPlot
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
 		BuildingType=BUILDING_ZOROASTRIAN_SHRINE
+		BuildingType=BUILDING_GONDESHAPUR
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
 		Player56Culture=10, (Independent2)
@@ -32914,8 +32915,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
+		BuildingType=BUILDING_SALSAL_BUDDHA
 		Player56Culture=10, (Independent)
-EndCity
 EndPlot
 BeginPlot
 	x=84,y=42
@@ -35363,6 +35364,7 @@ BeginPlot
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_IRON_PILLAR
 		ReligionType=RELIGION_HINDUISM
 		Player55Culture=100, (Independent)
 	EndCity
@@ -37017,6 +37019,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_BUDDHIST_SHRINE
+		BuildingType=BUILDING_NALANDA
 		ReligionType=RELIGION_HINDUISM
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
