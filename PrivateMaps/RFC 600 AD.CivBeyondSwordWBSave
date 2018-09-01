@@ -32917,6 +32917,7 @@ BeginPlot
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_SALSAL_BUDDHA
 		Player56Culture=10, (Independent)
+	EndCity
 EndPlot
 BeginPlot
 	x=84,y=42
