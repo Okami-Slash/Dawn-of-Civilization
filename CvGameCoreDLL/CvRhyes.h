@@ -13,8 +13,6 @@ typedef list<char*> LISTCHAR;
 
 #define BEGIN_WONDERS				(172) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+11)
-#define NUM_BUILDINGS_PLAGUE		(313) // always increment when a building is added
-#define NUM_BUILDINGTYPES_PLAGUE	(222) // increment when a building class is added
 
 #define NUM_MAJOR_PLAYERS		(55)
 #define NUM_MINORS				(5)	 // Independent, Independent2, Natives, Celtia, Barbarians
@@ -24,7 +22,7 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			((BuildingTypes)GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
 #define BUILDING_PALACE			((BuildingClassTypes)0)
-#define BUILDING_PLAGUE			(NUM_BUILDINGS_PLAGUE-1)
+#define BUILDING_PLAGUE			((BuildingTypes)GC.getInfoTypeForString("BUILDING_PLAGUE"))
 
 #define UNITCLASS_SLAVE			((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
 
