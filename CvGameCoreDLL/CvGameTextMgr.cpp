@@ -7699,7 +7699,10 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	// Leoreth: American UP
 	if (GC.getGame().getActivePlayer() == AMERICA)
 	{
-		if (eCivic == CIVIC_DEMOCRACY || eCivic == CIVIC_CONSTITUTION || eCivic == CIVIC_INDIVIDUALISM || eCivic == CIVIC_FREE_ENTERPRISE)
+		if (eCivic == CIVIC_DEMOCRACY || eCivic == CIVIC_STATE_PARTY || 
+			eCivic == CIVIC_CONSTITUTION || eCivic == CIVIC_IDEOLOGY || 
+			eCivic == CIVIC_INDIVIDUALISM || eCivic == CIVIC_TOTALITARIANISM || eCivic == CIVIC_EGALITARIANISM ||
+			eCivic == CIVIC_FREE_ENTERPRISE || eCivic == CIVIC_CENTRAL_PLANNING || eCivic == CIVIC_PUBLIC_WELFARE)
 		{
 			szHelpText.append(NEWLINE);
 			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS", 2, gDLL->getSymbolID(HAPPY_CHAR)));

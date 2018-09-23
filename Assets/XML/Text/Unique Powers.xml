@@ -3,7 +3,7 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME_TITLE</Tag>
-		<English>The Power of the American Dream:</English>
+		<English>The Power of American Enlightenment:</English>
 		<French>Le pouvoir du r&#234;ve am&#233;ricain :</French>
 		<German>Die Macht des Amerikanischen Traums:</German>
 		<Italian>Il potere del sogno americano:</Italian>
@@ -11,7 +11,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
-		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
+		<English>Additional happiness from running late game Government, Legitimacy, Society, and Economy Civics</English>
 		<French>Bonheur additionnel avec les doctrines D&#233;mocratie, Constitution, Individualisme et Libre entreprise</French>
 		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
 		<Italian>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Italian>
