@@ -2882,7 +2882,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		}
 		iExperience += getDomainFreeExperience((DomainTypes)(GC.getUnitInfo(eUnit).getDomainType()));
 
-		if (!GC.getUnitInfo(eUnit).isSpy()) iExperience += getSpecialistFreeExperience();
+		iExperience += getSpecialistFreeExperience();
 
 		// Leoreth: domain specific experience from civics
 		if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
@@ -2898,31 +2898,33 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 			iExperience += GET_PLAYER(getOwnerINLINE()).getStateReligionFreeExperience();
 
 			//Leoreth: Harmandir Sahib effect
-            if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
-                iExperience += 2;
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
+			{
+				iExperience += 2;
+			}
 		}
 	}
 	
-	//SuperSpies: TSHEEP - Only give spies spy specific xp
-	if (eUnit != NO_UNIT)
-	{
-        if(GC.getUnitInfo(eUnit).isSpy())
-        {
-            iExperience = 0;
-
-            if (GC.getUnitInfo(eUnit).getUnitCombatType() != NO_UNITCOMBAT)
-            {
-                iExperience += getUnitCombatFreeExperience((UnitCombatTypes)(GC.getUnitInfo(eUnit).getUnitCombatType()));
-            }
-        }
-	}
-	//SuperSpies: TSHEEP 
-
 	// Leoreth: Chapultepec Castle
 	if (isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
 	{
 		iExperience += getCultureLevel();
 	}
+	
+	//SuperSpies: TSHEEP - Only give spies spy specific xp
+	if (eUnit != NO_UNIT)
+	{
+		if (GC.getUnitInfo(eUnit).isSpy())
+		{
+			iExperience = 0;
+
+			if (GC.getUnitInfo(eUnit).getUnitCombatType() != NO_UNITCOMBAT)
+			{
+				iExperience += getUnitCombatFreeExperience((UnitCombatTypes)(GC.getUnitInfo(eUnit).getUnitCombatType()));
+			}
+		}
+	}
+	//SuperSpies: TSHEEP 
 
 	return std::max(0, iExperience);
 }
@@ -4873,6 +4875,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iPowerConsumed);
+		}
+
+		// Burj Khalifa
+		else if (eBuilding == BURJ_KHALIFA)
+		{
+			updateYield();
 		}
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -10626,7 +10634,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
 
 	// Leoreth: Himeji Castle effect
-	if (eIndex == COMMERCE_CULTURE && isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	if (eIndex == COMMERCE_CULTURE && isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 	{
 		CvUnit* pUnit;
 		for (int i = 0; i < plot()->getNumUnits(); i++)

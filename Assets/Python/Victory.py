@@ -271,7 +271,7 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
+		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
@@ -1795,7 +1795,7 @@ def checkHistoricalVictory(iPlayer):
 		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
-			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeTurns())
+			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeLength())
 			
 			if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
