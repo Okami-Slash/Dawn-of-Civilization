@@ -1642,6 +1642,61 @@ int CvCity::countNumImprovedPlots(ImprovementTypes eImprovement, bool bPotential
 	return iCount;
 }
 
+int CvCity::countNumWorthyLandPlots() const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+	iCount = 0;
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+		if (pLoopPlot != NULL)
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (!pLoopPlot->isImpassable() && !pLoopPlot->isWater())
+				{
+					if ((pLoopPlot->getYield(YIELD_FOOD) * 2 + pLoopPlot->getYield(YIELD_PRODUCTION) + pLoopPlot->getYield(YIELD_COMMERCE) >= 4))
+					{
+						iCount++;
+					}
+				}
+			}
+		}
+	}
+	return iCount;
+}
+
+int CvCity::countNumWorthyWaterPlots() const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+
+	iCount = 0;
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+
+		if (pLoopPlot != NULL)
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (!pLoopPlot->isImpassable() && pLoopPlot->isWater())
+				{
+					if ((pLoopPlot->getYield(YIELD_FOOD) * 2 + pLoopPlot->getYield(YIELD_PRODUCTION) + pLoopPlot->getYield(YIELD_COMMERCE) >= 4))
+					{
+						iCount++;
+					}
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
 
 int CvCity::countNumWaterPlots() const
 {
@@ -2882,7 +2937,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		}
 		iExperience += getDomainFreeExperience((DomainTypes)(GC.getUnitInfo(eUnit).getDomainType()));
 
-		if (!GC.getUnitInfo(eUnit).isSpy()) iExperience += getSpecialistFreeExperience();
+		iExperience += getSpecialistFreeExperience();
 
 		// Leoreth: domain specific experience from civics
 		if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
@@ -2898,31 +2953,33 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 			iExperience += GET_PLAYER(getOwnerINLINE()).getStateReligionFreeExperience();
 
 			//Leoreth: Harmandir Sahib effect
-            if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
-                iExperience += 2;
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
+			{
+				iExperience += 2;
+			}
 		}
 	}
 	
-	//SuperSpies: TSHEEP - Only give spies spy specific xp
-	if (eUnit != NO_UNIT)
-	{
-        if(GC.getUnitInfo(eUnit).isSpy())
-        {
-            iExperience = 0;
-
-            if (GC.getUnitInfo(eUnit).getUnitCombatType() != NO_UNITCOMBAT)
-            {
-                iExperience += getUnitCombatFreeExperience((UnitCombatTypes)(GC.getUnitInfo(eUnit).getUnitCombatType()));
-            }
-        }
-	}
-	//SuperSpies: TSHEEP 
-
 	// Leoreth: Chapultepec Castle
 	if (isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
 	{
 		iExperience += getCultureLevel();
 	}
+	
+	//SuperSpies: TSHEEP - Only give spies spy specific xp
+	if (eUnit != NO_UNIT)
+	{
+		if (GC.getUnitInfo(eUnit).isSpy())
+		{
+			iExperience = 0;
+
+			if (GC.getUnitInfo(eUnit).getUnitCombatType() != NO_UNITCOMBAT)
+			{
+				iExperience += getUnitCombatFreeExperience((UnitCombatTypes)(GC.getUnitInfo(eUnit).getUnitCombatType()));
+			}
+		}
+	}
+	//SuperSpies: TSHEEP 
 
 	return std::max(0, iExperience);
 }
@@ -4873,6 +4930,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iPowerConsumed);
+		}
+
+		// Burj Khalifa
+		else if (eBuilding == BURJ_KHALIFA)
+		{
+			updateYield();
 		}
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -10626,7 +10689,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
 
 	// Leoreth: Himeji Castle effect
-	if (eIndex == COMMERCE_CULTURE && isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	if (eIndex == COMMERCE_CULTURE && isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 	{
 		CvUnit* pUnit;
 		for (int i = 0; i < plot()->getNumUnits(); i++)
@@ -11788,12 +11851,12 @@ int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
 
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		iTotalCulture += getCultureTimes100((PlayerTypes)iI) / 100;
+		iTotalCulture += getCultureTimes100((PlayerTypes)iI);
 	}
 
 	if (iTotalCulture > 0)
 	{
-		return (getCultureTimes100(eIndex) / iTotalCulture);
+		return (getCultureTimes100(eIndex) * 100 / iTotalCulture);
 	}
 
 	if (eIndex == getOwner())
