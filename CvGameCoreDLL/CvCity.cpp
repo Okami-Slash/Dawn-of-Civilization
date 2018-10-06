@@ -1642,6 +1642,61 @@ int CvCity::countNumImprovedPlots(ImprovementTypes eImprovement, bool bPotential
 	return iCount;
 }
 
+int CvCity::countNumWorthyLandPlots() const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+	iCount = 0;
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+		if (pLoopPlot != NULL)
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (!pLoopPlot->isImpassable() && !pLoopPlot->isWater())
+				{
+					if ((pLoopPlot->getYield(YIELD_FOOD) * 2 + pLoopPlot->getYield(YIELD_PRODUCTION) + pLoopPlot->getYield(YIELD_COMMERCE) >= 4))
+					{
+						iCount++;
+					}
+				}
+			}
+		}
+	}
+	return iCount;
+}
+
+int CvCity::countNumWorthyWaterPlots() const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+
+	iCount = 0;
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+
+		if (pLoopPlot != NULL)
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (!pLoopPlot->isImpassable() && pLoopPlot->isWater())
+				{
+					if ((pLoopPlot->getYield(YIELD_FOOD) * 2 + pLoopPlot->getYield(YIELD_PRODUCTION) + pLoopPlot->getYield(YIELD_COMMERCE) >= 4))
+					{
+						iCount++;
+					}
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
 
 int CvCity::countNumWaterPlots() const
 {

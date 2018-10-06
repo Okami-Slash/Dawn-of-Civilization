@@ -68,7 +68,11 @@
 			<Button>,Art/Interface/Buttons/Civics/Republic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iNumCitiesMaintenanceModifier>25</iNumCitiesMaintenanceModifier>
+			<LandYields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>-1</iYield>
+			</LandYields>
 			<SpecialistExtraYields>
 				<iYield>1</iYield>
 			</SpecialistExtraYields>

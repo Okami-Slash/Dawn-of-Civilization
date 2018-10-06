@@ -61,6 +61,8 @@ CvPlayer::CvPlayer()
 	m_aiHappinessExtraYield = new int[NUM_YIELD_TYPES]; // Leoreth
 	m_aiUnhappinessExtraYield = new int[NUM_YIELD_TYPES]; // Leoreth
 	m_aiUnimprovedTileYield = new int[NUM_YIELD_TYPES]; // Leoreth
+	m_aiLandYield = new int[NUM_YIELD_TYPES]; // 1SDAN
+	m_aiWaterYield = new int[NUM_YIELD_TYPES]; // 1SDAN
 	m_aiCommerceFlexibleCount = new int[NUM_COMMERCE_TYPES];
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
@@ -140,6 +142,8 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiHappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiUnimprovedTileYield); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiLandYield); // 1SDAN
+	SAFE_DELETE_ARRAY(m_aiWaterYield); // 1SDAN
 	SAFE_DELETE_ARRAY(m_aiCommerceFlexibleCount);
 	SAFE_DELETE_ARRAY(m_aiGoldPerTurnByPlayer);
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
@@ -597,6 +601,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aiHappinessExtraYield[iI] = 0; // Leoreth
 		m_aiUnhappinessExtraYield[iI] = 0; // Leoreth
 		m_aiUnimprovedTileYield[iI] = 0; // Leoreth
+		m_aiLandYield[iI] = 0; // 1SDAN
+		m_aiWaterYield[iI] = 0; // 1SDAN
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -13794,6 +13800,44 @@ void CvPlayer::changeUnimprovedTileYield(YieldTypes eYield, int iChange)
 	}
 }
 
+// 1SDAN
+int CvPlayer::getLandYield(YieldTypes eYield) const
+{
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > -1, "Index out of bounds");
+	return m_aiLandYield[eYield];
+}
+// 1SDAN
+void CvPlayer::changeLandYield(YieldTypes eYield, int iChange)
+{
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > -1, "Index out of bounds");
+	if (iChange != 0)
+	{
+		m_aiLandYield[eYield] += iChange;
+		AI_updateAssignWork();
+	}
+}
+
+// 1SDAN
+int CvPlayer::getWaterYield(YieldTypes eYield) const
+{
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > -1, "Index out of bounds");
+	return m_aiWaterYield[eYield];
+}
+// 1SDAN
+void CvPlayer::changeWaterYield(YieldTypes eYield, int iChange)
+{
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > -1, "Index out of bounds");
+	if (iChange != 0)
+	{
+		m_aiWaterYield[eYield] += iChange;
+		AI_updateAssignWork();
+	}
+}
+
 int CvPlayer::getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const
 {
 	FAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
@@ -17921,6 +17965,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeHappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getHappinessExtraYield(iI) * iChange);
 		changeUnhappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnhappinessExtraYield(iI) * iChange);
 		changeUnimprovedTileYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnimprovedTileYield(iI) * iChange);
+		changeLandYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getLandYield(iI) * iChange);
+		changeWaterYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getWaterYield(iI) * iChange);
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
 			if (iI == (YieldTypes)YIELD_FOOD && (SpecialistTypes)iJ > SPECIALIST_STATESMAN)
@@ -18382,6 +18428,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_YIELD_TYPES, m_aiHappinessExtraYield); // Leoreth
 	pStream->Read(NUM_YIELD_TYPES, m_aiUnhappinessExtraYield); // Leoreth
 	pStream->Read(NUM_YIELD_TYPES, m_aiUnimprovedTileYield); // Leoreth
+	pStream->Read(NUM_YIELD_TYPES, m_aiLandYield); // 1SDAN
+	pStream->Read(NUM_YIELD_TYPES, m_aiWaterYield); // 1SDAN
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommercePercent);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRate);
@@ -18919,6 +18967,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_YIELD_TYPES, m_aiHappinessExtraYield); // Leoreth
 	pStream->Write(NUM_YIELD_TYPES, m_aiUnhappinessExtraYield); // Leoreth
 	pStream->Write(NUM_YIELD_TYPES, m_aiUnimprovedTileYield); // Leoreth
+	pStream->Write(NUM_YIELD_TYPES, m_aiLandYield); // 1SDAN
+	pStream->Write(NUM_YIELD_TYPES, m_aiWaterYield); // 1SDAN
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommercePercent);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRate);

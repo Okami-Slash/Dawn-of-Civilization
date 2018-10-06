@@ -1441,6 +1441,10 @@ public:
 	int* getUnhappinessExtraYieldArray() const; // Leoreth
 	int getUnimprovedTileYield(int i) const; // Leoreth
 	int* getUnimprovedTileYieldArray() const; // Leoreth
+	int getLandYield(int i) const; // 1SDAN
+	int* getLandYieldArray() const; // 1SDAN
+	int getWaterYield(int i) const; // 1SDAN
+	int* getWaterYieldArray() const; // 1SDAN
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getBuildingProductionModifier(int i) const;	//Leoreth
@@ -1540,6 +1544,8 @@ protected:
 	int* m_piHappinessExtraYield; // Leoreth
 	int* m_piUnhappinessExtraYield; // Leoreth
 	int* m_piUnimprovedTileYield; // Leoreth
+	int* m_piLandYield; // 1SDAN
+	int* m_piWaterYield; // 1SDAN
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiBuildingProductionModifiers; // Leoreth

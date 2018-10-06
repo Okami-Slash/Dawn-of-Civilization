@@ -10763,6 +10763,32 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += std::max(0, iUnimprovedWorkedTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getUnimprovedTileYield(iI) / 100;
 		}
 
+		// 1SDAN: Land yield
+		if (kCivic.getLandYield(iI) != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			int iLandTiles = 0;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iLandTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumWorthyLandPlots());
+			}
+			iTempValue += std::max(0, iLandTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getLandYield(iI) / 100;
+		}
+
+		// 1SDAN: Water yield
+		if (kCivic.getWaterYield(iI) != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			int iWaterTiles = 0;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iWaterTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumWorthyWaterPlots());
+			}
+			iTempValue += std::max(0, iWaterTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getWaterYield(iI) / 100;
+		}
+
 		// Leoreth: specialist extra yield
 		iTempValue += ((AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15) / 100;
 

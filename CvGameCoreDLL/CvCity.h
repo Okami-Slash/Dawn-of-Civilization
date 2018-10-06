@@ -57,6 +57,8 @@ public:
 	void verifyWorkingPlots();
 	void clearWorkingOverride(int iIndex);														// Exposed to Python
 	int countNumImprovedPlots(ImprovementTypes eImprovement = NO_IMPROVEMENT, bool bPotential = false) const;																			// Exposed to Python
+	int countNumWorthyLandPlots() const;
+	int countNumWorthyWaterPlots() const;
 	int countNumWaterPlots() const;																					// Exposed to Python
 	int countNumRiverPlots() const;																					// Exposed to Python
 

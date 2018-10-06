@@ -7075,7 +7075,12 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		// yield is subtracted again in calculateImprovementYieldChange()
 		if (!isWater() && !isImpassable())
 		{
-			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield);
+			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield) + GET_PLAYER(ePlayer).getLandYield(eYield);
+		}
+
+		if (isWater() && !isImpassable())
+		{
+			iYield += GET_PLAYER(ePlayer).getWaterYield(eYield);
 		}
 	}
 
