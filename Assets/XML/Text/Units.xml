@@ -808,7 +808,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREAT_STATESMAN</Tag>
 		<English>Great Statesman</English>
-		<French>Homme d'&#201;tat illustre</French>
+		<French>
+			<Text>Homme d'&#201;tat illustre:Femme d'&#201;tat illustre</Text>
+			<Gender>Male:Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gro&#223;er Staatsmann</German>
 		<Italian>Great Statesman</Italian>
 		<Spanish>Great Statesman</Spanish>
@@ -3097,6 +3101,4 @@
 		<Italian>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</Italian>
 		<Spanish>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</Spanish>
 	</TEXT>
-=======
->>>>>>> Zimbabwe
 </Civ4GameText>
