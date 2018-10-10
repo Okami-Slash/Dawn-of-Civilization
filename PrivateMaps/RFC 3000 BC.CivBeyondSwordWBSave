@@ -36252,7 +36252,7 @@ EndPlot
 BeginPlot
 	x=94,y=45
 	TerrainType=TERRAIN_DESERT
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=94,y=46
