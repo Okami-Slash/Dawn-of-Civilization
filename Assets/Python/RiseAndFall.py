@@ -292,6 +292,7 @@ class RiseAndFall:
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
 			self.adjust600ADWonders()
+			self.adjust600ADGreatPeople()
 			
 		if utils.getScenario() == i1700AD:
 			self.create1700ADstartingUnits()
@@ -299,8 +300,9 @@ class RiseAndFall:
 			self.prepareColonists()
 			self.adjust1700ADCulture()
 			self.adjust1700ADWonders()
-
-			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria]:
+			self.adjust1700ADGreatPeople()
+			
+			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans]:
 				utils.setReborn(iPlayer, True)
 			
 			pManchuria.updateTradeRoutes()
@@ -639,6 +641,81 @@ class RiseAndFall:
 	def expireWonders(self, lWonders):
 		for iWonder in lWonders:
 			gc.getGame().incrementBuildingClassCreatedCount(gc.getBuildingInfo(iWonder).getBuildingClassType())
+			
+	def adjust600ADGreatPeople(self):
+		dGreatPeopleCreated = {
+			iChina: 4,
+			iKorea: 1,
+			iByzantium: 1,
+			iJapan: 0,
+			iVikings: 0,
+			iTurks: 0,
+		}
+		
+		dGreatGeneralsCreated = {
+			iChina: 1,
+			iKorea: 0,
+			iByzantium: 0,
+			iJapan: 0,
+			iVikings: 0,
+			iTurks: 0,
+		}
+		
+		for iPlayer, iGreatPeople in dGreatPeopleCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatPeopleCreated(iGreatPeople)
+			
+		for iPlayer, iGreatGenerals in dGreatGeneralsCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatGeneralsCreated(iGreatGenerals)
+		
+	def adjust1700ADGreatPeople(self):
+		dGreatPeopleCreated = {
+			iChina: 12,
+			iIndia: 8,
+			iPersia: 4,
+			iTamils: 5,
+			iKorea: 6,
+			iJapan: 6,
+			iVikings: 8,
+			iTurks: 4,
+			iSpain: 8,
+			iFrance: 8,
+			iEngland: 8,
+			iHolyRome: 8,
+			iPoland: 8,
+			iPortugal: 8,
+			iMughals: 8,
+			iOttomans: 8,
+			iThailand: 8,
+			iCongo: 4,
+			iNetherlands: 6,
+		}
+		
+		dGreatGeneralsCreated = {
+			iChina: 4,
+			iIndia: 3,
+			iPersia: 2,
+			iTamils: 2,
+			iKorea: 3,
+			iJapan: 3,
+			iVikings: 3,
+			iSpain: 4,
+			iFrance: 3,
+			iEngland: 3,
+			iHolyRome: 4,
+			iPoland: 3,
+			iPortugal: 3,
+			iMughals: 4,
+			iOttomans: 5,
+			iThailand: 3,
+			iCongo: 2,
+			iNetherlands: 3,
+		}
+		
+		for iPlayer, iGreatPeople in dGreatPeopleCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatPeopleCreated(iGreatPeople)
+			
+		for iPlayer, iGreatGenerals in dGreatGeneralsCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatGeneralsCreated(iGreatGenerals)
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
@@ -2093,6 +2170,9 @@ class RiseAndFall:
 		targetList = utils.getColonialTargets(iPlayer, True)
 		targetCivList = []
 		settlerList = []
+		
+		if not targetList:
+			return
 
 		iGold = len(targetList) * 200
 
@@ -2174,6 +2254,10 @@ class RiseAndFall:
 
 	def handleColonialConquest(self, iPlayer):
 		targetList = utils.getColonialTargets(iPlayer)
+		
+		if not targetList:
+			self.handleColonialAcquisition(iPlayer)
+			return
 
 		for tPlot in targetList:
 			data.timedConquest(iPlayer, tPlot)
