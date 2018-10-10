@@ -7446,12 +7446,12 @@ int CvPlayer::calculateUnitSupply(int& iPaidUnits, int& iBaseSupplyCost) const
 
 int CvPlayer::calculatePreInflatedCosts() const
 {
-	CyArgsList argsList;
+	/*CyArgsList argsList;
 	argsList.add(getID());
 	long lResult;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExtraCost", argsList.makeFunctionArgs(), &lResult);
+	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExtraCost", argsList.makeFunctionArgs(), &lResult);*/
 
-	return (calculateUnitCost() + calculateUnitSupply() + getTotalMaintenance() + getCivicUpkeep() + (int)lResult);
+	return (calculateUnitCost() + calculateUnitSupply() + getTotalMaintenance() + getCivicUpkeep() /*+ (int)lResult*/);
 }
 
 
@@ -7460,10 +7460,10 @@ int CvPlayer::calculateInflationRate() const
 	//int iTurns = ((GC.getGameINLINE().getGameTurn() + GC.getGameINLINE().getElapsedGameTurns()) / 2);
 	int iTurns = GC.getGameINLINE().getGameTurn();
 
-	if (GC.getGameINLINE().getMaxTurns() > 0)
+	/*if (GC.getGameINLINE().getMaxTurns() > 0)
 	{
 		iTurns = std::min(GC.getGameINLINE().getMaxTurns(), iTurns);
-	}
+	}*/
 
 	iTurns += GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getInflationOffset();
 
@@ -9378,6 +9378,11 @@ void CvPlayer::incrementGreatPeopleCreated()
 	m_iGreatPeopleCreated++;
 }
 
+void CvPlayer::changeGreatPeopleCreated(int iChange)
+{
+	m_iGreatPeopleCreated += iChange;
+}
+
 int CvPlayer::getGreatGeneralsCreated() const
 {
 	return m_iGreatGeneralsCreated;
@@ -9386,6 +9391,11 @@ int CvPlayer::getGreatGeneralsCreated() const
 void CvPlayer::incrementGreatGeneralsCreated()
 {
 	m_iGreatGeneralsCreated++;
+}
+
+void CvPlayer::changeGreatGeneralsCreated(int iChange)
+{
+	m_iGreatGeneralsCreated += iChange;
 }
 
 void CvPlayer::decrementGreatGeneralsCreated()

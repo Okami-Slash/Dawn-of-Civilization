@@ -11,7 +11,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
+<<<<<<< HEAD
 		<English>Additional happiness from running late game Government, Legitimacy, Society, and Economy Civics</English>
+=======
+		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
+>>>>>>> QMC
 		<French>Bonheur additionnel avec les doctrines d&#233;mocratie, constitution, individualisme et libre entreprise</French>
 		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
 		<Italian>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Italian>
