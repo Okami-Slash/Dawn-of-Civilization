@@ -1371,12 +1371,12 @@ void CvMap::calculateAreas()
 		}
 	}
 
-	// Leoreth: create different continents for Europe, Africa and South America
+	// Leoreth: create different continents for Europe, Africa and South America, plus separate Scandinavia and Denmark
 	CvArea* europe = addArea();
 	CvArea* africa = addArea();
 	CvArea* southAmerica = addArea();
 	CvArea* scandinavia = addArea();
-	CvArea* maghreb = addArea();
+	CvArea* denmark = addArea();
 
 	int asiaID = plot(100, 44)->getArea(); // Chang'an
 	int americaID = plot(27, 46)->getArea(); // Washington
@@ -1385,13 +1385,13 @@ void CvMap::calculateAreas()
 	int africaID = africa->getID();
 	int southAmericaID = southAmerica->getID();
 	int scandinaviaID = scandinavia->getID();
-	int maghrebID = maghreb->getID();
+	int denmarkID = denmark->getID();
 
 	europe->init(europeID, false);
 	africa->init(africaID, false);
 	southAmerica->init(southAmericaID, false);
 	scandinavia->init(scandinaviaID, false);
-	maghreb->init(maghrebID, false);
+	denmark->init(denmarkID, false);
 
 	CvPlot* plot;
 	for (int iX = 0; iX < getGridWidth(); iX++)
@@ -1420,9 +1420,13 @@ void CvMap::calculateAreas()
 					if (plot->getArea() == asiaID) plot->setArea(europeID);
 					break;
 				case REGION_SCANDINAVIA:
-					if (plot->getArea() == scandinaviaID) plot->setArea(scandinaviaID);
+					if (plot->getArea() == asiaID)
+					{
+						if ((iX == 59 && iY >= 55 && iY <= 57) || (iX == 60 && iY == 56)) plot->setArea(denmarkID);
+						else plot->setArea(scandinaviaID);
+					}
+					break;
 				case REGION_MAGHREB:
-					if (plot->getArea() == maghrebID) plot->setArea(maghrebID);
 				case REGION_ETHIOPIA:
 				case REGION_WEST_AFRICA:
 				case REGION_SOUTH_AFRICA:
