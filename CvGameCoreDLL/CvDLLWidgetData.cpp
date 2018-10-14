@@ -4219,12 +4219,13 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 	if (pHeadSelectedCity != NULL)
 	{
+		int iTotalCulture = 0;
+
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
 			if (true) //GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
-				// Leoreth: count dead civs as well
-				//iCulturePercent = pHeadSelectedCity->plot()->calculateOverallCulturePercent((PlayerTypes)iI);
+				iTotalCulture += (pHeadSelectedCity->plot()->isCore((PlayerTypes)iI) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture((PlayerTypes)iI);
 				iCulturePercent = pHeadSelectedCity->calculateOverallCulturePercent((PlayerTypes)iI);
 
 				if (iCulturePercent > 0)
@@ -4232,6 +4233,23 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, GET_PLAYER((PlayerTypes)iI).getPlayerTextColorR(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorG(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorB(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorA(), GET_PLAYER((PlayerTypes)iI).getCivilizationAdjective());
 					szBuffer.append(szTempBuffer);
 				}
+			}
+		}
+
+		// Leoreth: stability effects of cultural control
+		int iOwnCulture = iTotalCulture == 0 ? 100 : 100 * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE()) / iTotalCulture;
+
+		if (pHeadSelectedCity->getOwnerINLINE() != PERSIA || (pHeadSelectedCity->getOwnerINLINE() == PERSIA && GET_PLAYER((PlayerTypes)PERSIA).isReborn()))
+		{
+			if (iOwnCulture < 20)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE"));
+			}
+			else if (iOwnCulture < 50)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_INSTABILITY_CULTURE"));
 			}
 		}
 
