@@ -607,6 +607,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iCultureRank = 0;
 
+	m_iStabilityPopulation = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -4844,21 +4846,23 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Metropolitain
 		else if (eBuilding == METROPOLITAIN)
 		{
-			for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 			{
-				int iNumBuildings = 0;
-				if (isHasRealBuilding((BuildingTypes)iI))
-				{
-					iNumBuildings += 1;
-				}
-					
-				changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iNumBuildings);
-			}
-		}
+				BuildingClassTypes eBuildingClass = (BuildingClassTypes)iI;
 
-		if (isHasBuildingEffect((BuildingTypes)METROPOLITAIN) && eBuilding != METROPOLITAIN)
-		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)METROPOLITAIN).getBuildingClassType(), YIELD_COMMERCE, iChange);
+				if (::isNationalWonderClass(eBuildingClass) || ::isWorldWonderClass(eBuildingClass))
+				{
+					continue;
+				}
+
+				BuildingTypes eCivilizationBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+				int iCulture = GC.getBuildingInfo(eCivilizationBuilding).getCommerceChange(COMMERCE_CULTURE) + GC.getBuildingInfo(eCivilizationBuilding).getObsoleteSafeCommerceChange(COMMERCE_CULTURE);
+
+				if (iCulture > 0)
+				{
+					changeBuildingYieldChange(eBuildingClass, YIELD_COMMERCE, iChange * iCulture / 2);
+				}
+			}
 		}
 
 		// Berlaymont
@@ -10843,7 +10847,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 					}
 				}
 				
-				// modified by Leoreth to account for Solomon's Temple's effect
+				// modified by Leoreth to account for the Dome of the Rock effect
 				int iShrineLimit = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK) ? 2 * MAX_COM_SHRINE : MAX_COM_SHRINE;
 
 				if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != NO_RELIGION)
@@ -15111,11 +15115,15 @@ bool CvCity::doCheckProduction()
 		}
 	}
 
+	bool bMaxedOut, bObsolete;
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		if (getBuildingProduction((BuildingTypes)iI) > 0)
 		{
-			if (GET_PLAYER(getOwnerINLINE()).isProductionMaxedBuildingClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType())))
+			bMaxedOut = GET_PLAYER(getOwnerINLINE()).isProductionMaxedBuildingClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()));
+			bObsolete = GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech() != NO_TECH && GC.getGameINLINE().countKnownTechNumTeams((TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech()) > 0;
+
+			if (bMaxedOut || bObsolete)
 			{
 				iProductionGold = ((getBuildingProduction((BuildingTypes)iI) * GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT")) / 100);
 
@@ -15900,6 +15908,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureTradeRouteModifier);
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 	pStream->Read(&m_iCultureRank);
+	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -16084,7 +16093,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=1; // Leoreth: 1 for wonder effect changes
+	uint uiFlag=2; // Leoreth: 1 for wonder effect changes, 2 for stability population
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16196,6 +16205,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingUnignorableBombardDefense);
 
 	pStream->Write(m_iCultureRank);
+
+	pStream->Write(m_iStabilityPopulation); // Leoreth
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -16664,6 +16675,14 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 	// if both the river and water flags are set, we require one of the two conditions, not both
 	if (GC.getBuildingInfo(eBuilding).isWater())
 	{
+		if (eBuilding == GOLDEN_GATE_BRIDGE || eBuilding == BROOKLYN_BRIDGE || eBuilding == DELTA_WORKS)
+		{
+			if (!plot()->isRiver() || !plot()->isCoastalLand(GC.getBuildingInfo(eBuilding).getMinAreaSize()))
+			{
+				return false;
+			}
+		}
+
 		if (!GC.getBuildingInfo(eBuilding).isRiver() || !plot()->isRiver())
 		{
 			if (!isCoastal(GC.getBuildingInfo(eBuilding).getMinAreaSize()))
@@ -19071,4 +19090,14 @@ void CvCity::setCultureRank(int iNewValue)
 			}
 		}
 	}
+}
+
+int CvCity::getStabilityPopulation() const
+{
+	return m_iStabilityPopulation;
+}
+
+void CvCity::setStabilityPopulation(int iNewValue)
+{
+	m_iStabilityPopulation = iNewValue;
 }

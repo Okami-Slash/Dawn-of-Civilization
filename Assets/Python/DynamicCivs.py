@@ -900,6 +900,8 @@ def getMaster(iPlayer):
 	return utils.getMaster(iPlayer)
 	
 def isEmpire(iPlayer):
+	if isVassal(iPlayer): return False
+
 	return gc.getPlayer(iPlayer).getNumCities() >= getEmpireThreshold(iPlayer)
 	
 def getEmpireThreshold(iPlayer):
@@ -1185,7 +1187,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 12 and countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
+		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iPlayer == iHolyRome:
@@ -1529,7 +1531,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 12 and countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
+		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iPlayer == iHolyRome:
@@ -1979,7 +1981,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iEra == iMedieval and getMaster(iFrance) == iEngland:
 			return "TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE"
 			
-		if getColumn(iPlayer) >= 12:
+		if getColumn(iPlayer) >= 11:
 			if bEmpire:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
