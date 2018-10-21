@@ -9219,8 +9219,7 @@ void CvCity::setOccupationTimer(int iNewValue)
 
 void CvCity::changeOccupationTimer(int iChange)
 {
-	//Leoreth: occupation time capped at 5
-	setOccupationTimer(std::min(getOccupationTimer() + iChange, 5));
+	setOccupationTimer(getOccupationTimer() + iChange);
 }
 
 
