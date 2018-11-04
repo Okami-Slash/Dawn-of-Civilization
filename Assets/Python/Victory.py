@@ -535,7 +535,7 @@ def checkTurn(iGameTurn, iPlayer):
 					
 	elif iPlayer == iRome:
 	
-		# first goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
+		# first goal: build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD
 		if iGameTurn == getTurnForYear(100):
 			expire(iRome, 0)
 			
@@ -2104,15 +2104,15 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iCounter >= 20:
 					win(iIndia, 1)
 	
-	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
+	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD
 	elif iPlayer == iRome:
 		if isPossible(iRome, 0):
-			if iBuilding in [iBarracks, iAqueduct, iAmphitheatre, iForum]:
+			if iBuilding in [iBarracks, iAqueduct, iArena, iForum]:
 				iNumBarracks = getNumBuildings(iRome, iBarracks)
 				iNumAqueducts = getNumBuildings(iRome, iAqueduct)
-				iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
+				iNumArenas = getNumBuildings(iRome, iArena)
 				iNumForums = getNumBuildings(iRome, iForum)
-				if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumAmphitheatres >= 4 and iNumForums >= 3:
+				if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumArenas >= 4 and iNumForums >= 3:
 					win(iRome, 0)
 					
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
@@ -2223,9 +2223,9 @@ def onProjectBuilt(iPlayer, iProject):
 	
 	# second Russian goal: be the first civilization to complete the Manhattan Project and the Apollo Program
 	if isPossible(iRussia, 1):
-		if iProject in [iApolloProgram, iManhattanProject]:
+		if iProject in [iLunarLanding, iManhattanProject]:
 			if iPlayer == iRussia:
-				bApolloProgram = iProject == iApolloProgram or teamRussia.getProjectCount(iApolloProgram) > 0
+				bApolloProgram = iProject == iLunarLanding or teamRussia.getProjectCount(iLunarLanding) > 0
 				bManhattanProject = iProject == iManhattanProject or teamRussia.getProjectCount(iManhattanProject) > 0
 				if bApolloProgram and bManhattanProject:
 					win(iRussia, 1)
@@ -3980,9 +3980,9 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iNumBarracks = getNumBuildings(iRome, iBarracks)
 			iNumAqueducts = getNumBuildings(iRome, iAqueduct)
-			iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
+			iNumArenas = getNumBuildings(iRome, iArena)
 			iNumForums = getNumBuildings(iRome, iForum)
-			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumAmphitheatres >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iNumAmphitheatres, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 3)))
+			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumArenas >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_ARENAS", (iNumArenas, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 3)))
 		elif iGoal == 1:
 			iCitiesSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False))
 			iCitiesFrance = getNumCitiesInArea(iRome, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
@@ -4278,8 +4278,8 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bSiberia) + siberiaText + ' ' + getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
 		elif iGoal == 1:
 			bManhattanProject = teamRussia.getProjectCount(iManhattanProject) > 0
-			bApolloProgram = teamRussia.getProjectCount(iApolloProgram) > 0
-			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))
+			bApolloProgram = teamRussia.getProjectCount(iLunarLanding) > 0
+			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_LUNAR_LANDING", ()))
 		elif iGoal == 2:
 			bCommunism = pRussia.getCivics(iCivicsEconomy) == iCentralPlanning
 			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))

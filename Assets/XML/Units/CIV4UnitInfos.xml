@@ -2483,7 +2483,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -2574,7 +2574,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -2668,7 +2668,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -2765,7 +2765,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3325,7 +3325,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3419,7 +3419,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3511,7 +3511,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3587,7 +3587,7 @@
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3663,7 +3663,7 @@
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3762,7 +3762,7 @@
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3857,7 +3857,7 @@
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -3945,7 +3945,7 @@
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -4031,7 +4031,7 @@
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -4092,14 +4092,14 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_MUSKETMAN</Class>
-			<Type>UNIT_MUSKETMAN</Type>
+			<Class>UNITCLASS_MUSKETEER</Class>
+			<Type>UNIT_MUSKETEER</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_MUSKETMAN</Description>
-			<Civilopedia>TXT_KEY_UNIT_MUSKETMAN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_MUSKETEER</Description>
+			<Civilopedia>TXT_KEY_UNIT_MUSKETEER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_MUSKETEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -4178,13 +4178,13 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_MUSKETMAN</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_MUSKETEER</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_MUSKETMAN</Class>
+			<Class>UNITCLASS_MUSKETEER</Class>
 			<Type>UNIT_ENGLISH_REDCOAT</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -4279,7 +4279,7 @@
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_MUSKETMAN</Class>
+			<Class>UNITCLASS_MUSKETEER</Class>
 			<Type>UNIT_SWEDEN_KAROLIN</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -4381,7 +4381,7 @@
 			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_MUSKETMAN</Class>
+			<Class>UNITCLASS_MUSKETEER</Class>
 			<Type>UNIT_AMERICAN_MINUTEMAN</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -6139,7 +6139,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 				<UnitClassUpgrade>
@@ -6237,7 +6237,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 				<UnitClassUpgrade>
@@ -6345,7 +6345,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_MUSKETMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 				<UnitClassUpgrade>
@@ -7972,7 +7972,7 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
@@ -8762,7 +8762,7 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
@@ -9402,7 +9402,7 @@
 			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
@@ -9520,8 +9520,8 @@
 			<iPlainsDefense>20</iPlainsDefense>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_ARTILLERY</UnitClassType>
-					<iUnitClassMod>50</iUnitClassMod>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
+					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_HOWITZER</UnitClassType>
@@ -14292,6 +14292,64 @@
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_DRONE</Class>
+			<Type>UNIT_DRONE</Type>
+			<Special>SPECIALUNIT_FIGHTER</Special>
+			<Combat>UNITCOMBAT_AIR</Combat>
+			<Domain>DOMAIN_AIR</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK_AIR</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DRONE</Description>
+			<Civilopedia>TXT_KEY_UNIT_DRONE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DRONE_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_CARRIER_BASE</Help>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<bMechanized>1</bMechanized>
+			<bRivalTerritory>1</bRivalTerritory>
+			<bSpy>1</bSpy>
+			<bInvisible>1</bInvisible>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_AIR</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_AUTOMATION</PrereqTech>
+			<BonusType>BONUS_OIL</BonusType>
+			<PrereqBonuses>
+				<BonusType>BONUS_ALUMINUM</BonusType>
+			</PrereqBonuses>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iAirRange>10</iAirRange>
+			<iNukeRange>-1</iNukeRange>
+			<iAirUnitCap>1</iAirUnitCap>
+			<iAirCombat>20</iAirCombat>
+			<iAirCombatLimit>100</iAirCombatLimit>
+			<iEvasionProbability>50</iEvasionProbability>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>4</iXPValueDefense>
+			<iBombRate>16</iBombRate>
+			<iAsset>4</iAsset>
+			<iPower>20</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>0.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DRONE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_NUCLEAR_BOMBER</Class>
 			<Type>UNIT_NUCLEAR_BOMBER</Type>
 			<Combat>UNITCOMBAT_AIR</Combat>
@@ -14342,6 +14400,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_ICBM</Class>
 			<Type>UNIT_ICBM</Type>
+			<Special>SPECIALUNIT_ICBM</Special>
 			<Domain>DOMAIN_IMMOBILE</Domain>
 			<DefaultUnitAI>UNITAI_ICBM</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ICBM</Description>
@@ -14379,6 +14438,68 @@
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_ICBM</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_SATELLITE</Class>
+			<Type>UNIT_SATELLITE</Type>
+			<Special>SPECIALUNIT_SATELLITE</Special>
+			<Domain>DOMAIN_AIR</Domain>
+			<DefaultUnitAI>UNITAI_SATELLITE</DefaultUnitAI>
+			<Invisible>INVISIBLE_SATELLITE</Invisible>
+			<SeeInvisible>INVISIBLE_SATELLITE</SeeInvisible>
+			<Description>TXT_KEY_UNIT_SATELLITE</Description>
+			<Civilopedia>TXT_KEY_UNIT_SATELLITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SATELLITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<bNukeImmune>1</bNukeImmune>
+			<bMechanized>1</bMechanized>
+			<bRivalTerritory>1</bRivalTerritory>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_SATELLITE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<GreatPeoples>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_RESEARCH_SATELLITE</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_COMMERCIAL_SATELLITE</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_MILITARY_SATELLITE</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+			</GreatPeoples>
+			<PrereqTech>TECH_SATELLITES</PrereqTech>
+			<iCost>400</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iNukeRange>-1</iNukeRange>
+			<iMoves>1</iMoves>
+			<iAsset>10</iAsset>
+			<iPower>0</iPower>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SENTRY</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SATELLITE</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>

@@ -358,7 +358,7 @@ class CvRFCEventHandler:
 		if iOwner == iNetherlands and tCity == Areas.getCapital(iNetherlands) and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
 			city.setPopulation(9)
 			
-			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iAmphitheatre, iTheatre, iTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
+			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre, iTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
 				
 			gc.getPlayer(iNetherlands).AI_updateFoundValues(False)
@@ -580,6 +580,11 @@ class CvRFCEventHandler:
 		if unit.getUnitType() == iSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and utils.getHumanID() != city.getOwner():
 			utils.moveSlaveToNewWorld(city.getOwner(), unit)
 			
+		# Space Elevator effect: +1 commerce per satellite built
+		if unit.getUnitType() == iSatellite:
+			city = utils.getBuildingEffectCity(iSpaceElevator)
+			if city:
+				city.changeBuildingYieldChange(gc.getBuildingInfo(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 1)
 	
 		
 	def onBuildingBuilt(self, argsList):
@@ -655,6 +660,12 @@ class CvRFCEventHandler:
 	def onProjectBuilt(self, argsList):
 		city, iProjectType = argsList
 		vic.onProjectBuilt(city.getOwner(), iProjectType)
+		
+		# Space Elevator effect: +5 commerce per space projectBuilt
+		if gc.getProjectInfo(iProjectType).isSpaceship():
+			city = utils.getBuildingEffectCity(iSpaceElevator)
+			if city:
+				city.changeBuildingYieldChange(gc.getBuildingInfo(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 5)
 
 	def onImprovementDestroyed(self, argsList):
 		pass

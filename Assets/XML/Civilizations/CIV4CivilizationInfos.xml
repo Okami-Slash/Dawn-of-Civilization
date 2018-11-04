@@ -62,7 +62,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<UnitType>UNIT_AMERICAN_MINUTEMAN</UnitType>
 				</Unit>
 			</Units>
@@ -1716,7 +1716,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<UnitType>UNIT_ENGLISH_REDCOAT</UnitType>
 				</Unit>
 			</Units>
@@ -2813,7 +2813,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_POST_OFFICE</BuildingClassType>
 					<BuildingType>BUILDING_IRANIAN_CARAVANSERAI</BuildingType>
 				</Building>
 				<Building>
@@ -3779,7 +3779,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_MAYAN_BALL_COURT</BuildingType>
 				</Building>
 				<Building>
@@ -3873,7 +3873,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_MEXICAN_CHARREADA</BuildingType>
 				</Building>
 				<Building>
@@ -4787,7 +4787,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
 					<BuildingType>BUILDING_PERSIAN_APOTHECARY</BuildingType>
 				</Building>
 				<Building>
@@ -5852,7 +5852,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<UnitType>UNIT_SWEDEN_KAROLIN</UnitType>
 				</Unit>
 			</Units>

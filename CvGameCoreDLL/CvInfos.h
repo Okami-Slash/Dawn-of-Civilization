@@ -251,6 +251,8 @@ public:
 	int getHappiness() const; // Leoreth
 
 	bool isVisible() const;				// Exposed to Python
+	bool isNoGlobalEffects() const; // Leoreth
+	bool isSatellite() const;
 
 	// Arrays
 
@@ -279,6 +281,7 @@ protected:
 	int m_iHappiness; // Leoreth
 
 	bool m_bVisible;				// Exposed to Python
+	bool m_bNoGlobalEffects; // Leoreth
 
 	CvString m_szTexture;
 
@@ -1287,6 +1290,7 @@ public:
 	virtual ~CvSpecialUnitInfo();
 
 	bool isValid() const;
+	bool isPlayerValid() const; // Leoreth
 	bool isCityLoad() const;
 
 	// Arrays
@@ -1301,6 +1305,7 @@ public:
 protected:
 
 	bool m_bValid;
+	bool m_bPlayerValid; // Leoreth
 	bool m_bCityLoad;
 
 	// Arrays
@@ -1745,6 +1750,8 @@ public:
 	int getHealth() const;				// Exposed to Python
 	int getAreaHealth() const;				// Exposed to Python
 	int getGlobalHealth() const;				// Exposed to Python
+	int getBuildingUnhealthModifier() const; // Leoreth
+	int getCorporationUnhealthModifier() const; // Leoreth
 	int getGlobalPopulationChange() const;				// Exposed to Python
 	int getFreeTechs() const;				// Exposed to Python
 	int getDefenseModifier() const;					// Exposed to Python
@@ -1975,6 +1982,8 @@ protected:
 	int m_iHealth;
 	int m_iAreaHealth;
 	int m_iGlobalHealth;
+	int m_iBuildingUnhealthModifier; // Leoreth
+	int m_iCorporationUnhealthModifier; // Leoreth
 	int m_iGlobalPopulationChange;
 	int m_iFreeTechs;
 	int m_iDefenseModifier;
@@ -3067,6 +3076,8 @@ public:
 	int* getHillsYieldChangeArray();
 	int getIrrigatedYieldChange(int i) const;				// Exposed to Python
 	int* getIrrigatedYieldChangeArray();				// For Moose - CvWidgetData XXX
+	int getCoastalYieldChange(int i) const; // Leoreth
+	int* getCoastalYieldChangeArray();
 
 	bool getTerrainMakesValid(int i) const;				// Exposed to Python
 	bool getFeatureMakesValid(int i) const;				// Exposed to Python
@@ -3141,6 +3152,7 @@ protected:
 	int* m_piRiverSideYieldChange;
 	int* m_piHillsYieldChange;
 	int* m_piIrrigatedChange;
+	int* m_piCoastalYieldChange; // Leoreth
 
 	bool* m_pbTerrainMakesValid;
 	bool* m_pbFeatureMakesValid;
@@ -4160,13 +4172,25 @@ public:
 	int getProductionCost() const;								// Exposed to Python
 	int getNukeInterception() const;							// Exposed to Python
 	int getTechShare() const;											// Exposed to Python
+	int getAirExperience() const; // Leoreth
+	int getFirstAirExperience() const; // Leoreth
+	int getExistingProductionModifier() const; // Leoreth
+	int getSpecialUnit() const; // Leoreth
 	int getEveryoneSpecialUnit() const;						// Exposed to Python
 	int getEveryoneSpecialBuilding() const;				// Exposed to Python
+	int getFirstFreeUnit() const; // Leoreth
+	int getFreePromotion() const; // Leoreth
 	int getVictoryDelayPercent() const;				// Exposed to Python
 	int getSuccessRate() const;				// Exposed to Python
 
 	bool isSpaceship() const;											// Exposed to Python
 	bool isAllowsNukes() const;											// Exposed to Python
+	bool isSatelliteIntercept() const; // Leoreth
+	bool isSatelliteAttack() const; // Leoreth
+	bool isGoldenAge() const; // Leoreth
+	bool isFirstEnemyAnarchy() const; // Leoreth
+	bool isRevealsMap() const; // Leoreth
+
 	const char* getMovieArtDef() const;						// Exposed to Python
 
 	const TCHAR* getCreateSound() const;					// Exposed to Python
@@ -4193,13 +4217,24 @@ protected:
 	int m_iProductionCost;
 	int m_iNukeInterception;
 	int m_iTechShare;
+	int m_iAirExperience; // Leoreth
+	int m_iFirstAirExperience; // Leoreth
+	int m_iExistingProductionModifier; // Leoreth
+	int m_iSpecialUnit; // Leoreth
 	int m_iEveryoneSpecialUnit;
 	int m_iEveryoneSpecialBuilding;
+	int m_iFirstFreeUnit; // Leoreth
+	int m_iFreePromotion; // Leoreth
 	int m_iVictoryDelayPercent;
 	int m_iSuccessRate;
 
 	bool m_bSpaceship;
 	bool m_bAllowsNukes;
+	bool m_bSatelliteIntercept; // Leoreth
+	bool m_bSatelliteAttack; // Leoreth
+	bool m_bGoldenAge; // Leoreth
+	bool m_bFirstEnemyAnarchy; // Leoreth
+	bool m_bRevealsMap; // Leoreth
 
 	CvString m_szCreateSound;
 	CvString m_szMovieArtDef;

@@ -1009,10 +1009,10 @@ public:
 
 	int getBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;           // Exposed to Python
 	void setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange);          // Exposed to Python
-	void changeBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange);
+	void changeBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange);			// Exposed to Python
 	int getBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce) const;           // Exposed to Python
 	void setBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange);          // Exposed to Python
-	void changeBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange);
+	void changeBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange);			// Exposed to Python
 	int getBuildingHappyChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
 	void setBuildingHappyChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
 	int getBuildingHealthChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
@@ -1117,6 +1117,19 @@ public:
 
 	int getStabilityPopulation() const;
 	void setStabilityPopulation(int iNewValue);
+
+	int getBuildingUnhealthModifier() const;
+	void setBuildingUnhealthModifier(int iNewValue);
+	void changeBuildingUnhealthModifier(int iChange);
+
+	int getCorporationUnhealthModifier() const;
+	void setCorporationUnhealthModifier(int iNewValue);
+	void changeCorporationUnhealthModifier(int iChange);
+
+	int countNoGlobalEffectsFreeSpecialists() const;
+	int countSatellites() const;
+
+	int getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1299,6 +1312,9 @@ protected:
 	int m_iCultureRank;
 
 	int m_iStabilityPopulation;
+
+	int m_iBuildingUnhealthModifier;
+	int m_iCorporationUnhealthModifier;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

@@ -102,6 +102,8 @@ CvPlayer::CvPlayer()
 	m_pabResearchingTech = NULL;
 	m_pabLoyalMember = NULL;
 
+	m_pabSpecialUnitValid = NULL; // Leoreth
+
 	m_paeCivics = NULL;
 
 	m_ppaaiSpecialistExtraYield = NULL;
@@ -329,6 +331,15 @@ void CvPlayer::init(PlayerTypes eID)
 				}
 			}
 		}
+
+		// Leoreth
+		for (iI = 0; iI < GC.getNumSpecialUnitInfos(); ++iI)
+		{
+			if (GC.getSpecialUnitInfo((SpecialUnitTypes)iI).isPlayerValid())
+			{
+				makeSpecialUnitValid((SpecialUnitTypes)iI);
+			}
+		}
 	}
 
 	AI_init();
@@ -361,6 +372,7 @@ void CvPlayer::uninit()
 
 	SAFE_DELETE_ARRAY(m_pabResearchingTech);
 	SAFE_DELETE_ARRAY(m_pabLoyalMember);
+	SAFE_DELETE_ARRAY(m_pabSpecialUnitValid); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_paeCivics);
 
@@ -790,6 +802,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		for (iI = 0; iI < GC.getNumVoteSourceInfos(); iI++)
 		{
 			m_pabLoyalMember[iI] = true;
+		}
+
+		// Leoreth
+		FAssertMsg(m_pabSpecialUnitValid == NULL, "about to leak memory, CvPlayer::m_pabSpecialUnitValid");
+		m_pabSpecialUnitValid = new bool[GC.getNumSpecialUnitInfos()];
+		for (iI = 0; iI < GC.getNumSpecialUnitInfos(); iI++)
+		{
+			m_pabSpecialUnitValid[iI] = false;
 		}
 
 		FAssertMsg(0 < GC.getNumUpkeepInfos(), "GC.getNumUpkeepInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
@@ -5919,6 +5939,11 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			{
 				return false;
 			}
+
+			if (!isSpecialUnitValid((SpecialUnitTypes)GC.getUnitInfo(eUnit).getSpecialUnitType()))
+			{
+				return false;
+			}
 		}
 
 		// Leoreth: at most one worker per city (disabled)
@@ -6730,6 +6755,12 @@ int CvPlayer::getProductionModifier(ProjectTypes eProject) const
 {
 	int iMultiplier = 0;
 
+	// Leoreth
+	if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
+	{
+		iMultiplier += GC.getProjectInfo(eProject).getExistingProductionModifier();
+	}
+
 	if (GC.getProjectInfo(eProject).isSpaceship())
 	{
 		iMultiplier += getSpaceProductionModifier();
@@ -7022,6 +7053,13 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		{
 			pLoopCity->changeHealRate(10 * iChange);
 		}
+	}
+
+	// Hubble Space Telescope
+	else if (eBuilding == HUBBLE_SPACE_TELESCOPE)
+	{
+		updateCommerce(COMMERCE_RESEARCH);
+		AI_makeAssignWorkDirty();
 	}
 }
 
@@ -8880,7 +8918,8 @@ int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) co
 
 int CvPlayer::specialistCommerce(SpecialistTypes eSpecialist, CommerceTypes eCommerce) const
 {
-	int iValue = (GC.getSpecialistInfo(eSpecialist).getCommerceChange(eCommerce) + getSpecialistExtraCommerce(eCommerce));
+	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
+	int iValue = (kSpecialist.getCommerceChange(eCommerce) + (kSpecialist.isNoGlobalEffects() ? 0 : getSpecialistExtraCommerce(eCommerce)) + (kSpecialist.isSatellite() ? getSatelliteExtraCommerce(eCommerce) : 0));
 	
 	// Merijn: Swedish UP: 1 gold (and 2 happiness) for settled GP
 	if (eCommerce == COMMERCE_GOLD && getID() == SWEDEN && (GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass() == NO_UNITCLASS))
@@ -15167,6 +15206,14 @@ bool CvPlayer::canDoEspionageMission(EspionageMissionTypes eMission, PlayerTypes
 		}
 	}
 
+	if (pUnit != NULL && pUnit->getDomainType() == DOMAIN_AIR)
+	{
+		if (kMission.getDestroyBuildingCostFactor() == 0 && kMission.getDestroyProjectCostFactor() == 0 && kMission.getDestroyUnitCostFactor() == 0)
+		{
+			return false;
+		}
+	}
+
 	int iCost = getEspionageMissionCost(eMission, eTargetPlayer, pPlot, iExtraData, pUnit);
 	if (iCost < 0)
 	{
@@ -18289,7 +18336,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 2
+	// Leoreth: using flag = 3
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18513,6 +18560,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumTechInfos(), m_pabResearchingTech);
 
 	pStream->Read(GC.getNumVoteSourceInfos(), m_pabLoyalMember);
+
+	if (uiFlag >= 3) pStream->Read(GC.getNumSpecialUnitInfos(), m_pabSpecialUnitValid); // Leoreth
 
 	for (iI=0;iI<GC.getNumCivicOptionInfos();iI++)
 	{
@@ -18830,7 +18879,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 2;
+	uint uiFlag = 3;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19053,6 +19102,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumTechInfos(), m_pabResearchingTech);
 
 	pStream->Write(GC.getNumVoteSourceInfos(), m_pabLoyalMember);
+
+	pStream->Write(GC.getNumSpecialUnitInfos(), m_pabSpecialUnitValid); // Leoreth
 
 	for (iI=0;iI<GC.getNumCivicOptionInfos();iI++)
 	{
@@ -22526,7 +22577,18 @@ void CvPlayer::launch(VictoryTypes eVictory)
 
 	kTeam.setCanLaunch(eVictory, false);
 
-	CvCity *capital = getCapitalCity();
+	CvCity* launchCity = getCapitalCity();
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			if (GC.getBuildingInfo((BuildingTypes)iI).getGlobalSpaceProductionModifier() > 0 && ::isNationalWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()))
+			{
+				launchCity = pCity;
+			}
+		}
+	}
 
 	//message
 	CvWString szBuffer;
@@ -22536,10 +22598,10 @@ void CvPlayer::launch(VictoryTypes eVictory)
 		{
 			int plotX = -1;
 			int plotY = -1;
-			if((capital != NULL) && capital->isRevealed(GET_PLAYER((PlayerTypes) i).getTeam(), false))
+			if((launchCity != NULL) && launchCity->isRevealed(GET_PLAYER((PlayerTypes) i).getTeam(), false))
 			{
-				plotX = capital->getX();
-				plotY = capital->getY();
+				plotX = launchCity->getX();
+				plotY = launchCity->getY();
 			}
 
 			if (GET_PLAYER((PlayerTypes)i).getTeam() == getTeam())
@@ -25893,4 +25955,41 @@ int CvPlayer::getBuildingPreference(BuildingTypes eBuilding) const
 	}
 
 	return -MAX_INT;
+}
+
+bool CvPlayer::isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const
+{
+	FAssertMsg(eSpecialUnit >= 0, "eSpecialUnit is expected to be non-negative (invalid Index)");
+	FAssertMsg(eSpecialUnit < GC.getNumSpecialUnitInfos(), "eSpecialUnit is expected to be within maximum bounds (invalid Index)");
+	return m_pabSpecialUnitValid[eSpecialUnit];
+}
+
+void CvPlayer::makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit)
+{
+	FAssertMsg(eSpecialUnit >= 0, "eSpecialUnit is expected to be non-negative (invalid Index)");
+	FAssertMsg(eSpecialUnit < GC.getNumSpecialUnitInfos(), "eSpecialUnit is expected to be within maximum bounds (invalid Index)");
+	m_pabSpecialUnitValid[eSpecialUnit] = true;
+}
+
+int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
+{
+	int iCommerce = 0;
+
+	if (eCommerce == COMMERCE_RESEARCH)
+	{
+		if (isHasBuildingEffect((BuildingTypes)HUBBLE_SPACE_TELESCOPE))
+		{
+			iCommerce += 5;
+		}
+	}
+
+	else if (eCommerce == COMMERCE_CULTURE)
+	{
+		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD))
+		{
+			iCommerce += 5;
+		}
+	}
+
+	return iCommerce;
 }

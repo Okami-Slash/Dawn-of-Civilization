@@ -559,13 +559,13 @@ class RiseAndFall:
 		pAthens.setBuildingOriginalOwner(iParthenon, iGreece)
 		
 		pRome = gc.getMap().plot(60, 44).getPlotCity()
-		pRome.setBuildingOriginalOwner(iColosseum, iRome)
+		pRome.setBuildingOriginalOwner(iFlavianAmphitheatre, iRome)
 		
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 		
 	def adjust1700ADWonders(self):
-		lExpiredWonders = [iOracle, iIshtarGate, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya, iGreatLighthouse, iMoaiStatues, iColosseum, iGreatLibrary, iGondeshapur, iSilverTreeFountain, iAlamut]
+		lExpiredWonders = [iOracle, iIshtarGate, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, iGreatLibrary, iGondeshapur, iSilverTreeFountain, iAlamut]
 		self.expireWonders(lExpiredWonders)
 	
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
@@ -584,7 +584,7 @@ class RiseAndFall:
 		pBaghdad.setBuildingOriginalOwner(iSpiralMinaret, iArabia)
 		
 		pRome = gc.getMap().plot(60, 44).getPlotCity()
-		pRome.setBuildingOriginalOwner(iColosseum, iRome)
+		pRome.setBuildingOriginalOwner(iFlavianAmphitheatre, iRome)
 		pRome.setBuildingOriginalOwner(iSistineChapel, iItaly)
 		
 		pSeville = gc.getMap().plot(51, 41).getPlotCity()

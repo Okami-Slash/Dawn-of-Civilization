@@ -179,6 +179,8 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 	m_iEspionagePointsEver = 0;
 
 	m_iTotalTechValue = 0; // Leoreth
+	m_iSatelliteInterceptCount = 0; // Leoreth
+	m_iSatelliteAttackCount = 0; // Leoreth
 
 	m_bMapCentering = false;
 	m_bCapitulated = false;
@@ -4740,6 +4742,8 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 
 	if (iChange != 0)
 	{
+		bool bFirst = GC.getGameINLINE().getProjectCreatedCount(eIndex) == 0 && iChange > 0;
+
 		GC.getGameINLINE().incrementProjectCreatedCount(eIndex, iChange);
 
 		iOldProjectCount = getProjectCount(eIndex);
@@ -4793,7 +4797,52 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 			if (kProject.isAllowsNukes())
 			{
 				GC.getGameINLINE().makeNukesValid(true);
-			}	
+			}
+
+			// Leoreth
+			if (kProject.isRevealsMap())
+			{
+				GC.getMapINLINE().setRevealedPlots(getID(), true, true);
+			}
+
+			// Leoreth
+			if (kProject.isSatelliteIntercept())
+			{
+				changeSatelliteInterceptCount(iChange);
+			}
+
+			// Leoreth
+			if (kProject.isSatelliteAttack())
+			{
+				changeSatelliteAttackCount(iChange);
+			}
+
+			// Leoreth
+			if (bFirst)
+			{
+				if (kProject.isFirstEnemyAnarchy())
+				{
+					for (iI = 0; iI < MAX_TEAMS; iI++)
+					{
+						if (GET_TEAM((TeamTypes)iI).getProjectMaking(eIndex) > 0)
+						{
+							for (iJ = 0; iJ > MAX_PLAYERS; iJ++)
+							{
+								if (GET_PLAYER((PlayerTypes)iJ).isAlive() && GET_PLAYER((PlayerTypes)iJ).getTeam() == iI)
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeAnarchyTurns(getTurns(1));
+
+									if (GC.getGame().isFinalInitialized() && GET_PLAYER((PlayerTypes)iJ).isHuman())
+									{
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
+										gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iJ), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -4801,6 +4850,112 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 					{
+						// Leoreth
+						if (bFirst)
+						{
+							if (kProject.getFirstAirExperience() != 0)
+							{
+								GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_AIR, kProject.getFirstAirExperience());
+							}
+						}
+
+						// Leoreth
+						if (kProject.getAirExperience() != 0)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_AIR, kProject.getAirExperience());
+						}
+
+						// Leoreth
+						if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
+						{
+							GET_PLAYER((PlayerTypes)iI).makeSpecialUnitValid((SpecialUnitTypes)kProject.getSpecialUnit());
+						}
+
+						// Leoreth
+						if (kProject.isGoldenAge())
+						{
+							GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(GET_PLAYER((PlayerTypes)iI).getGoldenAgeLength());
+						}
+
+						// Leorth
+						if (kProject.getFreePromotion() != NO_PROMOTION)
+						{
+							if (iChange > 0)
+							{
+								int iLoop;
+								for (CvUnit* pUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pUnit != NULL; pUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
+								{
+									if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(pUnit->getUnitCombatType()))
+									{
+										pUnit->setHasPromotion((PromotionTypes)kProject.getFreePromotion(), true);
+									}
+								}
+							}
+
+							for (int iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
+							{
+								if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(iJ))
+								{
+									GET_PLAYER((PlayerTypes)iI).setFreePromotion((UnitCombatTypes)iJ, (PromotionTypes)kProject.getFreePromotion(), iChange > 0);
+								}
+							}
+						}
+
+						// Leoreth
+						if (eIndex == PROJECT_GOLDEN_RECORD)
+						{
+							GET_PLAYER((PlayerTypes)iI).updateCommerce(COMMERCE_CULTURE);
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_THE_INTERNET)
+						{
+							for (int iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+							{
+								if (!GC.getSpecialistInfo((SpecialistTypes)iJ).isNoGlobalEffects())
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
+								}
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_HUMAN_GENOME_PROJECT)
+						{
+							for (int iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
+							{
+								if (GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_COMMERCE) > 3)
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_FOOD, iChange);
+								}
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
+						{
+							int iLoop;
+							CvCity* pCity;
+							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+							{
+								pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 3);
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_LUNAR_COLONY)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeSpaceProductionModifier(100);
+							
+							for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+							{
+								if (GC.getSpecialistInfo((SpecialistTypes)iJ).isSatellite())
+								{
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_PRODUCTION, iChange * 3);
+								}
+							}
+						}
+
 						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
 							bChangeProduction = false;
@@ -6656,7 +6811,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: uiFlag is 1
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iNumMembers);
@@ -6685,6 +6840,8 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iEspionagePointsEver);
 
 	pStream->Read(&m_iTotalTechValue); // Leoreth
+	if (uiFlag >= 1) pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
+	if (uiFlag >= 1) pStream->Read(&m_iSatelliteAttackCount); // Leoreth
 
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
@@ -6769,7 +6926,7 @@ void CvTeam::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 0;
+	uint uiFlag = 1;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iNumMembers);
@@ -6798,6 +6955,8 @@ void CvTeam::write(FDataStreamBase* pStream)
 	pStream->Write(m_iEspionagePointsEver);
 
 	pStream->Write(m_iTotalTechValue); // Leoreth
+	pStream->Write(m_iSatelliteInterceptCount); // Leoreth
+	pStream->Write(m_iSatelliteAttackCount); // Leoreth
 
 	pStream->Write(m_bMapCentering);
 	pStream->Write(m_bCapitulated);
@@ -7107,4 +7266,24 @@ std::set<TeamTypes> CvTeam::determineDefensivePactPartners(std::set<TeamTypes> v
 	}
 
 	return partners;
+}
+
+bool CvTeam::canSatelliteIntercept() const
+{
+	return m_iSatelliteInterceptCount > 0;
+}
+
+void CvTeam::changeSatelliteInterceptCount(int iChange)
+{
+	m_iSatelliteInterceptCount += iChange;
+}
+
+bool CvTeam::canSatelliteAttack() const
+{
+	return m_iSatelliteAttackCount > 0;
+}
+
+void CvTeam::changeSatelliteAttackCount(int iChange)
+{
+	m_iSatelliteAttackCount += iChange;
 }

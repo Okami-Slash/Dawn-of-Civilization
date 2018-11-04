@@ -901,8 +901,10 @@ EndPlayer
 BeginMap
 	grid width=124
 	grid height=68
-	top latitude=90
-	bottom latitude=-90
+	prime meridian=53
+	equator=26
+	top latitude=75
+	bottom latitude=-75
 	wrap X=1
 	wrap Y=0
 	world size=WORLDSIZE_HUGE
@@ -24633,7 +24635,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
@@ -26619,7 +26621,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
@@ -27111,7 +27113,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_CATHOLIC_SHRINE
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
 		BuildingType=BUILDING_SISTINE_CHAPEL
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
@@ -27243,7 +27245,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
@@ -31000,7 +31002,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_PARTHENON
 		BuildingType=BUILDING_MOUNT_ATHOS
 		ReligionType=RELIGION_JUDAISM
@@ -31654,7 +31656,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL

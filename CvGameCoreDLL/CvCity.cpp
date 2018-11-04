@@ -609,6 +609,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iStabilityPopulation = 0;
 
+	m_iBuildingUnhealthModifier = 0;
+	m_iCorporationUnhealthModifier = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -4568,6 +4571,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeWarWearinessModifier(GC.getBuildingInfo(eBuilding).getWarWearinessModifier() * iChange);
 		changeHurryAngerModifier(GC.getBuildingInfo(eBuilding).getHurryAngerModifier() * iChange);
 		changeHealRate(GC.getBuildingInfo(eBuilding).getHealRateChange() * iChange);
+
 		if (GC.getBuildingInfo(eBuilding).getHealth() > 0)
 		{
 			changeBuildingGoodHealth(GC.getBuildingInfo(eBuilding).getHealth() * iChange);
@@ -4576,6 +4580,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeBuildingBadHealth(GC.getBuildingInfo(eBuilding).getHealth() * iChange);
 		}
+
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
 			if (GC.getBuildingInfo(eBuilding).getSpecialistHealthChange(iI) > 0)
@@ -4587,6 +4592,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				changeSpecialistBadHealth(iI, GC.getBuildingInfo(eBuilding).getSpecialistHealthChange(iI) * iChange);
 			}
 		}
+
 		if (GC.getBuildingInfo(eBuilding).getHappiness() > 0)
 		{
 			changeBuildingGoodHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange);
@@ -4595,10 +4601,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeBuildingBadHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange);
 		}
+
 		if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 		{
 			changeStateReligionHappiness(((ReligionTypes)(GC.getBuildingInfo(eBuilding).getReligionType())), (GC.getBuildingInfo(eBuilding).getStateReligionHappiness() * iChange));
 		}
+
 		changeMilitaryProductionModifier(GC.getBuildingInfo(eBuilding).getMilitaryProductionModifier() * iChange);
 		changeSpaceProductionModifier(GC.getBuildingInfo(eBuilding).getSpaceProductionModifier() * iChange);
 		changeExtraTradeRoutes(GC.getBuildingInfo(eBuilding).getTradeRoutes() * iChange);
@@ -4610,9 +4618,17 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
 
-		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier());
+		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier() * iChange);
 		changeCultureHappiness(GC.getBuildingInfo(eBuilding).getCultureHappiness() * iChange);
-		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier());
+		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier() * iChange);
+
+		changeBuildingUnhealthModifier(GC.getBuildingInfo(eBuilding).getBuildingUnhealthModifier() * iChange);
+
+		if (GC.getBuildingInfo(eBuilding).getCorporationUnhealthModifier() != 0)
+		{
+			changeCorporationUnhealthModifier(GC.getBuildingInfo(eBuilding).getCorporationUnhealthModifier() * iChange);
+			updateCorporationHealth();
+		}
 
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
@@ -5022,11 +5038,11 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 		if (eGreatPeopleUnit != NO_UNIT)
 		{
-			changeGreatPeopleUnitRate(eGreatPeopleUnit, GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() * iChange);
+			changeGreatPeopleUnitRate(eGreatPeopleUnit, getSpecialistGreatPeopleRateChange(eSpecialist) * iChange);
 		}
 	}
 
-	changeBaseGreatPeopleRate(GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() * iChange);
+	changeBaseGreatPeopleRate(getSpecialistGreatPeopleRateChange(eSpecialist) * iChange);
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -5867,12 +5883,18 @@ int CvCity::totalGoodBuildingHealth() const
 
 int CvCity::totalBadBuildingHealth() const
 {
-	if (!isBuildingOnlyHealthy())
+	if (isBuildingOnlyHealthy())
 	{
-		return (getBuildingBadHealth() + area()->getBuildingBadHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingBadHealth() + getExtraBuildingBadHealth());
+		return 0;
 	}
 
-	return 0;
+	int iBuildingHealth = getBuildingBadHealth() + area()->getBuildingBadHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingBadHealth() + getExtraBuildingBadHealth();
+
+	// Leoreth: building health modifier
+	iBuildingHealth *= 100 + getBuildingUnhealthModifier();
+	iBuildingHealth /= 100;
+
+	return iBuildingHealth;
 }
 
 
@@ -6991,8 +7013,7 @@ int CvCity::getAdditionalBaseGreatPeopleRateBySpecialist(SpecialistTypes eSpecia
 {
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
-
-	return iChange * (GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() + GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel()));
+	return iChange * getSpecialistGreatPeopleRateChange(eSpecialist);
 }
 // BUG - Specialist Additional Great People - end
 
@@ -8172,6 +8193,18 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 		iBad -= getPopulation();
 	}
 
+	// Leoreth: building health modifier
+	if (kBuilding.getBuildingUnhealthModifier() != 0)
+	{
+		iBad -= (totalBadBuildingHealth() * (100 + kBuilding.getBuildingUnhealthModifier())) / 100;
+	}
+
+	// Leoreth: corporation health modifier
+	if (kBuilding.getCorporationUnhealthModifier() != 0)
+	{
+		iBad -= (getCorporationUnhealth() * (100 + kBuilding.getCorporationUnhealthModifier())) / 100;
+	}
+
 	// Effect on Spoiled Food
 	int iHealthy = goodHealth();
 	int iUnhealthy = badHealth();
@@ -8769,6 +8802,11 @@ int CvCity::getSpaceProductionModifier() const
 void CvCity::changeSpaceProductionModifier(int iChange)
 {
 	m_iSpaceProductionModifier = (m_iSpaceProductionModifier + iChange);
+
+	if (iChange != 0 && GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
+	{
+		updateCommerce(COMMERCE_CULTURE);
+	}
 }
 
 
@@ -9956,7 +9994,7 @@ int CvCity::getAdditionalBaseYieldRateBySpecialist(YieldTypes eIndex, Specialist
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 	
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getYieldChange(eIndex) + kSpecialist.getCultureLevelYieldChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex) : 0));
+	return iChange * (kSpecialist.getYieldChange(eIndex) + kSpecialist.getCultureLevelYieldChange(getCultureLevel(), eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex));
 }
 // BUG - Specialist Additional Yield - end
 
@@ -10530,13 +10568,7 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
-
-	if (eSpecialist == SPECIALIST_SLAVE)
-	{
-		return 0;
-	}
-
-	return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex)));
+    return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex)));
 }
 
 void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
@@ -10688,8 +10720,9 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 	iBaseCommerceRate = getCommerceFromPercent(eIndex, getYieldRate(YIELD_COMMERCE) * 100);
 
-	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - getFreeSpecialistCount(SPECIALIST_SLAVE)) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
+	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - countNoGlobalEffectsFreeSpecialists()) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
+	iBaseCommerceRate += 100 * countSatellites() * GET_PLAYER(getOwnerINLINE()).getSatelliteExtraCommerce(eIndex);
 
 	// Leoreth: Himeji Castle effect
 	if (eIndex == COMMERCE_CULTURE && isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
@@ -10730,6 +10763,12 @@ int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 	if (isPower())
 	{
 		iTotalModifier += getPowerCommerceRateModifier(eIndex);
+	}
+
+	// Leoreth
+	if (eIndex == COMMERCE_CULTURE && GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
+	{
+		iTotalModifier += getSpaceProductionModifier() / 2;
 	}
 
 	return std::max(0, iTotalModifier); // Leoreth
@@ -11169,7 +11208,21 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (GET_PLAYER(getOwnerINLINE()).specialistCommerce(eSpecialist, eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex) : 0));
+
+	int iCommerceRate = kSpecialist.getCommerceChange(eIndex);
+	iCommerceRate += kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex);
+
+	if (!kSpecialist.isNoGlobalEffects())
+	{
+		iCommerceRate += GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex);
+	}
+
+	if (kSpecialist.isSatellite())
+	{
+		iCommerceRate += GET_PLAYER(getOwnerINLINE()).getSatelliteExtraCommerce(eIndex);
+	}
+
+	return iChange * iCommerceRate;
 }
 // BUG - Specialist Additional Commerce - end
 
@@ -13017,6 +13070,21 @@ int CvCity::getFreeSpecialistCount(SpecialistTypes eIndex) const
 	return m_paiFreeSpecialistCount[eIndex];
 }
 
+// Leoreth
+int CvCity::countNoGlobalEffectsFreeSpecialists() const
+{
+	int iCount = 0;
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		if (GC.getSpecialistInfo((SpecialistTypes)iI).isNoGlobalEffects())
+		{
+			iCount += getFreeSpecialistCount((SpecialistTypes)iI);
+		}
+	}
+
+	return iCount;
+}
+
 int CvCity::getAddedFreeSpecialistCount(SpecialistTypes eIndex) const
 {
 	int iNumAddedSpecialists = getFreeSpecialistCount(eIndex);
@@ -14484,6 +14552,23 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			// Event reported to Python before the project is built, so that we can show the movie before awarding free techs, for example
 			CvEventReporter::getInstance().projectBuilt(this, eCreateProject);
 
+			// Leoreth
+			if (GC.getGameINLINE().getProjectCreatedCount(eCreateProject) == 0)
+			{
+				if (GC.getProjectInfo(eCreateProject).getFirstFreeUnit() != NO_UNIT)
+				{
+					UnitTypes eFreeUnit = (UnitTypes)GC.getProjectInfo(eCreateProject).getFirstFreeUnit();
+					if (GC.getUnitInfo(eFreeUnit).getDiscoverMultiplier() > 0 || GC.getUnitInfo(eFreeUnit).getEspionagePoints() > 0 || GC.getUnitInfo(eFreeUnit).getLeaderExperience() > 0)
+					{
+						createGreatPeople(eFreeUnit, false, false);
+					}
+					else
+					{
+						GET_PLAYER(getOwnerINLINE()).initUnit(eFreeUnit, getX_INLINE(), getY_INLINE());
+					}
+				}
+			}
+
 			GET_TEAM(getTeam()).changeProjectCount(eCreateProject, 1);
 
 			if (GC.getProjectInfo(eCreateProject).isSpaceship())
@@ -14497,6 +14582,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 					{
 						CvPopupInfo* pInfo = NULL;
 
+						/*
 						if (GC.getGameINLINE().isNetworkMultiPlayer())
 						{
 							pInfo = new CvPopupInfo(BUTTONPOPUP_LAUNCH, GC.getProjectInfo(eCreateProject).getVictoryPrereq());
@@ -14507,7 +14593,9 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 							pInfo->setText(L"showSpaceShip");
 							needsArtType = false;
 						}
+						*/
 
+						pInfo = new CvPopupInfo(BUTTONPOPUP_LAUNCH, GC.getProjectInfo(eCreateProject).getVictoryPrereq());
 						gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE());
 					}
 					else
@@ -14515,6 +14603,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 						GET_PLAYER(getOwnerINLINE()).AI_launch(eVictory);
 					}
 				}
+				/*
 				else
 				{
 					//show the spaceship progress
@@ -14529,6 +14618,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 						}
 					}
 				}
+				*/
 
 				if(needsArtType)
 				{
@@ -18314,6 +18404,13 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 		}
 	}
 
+	// Leoreth: corporation unhealth modifier
+	if (iHealth < 0)
+	{
+		iHealth *= 100 + getCorporationUnhealthModifier();
+		iHealth /= 100;
+	}
+
 	return iHealth / 10;
 }
 
@@ -18345,9 +18442,7 @@ bool CvCity::canSlaveJoin() const
 
 	if (!isColony()) return false;
 
-	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
-	int iNumSlaves = getFreeSpecialistCount(eSlave);
-
+	int iNumSlaves = getFreeSpecialistCount(SPECIALIST_SLAVE);
 	return (2 * iNumSlaves < getPopulation());
 }
 
@@ -19099,4 +19194,69 @@ int CvCity::getStabilityPopulation() const
 void CvCity::setStabilityPopulation(int iNewValue)
 {
 	m_iStabilityPopulation = iNewValue;
+}
+
+int CvCity::getBuildingUnhealthModifier() const
+{
+	return m_iBuildingUnhealthModifier;
+}
+
+void CvCity::setBuildingUnhealthModifier(int iNewValue)
+{
+	m_iBuildingUnhealthModifier = iNewValue;
+}
+
+void CvCity::changeBuildingUnhealthModifier(int iChange)
+{
+	m_iBuildingUnhealthModifier += iChange;
+}
+
+int CvCity::getCorporationUnhealthModifier() const
+{
+	return m_iCorporationUnhealthModifier;
+}
+
+void CvCity::setCorporationUnhealthModifier(int iNewValue)
+{
+	m_iCorporationUnhealthModifier = iNewValue;
+}
+
+void CvCity::changeCorporationUnhealthModifier(int iChange)
+{
+	m_iCorporationUnhealthModifier += iChange;
+}
+
+int CvCity::countSatellites() const
+{
+	int iCount = 0;
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
+		{
+			iCount += getFreeSpecialistCount((SpecialistTypes)iI);
+		}
+	}
+
+	return iCount;
+}
+
+int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const
+{
+	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
+	int iGreatPeopleRate = kSpecialist.getGreatPeopleRateChange();
+
+	if (!kSpecialist.isNoGlobalEffects())
+	{
+		iGreatPeopleRate += kSpecialist.getCultureLevelGreatPeopleRateChange(getCultureLevel());
+	}
+
+	if (kSpecialist.isSatellite())
+	{
+		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_INTERNATIONAL_SPACE_STATION))
+		{
+			iGreatPeopleRate += 3;
+		}
+	}
+
+	return iGreatPeopleRate;
 }
