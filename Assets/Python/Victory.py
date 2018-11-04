@@ -3479,7 +3479,7 @@ def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
 		if city.isHasReligion(iReligion) and city.getFreeSpecialistCount(iSpecialist) > 0:
 			iCount += 1
 	return iCount
-	
+
 def countPopulationInArea(iPlayer, lArea):
 	iCount = 0
 	for city in utils.getCityList(iPlayer):
@@ -3506,7 +3506,7 @@ def isMonopoly(iPlayer, iBonus, lPlots, bIncludeVassals = True):
 					return False
 		
 	return True
-	
+
 def calculateAlliedPercent(iPlayer, function):
 	pTeam = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
 
@@ -3535,7 +3535,7 @@ def calculateAlliedCommercePercent(iPlayer):
 	
 def calculateAlliedPowerPercent(iPlayer):
 	return calculateAlliedPercent(iPlayer, lambda x: gc.getPlayer(x).getPower())
-	
+
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
