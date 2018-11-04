@@ -764,9 +764,9 @@ BeginPlayer
 	StateReligion=RELIGION_PROTESTANTISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -10827,7 +10827,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+	UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -11823,13 +11823,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -13210,7 +13210,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -13734,7 +13734,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -14557,7 +14557,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -15012,7 +15012,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -16056,7 +16056,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -21585,7 +21585,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -23059,7 +23059,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -23565,28 +23565,28 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=26, (England)
@@ -43106,16 +43106,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=26, (England)
@@ -44493,19 +44493,19 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=26, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=26, (England)

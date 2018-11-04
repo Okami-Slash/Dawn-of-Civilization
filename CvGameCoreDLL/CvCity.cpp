@@ -607,6 +607,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iCultureRank = 0;
 
+	m_iStabilityPopulation = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -5751,7 +5753,7 @@ int CvCity::unhappyLevel(int iExtra) const
 }
 
 
-int CvCity::happyLevel() const
+int CvCity::happyLevel(bool bSpecial) const
 {
 	int iHappiness;
 
@@ -5782,9 +5784,9 @@ int CvCity::happyLevel() const
 	}
 
 	// Leoreth: Shalimar Gardens effect
-	if (isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
+	if (bSpecial && isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
 	{
-		iHappiness += std::max(0, goodHealth() - badHealth());
+		iHappiness += std::max(0, goodHealth(false) - badHealth());
 	}
 
 	return std::max(0, iHappiness);
@@ -5874,7 +5876,7 @@ int CvCity::totalBadBuildingHealth() const
 }
 
 
-int CvCity::goodHealth() const
+int CvCity::goodHealth(bool bSpecial) const
 {
 	int iTotalHealth;
 	int iHealth;
@@ -5949,9 +5951,9 @@ int CvCity::goodHealth() const
 	}*/
 
 	// Leoreth: Indian UP: +1 health for every 3 excess happiness
-	if (getOwner() == INDIA)
+	if (bSpecial && getOwner() == INDIA)
 	{
-		iHealth = (happyLevel() - unhappyLevel()) / 3;
+		iHealth = (happyLevel(false) - unhappyLevel()) / 3;
 		if (iHealth > 0)
 		{
 			iTotalHealth += iHealth;
@@ -9217,8 +9219,7 @@ void CvCity::setOccupationTimer(int iNewValue)
 
 void CvCity::changeOccupationTimer(int iChange)
 {
-	//Leoreth: occupation time capped at 5
-	setOccupationTimer(std::min(getOccupationTimer() + iChange, 5));
+	setOccupationTimer(getOccupationTimer() + iChange);
 }
 
 
@@ -10845,7 +10846,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 					}
 				}
 				
-				// modified by Leoreth to account for Solomon's Temple's effect
+				// modified by Leoreth to account for the Dome of the Rock effect
 				int iShrineLimit = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK) ? 2 * MAX_COM_SHRINE : MAX_COM_SHRINE;
 
 				if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != NO_RELIGION)
@@ -15113,11 +15114,15 @@ bool CvCity::doCheckProduction()
 		}
 	}
 
+	bool bMaxedOut, bObsolete;
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		if (getBuildingProduction((BuildingTypes)iI) > 0)
 		{
-			if (GET_PLAYER(getOwnerINLINE()).isProductionMaxedBuildingClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType())))
+			bMaxedOut = GET_PLAYER(getOwnerINLINE()).isProductionMaxedBuildingClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()));
+			bObsolete = GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech() != NO_TECH && GC.getGameINLINE().countKnownTechNumTeams((TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech()) > 0;
+
+			if (bMaxedOut || bObsolete)
 			{
 				iProductionGold = ((getBuildingProduction((BuildingTypes)iI) * GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT")) / 100);
 
@@ -15902,6 +15907,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureTradeRouteModifier);
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 	pStream->Read(&m_iCultureRank);
+	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -16086,7 +16092,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=1; // Leoreth: 1 for wonder effect changes
+	uint uiFlag=2; // Leoreth: 1 for wonder effect changes, 2 for stability population
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16198,6 +16204,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingUnignorableBombardDefense);
 
 	pStream->Write(m_iCultureRank);
+
+	pStream->Write(m_iStabilityPopulation); // Leoreth
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -19081,4 +19089,14 @@ void CvCity::setCultureRank(int iNewValue)
 			}
 		}
 	}
+}
+
+int CvCity::getStabilityPopulation() const
+{
+	return m_iStabilityPopulation;
+}
+
+void CvCity::setStabilityPopulation(int iNewValue)
+{
+	m_iStabilityPopulation = iNewValue;
 }
