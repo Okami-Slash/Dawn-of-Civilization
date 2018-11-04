@@ -3507,7 +3507,6 @@ def isMonopoly(iPlayer, iBonus, lPlots, bIncludeVassals = True):
 		
 	return True
 
-
 def calculateAlliedPercent(iPlayer, function):
 	pTeam = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
 
