@@ -62,6 +62,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
+					<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<UnitType>UNIT_AMERICAN_MINUTEMAN</UnitType>
 				</Unit>
@@ -158,8 +162,12 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
-					<UnitType>UNIT_ARABIAN_CAMEL_ARCHER</UnitType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_ARABIAN_MOBILE_GUARD</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GHAZI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -874,6 +882,10 @@
 					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_BYZANTINE_CATAPHRACT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_DROMON</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -1086,6 +1098,10 @@
 				</Building>
 			</Buildings>
 			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_SACRED_BAND</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_WAR_ELEPHANT</UnitClassType>
 					<UnitType>UNIT_PHOENICIAN_ATLAS_ELEPHANT</UnitType>
@@ -1501,6 +1517,10 @@
 					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
 					<UnitType>UNIT_COLOMBIAN_ALBION_LEGION</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HUSSAR</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_LLANERO</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -1719,6 +1739,10 @@
 					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<UnitType>UNIT_ENGLISH_REDCOAT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<UnitType>UNIT_ENGLISH_MAN_OF_WAR</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -1838,8 +1862,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_ASKARI</UnitType>
+					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_SHOTELAI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -1937,8 +1961,12 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
-					<UnitType>UNIT_FRENCH_HEAVY_CANNON</UnitType>
+					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
+					<UnitType>UNIT_FRENCH_GENDARME</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
+					<UnitType>UNIT_FRENCH_GUARD</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -2064,6 +2092,10 @@
 				</Building>
 			</Buildings>
 			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
+					<UnitType>UNIT_GERMAN_FUSILIER</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_TANK</UnitClassType>
 					<UnitType>UNIT_GERMAN_PANZER</UnitType>
@@ -2197,6 +2229,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<UnitType>UNIT_GREEK_HOPLITE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
+					<UnitType>UNIT_GREEK_COMPANION</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -2407,6 +2443,10 @@
 					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
 					<UnitType>UNIT_HOLY_ROMAN_LANDSKNECHT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitType>UNIT_HOLY_ROMAN_GRENZER</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -2608,6 +2648,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_INDIAN_VARU</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
 					<UnitType>UNIT_INDIAN_PATIYODHA</UnitType>
 				</Unit>
@@ -2714,8 +2758,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_ORANG_LAUT</UnitType>
+					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_DJONG</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -2922,8 +2966,12 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_INFANTRY</UnitClassType>
-					<UnitType>UNIT_ITALIAN_BERSAGLIERE</UnitType>
+					<UnitClassType>UNITCLASS_CROSSBOWMAN</UnitClassType>
+					<UnitType>UNIT_ITALIAN_BALESTRIERE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
+					<UnitType>UNIT_ITALIAN_LANTERNAS</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3033,6 +3081,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_JAPANESE_SAMURAI</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_FIGHTER</UnitClassType>
+					<UnitType>UNIT_JAPANESE_ZERO</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3351,6 +3403,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
 					<UnitType>UNIT_KOREAN_HWACHA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
+					<UnitType>UNIT_KOREAN_KOBUKSON</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3884,7 +3940,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
-					<UnitType>UNIT_MEXICAN_RURALES</UnitType>
+					<UnitType>UNIT_MEXICAN_RURAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses/>
@@ -3980,6 +4036,10 @@
 				</Building>
 			</Buildings>
 			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_MANGUDAI</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_MONGOLIAN_KESHIK</UnitType>
@@ -4800,6 +4860,10 @@
 					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<UnitType>UNIT_PERSIAN_IMMORTAL</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_PERSIAN_SAVARAN</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -5240,6 +5304,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_EXPLORER</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_BANDEIRANTE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
 					<UnitType>UNIT_PORTUGUESE_CARRACK</UnitType>
 				</Unit>
@@ -5364,6 +5432,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_ROMAN_LEGION</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
+					<UnitType>UNIT_ROMAN_BALLISTA</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -5560,6 +5632,10 @@
 				</Building>
 			</Buildings>
 			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
+					<UnitType>UNIT_SPANISH_TERCIO</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
 					<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
@@ -5892,7 +5968,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_VIKINGS</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_VIKING</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_VIKING_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_VIKING_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
@@ -5968,6 +6044,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
 					<UnitType>UNIT_TAMIL_DHARANI</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitType>UNIT_TAMIL_ROCKETEER</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -6523,6 +6603,10 @@
 				</Building>
 			</Buildings>
 			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
+					<UnitType>UNIT_VIKING_LONGSHIP</UnitType>
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_VIKING_HUSCARL</UnitType>

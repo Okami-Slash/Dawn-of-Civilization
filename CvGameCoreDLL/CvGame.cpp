@@ -686,6 +686,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 
 	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
 	{
+		gDLL->logMsg("sdkDbg.log", "%d", iI);
 		eUnit = (UnitTypes)iI;
 		aUpgradeUnits.clear();
 		do
