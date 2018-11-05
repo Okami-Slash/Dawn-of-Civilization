@@ -2247,6 +2247,14 @@
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_HEADER_SATELLITE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Satelliten[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Sp&#233;cialistes illustres[COLOR_REVERT]</French>
@@ -2967,6 +2975,22 @@
 		<German>[ICON_BULLET]%D1_Change%% St&#228;rke f&#252;r %s2_TerrOrFeat</German>
 		<Italian>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_LIMIT</Tag>
+		<English>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</English>
+		<French>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</French>
+		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Sklaven geringer als die H&#228;lfte ihrer Bev&#246;lkerung ist</German>
+		<Italian>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Italian>
+		<Spanish>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SATELLITE_LIMIT</Tag>
+		<English>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</English>
+		<French>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</French>
+		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Satelliten gering als ein F&#252;nftel ihrer Anzahl verf&#252;gbarer Spezialisten ist</German>
+		<Italian>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Italian>
+		<Spanish>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
