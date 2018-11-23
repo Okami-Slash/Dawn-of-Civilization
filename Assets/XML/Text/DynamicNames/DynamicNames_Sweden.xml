@@ -109,4 +109,8 @@
 		<Italian>No Translation</Italian>
 		<Spanish>No Translation</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_REPUBLIC</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
 </Civ4GameText>
