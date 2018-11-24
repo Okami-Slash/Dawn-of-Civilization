@@ -730,7 +730,7 @@ dBuildingPreferences = {
 		iOracle: 15,
 	},
 	iCivRome : {
-		iColosseum: 30,
+		iFlavianAmphitheatre: 30,
 		iAquaAppia: 30,
 		iSantaMariaDelFiore: 30,
 		iSistineChapel: 30,
@@ -905,7 +905,7 @@ dBuildingPreferences = {
 		iTempleOfKukulkan: 20,
 	},
 	iCivItaly : {
-		iColosseum: 30,
+		iFlavianAmphitheatre: 30,
 		iSantaMariaDelFiore: 30,
 		iSistineChapel: 30,
 		iSanMarcoBasilica: 30,

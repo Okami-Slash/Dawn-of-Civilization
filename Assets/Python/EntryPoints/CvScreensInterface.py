@@ -234,8 +234,9 @@ def showEraMovie(argsList):
 	
 spaceShip = CvSpaceShipScreen.CvSpaceShipScreen()
 def showSpaceShip(argsList):
-	if (-1 != CyGame().getActivePlayer()):
-		spaceShip.interfaceScreen(argsList[0])
+	showVictoryScreen(argsList)
+	#if (-1 != CyGame().getActivePlayer()):
+	#	spaceShip.interfaceScreen(argsList[0])
 	
 replayScreen = CvReplayScreen.CvReplayScreen(REPLAY_SCREEN)
 def showReplay(argsList):

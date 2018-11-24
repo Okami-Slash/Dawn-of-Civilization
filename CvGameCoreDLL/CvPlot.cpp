@@ -1226,7 +1226,7 @@ void CvPlot::verifyUnitValidPlot()
 						{
 							if (isVisibleEnemyUnit(pLoopUnit))
 							{
-								if (!(pLoopUnit->isInvisible(getTeam(), false)))
+								if (!(pLoopUnit->isInvisible(getTeam(), false)) && (pLoopUnit->getInvisibleType() == NO_INVISIBLE || !pLoopUnit->isRivalTerritory()))
 								{
 									if (!pLoopUnit->jumpToNearestValidPlot())
 									{
@@ -4420,13 +4420,22 @@ bool CvPlot::at(int iX, int iY) const
 #define MIN_LONGITUDE		-180
 #define MAX_LONGITUDE		180
 
-int CvPlot::calculateMinutes(int iPlotIndex, int iPlotCount, bool bWrap, int iDegreeMin, int iDegreeMax) const
+int CvPlot::calculateMinutes(int iPlotIndex, int iPlotCount, bool bWrap, int iDegreeMin, int iDegreeMax, int iZero) const
 {
 	if (!bWrap)
 	{
 		iPlotCount--;
+
+		if (iZero > 0)
+		{
+			return (iPlotIndex - iZero) * (iPlotIndex < iZero ? abs(iDegreeMin) : abs(iDegreeMax)) * MINUTES_PER_DEGREE / (iPlotIndex < iZero ? iZero : iPlotCount - iZero);
+		}
 	}
-	return iPlotIndex * (iDegreeMax - iDegreeMin) * MINUTES_PER_DEGREE / iPlotCount + iDegreeMin * MINUTES_PER_DEGREE;
+
+	int iOffset = iPlotCount / 2 - iZero;
+	int iAdjustedIndex = (iPlotIndex + iOffset) % iPlotCount;
+
+	return iAdjustedIndex * (iDegreeMax - iDegreeMin) * MINUTES_PER_DEGREE / iPlotCount + iDegreeMin * MINUTES_PER_DEGREE;
 }
 
 int CvPlot::getLongitudeMinutes() const
@@ -4434,17 +4443,17 @@ int CvPlot::getLongitudeMinutes() const
 	if (GC.getMapINLINE().isWrapXINLINE())
 	{
 		// normal and toroidal
-		return calculateMinutes(getX_INLINE(), GC.getMapINLINE().getGridWidthINLINE(), true, MIN_LONGITUDE, MAX_LONGITUDE);
+		return calculateMinutes(getX_INLINE(), GC.getMapINLINE().getGridWidthINLINE(), true, MIN_LONGITUDE, MAX_LONGITUDE, GC.getMapINLINE().getPrimeMeridian());
 	}
 	else if (!GC.getMapINLINE().isWrapYINLINE())
 	{
 		// flat
-		return calculateMinutes(getX_INLINE(), GC.getMapINLINE().getGridWidthINLINE(), false, MIN_LONGITUDE, MAX_LONGITUDE);
+		return calculateMinutes(getX_INLINE(), GC.getMapINLINE().getGridWidthINLINE(), false, MIN_LONGITUDE, MAX_LONGITUDE, GC.getMapINLINE().getPrimeMeridian());
 	}
 	else
 	{
 		// tilted axis
-		return calculateMinutes(getY_INLINE(), GC.getMapINLINE().getGridHeightINLINE(), true, MIN_LONGITUDE, MAX_LONGITUDE);
+		return calculateMinutes(getY_INLINE(), GC.getMapINLINE().getGridHeightINLINE(), true, MIN_LONGITUDE, MAX_LONGITUDE, GC.getMapINLINE().getPrimeMeridian());
 	}
 }
 
@@ -4453,17 +4462,17 @@ int CvPlot::getLatitudeMinutes() const
 	if (GC.getMapINLINE().isWrapXINLINE())
 	{
 		// normal and toroidal
-		return calculateMinutes(getY_INLINE(), GC.getMapINLINE().getGridHeightINLINE(), GC.getMapINLINE().isWrapYINLINE(), GC.getMapINLINE().getBottomLatitude(), GC.getMapINLINE().getTopLatitude());
+		return calculateMinutes(getY_INLINE(), GC.getMapINLINE().getGridHeightINLINE(), GC.getMapINLINE().isWrapYINLINE(), GC.getMapINLINE().getBottomLatitude(), GC.getMapINLINE().getTopLatitude(), GC.getMapINLINE().getEquator());
 	}
 	else if (!GC.getMapINLINE().isWrapYINLINE())
 	{
 		// flat
-		return calculateMinutes(getY_INLINE(), GC.getMapINLINE().getGridHeightINLINE(), false, GC.getMapINLINE().getBottomLatitude(), GC.getMapINLINE().getTopLatitude());
+		return calculateMinutes(getY_INLINE(), GC.getMapINLINE().getGridHeightINLINE(), false, GC.getMapINLINE().getBottomLatitude(), GC.getMapINLINE().getTopLatitude(), GC.getMapINLINE().getEquator());
 	}
 	else
 	{
 		// tilted axis
-		return calculateMinutes(getX_INLINE(), GC.getMapINLINE().getGridWidthINLINE(), false, GC.getMapINLINE().getBottomLatitude(), GC.getMapINLINE().getTopLatitude());
+		return calculateMinutes(getX_INLINE(), GC.getMapINLINE().getGridWidthINLINE(), false, GC.getMapINLINE().getBottomLatitude(), GC.getMapINLINE().getTopLatitude(), GC.getMapINLINE().getEquator());
 	}
 }
 
@@ -6847,6 +6856,13 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	if (isHills())
 	{
 		iYield += GC.getImprovementInfo(eImprovement).getHillsYieldChange(eYield);
+	}
+
+	// Leoreth
+	int iCoastalYieldChange = GC.getImprovementInfo(eImprovement).getCoastalYieldChange(eYield);
+	if (iCoastalYieldChange != 0 && isCoastalLand())
+	{
+		iYield += iCoastalYieldChange;
 	}
 
 	if ((bOptimal) ? true : isIrrigationAvailable())

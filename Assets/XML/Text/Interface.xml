@@ -2063,6 +2063,14 @@
 		<Spanish>Unique Buildings</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_PEOPLE_BUILDINGS</Tag>
+		<English>Great Buildings</English>
+		<French>Great Buildings</French>
+		<German>Great Buildings</German>
+		<Italian>Great Buildings</Italian>
+		<Spanish>Great Buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_RELIGIOUS_BUILDINGS</Tag>
 		<English>Religion Buildings</English>
 		<French>B&#226;timents religieux</French>
@@ -2237,6 +2245,14 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_HEADER_SATELLITE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Satelliten[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
@@ -2749,6 +2765,224 @@
 		<German>Periphery Population: %d1</German>
 		<Italian>Periphery Population: %d1</Italian>
 		<Spanish>Periphery Population: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUILDING_UNHEALTH_MODIFIER</Tag>
+		<English>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</English>
+		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</French>
+		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Geb&#228;ude</German>
+		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</Italian>
+		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CORPORATION_UNHEALTH_MODIFIER</Tag>
+		<English>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</English>
+		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</French>
+		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Kapitalgesellschaften</German>
+		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Italian>
+		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVED_RESOURCE_YIELDS</Tag>
+		<English>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</English>
+		<French>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</French>
+		<German>[ICON_BULLET]%s1 auf verbesserten [LINK=literal]%s2[\LINK] Rohstoffen</German>
+		<Italian>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</Italian>
+		<Spanish>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_RESEARCH_SATELLITE</Tag>
+		<English>Research Satellite</English>
+		<French>Research Satellite</French>
+		<German>Forschungssatellit</German>
+		<Italian>Research Satellite</Italian>
+		<Spanish>Research Satellite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_COMMERCIAL_SATELLITE</Tag>
+		<English>Commercial Satellite</English>
+		<French>Commercial Satellite</French>
+		<German>Kommerzieller Satellit</German>
+		<Italian>Commercial Satellite</Italian>
+		<Spanish>Commercial Satellite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_MILITARY_SATELLITE</Tag>
+		<English>Military Satellite</English>
+		<French>Military Satellite</French>
+		<German>Milit&#228;rischer Satellit</German>
+		<Italian>Military Satellite</Italian>
+		<Spanish>Military Satellite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INVISIBLE_SATELLITE</Tag>
+		<English>Satellites</English>
+		<French>Satellites</French>
+		<German>Satelliten</German>
+		<Italian>Satellites</Italian>
+		<Spanish>Satellites</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_ENABLES_SPECIAL_PLAYER</Tag>
+		<!-- %s1_Name = Can be Buildings, Units, Projects, etc -->
+		<English>[ICON_BULLET]Enables %s1_Name</English>
+		<French>[ICON_BULLET]Permet : %s1_Name</French>
+		<German>[ICON_BULLET]Erm&#246;glicht: %s1_Name</German>
+		<Italian>[ICON_BULLET]Attiva %s1_Name</Italian>
+		<Spanish>[ICON_BULLET]Permite: %s1_Name</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GOLDEN_AGE</Tag>
+		<English>[ICON_BULLET]Starts a Golden Age</English>
+		<French>[ICON_BULLET]Starts a Golden Age</French>
+		<German>[ICON_BULLET]Startet ein Goldenes Zeitalter</German>
+		<Italian>[ICON_BULLET]Starts a Golden Age</Italian>
+		<Spanish>[ICON_BULLET]Starts a Golden Age</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_FREE_UNIT</Tag>
+		<English>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</English>
+		<French>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet erh&#228;lt: [LINK=literal]%s1_Name[\LINK]</German>
+		<Italian>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_ENEMY_ANARCHY</Tag>
+		<English>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</English>
+		<French>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet l&#246;st Anarchie bei allen aus, die an dem Projekt arbeiten</German>
+		<Italian>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</Italian>
+		<Spanish>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_PROJECT_ANARCHY</Tag>
+		<English>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</English>
+		<French>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</French>
+		<German>Es war ein gewaltiger Schock f&#252;r unsere Zivilisation zu erfahren, dass %s1 es geschafft hat, %s2 vor uns zu vollenden!</German>
+		<Italian>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Italian>
+		<Spanish>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_AIR_EXPERIENCE</Tag>
+		<English>[ICON_BULLET]First to complete receives %s1 experience for Air units</English>
+		<French>[ICON_BULLET]First to complete receives %s1 experience for Air units</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet, erh&#228;lt %s1 Erfahrung für Luft-Einheiten</German>
+		<Italian>[ICON_BULLET]First to complete receives %s1 experience for Air units</Italian>
+		<Spanish>[ICON_BULLET]First to complete receives %s1 experience for Air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_EXISTING_PROJECT</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</English>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</French>
+		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] f&#252;r die Errichtung eines existierenden Projekts</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_DOUBLE_SPEED_EXISTING</Tag>
+		<English>Double Production Speed when already completed by another civilization</English>
+		<French>Double Production Speed when already completed by another civilization</French>
+		<German>Doppelte Produktionsgeschwindigkeit falls bereits von einer anderen Zivilisation vollendet</German>
+		<Italian>Double Production Speed when already completed by another civilization</Italian>
+		<Spanish>Double Production Speed when already completed by another civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_BUILDS_FASTER_EXISTING</Tag>
+		<English>Builds %d1_Mod%% Faster when already completed by another civilization</English>
+		<French>Builds %d1_Mod%% Faster when already completed by another civilization</French>
+		<German>Baut %d1_Mod%% schneller falls bereits von einer anderen Zivilisation vollendet</German>
+		<Italian>Builds %d1_Mod%% Faster when already completed by another civilization</Italian>
+		<Spanish>Builds %d1_Mod%% Faster when already completed by another civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_AIR_EXPERIENCE</Tag>
+		<English>[ICON_BULLET]%s1 experience for Air units</English>
+		<French>[ICON_BULLET]%s1 experience for Air units</French>
+		<German>[ICON_BULLET]%s1 Erfahrung f&#252;r Luft-Einheiten</German>
+		<Italian>[ICON_BULLET]%s1 experience for Air units</Italian>
+		<Spanish>[ICON_BULLET]%s1 experience for Air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FREE_PROMOTION</Tag>
+		<English>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</English>
+		<French>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</French>
+		<German>[ICON_BULLET]Alle Einheiten erhalten die [LINK=literal]%s1[\LINK]-Bef&#246;rderung</German>
+		<Italian>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Italian>
+		<Spanish>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SATELLITE_INTERCEPT</Tag>
+		<English>[ICON_BULLET]Satellites can intercept Nuclear Weapons</English>
+		<French>[ICON_BULLET]Satellites can intercept Nuclear Weapons</French>
+		<German>[ICON_BULLET]Satelliten k&#246;nnen nukleare Waffen abfangen</German>
+		<Italian>[ICON_BULLET]Satellites can intercept Nuclear Weapons</Italian>
+		<Spanish>[ICON_BULLET]Satellites can intercept Nuclear Weapons</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE</Tag>
+		<English>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</English>
+		<French>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</French>
+		<German>Eine %s1 %s2_UnitName wurde von einem %s3 SDI-%s4 abgefangen!!!</German>
+		<Italian>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</Italian>
+		<Spanish>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SATELLITE_ATTACK</Tag>
+		<English>[ICON_BULLET]Satellites can attack enemy Satellites</English>
+		<French>[ICON_BULLET]Satellites can attack enemy Satellites</French>
+		<German>[ICON_BULLET]Satelliten k&#246;nnen gegnerische Satelliten angreifen</German>
+		<Italian>[ICON_BULLET]Satellites can attack enemy Satellites</Italian>
+		<Spanish>[ICON_BULLET]Satellites can attack enemy Satellites</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_REQUIRES_ONE</Tag>
+		<!-- %s1_Name = Can be Buildings, Units, Projects, etc -->
+		<English>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Requiert : [LINK=literal]%s1[\LINK][COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Erfordert: [LINK=literal]%s1[\LINK][COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Richiede [LINK=literal]%s1[\LINK][COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Requiere [LINK=literal]%s1[\LINK][COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_COMMERCE_SPACE_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Spaceship Production</English>
+		<French>[ICON_BULLET]%D1%%%F2 from Spaceship Production</French>
+		<German>[ICON_BULLET]%D1%%%F2 durch Raumschiffproduktion</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_LAUNCH_SPACESHIP</Tag>
+		<English>Launch</English>
+		<French>Launch</French>
+		<German>Starten</German>
+		<Italian>Launch</Italian>
+		<Spanish>Launch</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_COASTAL</Tag>
+		<English>[SPACE]on the Coast</English>
+		<French>[SPACE]on the Coast</French>
+		<German>[SPACE]an der K&#252;ste</German>
+		<Italian>[SPACE]on the Coast</Italian>
+		<Spanish>[SPACE]on the Coast</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_LIMIT</Tag>
+		<English>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</English>
+		<French>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</French>
+		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Sklaven geringer als die H&#228;lfte ihrer Bev&#246;lkerung ist</German>
+		<Italian>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Italian>
+		<Spanish>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SATELLITE_LIMIT</Tag>
+		<English>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</English>
+		<French>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</French>
+		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Satelliten gering als ein F&#252;nftel ihrer Anzahl verf&#252;gbarer Spezialisten ist</German>
+		<Italian>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Italian>
+		<Spanish>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

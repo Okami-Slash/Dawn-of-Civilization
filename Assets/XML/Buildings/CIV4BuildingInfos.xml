@@ -1422,13 +1422,13 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
-			<Type>BUILDING_AMPHITHEATRE</Type>
-			<Description>TXT_KEY_BUILDING_AMPHITHEATRE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_AMPHITHEATRE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_AMPHITHEATRE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
+			<Type>BUILDING_ARENA</Type>
+			<Description>TXT_KEY_BUILDING_ARENA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ARENA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ARENA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_AMPHITHEATRE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ARENA</ArtDefineTag>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1442,16 +1442,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
 			</CommerceHappinesses>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_MAYAN_BALL_COURT</Type>
 			<Description>TXT_KEY_BUILDING_MAYAN_BALL_COURT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MAYAN_BALL_COURT_PEDIA</Civilopedia>
@@ -1490,7 +1484,7 @@
 			</UnitCombatFreeExperiences>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_MEXICAN_CHARREADA</Type>
 			<Description>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MEXICAN_CHARREADA_PEDIA</Civilopedia>
@@ -1533,7 +1527,7 @@
 			</UnitCombatFreeExperiences>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_BABYLONIAN_GARDEN</Type>
 			<Description>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_PEDIA</Civilopedia>
@@ -1901,150 +1895,6 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
-			<Type>BUILDING_PERSIAN_APOTHECARY</Type>
-			<Description>TXT_KEY_BUILDING_PERSIAN_APOTHECARY</Description>
-			<Civilopedia>TXT_KEY_BUILDING_PERSIAN_APOTHECARY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_PERSIAN_APOTHECARY_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PERSIAN_APOTHECARY</ArtDefineTag>
-			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
-			<PrereqTech>TECH_CURRENCY</PrereqTech>
-			<iCost>150</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
-			<iHealth>2</iHealth>
-			<iAsset>3</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceModifiers>
-				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_FUR</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_IVORY</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_WHALE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
-			<BonusYieldChanges>
-				<BonusYieldChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<YieldChanges>
-						<iYield>2</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-			</BonusYieldChanges>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
-			<Type>BUILDING_IRANIAN_CARAVANSERAI</Type>
-			<Description>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</ArtDefineTag>
-			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
-			<PrereqTech>TECH_CURRENCY</PrereqTech>
-			<iCost>150</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
-			<iTradeRoutes>1</iTradeRoutes>
-			<iAsset>3</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceModifiers>
-				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_FUR</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_IVORY</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_WHALE</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
-			<BonusYieldChanges>
-				<BonusYieldChange>
-					<BonusType>BONUS_INCENSE</BonusType>
-					<YieldChanges>
-						<iYield>2</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-				<BonusYieldChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</BonusYieldChange>
-			</BonusYieldChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2664,6 +2514,74 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PHARMACY</BuildingClass>
+			<Type>BUILDING_PERSIAN_APOTHECARY</Type>
+			<Description>TXT_KEY_BUILDING_PERSIAN_APOTHECARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PERSIAN_APOTHECARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PERSIAN_APOTHECARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PERSIAN_APOTHECARY</ArtDefineTag>
+			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>4</iAsset>
+			<iHealth>2</iHealth>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_BANANA</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_WINE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_SPICES</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<BonusYieldChanges>
+				<BonusYieldChange>
+					<BonusType>BONUS_INCENSE</BonusType>
+					<YieldChanges>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_SILK</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_SPICES</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+			</BonusYieldChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PHARMACY</BuildingClass>
 			<Type>BUILDING_ARABIAN_ALCHEMIST</Type>
 			<Description>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST_PEDIA</Civilopedia>
@@ -2780,6 +2698,68 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_POST_OFFICE</BuildingClass>
+			<Type>BUILDING_IRANIAN_CARAVANSERAI</Type>
+			<Description>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</ArtDefineTag>
+			<PrereqTech>TECH_PAPER</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iTradeRoutes>2</iTradeRoutes>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</CommerceChanges>
+			<BonusYieldChanges>
+				<BonusYieldChange>
+					<BonusType>BONUS_INCENSE</BonusType>
+					<YieldChanges>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_SILK</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_SPICES</BonusType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+			</BonusYieldChanges>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
@@ -3233,7 +3213,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iForeignTradeRouteModifier>100</iForeignTradeRouteModifier>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
@@ -3832,6 +3812,7 @@
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
+		
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ESTATE</BuildingClass>
 			<Type>BUILDING_ESTATE</Type>
@@ -3858,6 +3839,11 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>5</iCommerce>
+			</CommerceHappinesses>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
@@ -3872,6 +3858,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -3905,6 +3895,11 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>5</iCommerce>
+			</CommerceHappinesses>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
@@ -3925,6 +3920,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -3958,6 +3957,11 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>5</iCommerce>
+			</CommerceHappinesses>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
@@ -4016,6 +4020,10 @@
 					<iFlavor>6</iFlavor>
 				</Flavor>
 				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
@@ -4047,6 +4055,11 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>5</iCommerce>
+			</CommerceHappinesses>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
@@ -4077,6 +4090,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -4219,15 +4236,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_PARK</BuildingClass>
-			<Type>BUILDING_PARK</Type>
-			<Description>TXT_KEY_BUILDING_PARK</Description>
-			<Civilopedia>TXT_KEY_BUILDING_PARK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_PARK_STRATEGY</Strategy>
-			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PARK</ArtDefineTag>
+			<BuildingClass>BUILDINGCLASS_WAREHOUSE</BuildingClass>
+			<Type>BUILDING_WAREHOUSE</Type>
+			<Description>TXT_KEY_BUILDING_WAREHOUSE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WAREHOUSE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WAREHOUSE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_WAREHOUSE</ArtDefineTag>
 			<PrereqTech>TECH_MEASUREMENT</PrereqTech>
-			<iCost>150</iCost>
+			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -4235,15 +4252,20 @@
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceHappinesses>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>5</iCommerce>
-			</CommerceHappinesses>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>4</iFlavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -4465,52 +4487,72 @@
 			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>4</iAsset>
+			<iHealth>-1</iHealth>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
-			<BonusHealthChanges>
-				<BonusHealthChange>
-					<BonusType>BONUS_SUGAR</BonusType>
-					<iHealthChange>-1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
+			<BonusYieldChanges>
+				<BonusYieldChange>
+					<BonusType>BONUS_WHEAT</BonusType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
+					<BonusType>BONUS_RICE</BonusType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
 					<BonusType>BONUS_WINE</BonusType>
-					<iHealthChange>-1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_BANANA</BonusType>
-					<iHealthChange>-1</iHealthChange>
-				</BonusHealthChange>
-			</BonusHealthChanges>
-			<BonusCommerceModifiers>
-				<BonusCommerceModifier>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+				<BonusYieldChange>
 					<BonusType>BONUS_SUGAR</BonusType>
-					<CommerceModifiers>
-						<iCommerce>10</iCommerce>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
-				<BonusCommerceModifier>
-					<BonusType>BONUS_WINE</BonusType>
-					<CommerceModifiers>
-						<iCommerce>10</iCommerce>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
-				<BonusCommerceModifier>
-					<BonusType>BONUS_BANANA</BonusType>
-					<CommerceModifiers>
-						<iCommerce>10</iCommerce>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
-			</BonusCommerceModifiers>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</YieldChanges>
+				</BonusYieldChange>
+			</BonusYieldChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>6</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PARK</BuildingClass>
+			<Type>BUILDING_PARK</Type>
+			<Description>TXT_KEY_BUILDING_PARK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PARK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PARK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PARK</ArtDefineTag>
+			<PrereqTech>TECH_BIOLOGY</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iHappiness>2</iHappiness>
+			<iHealth>2</iHealth>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>8</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -4554,6 +4596,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_RAILWAY_STATION</ArtDefineTag>
 			<FreeStartEra>ERA_DIGITAL</FreeStartEra>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
+			<PrereqBonuses>
+				<Bonus>BONUS_COAL</Bonus>
+				<Bonus>BONUS_OIL</Bonus>
+			</PrereqBonuses>
 			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4561,6 +4607,7 @@
 			<iHealth>-1</iHealth>
 			<iAsset>6</iAsset>
 			<iPower>2</iPower>
+			<iTradeRoutes>1</iTradeRoutes>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<SpecialistCounts>
 				<SpecialistCount>
@@ -4569,34 +4616,14 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_FACTORY</ConstructSound>
-			<BonusHealthChanges>
-				<BonusHealthChange>
-					<BonusType>BONUS_COAL</BonusType>
-					<iHealthChange>-1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
-					<BonusType>BONUS_OIL</BonusType>
-					<iHealthChange>-1</iHealthChange>
-				</BonusHealthChange>
-			</BonusHealthChanges>
-			<BonusCommerceModifiers>
-				<BonusCommerceModifier>
-					<BonusType>BONUS_COAL</BonusType>
-					<CommerceModifiers>
-						<iYield>15</iYield>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
-				<BonusCommerceModifier>
-					<BonusType>BONUS_OIL</BonusType>
-					<CommerceModifiers>
-						<iYield>15</iYield>
-					</CommerceModifiers>
-				</BonusCommerceModifier>
-			</BonusCommerceModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>10</iFlavor>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -4773,7 +4800,7 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
+					<iSpecialistCount>2</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_FACTORY</ConstructSound>
@@ -5006,29 +5033,20 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iAsset>5</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
+			<iHealth>1</iHealth>
 			<BonusHealthChanges>
 				<BonusHealthChange>
 					<BonusType>BONUS_OIL</BonusType>
 					<iHealthChange>2</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>2</iFlavor>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -5266,6 +5284,30 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BUNKER</BuildingClass>
+			<Type>BUILDING_BUNKER</Type>
+			<Description>TXT_KEY_BUILDING_BUNKER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BUNKER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BUNKER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BUNKER</ArtDefineTag>
+			<PrereqTech>TECH_ROCKETRY</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAirModifier>-50</iAirModifier>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BOMB_SHELTER</BuildingClass>
 			<Type>BUILDING_BOMB_SHELTER</Type>
 			<SpecialBuildingType>SPECIALBUILDING_BOMB_SHELTER</SpecialBuildingType>
@@ -5321,25 +5363,98 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_BUNKER</BuildingClass>
-			<Type>BUILDING_BUNKER</Type>
-			<Description>TXT_KEY_BUILDING_BUNKER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_BUNKER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_BUNKER_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_SECURITY_BUREAU</BuildingClass>
+			<Type>BUILDING_SECURITY_BUREAU</Type>
+			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SECURITY_BUREAU_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SECURITY_BUREAU_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BUNKER</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_SECURITY_BUREAU</ArtDefineTag>
 			<PrereqTech>TECH_RADAR</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
-			<iCost>100</iCost>
+			<FreePromotion>PROMOTION_SECURITY1</FreePromotion>
+			<iCost>220</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iAirModifier>-50</iAirModifier>
-			<iAsset>1</iAsset>
+			<iEspionageDefense>50</iEspionageDefense>
+			<iAsset>5</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</CommerceChanges>
+			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_STADIUM</BuildingClass>
+			<Type>BUILDING_STADIUM</Type>
+			<Description>TXT_KEY_BUILDING_STADIUM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_STADIUM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_STADIUM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_STADIUM</ArtDefineTag>
+			<PrereqTech>TECH_TELEVISION</PrereqTech>
+			<iCost>200</iCost>
+			<iHappiness>1</iHappiness>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<PowerCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</PowerCommerceModifiers>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CONTAINER_TERMINAL</BuildingClass>
+			<Type>BUILDING_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONTAINER_TERMINAL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONTAINER_TERMINAL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CONTAINER_TERMINAL</ArtDefineTag>
+			<PrereqTech>TECH_RADAR</PrereqTech>
+			<bWater>1</bWater>
+			<iCost>300</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>10</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -5380,32 +5495,40 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_SECURITY_BUREAU</BuildingClass>
-			<Type>BUILDING_SECURITY_BUREAU</Type>
-			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SECURITY_BUREAU_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SECURITY_BUREAU_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SECURITY_BUREAU</ArtDefineTag>
+			<BuildingClass>BUILDINGCLASS_SUPERCOMPUTER</BuildingClass>
+			<Type>BUILDING_SUPERCOMPUTER</Type>
+			<Description>TXT_KEY_BUILDING_SUPERCOMPUTER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SUPERCOMPUTER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SUPERCOMPUTER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SUPERCOMPUTER</ArtDefineTag>
 			<PrereqTech>TECH_COMPUTERS</PrereqTech>
-			<FreePromotion>PROMOTION_SECURITY1</FreePromotion>
-			<iCost>220</iCost>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iEspionageDefense>50</iEspionageDefense>
-			<iAsset>5</iAsset>
+			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceChanges>
+			<PowerCommerceModifiers>
 				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</CommerceChanges>
-			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
+				<iCommerce>25</iCommerce>
+			</PowerCommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -5462,18 +5585,56 @@
 			<Strategy>TXT_KEY_BUILDING_RECYCLING_CENTER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RECYCLING_CENTER</ArtDefineTag>
-			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+			<PrereqTech>TECH_ECOLOGY</PrereqTech>
 			<iCost>300</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iCorporationUnhealthModifier>-50</iCorporationUnhealthModifier>
+			<iAsset>6</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_LOGISTICS_CENTER</BuildingClass>
+			<Type>BUILDING_LOGISTICS_CENTER</Type>
+			<Description>TXT_KEY_BUILDING_LOGISTICS_CENTER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_LOGISTICS_CENTER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_LOGISTICS_CENTER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_LOGISTICS_CENTER</ArtDefineTag>
+			<PrereqTech>TECH_TELECOMMUNICATIONS</PrereqTech>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
-			<bBuildingOnlyHealthy>1</bBuildingOnlyHealthy>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<PowerCommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</PowerCommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_WAREHOUSE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -5506,6 +5667,116 @@
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_FIBER_NETWORK</BuildingClass>
+			<Type>BUILDING_FIBER_NETWORK</Type>
+			<Description>TXT_KEY_BUILDING_FIBER_NETWORK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_FIBER_NETWORK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_FIBER_NETWORK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_FIBER_NETWORK</ArtDefineTag>
+			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
+			<iCost>500</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<PowerYieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>10</iYield>
+			</PowerYieldModifiers>
+			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_ELECTRICAL_GRID</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_AUTOMATED_FACTORY</BuildingClass>
+			<Type>BUILDING_AUTOMATED_FACTORY</Type>
+			<Description>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_AUTOMATED_FACTORY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_AUTOMATED_FACTORY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_AUTOMATED_FACTORY</ArtDefineTag>
+			<FreeStartEra>NONE</FreeStartEra>
+			<PrereqTech>TECH_AUTOMATION</PrereqTech>
+			<iCost>500</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iHealth>-1</iHealth>
+			<iAsset>6</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<PowerYieldModifiers>
+				<iYield>0</iYield>
+				<iYield>25</iYield>
+			</PowerYieldModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_FACTORY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_VERTICAL_FARM</BuildingClass>
+			<Type>BUILDING_VERTICAL_FARM</Type>
+			<Description>TXT_KEY_BUILDING_VERTICAL_FARM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VERTICAL_FARM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VERTICAL_FARM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VERTICAL_FARM</ArtDefineTag>
+			<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
+			<iCost>500</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>6</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<PowerYieldModifiers>
+				<iYield>10</iYield>
+			</PowerYieldModifiers>
+			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -8442,6 +8713,33 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SPACEPORT</BuildingClass>
+			<Type>BUILDING_SPACEPORT</Type>
+			<Description>TXT_KEY_BUILDING_SPACEPORT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SPACEPORT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SPACEPORT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SPACEPORT</ArtDefineTag>
+			<PrereqTech>TECH_SPACEFLIGHT</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
+			<iCost>800</iCost>
+			<iHurryCostModifier>50</iHurryCostModifier>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>30</iMaxLatitude>
+			<iGlobalSpaceProductionModifier>100</iGlobalSpaceProductionModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>8</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_GREAT_SPHINX</BuildingClass>
 			<Type>BUILDING_GREAT_SPHINX</Type>
 			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
@@ -9398,14 +9696,14 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
-			<Type>BUILDING_COLOSSEUM</Type>
-			<Description>TXT_KEY_BUILDING_COLOSSEUM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_COLOSSEUM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_FLAVIAN_AMPHITHEATRE</BuildingClass>
+			<Type>BUILDING_FLAVIAN_AMPHITHEATRE</Type>
+			<Description>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_COLOSSEUM</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_COLOSSEUM</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_FLAVIAN_AMPHITHEATRE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_FLAVIAN_AMPHITHEATRE</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			<ObsoleteTech>TECH_COMPANIES</ObsoleteTech>
@@ -15248,6 +15546,7 @@
 			<Description>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HUBBLE_SPACE_TELESCOPE</ArtDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
@@ -15256,6 +15555,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>500</iAIWeight>
 			<iCost>3000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -15266,7 +15566,7 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -15278,10 +15578,6 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>100</iCommerce>
-			</CommerceModifiers>
 			<ConstructSound>AS2D_BUILD_OBSERVATORY</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -15507,6 +15803,7 @@
 			<Description>TXT_KEY_BUILDING_SPACE_ELEVATOR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SPACE_ELEVATOR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SPACE_ELEVATOR_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SPACE_ELEVATOR_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SPACE_ELEVATOR</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_SPACE_ELEVATOR</MovieDefineTag>
