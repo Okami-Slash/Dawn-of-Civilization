@@ -100,9 +100,9 @@ def init():
 ### Capitals ###
 
 tCapitals = (
-(0, 0), # Thebes
-(0, 0), # Chang'an
-(0, 0), # Babylon
+(79, 42), # Thebes
+(121, 52), # Chang'an
+(89, 47), # Babylon
 (0, 0), # Harappa
 (0, 0), # Athens
 (0, 0), # Pataliputra
@@ -148,7 +148,7 @@ tCapitals = (
 )
 
 dChangedCapitals = {
-iChina : (0, 0),	# Beijing
+iChina : (124, 56),	# Beijing
 iIndia : (0, 0),	# Delhi
 iCarthage : (0, 0),	# Carthage
 iPersia : (0, 0),	# Esfahan (Iran)
@@ -170,8 +170,8 @@ iOttomans : (0, 0),	# Istanbul
 
 # new capital locations on respawn
 dRespawnCapitals = {
-iEgypt : (0, 0),	# Cairo
-iChina :  (0, 0),	# Beijing
+iEgypt : (79, 42),	# Cairo
+iChina :  (124, 56),	# Beijing
 iIndia : (0, 0),	# Delhi
 iPersia : (0, 0),	# Esfahan
 iEthiopia : (0, 0),	# Addis Ababa
@@ -190,11 +190,11 @@ iOttomans : (0, 0),	# Istanbul
 ### Birth Area ###
 
 tBirthArea = (
-((0, 0),	(0, 0)),	# Egypt
-((0, 0),	(0, 0)), 	# China
-((0, 0),	(0, 0)),	# Babylonia
-((0, 0),	(0, 0)),	# Harappa
-((0, 0),	(0, 0)),	# Greece
+((76, 37),	(81, 45)),	# Egypt
+((117, 48),	(129, 56)), 	# China
+((86, 47),	(89, 52)),	# Babylonia
+((99, 44),	(102, 48)),	# Harappa
+((73, 48),	(81, 55)),	# Greece
 ((0, 0),	(0, 0)),	# India
 ((0, 0),	(0, 0)),	# Carthage
 ((0, 0),	(0, 0)),	# Polynesia
@@ -247,10 +247,11 @@ iArgentina : 	((0, 0),	(0, 0)),	# includes Chile
 }
 
 dBirthAreaExceptions = {
-iChina : [],
-iBabylonia : [],
-iHarappa : [],
-iGreece : [],
+iEgypt : [(78,45), (81, 45), (82, 45)],
+iChina : [(128, 56)],
+iBabylonia : [(89, 52), (88, 52), (86, 47), (86, 48), (86, 49), (86, 50), (87, 47), (87, 48), (89, 51)],
+iHarappa : [(102, 44)],
+iGreece : [(73, 55), (74, 55), (75, 55), (76, 55), (81, 53), (81, 54), (81, 55)],
 iIndia : [],
 iRome : [],
 iByzantium : [],
@@ -278,11 +279,11 @@ iCanada : [],
 ### Core Area ###
 
 tCoreArea = (
-((0, 0),	(0, 0)),	# Egypt
-((0, 0),	(0, 0)),	# China
-((0, 0),	(0, 0)),	# Babylonia
-((0, 0),	(0, 0)),	# Harappa
-((0, 0),	(0, 0)),	# Greece
+((78, 39),	(80, 45)),	# Egypt
+((117, 48),	(128, 56)),	# China
+((86, 47),	(89, 52)),	# Babylonia
+((99, 44),	(102, 48)),	# Harappa
+((73, 48),	(81, 55)),	# Greece
 ((0, 0),	(0, 0)),	# India
 ((0, 0),	(0, 0)),	# Phoenicia
 ((0, 0),	(0, 0)),	# Polynesia
@@ -326,8 +327,8 @@ tCoreArea = (
 )
 
 dChangedCoreArea = {
-iChina :	((0, 0),	(0, 0)),
-iGreece :	((0, 0),	(0, 0)),
+iChina :	((117, 48),	(129, 56)),
+iGreece : ((74, 48),	(78, 52)),
 iIndia :	((0, 0),	(0, 0)),
 iPhoenicia :	((0, 0),	(0, 0)),
 iMaya :		((0, 0),	(0, 0)),	# Colombia
@@ -348,10 +349,11 @@ iGermany :	((0, 0),	(0, 0)),
 }
 
 dCoreAreaExceptions = {
-iChina : [],
-iBabylonia : [],
-iHarappa : [],
-iGreece : [],
+iEgypt : [(78, 39), (78, 40)],
+iChina : [(117, 50), (117, 52), (117, 53), (117, 55), (117, 56), (118, 56), (122, 48), (123, 48), (123, 49), (123, 50), (124, 49), (124, 50), (124, 51), (125, 48), (125, 49), (125, 50), (125, 51), (126, 49), (126, 50), (126, 51), (126, 52), (127, 48), (127, 49), (127, 50), (127, 51), (127, 52), (128, 48), (128, 49), (128, 51), (128, 52), (128, 56)],
+iBabylonia : [(86, 47), (86, 48), (86, 49), (86, 50), (87, 47), (87, 48), (89, 51)],
+iHarappa : [(102, 44)],
+iGreece : [(73, 55), (74, 55), (75, 55), (76, 55), (81, 53), (81, 54)],
 iIndia : [],
 iRome : [],
 iByzantium : [],
@@ -375,7 +377,7 @@ iCanada : [],
 }
 
 dChangedCoreAreaExceptions = {
-iChina : [],
+iChina : [(117, 50), (117, 52), (117, 53), (117, 55), (117, 56), (118, 56), (128, 56)],
 iIndia : [],
 iMaya : [], # Colombia
 iArabia : [],
@@ -393,7 +395,7 @@ iGermany : [],
 ### Normal Area ###
 
 tNormalArea = (
-((0, 0),	(0, 0)),	# Egypt
+((75, 36),	(82, 45)),	# Egypt
 ((0, 0),	(0, 0)),	# China
 ((0, 0),	(0, 0)),	# Babylonia
 ((0, 0),	(0, 0)), 	# Harappa

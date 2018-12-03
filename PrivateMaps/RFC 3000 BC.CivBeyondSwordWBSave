@@ -35847,6 +35847,12 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
+	EndUnit
 EndPlot
 BeginPlot
 	x=79,y=43
@@ -36776,12 +36782,6 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
-	EndUnit
 EndPlot
 BeginPlot
 	x=81,y=41

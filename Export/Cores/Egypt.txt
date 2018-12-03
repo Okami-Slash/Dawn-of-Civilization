@@ -1,5 +1,5 @@
 # tCoreArea
-((67, 32),	(70, 36)),	# Egypt
+((78, 39),	(80, 45)),	# Egypt
 
 # dCoreAreaExceptions
-iEgypt : [(70, 35), (70, 36)],
+iEgypt : [(78, 39), (78, 40)],
