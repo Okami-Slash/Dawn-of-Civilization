@@ -3085,7 +3085,7 @@ def canApplyCrusadeDone2(argsList):
 	#Rhye - switch to Jerusalem
 	if utils.getScenario() >= i600AD: #late start condition
 		if (holyCity.getX() == 60 and holyCity.getY() == 44):
-			pJerusalem = gc.getMap().plot(73, 38)
+			pJerusalem = gc.getMap().plot(84, 45)
 			if (not pJerusalem.getPlotCity().isNone()):
 				holyCity = pJerusalem.getPlotCity()
 			else:

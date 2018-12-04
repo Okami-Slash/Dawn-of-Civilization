@@ -34,7 +34,7 @@ tEuropeTL = (48, 33)
 tEuropeBR = (72, 65)
 tQufuTL = (102, 44)
 tQufuBR = (106, 46)
-tMecca = (75, 33)
+tMecca = (87, 38)
 
 dCatholicPreference = {
 iEgypt		: 80,

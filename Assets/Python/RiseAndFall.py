@@ -697,10 +697,10 @@ class RiseAndFall:
 
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
 		if not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (data.iSeed % 10):
-			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
-			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
-			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
-			utils.makeUnit(iAtlasElephant, iCarthage, (58, 39), 2)
+			utils.makeUnit(iSettler, iCarthage, (67, 48), 1)
+			utils.makeUnit(iArcher, iCarthage, (67, 48), 2)
+			utils.makeUnit(iWorker, iCarthage, (67, 48), 2)
+			utils.makeUnit(iAtlasElephant, iCarthage, (67, 48), 2)
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
@@ -731,7 +731,7 @@ class RiseAndFall:
 					self.giveColonists(iPlayer)
 					
 		if iGameTurn == getTurnForYear(710)-1:
-			x, y = 51, 37
+			x, y = 57, 44
 			if gc.getMap().plot(x,y).isCity():
 				marrakesh = gc.getMap().plot(x,y).getPlotCity()
 				marrakesh.setHasReligion(iIslam, True, False, False)
